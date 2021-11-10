@@ -15,14 +15,14 @@
     </div>
   </div>
   <div class="mt-8">
-    <p class="p-4">Daily health tip</p>
+    <p class="p-4 text-gray-900 capitalize">Daily health tip</p>
     <div class="my-2 p-4 bg-white">
       <div class="text-center">
         <img src="/assets/img/tip.svg" />
       </div>
       <div class="mt-6">
-        <p class="font-bold mb-2">hello world</p>
-        <p>
+        <p class="font-bold mb-2 text-gray-900">Hello world</p>
+        <p class="text-gray-500">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
           consectetur illo expedita omnis praesentium reprehenderit ipsa numquam
           porro minus corrupti. Mollitia labore iste ex odit eaque nemo quidem
@@ -32,13 +32,15 @@
     </div>
   </div>
   <div class="py-8 px-4 grid grid-cols-2 gap-5 text-gray-900">
-    <div class="bg-pink-200 rounded-xl p-4 text-center">
+    <div class="bg-pink-200 rounded-xl p-4 text-center relative">
+      <app-guage value="80" color="green"></app-guage>
       <p class="font-bold text-3xl mt-6">100</p>
       <span class="text-sm mb-4 inline-block">mg/dl</span>
       <p class="font-bold">Blood sugar</p>
       <p class="border border-white py-2 mt-4 text-white rounded-xl">Record</p>
     </div>
-    <div class="bg-blue-200 rounded-xl p-4 text-center">
+    <div class="bg-blue-200 rounded-xl p-4 text-center relative">
+      <app-guage value="80" color="green"></app-guage>
       <p class="font-bold text-3xl mt-6">100/80</p>
       <span class="text-sm mb-4 inline-block">mmhg</span>
       <p class="font-bold">Blood Pressure</p>

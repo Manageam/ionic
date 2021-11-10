@@ -1,0 +1,45 @@
+<ion-app>
+  <ion-header
+    class="p-4 flex items-center ion-no-border font-geomanist font-bold text-xl"
+  >
+    <ion-icon
+      name="arrow-back"
+      class="text-2xl"
+      (click)="modalController.dismiss()"
+    ></ion-icon>
+    <span class="inline-block ml-4">Category</span>
+  </ion-header>
+  <ion-content>
+    <div class="p-4 content" [innerHtml]="data.description"></div>
+    <div class="flex justify-between p-4">
+      <p
+        class="
+          py-2
+          px-6
+          text-blue-500
+          rounded-xl
+          flex
+          items-center
+          border border-blue-500
+        "
+      >
+        <ion-icon name="bookmark" class="text-2xl"></ion-icon>
+        <span class="text-xl">Bookmark</span>
+      </p>
+      <p
+        class="
+          py-2
+          px-6
+          text-blue-500
+          rounded-xl
+          flex
+          items-center
+          border border-blue-500
+        "
+      >
+        <ion-icon name="share-social" class="text-2xl"></ion-icon>
+        <span class="text-xl">Share</span>
+      </p>
+    </div>
+  </ion-content>
+</ion-app>

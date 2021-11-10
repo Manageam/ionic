@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 
 @Component({
@@ -7,12 +8,18 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private menuController: MenuController) {}
+  currentRoute = '';
+  constructor(private menuController: MenuController, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.router.events.subscribe((ev) => {
+      if (ev instanceof NavigationEnd) {
+        this.currentRoute = ev.url.split('/').slice(-1)[0];
+      }
+    });
+  }
 
   async toggleMenu() {
-    console.log('open menu');
     await this.menuController.toggle();
   }
 }

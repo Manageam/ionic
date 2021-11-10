@@ -15,6 +15,9 @@ module.exports = {
         calibre: ["Calibre Regular", "san-serif"],
         geomanist: ["Geomanist Regular", "san-serif"],
       },
+      colors: {
+        accent: "#012547",
+      },
     },
   },
   variants: {

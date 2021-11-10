@@ -7,14 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { HealthPageRoutingModule } from './health-routing.module';
 
 import { HealthPage } from './health.page';
+import { GuageComponent } from 'src/app/components/guage/guage.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HealthPageRoutingModule
-  ],
-  declarations: [HealthPage]
+  imports: [CommonModule, FormsModule, IonicModule, HealthPageRoutingModule],
+  declarations: [HealthPage, GuageComponent],
 })
 export class HealthPageModule {}

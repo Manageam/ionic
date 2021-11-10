@@ -1,1 +1,97 @@
-health
+<div class="bg-accent p-4 relative min-h-full">
+  <div class="text-white">
+    <p class="text-2xl font-bold font-calibre">Health</p>
+    <p class="mt-2">Click cards to see history</p>
+  </div>
+
+  <div class="bg-white p-4 mt-4 rounded-lg flex">
+    <img src="/assets/img/drug.svg" />
+    <div class="ml-4 font-geomanist w-full">
+      <p class="text-lg font-bold">Medication</p>
+      <p class="text-gray-500">Some random medication</p>
+      <div class="flex space-x-4 mt-4">
+        <p
+          class="
+            w-full
+            bg-blue-500
+            p-2
+            font-semibold
+            text-center text-white
+            rounded-xl
+            items-center
+          "
+        >
+          <span>Add new</span>
+        </p>
+
+        <p
+          class="
+            w-full
+            p-2
+            text-center
+            block
+            text-blue-500
+            border border-blue-500
+            rounded-xl
+          "
+        >
+          View all
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-8 grid grid-cols-2 gap-5 text-gray-900">
+    <div class="bg-white rounded-xl p-4 text-center">
+      <img src="/assets/img/diabetic.svg" class="inline-block h-12" />
+      <p class="font-bold text-xl mt-6">Health Status</p>
+      <p class="font-bold">Diabetic</p>
+      <p class="border border-blue-500 py-2 mt-4 text-blue-500 rounded-xl">
+        change
+      </p>
+    </div>
+
+    <div class="bg-white rounded-xl p-4 text-center">
+      <img src="/assets/img/diabetic.svg" class="inline-block h-12" />
+      <p class="font-bold text-xl mt-6">HbA1c</p>
+      <p class="font-bold">5.7%</p>
+      <p class="border border-blue-500 py-2 mt-4 text-blue-500 rounded-xl">
+        Record
+      </p>
+    </div>
+
+    <div class="bg-pink-200 rounded-xl p-4 text-center relative">
+      <app-guage value="80" color="red"></app-guage>
+      <p class="font-bold text-2xl mt-6">100</p>
+      <span class="text-sm mb-4 inline-block">mg/dl</span>
+      <p class="font-bold">Blood sugar</p>
+      <p class="border border-white py-2 mt-4 text-white rounded-xl">Record</p>
+    </div>
+
+    <div class="bg-blue-200 rounded-xl p-4 text-center relative">
+      <app-guage value="80" color="green"></app-guage>
+      <p class="font-bold text-2xl mt-6">100/80</p>
+      <span class="text-sm mb-4 inline-block">mmhg</span>
+      <p class="font-bold">Blood Pressure</p>
+      <p class="border border-white py-2 mt-4 text-white rounded-xl">Record</p>
+    </div>
+
+    <div class="bg-white rounded-xl p-4 text-center">
+      <p class="font-bold text-2xl mt-6">100</p>
+      <span class="text-sm mb-4 inline-block">mg/dl</span>
+      <p class="font-bold">total Cholesterol</p>
+      <p class="border border-blue-500 py-2 mt-4 text-blue-500 rounded-xl">
+        Record
+      </p>
+    </div>
+
+    <div class="bg-white rounded-xl p-4 text-center">
+      <p class="font-bold text-2xl mt-6">100/80</p>
+      <span class="text-sm mb-4 inline-block">mmhg</span>
+      <p class="font-bold">Body Mass Index</p>
+      <p class="border border-blue-500 py-2 mt-4 text-blue-500 rounded-xl">
+        Record
+      </p>
+    </div>
+  </div>
+</div>
