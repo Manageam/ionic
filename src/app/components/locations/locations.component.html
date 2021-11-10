@@ -1,0 +1,39 @@
+<ion-app class="">
+  <ion-header
+    class="ion-no-border p-4 flex justify-between font-geomanist bg-gray-100"
+  >
+    <div class="flex">
+      <ion-icon
+        name="arrow-back"
+        class="text-2xl"
+        (click)="modalController.dismiss()"
+      ></ion-icon>
+      <p class="ml-4 block text-gray-900 text-xl">Location</p>
+    </div>
+    <span class="text-blue-500 text-xl" (click)="fetchLocations()">Change</span>
+  </ion-header>
+  <ion-content>
+    <div class="pt-6 py-4 px-4 font-geomanist bg-gray-100 h-full">
+      <h3 class="text-xl text-gray-900 my-4">Hospitals</h3>
+      <ul>
+        <li
+          class="flex items-center bg-white border-b border-gray-100 p-4"
+          *ngFor="let item of [1, 2, 3, 4, 5]"
+        >
+          <div class="grid">
+            <p class="truncate">
+              Lorem ipsum, dolor sit amet consectetur adipisicing.
+            </p>
+            <p class="text-blue-500 text-sm">
+              Lorem ipsum, dolor sit amet consectetur adipisicing .
+            </p>
+          </div>
+          <ion-icon
+            name="chevron-forward"
+            class="inline-block ml-2 text-xl"
+          ></ion-icon>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-app>
