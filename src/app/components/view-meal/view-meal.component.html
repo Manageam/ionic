@@ -1,3 +1,135 @@
-<p>
-  view-meal works!
-</p>
+<ion-app>
+  <ion-header class="py-6 px-4 ion-no-border">
+    <div class="flex justify-between items-center">
+      <p class="flex">
+        <span
+          class="
+            w-6
+            h-6
+            flex
+            items-center
+            justify-center
+            bg-green-100
+            rounded-full
+            text-green-900
+            mr-1
+          "
+          >3</span
+        >
+        <span class="text-blue-400">Total foods</span>
+      </p>
+
+      <ion-icon
+        (click)="modalController.dismiss(false)"
+        name="close"
+        class="text-white bg-gray-400 p-1 rounded-full"
+      ></ion-icon>
+    </div>
+
+    <div class="mt-16 text-gray-900">
+      <div class="flex justify-between">
+        <p class="text-xl">Lunch</p>
+        <span class="uppercase block mr-3 text-gray-500">9, November</span>
+      </div>
+      <div class="flex justify-between items-end">
+        <p><span class="text-3xl font-semibold">219</span> kcal</p>
+        <p class="py-1 text-sm rounded-full px-4 bg-red-100 text-red-900">
+          Poor
+        </p>
+      </div>
+    </div>
+  </ion-header>
+  <ion-content>
+    <div class="bg-gray-100 p-4">
+      <div class="bg-white rounded-lg">
+        <h2 class="text-xl p-4">Nutrition Information</h2>
+        <ul>
+          <h3 class="bg-gray-100 text-blue-500 p-4">Carbohydrate</h3>
+          <li
+            class="
+              bg-white
+              text-gray-600
+              p-4
+              border-t border-gray-200
+              flex
+              justify-between
+            "
+            *ngFor="let item of [1, 2, 3, 4]"
+          >
+            <span>1 serving of cabbage</span> <span>62.4</span>
+          </li>
+        </ul>
+
+        <ul>
+          <h3 class="bg-gray-100 text-blue-500 p-4">Protein</h3>
+          <li
+            class="
+              bg-white
+              text-gray-600
+              p-4
+              border-t border-gray-200
+              flex
+              justify-between
+            "
+            *ngFor="let item of [1, 2, 3, 4]"
+          >
+            <span>1 serving of cabbage</span> <span>62.4</span>
+          </li>
+        </ul>
+
+        <ul>
+          <h3 class="bg-gray-100 text-blue-500 p-4 flex justify-between">
+            <span>Fruit & Vegetables</span>
+            <span>3</span>
+          </h3>
+          <li
+            class="
+              bg-white
+              text-gray-600
+              p-4
+              border-t border-gray-200
+              flex
+              justify-between
+            "
+            *ngFor="let item of [1, 2, 3, 4]"
+          >
+            <span>1 serving of cabbage</span> <span>62.4</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-2 gap-10 mt-4">
+        <p
+          (click)="modalController.dismiss(true)"
+          class="
+            bg-red-600
+            text-white
+            uppercase
+            rounded-2xl
+            text-center
+            py-4
+            font-semibold
+            px-6
+          "
+        >
+          Remove
+        </p>
+        <p
+          (click)="modalController.dismiss(false)"
+          class="
+            bg-white
+            text-gray-800
+            uppercase
+            rounded-2xl
+            text-center
+            py-4
+            font-semibold
+            px-6
+          "
+        >
+          close
+        </p>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>

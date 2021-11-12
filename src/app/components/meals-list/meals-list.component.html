@@ -1,0 +1,50 @@
+<ion-app>
+  <ion-header class="ion-no-border p-4 font-geomanist">
+    <div class="flex">
+      <ion-icon
+        name="arrow-back"
+        class="text-2xl"
+        (click)="modalController.dismiss()"
+      ></ion-icon>
+      <p class="ml-4 block text-gray-900 text-xl">Meals guide</p>
+    </div>
+    <ion-segment
+      (ionChange)="segmentChanged($event)"
+      [value]="segment"
+      mode="md"
+      class="bg-white mt-6"
+    >
+      <ion-segment-button value="carbohydrate">
+        <ion-label>Carbohydrate</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="protein">
+        <ion-label>Protein</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="fruits & veg">
+        <ion-label>Fruits & Veg</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <div
+      class="
+        bg-white
+        mt-4
+        flex
+        px-2
+        items-center
+        rounded
+        border border-gray-200
+      "
+    >
+      <ion-icon name="search" class="text-2xl p-2"></ion-icon>
+      <input
+        type="text"
+        class=""
+        [placeholder]="'Search ' + segment + ' ...'"
+        class="py-4 w-full outline-none"
+      />
+    </div>
+  </ion-header>
+  <ion-content>
+    <div class="min-h-full p-4 meal pb-10"></div>
+  </ion-content>
+</ion-app>

@@ -37,6 +37,8 @@ import { DiabetesWalkComponent } from 'src/app/components/diabetes-walk/diabetes
 import { RegisterForWalkComponent } from 'src/app/components/register-for-walk/register-for-walk.component';
 import { SettingsComponent } from 'src/app/components/settings/settings.component';
 import { LanguageSettingsComponent } from 'src/app/components/language-settings/language-settings.component';
+import { ViewMealsComponent } from 'src/app/components/view-meals/view-meals.component';
+import { MealsListComponent } from 'src/app/components/meals-list/meals-list.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,9 @@ import { LanguageSettingsComponent } from 'src/app/components/language-settings/
     RegisterForWalkComponent,
     SettingsComponent,
     LanguageSettingsComponent,
+    ViewMealsComponent,
+    ViewMealComponent,
+    MealsListComponent,
   ],
   imports: [CommonModule, IonicModule, FormsModule],
 })

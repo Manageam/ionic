@@ -18,9 +18,7 @@ export class MenuComponent implements OnInit {
     private modalController: ModalController
   ) {}
 
-  ngOnInit() {
-    this.showSettings();
-  }
+  ngOnInit() {}
 
   async showProfile() {
     const modal = await this.modalController.create({

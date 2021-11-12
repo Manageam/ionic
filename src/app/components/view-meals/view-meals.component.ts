@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { MealsListComponent } from '../meals-list/meals-list.component';
+import { ViewMealComponent } from '../view-meal/view-meal.component';
 
 @Component({
   selector: 'app-view-meals',
@@ -6,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-meals.component.scss'],
 })
 export class ViewMealsComponent implements OnInit {
+  segment = 'current';
+  constructor(public modalController: ModalController) {}
 
-  constructor() { }
+  ngOnInit() {
+    this.addMeal();
+  }
+  segmentChanged(e) {
+    this.segment = e.detail.value;
+  }
+  async showMeal(meal) {
+    const modal = await this.modalController.create({
+      component: ViewMealComponent,
+    });
+    modal.onDidDismiss().then((data) => {
+      console.log(data);
+    });
+    await modal.present();
+  }
 
-  ngOnInit() {}
-
+  async addMeal() {
+    const modal = await this.modalController.create({
+      component: MealsListComponent,
+    });
+    await modal.present();
+  }
 }

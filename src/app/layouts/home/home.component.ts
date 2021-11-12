@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { MenuController, ModalController } from '@ionic/angular';
 import { LocationsComponent } from 'src/app/components/locations/locations.component';
+import { ViewMealsComponent } from 'src/app/components/view-meals/view-meals.component';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.showMeals();
     this.router.events.subscribe((ev) => {
       if (ev instanceof NavigationEnd) {
         this.currentRoute = ev.url.split('/').slice(-1)[0];
@@ -31,6 +33,13 @@ export class HomeComponent implements OnInit {
   async showLocation() {
     const modal = await this.modalController.create({
       component: LocationsComponent,
+    });
+    modal.present();
+  }
+
+  async showMeals() {
+    const modal = await this.modalController.create({
+      component: ViewMealsComponent,
     });
     modal.present();
   }
