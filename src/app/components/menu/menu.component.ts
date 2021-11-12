@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, ModalController } from '@ionic/angular';
-import { BookmarkComponent } from 'src/app/pages/logged/education/bookmark/bookmark.component';
+import { BookmarksComponent } from '../bookmarks/bookmarks.component';
 import { DiabetesWalkComponent } from '../diabetes-walk/diabetes-walk.component';
 import { ExerciseComponent } from '../exercise/exercise.component';
 import { ProfileComponent } from '../profile/profile.component';
@@ -18,7 +18,9 @@ export class MenuComponent implements OnInit {
     private modalController: ModalController
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // this.showDiabetesWalk();
+  }
 
   async showProfile() {
     const modal = await this.modalController.create({
@@ -43,7 +45,7 @@ export class MenuComponent implements OnInit {
 
   async showBookmark() {
     const modal = await this.modalController.create({
-      component: BookmarkComponent,
+      component: BookmarksComponent,
     });
     modal.present();
   }

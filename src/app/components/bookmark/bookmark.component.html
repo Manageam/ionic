@@ -1,0 +1,31 @@
+<ion-app class="bg-white">
+  <ion-header class="ion-no-border p-4 flex justify-end font-geomanist">
+    <p
+      class="ml-2 block text-xl font-bold text-blue-500"
+      (click)="modalController.dismiss()"
+    >
+      Close
+    </p>
+  </ion-header>
+  <ion-content>
+    <div class="min-h-ful p-4 font-calibre text-gray-900">
+      <p class="text-sm">Topic</p>
+      <h3 class="text-2xl">{{ data.topic }}</h3>
+      <p class="mt-4" [innerHTML]="data.description"></p>
+      <p
+        class="
+          mt-6
+          bg-red-600
+          font-bold
+          text-white
+          p-3
+          text-center
+          rounded-full
+        "
+        (click)="remove(data.slug)"
+      >
+        Remove
+      </p>
+    </div>
+  </ion-content>
+</ion-app>

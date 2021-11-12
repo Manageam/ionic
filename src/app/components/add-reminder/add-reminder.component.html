@@ -1,0 +1,117 @@
+<ion-app class="text-gray-900">
+  <ion-header
+    class="
+      bg-blue-100
+      px-4
+      py-6
+      ion-no-border
+      text-xl
+      flex
+      justify-between
+      items-center
+    "
+  >
+    <p class="font-bold">New Reminder</p>
+    <ion-icon
+      (click)="modalController.dismiss()"
+      name="close"
+      class="bg-gray-500 text-2xl text-white rounded-full"
+    ></ion-icon>
+  </ion-header>
+  <ion-content>
+    <div class="p-4 space-y-4">
+      <ion-item>
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Category</ion-label
+        >
+        <ion-select
+          [value]="reminder.category"
+          [(ngModel)]="reminder.category"
+          class="w-full"
+          placeholder="Choose category"
+        >
+          <ion-select-option value="glucose-meter"
+            >Glucose meter</ion-select-option
+          >
+          <ion-select-option value="medication-tracker"
+            >Medication Tracker</ion-select-option
+          >
+          <ion-select-option value="exercise">Exercise</ion-select-option>
+          <ion-select-option value="doctors-appointment"
+            >Doctor's appointment</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="reminder.category">
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Title</ion-label
+        >
+        <ion-input
+          placeholder="Enter title of the reminder"
+          type="text"
+          [value]="reminder.title"
+          [(ngModel)]="reminder.title"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="reminder.title">
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Date and time to be reminded</ion-label
+        >
+        <ion-datetime
+          placeholder="Pick date and time to be reminded"
+          [value]="reminder.date"
+          [(ngModel)]="reminder.date"
+        ></ion-datetime>
+      </ion-item>
+
+      <ion-item *ngIf="reminder.date">
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Repeat</ion-label
+        >
+        <ion-select
+          [value]="reminder.repeat"
+          [(ngModel)]="reminder.repeat"
+          class="w-full"
+          placeholder="Choose a repeat for the reminder"
+        >
+          <ion-select-option value="never">Never</ion-select-option>
+          <ion-select-option value="hour">Every hour</ion-select-option>
+          <ion-select-option value="day">Every hour</ion-select-option>
+          <ion-select-option value="week">Every week</ion-select-option>
+          <ion-select-option value="month">Every month</ion-select-option>
+          <ion-select-option value="year">Every year</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="reminder.repeat">
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Weight</ion-label
+        >
+        <ion-textarea
+          [value]="reminder.note"
+          [(ngModel)]="reminder.note"
+          placeholder="Enter reminder note"
+        ></ion-textarea>
+      </ion-item>
+
+      <span
+        (click)="save()"
+        *ngIf="reminder.note"
+        class="
+          w-full
+          bg-blue-500
+          p-4
+          font-semibold
+          text-center
+          block
+          text-white
+          uppercase
+          rounded-xl
+          mt-10
+        "
+        >Done</span
+      >
+    </div>
+  </ion-content>
+</ion-app>

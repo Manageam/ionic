@@ -12,7 +12,6 @@ import { AddMedicationComponent } from 'src/app/components/add-medication/add-me
 import { AllMedicationsComponent } from 'src/app/components/all-medications/all-medications.component';
 import { GuageComponent } from 'src/app/components/guage/guage.component';
 import { HealthStatusComponent } from 'src/app/components/health-status/health-status.component';
-import { LocationsComponent } from 'src/app/components/locations/locations.component';
 import { UpdateBloodPressureComponent } from 'src/app/components/update-blood-pressure/update-blood-pressure.component';
 import { UpdateBloodSugarComponent } from 'src/app/components/update-blood-sugar/update-blood-sugar.component';
 import { UpdateBmiComponent } from 'src/app/components/update-bmi/update-bmi.component';
@@ -30,9 +29,12 @@ import { HomePage } from 'src/app/pages/logged/home/home.page';
 import { HealthPage } from 'src/app/pages/logged/health/health.page';
 import { ExpandableComponent } from 'src/app/components/expandable/expandable.component';
 import { FormsModule } from '@angular/forms';
-import { ProfileComponent } from 'src/app/components/profile/profile.component';
-import { UpdateProfileComponent } from 'src/app/components/update-profile/update-profile.component';
-import { UpdatePictureComponent } from 'src/app/components/update-picture/update-picture.component';
+import { ReminderComponent } from 'src/app/components/reminder/reminder.component';
+import { AddReminderComponent } from 'src/app/components/add-reminder/add-reminder.component';
+import { BookmarksComponent } from 'src/app/components/bookmarks/bookmarks.component';
+import { BookmarkComponent } from 'src/app/components/bookmark/bookmark.component';
+import { DiabetesWalkComponent } from 'src/app/components/diabetes-walk/diabetes-walk.component';
+import { RegisterForWalkComponent } from 'src/app/components/register-for-walk/register-for-walk.component';
 
 @NgModule({
   declarations: [
@@ -63,9 +65,12 @@ import { UpdatePictureComponent } from 'src/app/components/update-picture/update
     HomePage,
     HealthPage,
     ExpandableComponent,
-    ProfileComponent,
-    UpdateProfileComponent,
-    UpdatePictureComponent,
+    ReminderComponent,
+    AddReminderComponent,
+    BookmarksComponent,
+    BookmarkComponent,
+    DiabetesWalkComponent,
+    RegisterForWalkComponent,
   ],
   imports: [CommonModule, IonicModule, FormsModule],
 })
