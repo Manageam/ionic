@@ -30,6 +30,9 @@ import { HomePage } from 'src/app/pages/logged/home/home.page';
 import { HealthPage } from 'src/app/pages/logged/health/health.page';
 import { ExpandableComponent } from 'src/app/components/expandable/expandable.component';
 import { FormsModule } from '@angular/forms';
+import { ProfileComponent } from 'src/app/components/profile/profile.component';
+import { UpdateProfileComponent } from 'src/app/components/update-profile/update-profile.component';
+import { UpdatePictureComponent } from 'src/app/components/update-picture/update-picture.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +63,9 @@ import { FormsModule } from '@angular/forms';
     HomePage,
     HealthPage,
     ExpandableComponent,
+    ProfileComponent,
+    UpdateProfileComponent,
+    UpdatePictureComponent,
   ],
   imports: [CommonModule, IonicModule, FormsModule],
 })

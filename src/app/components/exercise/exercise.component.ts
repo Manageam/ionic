@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import exercises from 'src/assets/data/exercise';
 
 @Component({
   selector: 'app-exercise',
@@ -6,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exercise.component.scss'],
 })
 export class ExerciseComponent implements OnInit {
-
-  constructor() { }
+  exercises = exercises;
+  constructor(public modalController: ModalController) {}
 
   ngOnInit() {}
-
 }

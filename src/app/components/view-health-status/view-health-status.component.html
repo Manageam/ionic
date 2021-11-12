@@ -29,7 +29,7 @@
         </div>
         <div class="flex justify-between mt-8">
           <span
-            (click)="update()"
+            (click)="modalController.dismiss(true)"
             class="
               bg-blue-500
               p-3
@@ -44,7 +44,7 @@
             >Update</span
           >
           <span
-            (click)="modalController.dismiss(true)"
+            (click)="modalController.dismiss()"
             class="
               p-3
               px-9

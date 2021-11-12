@@ -1,3 +1,121 @@
-<p>
-  profile works!
-</p>
+<ion-app class="">
+  <ion-header
+    class="ion-no-border p-4 flex justify-between font-geomanist bg-white"
+  >
+    <div class="flex">
+      <ion-icon
+        name="arrow-back"
+        class="text-2xl"
+        (click)="modalController.dismiss()"
+      ></ion-icon>
+      <p class="ml-4 block text-gray-900 text-xl">Profile</p>
+    </div>
+  </ion-header>
+  <ion-content>
+    <div class="bg-gray-100 m-h-full relative pb-10 font-geomanist">
+      <div class="h-28 w-full bg-white absolute top-0 z-0"></div>
+      <div class="text-center pt-14 z-10 relative">
+        <img
+          src=""
+          onerror="this.src = '/assets/img/profile.jpeg'"
+          class="
+            rounded-full
+            h-38
+            w-38
+            object-cover
+            inline-block
+            border-8 border-white
+          "
+        />
+        <p class="text-gray-900 font-bold text-3xl my-4">Uduakabaci</p>
+        <div class="flex p-4 justify-center">
+          <p
+            class="bg-white py-3 rounded-lg px-6 mr-4"
+            (click)="showUpdateProfile()"
+          >
+            Edit Profile
+          </p>
+          <p class="bg-white py-3 rounded-lg px-6" (click)="showUpdateImage()">
+            Profile Image
+          </p>
+        </div>
+      </div>
+
+      <div class="m-4 bg-white rounded-lg space-y-8 py-4">
+        <div class="grid grid-cols-2 gap-8 px-4">
+          <div class="w-full">
+            <span class="block text-sm pb-1">Gender</span>
+            <span
+              class="block border-b border-gray-300 w-full pb-2 text-gray-400"
+              >Male</span
+            >
+          </div>
+          <div class="w-full">
+            <span class="block text-sm pb-1">Age</span>
+            <span
+              class="block border-b border-gray-300 w-full pb-2 text-gray-400"
+              >22</span
+            >
+          </div>
+        </div>
+
+        <div class="w-full px-4">
+          <span class="block text-sm pb-1">Body Wieght</span>
+          <span class="block border-b border-gray-300 w-full pb-2 text-gray-400"
+            >50kg</span
+          >
+        </div>
+
+        <div class="w-full px-4">
+          <span class="block text-sm pb-1">Height</span>
+          <span class="block border-b border-gray-300 w-full pb-2 text-gray-400"
+            >20m</span
+          >
+        </div>
+
+        <p class="bg-gray-100 p-4">Account details</p>
+
+        <div class="w-full px-4">
+          <span class="block text-sm pb-1">Email</span>
+          <span class="block border-b border-gray-300 w-full pb-2 text-gray-400"
+            >uduakabaci@gmail.com</span
+          >
+        </div>
+
+        <div class="w-full px-4">
+          <span class="block text-sm pb-1">Phone</span>
+          <span class="block border-b border-gray-300 w-full pb-2 text-gray-400"
+            >0921069597</span
+          >
+        </div>
+
+        <div class="w-full px-4">
+          <span class="block text-sm pb-1">password</span>
+          <span class="block border-b border-gray-300 w-full pb-2 text-blue-500"
+            >Change password</span
+          >
+        </div>
+
+        <div class="w-full px-4">
+          <span class="block text-sm pb-1">Email</span>
+          <div
+            class="
+              border-b
+              flex
+              justify-between
+              border-gray-300
+              w-full
+              pb-2
+              text-gray-400
+            "
+          >
+            <span>Off</span
+            ><span (click)="updateTipNotification()" class="text-blue-500"
+              >Update</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>

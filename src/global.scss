@@ -136,6 +136,26 @@
   border-top-right-radius: 18px;
 }
 
+.modal-90 {
+  bottom: 0;
+  min-height: initial;
+  top: initial;
+  height: 100%;
+  border-width: 0;
+  border-style: solid;
+  color: white !important;
+}
+
+.modal-90 .modal-wrapper,
+.modal-90 .modal-shadow {
+  height: 90%;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
 .item-native {
   --padding-start: 0px !important;
 }
