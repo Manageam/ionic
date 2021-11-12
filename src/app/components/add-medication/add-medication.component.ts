@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { GlobalService } from 'src/app/services/global/global.service';
 
 @Component({
   selector: 'app-add-medication',
@@ -6,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-medication.component.scss'],
 })
 export class AddMedicationComponent implements OnInit {
-
-  constructor() { }
+  medication = { type: 'prescribed', name: '' };
+  constructor(
+    public modalController: ModalController,
+    private global: GlobalService
+  ) {}
 
   ngOnInit() {}
-
+  save() {
+    if (!this.medication.name)
+      return this.global.alert('New medication', 'Medication is required', [
+        'OK',
+      ]);
+  }
 }

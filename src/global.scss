@@ -35,3 +35,111 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.modal-60 {
+  bottom: 0;
+  min-height: initial;
+  top: initial;
+  height: 100%;
+  border-width: 0;
+  border-style: solid;
+  color: white !important;
+}
+
+.modal-60 .modal-wrapper,
+.modal-60 .modal-shadow {
+  height: 60%;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.modal-30 {
+  bottom: 0;
+  min-height: initial;
+  top: initial;
+  height: 100%;
+  border-width: 0;
+  border-style: solid;
+  color: white !important;
+}
+
+.modal-30 .modal-wrapper,
+.modal-30 .modal-shadow {
+  height: 30%;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.modal-40 {
+  bottom: 0;
+  min-height: initial;
+  top: initial;
+  height: 100%;
+  border-width: 0;
+  border-style: solid;
+  color: white !important;
+}
+
+.modal-40 .modal-wrapper,
+.modal-40 .modal-shadow {
+  height: 40%;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.modal-50 {
+  bottom: 0;
+  min-height: initial;
+  top: initial;
+  height: 100%;
+  border-width: 0;
+  border-style: solid;
+  color: white !important;
+}
+
+.modal-50 .modal-wrapper,
+.modal-50 .modal-shadow {
+  height: 50%;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.modal-80 {
+  bottom: 0;
+  min-height: initial;
+  top: initial;
+  height: 100%;
+  border-width: 0;
+  border-style: solid;
+  color: white !important;
+}
+
+.modal-80 .modal-wrapper,
+.modal-80 .modal-shadow {
+  height: 80%;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.item-native {
+  --padding-start: 0px !important;
+}
+
+ion-item {
+  --padding-start: 0px !important;
+}

@@ -6,9 +6,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
-import { HomePage } from './home.page';
-import { GuageComponent } from 'src/app/components/guage/guage.component';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +14,6 @@ import { GuageComponent } from 'src/app/components/guage/guage.component';
     HomePageRoutingModule,
     IonicModule,
   ],
-  declarations: [HomePage, GuageComponent],
+  declarations: [],
 })
 export class HomePageModule {}

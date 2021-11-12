@@ -20,6 +20,7 @@
             rounded-xl
             items-center
           "
+          (click)="addMedication()"
         >
           <span>Add new</span>
         </p>
@@ -34,6 +35,7 @@
             border border-blue-500
             rounded-xl
           "
+          (click)="showMedication()"
         >
           View all
         </p>
@@ -42,56 +44,13 @@
   </div>
 
   <div class="py-8 grid grid-cols-2 gap-5 text-gray-900">
-    <div class="bg-white rounded-xl p-4 text-center">
-      <img src="/assets/img/diabetic.svg" class="inline-block h-12" />
-      <p class="font-bold text-xl mt-6">Health Status</p>
-      <p class="font-bold">Diabetic</p>
-      <p class="border border-blue-500 py-2 mt-4 text-blue-500 rounded-xl">
-        change
-      </p>
-    </div>
+    <app-health-status></app-health-status>
+    <app-hba1c></app-hba1c>
 
-    <div class="bg-white rounded-xl p-4 text-center">
-      <img src="/assets/img/diabetic.svg" class="inline-block h-12" />
-      <p class="font-bold text-xl mt-6">HbA1c</p>
-      <p class="font-bold">5.7%</p>
-      <p class="border border-blue-500 py-2 mt-4 text-blue-500 rounded-xl">
-        Record
-      </p>
-    </div>
+    <app-blood-sugar></app-blood-sugar>
+    <app-blood-pressure></app-blood-pressure>
 
-    <div class="bg-pink-200 rounded-xl p-4 text-center relative">
-      <app-guage value="80" color="red"></app-guage>
-      <p class="font-bold text-2xl mt-6">100</p>
-      <span class="text-sm mb-4 inline-block">mg/dl</span>
-      <p class="font-bold">Blood sugar</p>
-      <p class="border border-white py-2 mt-4 text-white rounded-xl">Record</p>
-    </div>
-
-    <div class="bg-blue-200 rounded-xl p-4 text-center relative">
-      <app-guage value="80" color="green"></app-guage>
-      <p class="font-bold text-2xl mt-6">100/80</p>
-      <span class="text-sm mb-4 inline-block">mmhg</span>
-      <p class="font-bold">Blood Pressure</p>
-      <p class="border border-white py-2 mt-4 text-white rounded-xl">Record</p>
-    </div>
-
-    <div class="bg-white rounded-xl p-4 text-center">
-      <p class="font-bold text-2xl mt-6">100</p>
-      <span class="text-sm mb-4 inline-block">mg/dl</span>
-      <p class="font-bold">total Cholesterol</p>
-      <p class="border border-blue-500 py-2 mt-4 text-blue-500 rounded-xl">
-        Record
-      </p>
-    </div>
-
-    <div class="bg-white rounded-xl p-4 text-center">
-      <p class="font-bold text-2xl mt-6">100/80</p>
-      <span class="text-sm mb-4 inline-block">mmhg</span>
-      <p class="font-bold">Body Mass Index</p>
-      <p class="border border-blue-500 py-2 mt-4 text-blue-500 rounded-xl">
-        Record
-      </p>
-    </div>
+    <app-cholesterol></app-cholesterol>
+    <app-bmi></app-bmi>
   </div>
 </div>

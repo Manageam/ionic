@@ -1,3 +1,71 @@
-<p>
-  view-health-status works!
-</p>
+<ion-app class="">
+  <ion-header
+    class="ion-no-border p-4 flex justify-between font-geomanist bg-white"
+  >
+    <div class="flex">
+      <ion-icon
+        name="arrow-back"
+        class="text-2xl"
+        (click)="modalController.dismiss()"
+      ></ion-icon>
+      <p class="ml-4 block text-gray-900 text-xl">Health Status</p>
+    </div>
+  </ion-header>
+  <ion-content>
+    <div class="bg-gray-100 h-full">
+      <div class="flex bg-white px-4 py-10">
+        <img src="/assets/img/diabetic.svg" class="h-14" />
+        <div class="ml-4 font-geomanist w-full">
+          <p class="text-lg font-bold">My status</p>
+          <p class="text-gray-500">
+            Your current medical condition as recorded.
+          </p>
+        </div>
+      </div>
+      <div class="bg-white px-4 py-10 mt-2">
+        <div class="bg-gray-100 p-4 py-10 rounded-xl text-center">
+          <h3 class="font-bold text-3xl">Diabetes</h3>
+          <span class="text-blue-500">Last updated 9 Nov, 2021 - 9:53pm</span>
+        </div>
+        <div class="flex justify-between mt-8">
+          <span
+            (click)="update()"
+            class="
+              bg-blue-500
+              p-3
+              px-9
+              font-semibold
+              text-center
+              block
+              text-white
+              uppercase
+              rounded-xl
+            "
+            >Update</span
+          >
+          <span
+            (click)="modalController.dismiss(true)"
+            class="
+              p-3
+              px-9
+              text-center
+              block
+              text-blue-500
+              border border-blue-500
+              uppercase
+              rounded-xl
+            "
+            >close</span
+          >
+        </div>
+      </div>
+      <div class="mt-4">
+        <p class="p-4 font-bold">Related tip</p>
+        <a class="bg-white p-4 flex justify-between" routerLink="/education">
+          <p class="text-lg">Learn more about diabetes</p>
+          <ion-icon name="chevron-forward" class="text-xl"></ion-icon>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>

@@ -1,3 +1,74 @@
-<p>
-  update-hba1c works!
-</p>
+<ion-app class="text-gray-900">
+  <ion-header
+    class="
+      bg-blue-100
+      px-4
+      py-6
+      ion-no-border
+      text-xl
+      flex
+      justify-between
+      items-center
+    "
+  >
+    <p class="font-bold">Record HbA1c</p>
+    <ion-icon
+      (click)="modalController.dismiss()"
+      name="close"
+      class="bg-gray-500 text-2xl text-white rounded-full"
+    ></ion-icon>
+  </ion-header>
+  <ion-content>
+    <div class="p-4 space-y-4">
+      <ion-item>
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Unit of measurement</ion-label
+        >
+        <ion-select value="mmol/mol" class="w-full">
+          <ion-select-option value="mmol/mol">mmol/mol</ion-select-option>
+          <ion-select-option value="percentage">percentage</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Measured HbA1c</ion-label
+        >
+        <ion-input placeholder="Enter HbA1c or A1c number"></ion-input>
+      </ion-item>
+
+      <div class="">
+        <div class="flex items-center">
+          <ion-icon
+            name="information-circle-outline"
+            class="text-blue-600 text-xl inline-block mr-2 relative -top-1"
+          ></ion-icon>
+          <span>Health Tip</span>
+        </div>
+        <p class="text-gray-400 mt-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor beatae
+          ex perferendis dolores sequi eveniet aliquam est placeat consectetur
+          doloribus non ut tempora corporis temporibus facere, culpa voluptate
+          illo amet?
+        </p>
+      </div>
+
+      <span
+        (click)="save()"
+        class="
+          w-full
+          bg-blue-500
+          p-4
+          font-semibold
+          text-center
+          block
+          text-white
+          uppercase
+          rounded-xl
+          mt-10
+        "
+        >Done</span
+      >
+    </div>
+  </ion-content>
+</ion-app>

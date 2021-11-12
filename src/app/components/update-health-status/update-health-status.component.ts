@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-update-health-status',
@@ -6,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update-health-status.component.scss'],
 })
 export class UpdateHealthStatusComponent implements OnInit {
-
-  constructor() { }
+  constructor(public modalController: ModalController) {}
 
   ngOnInit() {}
-
+  save() {}
 }

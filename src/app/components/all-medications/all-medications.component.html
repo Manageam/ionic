@@ -1,3 +1,74 @@
-<p>
-  all-medications works!
-</p>
+<ion-app class="">
+  <ion-header
+    class="ion-no-border p-4 flex justify-between font-geomanist bg-white"
+  >
+    <div class="flex">
+      <ion-icon
+        name="arrow-back"
+        class="text-2xl"
+        (click)="modalController.dismiss()"
+      ></ion-icon>
+      <p class="ml-4 block text-gray-900 text-xl">All medications</p>
+    </div>
+    <span class="text-blue-500 text-xl" (click)="share()">Share</span>
+  </ion-header>
+  <ion-content>
+    <div class="bg-gray-100">
+      <div class="flex bg-white p-4">
+        <img src="/assets/img/drug.svg" />
+        <div class="ml-4 font-geomanist w-full">
+          <p class="text-lg font-bold">Medication</p>
+          <p class="text-gray-500">List of your recorded medications</p>
+        </div>
+      </div>
+      <div>
+        <ul class="">
+          <li *ngFor="let item of [1, 3, 4, 5]">
+            <div
+              class="bg-white flex mt-1 p-4 justify-between items-center"
+              (click)="toggle(item)"
+            >
+              <p class="text-lg">Blasticide</p>
+              <ion-icon
+                name="chevron-forward"
+                class="text-xl {{ item == expand ? 'rotate-90' : '' }}"
+              ></ion-icon>
+            </div>
+            <app-expandable [expanded]="item == expand" expandHeight="500px">
+              <div class="bg-white p-4 text-gray-600 space-y-4">
+                <p>
+                  <span class="font-bold">Used for</span>: Lorem ipsum dolor sit
+                  amet consectetur adipisicing elit. Odio, quod est accusamus
+                  doloremque illum ullam.
+                </p>
+                <p class="text-green-600">
+                  Contact your doctor if you have any of these symptoms
+                </p>
+                <ul class="text-gray-600">
+                  <li class="font-bold mb-2">Possible Side Effect:</li>
+                  <li *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8]">
+                    Cold Sweat
+                  </li>
+                </ul>
+
+                <p
+                  class="
+                    bg-red-600
+                    font-bold
+                    text-white
+                    p-3
+                    text-center
+                    rounded-full
+                  "
+                  (click)="remove(item)"
+                >
+                  Remove
+                </p>
+              </div>
+            </app-expandable>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ion-content></ion-app
+>

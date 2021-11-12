@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
         this.currentRoute = ev.url.split('/').slice(-1)[0];
       }
     });
-    this.showLocation();
   }
 
   async toggleMenu() {

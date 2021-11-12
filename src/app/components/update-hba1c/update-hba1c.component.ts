@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-update-hba1c',
@@ -6,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update-hba1c.component.scss'],
 })
 export class UpdateHba1cComponent implements OnInit {
-
-  constructor() { }
+  constructor(public modalController: ModalController) {}
 
   ngOnInit() {}
-
+  save() {}
 }
