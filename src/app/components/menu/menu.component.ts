@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, ModalController } from '@ionic/angular';
+import { BookmarkComponent } from 'src/app/pages/logged/education/bookmark/bookmark.component';
+import { DiabetesWalkComponent } from '../diabetes-walk/diabetes-walk.component';
 import { ExerciseComponent } from '../exercise/exercise.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { ReminderComponent } from '../reminder/reminder.component';
+import { SettingsComponent } from '../settings/settings.component';
 
 @Component({
   selector: 'app-menu',
@@ -26,6 +30,34 @@ export class MenuComponent implements OnInit {
   async showExercise() {
     const modal = await this.modalController.create({
       component: ExerciseComponent,
+    });
+    modal.present();
+  }
+
+  async showReminders() {
+    const modal = await this.modalController.create({
+      component: ReminderComponent,
+    });
+    modal.present();
+  }
+
+  async showBookmark() {
+    const modal = await this.modalController.create({
+      component: BookmarkComponent,
+    });
+    modal.present();
+  }
+
+  async showDiabetesWalk() {
+    const modal = await this.modalController.create({
+      component: DiabetesWalkComponent,
+    });
+    modal.present();
+  }
+
+  async showSettings() {
+    const modal = await this.modalController.create({
+      component: SettingsComponent,
     });
     modal.present();
   }
