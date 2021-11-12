@@ -13,7 +13,7 @@ export class ViewMealsComponent implements OnInit {
   constructor(public modalController: ModalController) {}
 
   ngOnInit() {
-    this.addMeal();
+    this.addMeal('breakfast');
   }
   segmentChanged(e) {
     this.segment = e.detail.value;
@@ -28,9 +28,12 @@ export class ViewMealsComponent implements OnInit {
     await modal.present();
   }
 
-  async addMeal() {
+  async addMeal(type = 'breakfast') {
     const modal = await this.modalController.create({
       component: MealsListComponent,
+      componentProps: {
+        type,
+      },
     });
     await modal.present();
   }

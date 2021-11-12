@@ -6,7 +6,7 @@
         class="text-2xl"
         (click)="modalController.dismiss()"
       ></ion-icon>
-      <p class="ml-4 block text-gray-900 text-xl">Meals guide</p>
+      <p class="ml-4 block text-gray-900 text-xl">Add food ({{ type }})</p>
     </div>
     <ion-segment
       (ionChange)="segmentChanged($event)"
@@ -14,14 +14,11 @@
       mode="md"
       class="bg-white mt-6"
     >
-      <ion-segment-button value="carbohydrate">
-        <ion-label>Carbohydrate</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="protein">
-        <ion-label>Protein</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="fruits & veg">
-        <ion-label>Fruits & Veg</ion-label>
+      <ion-segment-button
+        [value]="category.id"
+        *ngFor="let category of categogories"
+      >
+        <ion-label>{{ category.category }}</ion-label>
       </ion-segment-button>
     </ion-segment>
     <div
@@ -37,14 +34,51 @@
     >
       <ion-icon name="search" class="text-2xl p-2"></ion-icon>
       <input
+        [(ngModel)]="search"
+        (ngModelChange)="filterFoods(segment)"
         type="text"
         class=""
-        [placeholder]="'Search ' + segment + ' ...'"
+        [placeholder]="'Search ' + searchCat"
         class="py-4 w-full outline-none"
       />
     </div>
   </ion-header>
   <ion-content>
-    <div class="min-h-full p-4 meal pb-10"></div>
+    <div class="min-h-full p-4 meal pb-10 bg-gray-100">
+      <ul class="bg-white rounded-lg">
+        <li class="p-4 grid grid-cols-3">
+          <span class="font-bold col-start-2 text-center">Food</span>
+          <span class="font-bold col-start-3 text-center">Calories</span>
+        </li>
+        <li
+          class="p-4 grid grid-cols-3 border-t border-gray-200 items-center"
+          *ngFor="let food of filteredFood"
+        >
+          <div class="flex space-x-2 items-center">
+            <ion-icon
+              (click)="inc(food)"
+              name="add"
+              class="text-white bg-gray-500 p-1 rounded-full"
+            ></ion-icon>
+            <ion-checkbox
+              color="primary"
+              mode="ios"
+              [checked]="food.amount > 0"
+              (click)="toggle(food)"
+            ></ion-checkbox>
+            <ion-icon
+              (click)="dec(food)"
+              name="remove"
+              class="text-white bg-gray-500 p-1 rounded-full"
+            ></ion-icon>
+          </div>
+          <p class="text-center">
+            {{ food.name }} - {{ food.quantity }}g
+            {{ " x " + food.amount }}
+          </p>
+          <p class="text-center">{{ food.calories }} kcal</p>
+        </li>
+      </ul>
+    </div>
   </ion-content>
 </ion-app>
