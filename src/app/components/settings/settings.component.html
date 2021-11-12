@@ -1,3 +1,25 @@
-<p>
-  settings works!
-</p>
+<ion-app class="bg-gray-100">
+  <ion-header class="ion-no-border p-4 flex justify-between font-geomanist">
+    <div class="flex">
+      <ion-icon
+        name="arrow-back"
+        class="text-2xl"
+        (click)="modalController.dismiss()"
+      ></ion-icon>
+      <p class="ml-4 block text-gray-900 text-xl">Settings</p>
+    </div>
+  </ion-header>
+  <ion-content>
+    <div class="min-h-full bg-gray-100 py-4 font-calibre text-gray-900">
+      <!-- <p class="p-4 text-gray-500">You have not added any bookmark</p> -->
+      <ul>
+        <li class="bg-white p-4 mb-2" (click)="openLanguages()">
+          <div class="flex justify-between items-center">
+            <p class="text-lg">Language</p>
+            <ion-icon name="chevron-forward" class="text-xl"></ion-icon>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-app>

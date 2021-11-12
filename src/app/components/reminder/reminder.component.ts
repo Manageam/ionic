@@ -11,9 +11,7 @@ export class ReminderComponent implements OnInit {
   expand = null;
   constructor(public modalController: ModalController) {}
 
-  ngOnInit() {
-    this.showAdd();
-  }
+  ngOnInit() {}
   toggle(i) {
     if (i == this.expand) {
       this.expand = null;

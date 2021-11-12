@@ -35,6 +35,8 @@ import { BookmarksComponent } from 'src/app/components/bookmarks/bookmarks.compo
 import { BookmarkComponent } from 'src/app/components/bookmark/bookmark.component';
 import { DiabetesWalkComponent } from 'src/app/components/diabetes-walk/diabetes-walk.component';
 import { RegisterForWalkComponent } from 'src/app/components/register-for-walk/register-for-walk.component';
+import { SettingsComponent } from 'src/app/components/settings/settings.component';
+import { LanguageSettingsComponent } from 'src/app/components/language-settings/language-settings.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import { RegisterForWalkComponent } from 'src/app/components/register-for-walk/r
     BookmarkComponent,
     DiabetesWalkComponent,
     RegisterForWalkComponent,
+    SettingsComponent,
+    LanguageSettingsComponent,
   ],
   imports: [CommonModule, IonicModule, FormsModule],
 })

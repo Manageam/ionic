@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // this.showDiabetesWalk();
+    this.showSettings();
   }
 
   async showProfile() {
