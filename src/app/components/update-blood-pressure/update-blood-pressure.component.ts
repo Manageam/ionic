@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-update-blood-pressure',
@@ -6,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update-blood-pressure.component.scss'],
 })
 export class UpdateBloodPressureComponent implements OnInit {
-
-  constructor() { }
+  pressure = {
+    systolic: '',
+    diastolic: '',
+  };
+  tip = '';
+  constructor(public modalController: ModalController) {}
 
   ngOnInit() {}
-
+  save() {}
 }

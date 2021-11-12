@@ -11,9 +11,7 @@ import { ViewHba1cComponent } from '../view-hba1c/view-hba1c.component';
 export class Hba1cComponent implements OnInit {
   constructor(private modalController: ModalController) {}
 
-  ngOnInit() {
-    this.view();
-  }
+  ngOnInit() {}
 
   async view() {
     const modal = await this.modalController.create({

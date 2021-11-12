@@ -7,6 +7,11 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./update-hba1c.component.scss'],
 })
 export class UpdateHba1cComponent implements OnInit {
+  hba1c = {
+    unit: '',
+    reading: '',
+  };
+  tip = '';
   constructor(public modalController: ModalController) {}
 
   ngOnInit() {}

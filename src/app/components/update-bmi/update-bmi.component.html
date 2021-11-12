@@ -1,3 +1,80 @@
-<p>
-  update-bmi works!
-</p>
+<ion-app class="text-gray-900">
+  <ion-header
+    class="
+      bg-blue-100
+      px-4
+      py-6
+      ion-no-border
+      text-xl
+      flex
+      justify-between
+      items-center
+    "
+  >
+    <p class="font-bold">Record BMI</p>
+    <ion-icon
+      (click)="modalController.dismiss()"
+      name="close"
+      class="bg-gray-500 text-2xl text-white rounded-full"
+    ></ion-icon>
+  </ion-header>
+  <ion-content>
+    <div class="p-4 space-y-4">
+      <ion-item>
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Unit of measurement</ion-label
+        >
+        <ion-select
+          [value]="bmi.unit"
+          [(ngModel)]="bmi.unit"
+          class="w-full"
+          placeholder="Choose unit of measurement"
+        >
+          <ion-select-option value="pounds/inch">Pounds/Inch</ion-select-option>
+          <ion-select-option value="kg/m">kg/m</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="bmi.unit">
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Height</ion-label
+        >
+        <ion-input
+          placeholder="Enter hieght"
+          type="number"
+          [value]="bmi.hieght"
+          [(ngModel)]="bmi.hieght"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="bmi.hieght">
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Weight</ion-label
+        >
+        <ion-input
+          type="number"
+          placeholder="Enter weight"
+          [value]="bmi.weight"
+          [(ngModel)]="bmi.weight"
+        ></ion-input>
+      </ion-item>
+
+      <span
+        (click)="save()"
+        *ngIf="bmi.weight"
+        class="
+          w-full
+          bg-blue-500
+          p-4
+          font-semibold
+          text-center
+          block
+          text-white
+          uppercase
+          rounded-xl
+          mt-10
+        "
+        >Done</span
+      >
+    </div>
+  </ion-content>
+</ion-app>

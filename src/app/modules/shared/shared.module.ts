@@ -29,6 +29,7 @@ import { ViewMealComponent } from 'src/app/components/view-meal/view-meal.compon
 import { HomePage } from 'src/app/pages/logged/home/home.page';
 import { HealthPage } from 'src/app/pages/logged/health/health.page';
 import { ExpandableComponent } from 'src/app/components/expandable/expandable.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,6 @@ import { ExpandableComponent } from 'src/app/components/expandable/expandable.co
     HealthPage,
     ExpandableComponent,
   ],
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonicModule, FormsModule],
 })
 export class SharedModule {}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-update-bmi',
@@ -6,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update-bmi.component.scss'],
 })
 export class UpdateBmiComponent implements OnInit {
-
-  constructor() { }
+  bmi = {
+    unit: '',
+    hieght: '',
+    weight: '',
+    bmi: '',
+  };
+  constructor(public modalController: ModalController) {}
 
   ngOnInit() {}
-
+  save() {}
 }
