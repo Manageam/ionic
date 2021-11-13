@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ActionSheetController, ModalController } from '@ionic/angular';
 import { MealsListComponent } from '../meals-list/meals-list.component';
 import { ViewMealComponent } from '../view-meal/view-meal.component';
 
@@ -10,17 +10,19 @@ import { ViewMealComponent } from '../view-meal/view-meal.component';
 })
 export class ViewMealsComponent implements OnInit {
   segment = 'current';
-  constructor(public modalController: ModalController) {}
+  constructor(
+    public modalController: ModalController,
+    private actionSheetController: ActionSheetController
+  ) {}
 
-  ngOnInit() {
-    this.addMeal('breakfast');
-  }
+  ngOnInit() {}
   segmentChanged(e) {
     this.segment = e.detail.value;
   }
   async showMeal(meal) {
     const modal = await this.modalController.create({
       component: ViewMealComponent,
+      componentProps: { meal },
     });
     modal.onDidDismiss().then((data) => {
       console.log(data);
@@ -28,11 +30,37 @@ export class ViewMealsComponent implements OnInit {
     await modal.present();
   }
 
-  async addMeal(type = 'breakfast') {
+  async addMeal() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Select meal type',
+      cssClass: 'image-action-sheet',
+      buttons: [
+        {
+          text: 'Snacks',
+          role: 'snacks',
+        },
+        {
+          text: 'Breakfast',
+          role: 'breakfast',
+        },
+        {
+          text: 'Lunch',
+          role: 'lunch',
+        },
+        {
+          text: 'Dinner',
+          role: 'dinner',
+        },
+      ],
+    });
+    await actionSheet.present();
+
+    const { role } = await actionSheet.onDidDismiss();
+    if (role == 'backdrop') return;
     const modal = await this.modalController.create({
       component: MealsListComponent,
       componentProps: {
-        type,
+        type: role,
       },
     });
     await modal.present();

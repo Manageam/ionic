@@ -39,6 +39,7 @@ import { SettingsComponent } from 'src/app/components/settings/settings.componen
 import { LanguageSettingsComponent } from 'src/app/components/language-settings/language-settings.component';
 import { ViewMealsComponent } from 'src/app/components/view-meals/view-meals.component';
 import { MealsListComponent } from 'src/app/components/meals-list/meals-list.component';
+import { HealthProfileComponent } from 'src/app/pages/auth/signup/health-profile/health-profile.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { MealsListComponent } from 'src/app/components/meals-list/meals-list.com
     ViewMealsComponent,
     ViewMealComponent,
     MealsListComponent,
+    HealthProfileComponent,
   ],
   imports: [CommonModule, IonicModule, FormsModule],
 })

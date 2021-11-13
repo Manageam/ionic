@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { HealthProfileComponent } from './health-profile/health-profile.component';
 
 @Component({
   selector: 'app-signup',
@@ -13,10 +15,13 @@ export class SignupPage implements OnInit {
     password: '',
     name: '',
   };
-  constructor(private globalService: GlobalService) {}
+  constructor(
+    private globalService: GlobalService,
+    private modalController: ModalController
+  ) {}
 
   ngOnInit() {}
-  register() {
+  async register() {
     if (!this.data.email || !this.data.password || !this.data.name) {
       return this.globalService.alert(
         'Registration',
@@ -24,5 +29,12 @@ export class SignupPage implements OnInit {
         ['Okay']
       );
     }
+    const modal = await this.modalController.create({
+      component: HealthProfileComponent,
+      cssClass: 'modal-50',
+    });
+    await modal.present();
+    const { data } = await modal.onDidDismiss();
+    console.log(data);
   }
 }

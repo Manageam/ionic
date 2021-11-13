@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.showMeals();
     this.router.events.subscribe((ev) => {
       if (ev instanceof NavigationEnd) {
         this.currentRoute = ev.url.split('/').slice(-1)[0];
