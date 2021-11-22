@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
 
@@ -17,7 +18,8 @@ export class SigninPage implements OnInit {
   constructor(
     private globalService: GlobalService,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {}
@@ -31,7 +33,7 @@ export class SigninPage implements OnInit {
     }
     this.userService.login(this.data).subscribe((user: any) => {
       const { user_details } = user;
-      this.userService.login(user_details);
+      this.auth.login(user_details);
       this.router.navigate(['/']);
     });
   }
