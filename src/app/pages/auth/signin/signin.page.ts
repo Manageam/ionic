@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-signin',
@@ -12,7 +14,11 @@ export class SigninPage implements OnInit {
     email: '',
     password: '',
   };
-  constructor(private globalService: GlobalService) {}
+  constructor(
+    private globalService: GlobalService,
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   ngOnInit() {}
   login() {
@@ -23,5 +29,10 @@ export class SigninPage implements OnInit {
         ['Okay']
       );
     }
+    this.userService.login(this.data).subscribe((user: any) => {
+      const { user_details } = user;
+      this.userService.login(user_details);
+      this.router.navigate(['/']);
+    });
   }
 }
