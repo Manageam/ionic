@@ -18,6 +18,10 @@ export class HealthProfileComponent implements OnInit {
   ngOnInit() {}
 
   save() {
-    this.modalController.dismiss(this.profile);
+    const data = {};
+    for (let key in this.profile) {
+      if (this.profile[key]) data[key] = this.profile[key];
+    }
+    this.modalController.dismiss(data);
   }
 }

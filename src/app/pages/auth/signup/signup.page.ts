@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { UserService } from 'src/app/services/user/user.service';
 import { HealthProfileComponent } from './health-profile/health-profile.component';
 
 @Component({
@@ -17,7 +20,10 @@ export class SignupPage implements OnInit {
   };
   constructor(
     private globalService: GlobalService,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private UserService: UserService,
+    private authService: AuthenticationService,
+    private router: Router
   ) {}
 
   ngOnInit() {}
@@ -29,12 +35,19 @@ export class SignupPage implements OnInit {
         ['Okay']
       );
     }
+
     const modal = await this.modalController.create({
       component: HealthProfileComponent,
       cssClass: 'modal-50',
     });
+
     await modal.present();
     const { data } = await modal.onDidDismiss();
-    console.log(data);
+    this.UserService.register(this.data).subscribe((user) => {
+      this.authService.login(user);
+      this.UserService.updateDetails(data).subscribe(async () => {
+        await this.router.navigate(['/']);
+      });
+    });
   }
 }

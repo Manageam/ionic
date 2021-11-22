@@ -6,7 +6,7 @@ import { AuthenticationService } from '../authentication/authentication.service'
   providedIn: 'root',
 })
 export class UserService {
-  url = environment.apiUrl + 'users';
+  url = environment.apiUrl + '/users';
   user: any = {};
   constructor(private http: HttpClient, private auth: AuthenticationService) {}
 
@@ -22,7 +22,7 @@ export class UserService {
 
   updateDetails(data) {
     const user = this.auth.loggedUser();
-    return this.http.put(`${this.url}/details/${user.id}`, data);
+    return this.http.post(`${this.url}/update/${user.id}`, data);
   }
 
   login(data) {

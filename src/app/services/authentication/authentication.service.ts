@@ -47,7 +47,7 @@ export class AuthenticationService {
 
   login(data) {
     localStorage.user = JSON.stringify(data);
-    localStorage.token = data.accessToken;
+    localStorage.token = data.api_token;
   }
 
   async logout() {

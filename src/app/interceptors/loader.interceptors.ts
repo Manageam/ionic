@@ -52,7 +52,7 @@ export class LoaderInterceptor implements HttpInterceptor {
         if (error.status === 401) {
           await this.auth.logout();
         }
-        const message = error.error.message;
+        const message = error.error;
         if (message) await this.global.alert('', message, ['Okay']);
         return error;
       })
