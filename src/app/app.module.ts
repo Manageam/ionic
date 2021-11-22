@@ -11,6 +11,8 @@ import { SharedModule } from './modules/shared/shared.module';
 import { AuthenticationService } from './services/authentication/authentication.service';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthService } from './services/auth/auth.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { LoaderInterceptor } from './interceptors/loader.interceptors';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,11 +26,17 @@ import { AuthService } from './services/auth/auth.service';
       config: {},
     }),
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AuthenticationService,
     AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })
