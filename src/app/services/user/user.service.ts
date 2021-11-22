@@ -15,6 +15,15 @@ export class UserService {
     return this.http.get(`${this.url}/details/${user.id}`);
   }
 
+  setDetails(details) {
+    localStorage.details = JSON.stringify(details);
+  }
+
+  fetchDetails() {
+    const details = localStorage.details;
+    return JSON.parse(details);
+  }
+
   getPhoto() {
     const user = this.auth.loggedUser();
     return this.http.get(`${this.url}/userPhoto/${user.id}`);
