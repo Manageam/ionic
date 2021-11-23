@@ -29,6 +29,7 @@
           class="w-full"
           [value]="hba1c.unit"
           [(ngModel)]="hba1c.unit"
+          (ngModelChange)="updateTip()"
           placeholder="Choose unit of measurement"
         >
           <ion-select-option value="mmol/mol">mmol/mol</ion-select-option>
@@ -42,8 +43,9 @@
         >
         <ion-input
           placeholder="Enter HbA1c or A1c number"
-          [value]="hba1c.reading"
-          [(ngModel)]="hba1c.reading"
+          [value]="hba1c.number"
+          [(ngModel)]="hba1c.number"
+          (ngModelChange)="updateTip()"
         ></ion-input>
       </ion-item>
 
@@ -55,13 +57,11 @@
           ></ion-icon>
           <span>Health Tip</span>
         </div>
-        <p class="text-gray-400 mt-3">
-          {{ tip }}
-        </p>
+        <p class="text-gray-400 mt-3" [innerHTML]="tip"></p>
       </div>
 
       <span
-        *ngIf="hba1c.reading"
+        *ngIf="hba1c.number"
         (click)="save()"
         class="
           w-full

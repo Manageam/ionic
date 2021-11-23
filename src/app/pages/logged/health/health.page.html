@@ -8,7 +8,10 @@
     <img src="/assets/img/drug.svg" />
     <div class="ml-4 font-geomanist w-full">
       <p class="text-lg font-bold">Medication</p>
-      <p class="text-gray-500">Some random medication</p>
+      <p class="text-gray-500" *ngIf="!medication">
+        What medication are you on?
+      </p>
+      <p class="text-gray-500" *ngIf="medication">Some random medication</p>
       <div class="flex space-x-4 mt-4">
         <p
           class="

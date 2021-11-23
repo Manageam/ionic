@@ -1,7 +1,15 @@
-<div class="bg-white rounded-xl p-4 text-center" (click)="view()">
-  <img src="/assets/img/status.svg" class="inline-block h-12" />
-  <p class="font-bold text-xl mt-6">HbA1c</p>
-  <p class="font-bold">5.7%</p>
+<div class="bg-white rounded-xl p-4 text-center relative" (click)="view()">
+  <app-guage value="100" [color]="color"></app-guage>
+  <p class="font-bold text-2xl mt-7">
+    {{ hba1c?.number || 0 }}{{ hba1c?.unit == "percentage" ? "%" : "" }}
+  </p>
+  <span
+    class="text-sm mb-4 inline-block {{
+      hba1c?.unit == 'percentage' ? 'text-white' : ''
+    }}"
+    >{{ hba1c?.unit }}</span
+  >
+  <p class="font-bold">HbA1C</p>
   <p
     class="border border-blue-500 py-2 mt-4 text-blue-500 rounded-xl"
     (click)="record($event)"

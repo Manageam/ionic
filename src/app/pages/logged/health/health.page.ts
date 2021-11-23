@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { AddMedicationComponent } from 'src/app/components/add-medication/add-medication.component';
 import { AllMedicationsComponent } from 'src/app/components/all-medications/all-medications.component';
+import { MedicationsService } from 'src/app/services/medications/medications.service';
 
 @Component({
   selector: 'app-health',
@@ -9,9 +10,15 @@ import { AllMedicationsComponent } from 'src/app/components/all-medications/all-
   styleUrls: ['./health.page.scss'],
 })
 export class HealthPage implements OnInit {
-  constructor(private modalController: ModalController) {}
+  medication: any = null;
+  constructor(
+    private modalController: ModalController,
+    private medicationService: MedicationsService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.medication = this.medicationService.myMedications()[0];
+  }
   async addMedication() {
     const modal = await this.modalController.create({
       component: AddMedicationComponent,
