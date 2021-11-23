@@ -53,4 +53,13 @@ export class UserService {
   changePassword(id, data) {
     return this.http.post(`${this.url}/password/${id}`, data);
   }
+
+  fetchTip() {
+    this.http.get(`${environment.apiUrl}/dailytips/all`).subscribe((data) => {
+      localStorage.tip = JSON.stringify(data[0]);
+    });
+
+    const tip = localStorage.tip || '{}';
+    return JSON.parse(tip);
+  }
 }

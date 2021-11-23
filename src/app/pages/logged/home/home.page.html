@@ -1,6 +1,8 @@
 <div class="bg-gray-100">
   <div class="p-4">
-    <p class="text-gray-900 text-2xl font-bold font-calibre">Hello, Uduak</p>
+    <p class="text-gray-900 text-2xl font-bold font-calibre">
+      Hello, {{ user.name }}
+    </p>
     <p class="mt-2">
       Let's keep you up to date on your health, learn somthing new today.
     </p>
@@ -21,13 +23,8 @@
         <img src="/assets/img/tip.svg" />
       </div>
       <div class="mt-6">
-        <p class="font-bold mb-2 text-gray-900">Hello world</p>
-        <p class="text-gray-500">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
-          consectetur illo expedita omnis praesentium reprehenderit ipsa numquam
-          porro minus corrupti. Mollitia labore iste ex odit eaque nemo quidem
-          dolores pariatur?
-        </p>
+        <p class="font-bold mb-2 text-gray-900">{{tip.title}}</p>
+        <p class="text-gray-500">{{tip.note}}</p>
       </div>
     </div>
   </div>
