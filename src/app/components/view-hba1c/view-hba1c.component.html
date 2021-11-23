@@ -29,20 +29,57 @@
 
       <div class="mt-4">
         <div *ngIf="segment == 'current'">
-          <div class="bg-white shadow-sm px-4 py-10 rounded-xl text-center">
-            <h3 class="font-bold text-2xl mb-4">HbA1c Level</h3>
-            <p class="text-gray-500 mb-2">
-              HbA1c refers to flycated haemoglobin(A1c). This is your reading.
-            </p>
-            <p class="text-blue-500">Last updated 12-10-2020</p>
+          <div
+            class="
+              bg-white
+              shadow-sm
+              px-8
+              py-14
+              rounded-xl
+              text-center
+              relative
+            "
+          >
+            <app-guage value="100" [color]="color"></app-guage>
+            <div class="px-6 mt-6 font-calibre">
+              <h2 class="font-bold text-6xl">
+                {{ hba1c.number }}
+                {{
+                  hba1c?.unit == "percentage" || hba1c?.unit == "percent"
+                    ? "%"
+                    : ""
+                }}
+              </h2>
+              <span
+                class="text-sm mb-4 inline-block {{
+                  hba1c?.unit == 'percentage' || hba1c?.unit == 'percent'
+                    ? 'text-white'
+                    : ''
+                }}"
+                >{{ hba1c?.unit }}</span
+              >
+              <h3 class="font-bold text-2xl mb-4">HbA1c Level</h3>
+              <p class="text-gray-500 mb-2">
+                HbA1c refers to glycated haemoglobin(A1c). This is your reading.
+              </p>
+              <p class="text-blue-500">Last updated 12-10-2020</p>
+            </div>
           </div>
 
           <div class="bg-white shadow-sm px-4 py-10 rounded-xl mt-4">
             <p class="flex justify-between items-center">
               <span>Current status</span>
-              <span class="text-white bg-blue-500 py-1 px-4 rounded-full"
-                >Critical</span
+              <span
+                class=" py-1 px-4 rounded-full {{
+                  color == 'green' ? 'bg-green-100 text-green-800' : ''
+                }} {{ color == 'red' ? 'bg-red-100 text-red-800' : '' }}
+
+                {{ color == 'yellow' ? 'bg-yellow-100 text-yellow-800' : '' }}"
               >
+                {{ color == "green" ? "Very Good" : "" }}
+                {{ color == "yellow" ? "Risk" : "" }}
+                {{ color == "red" ? "Critical" : "" }}
+              </span>
             </p>
 
             <div class="flex mt-10">
@@ -51,7 +88,7 @@
                 <h3 class="font-bold text-2xl mb-1">
                   Your levels are critical
                 </h3>
-                <p class="text-gray-500">Lorem ipsum dolor</p>
+                <p class="text-gray-500">{{ status }}</p>
               </div>
             </div>
           </div>

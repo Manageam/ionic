@@ -13,6 +13,7 @@ export class Hba1cComponent implements OnInit {
   hba1c: { number; unit } = null;
   color = 'green';
   animation = null;
+  status = '';
   constructor(
     private modalController: ModalController,
     private healthService: HealthService
@@ -20,6 +21,7 @@ export class Hba1cComponent implements OnInit {
 
   ngOnInit() {
     this.fetchba1c();
+    this.view();
   }
 
   fetchba1c() {
