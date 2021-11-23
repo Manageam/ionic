@@ -9,12 +9,17 @@ import topics from 'src/assets/data/topics';
 })
 export class EducationService {
   url = environment.apiUrl + '/educations';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.http.get(`${this.url}/all`).subscribe((data) => {
+      localStorage.categoriesTopics = JSON.stringify(data);
+    });
 
-  fetchCategories() {
     this.http.get(`${this.url}/categories`).subscribe((data) => {
       localStorage.categories = JSON.stringify(data);
     });
+  }
+
+  fetchCategories() {
     const fcategories = localStorage.categories;
     localStorage.categories = fcategories
       ? fcategories
@@ -24,10 +29,6 @@ export class EducationService {
   }
 
   fetchCategoryTopics(id) {
-    this.http.get(`${this.url}/all`).subscribe((data) => {
-      localStorage.categoriesTopics = JSON.stringify(data);
-    });
-
     let sTopics = localStorage.categoriesTopics || JSON.stringify(topics);
     localStorage.categoriesTopics = sTopics;
 
@@ -35,8 +36,9 @@ export class EducationService {
   }
 
   getRandomEducational() {
-    const topics = JSON.parse(localStorage.categoriesTopics);
-    const index = Math.floor(Math.random() * topics.length - 1);
-    return topics[index];
+    let ftopics = localStorage.categoriesfTopics || JSON.stringify(topics);
+    ftopics = JSON.parse(ftopics);
+    const index = Math.floor(Math.random() * ftopics.length - 1);
+    return ftopics[index];
   }
 }

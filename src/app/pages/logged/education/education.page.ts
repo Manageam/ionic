@@ -28,7 +28,9 @@ export class EducationPage implements OnInit {
   ngOnInit() {
     this.categories = this.educationService.fetchCategories();
     this.categories = this.categories.map((c, i) => ({ ...c, bg: colors[i] }));
-    this.randomEducational = this.educationService.getRandomEducational();
+    setTimeout(() => {
+      this.randomEducational = this.educationService.getRandomEducational();
+    }, 0);
   }
 
   async viewCategory(category) {

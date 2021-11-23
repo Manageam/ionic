@@ -34,7 +34,6 @@ export class MedicationsService {
     } = user;
     const { medications } = user;
     this.http.get(`${this.url}/user_medication/${id}`).subscribe((med) => {
-      console.log(med);
       this.userService.setDetails({ ...user, med });
     });
 
