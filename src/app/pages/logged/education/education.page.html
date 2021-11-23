@@ -1,7 +1,10 @@
 <div class="text-gray-900 bg-gray-100 min-h-full">
   <p class="p-4 text-lg">Suggested for you</p>
-  <div class="flex justify-between bg-white px-4 py-6 items-center">
-    <p class="font-bold text-xl">What is Diabetes?</p>
+  <div
+    class="flex justify-between bg-white px-4 py-6 items-center"
+    (click)="viewEducation()"
+  >
+    <p class="font-bold text-xl">{{randomEducational.topic}}</p>
     <ion-icon name="chevron-forward" class="text-2xl"></ion-icon>
   </div>
 

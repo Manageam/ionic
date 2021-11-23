@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import catetories from '../../../../assets/data/education-category';
+import { EducationService } from 'src/app/services/education/education.service';
 import { CategoryComponent } from './category/category.component';
+import { SingleComponent } from './single/single.component';
 const colors = [
   'bg-red-300',
   'bg-green-300',
@@ -17,16 +18,34 @@ const colors = [
   styleUrls: ['./education.page.scss'],
 })
 export class EducationPage implements OnInit {
-  categories = catetories.map((c, i) => ({ ...c, bg: colors[i] }));
-  constructor(private modalController: ModalController) {}
+  categories = [];
+  randomEducational: any = {};
+  constructor(
+    private modalController: ModalController,
+    private educationService: EducationService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.categories = this.educationService.fetchCategories();
+    this.categories = this.categories.map((c, i) => ({ ...c, bg: colors[i] }));
+    this.randomEducational = this.educationService.getRandomEducational();
+  }
 
   async viewCategory(category) {
     const modal = await this.modalController.create({
       component: CategoryComponent,
       componentProps: {
         data: category,
+      },
+    });
+    await modal.present();
+  }
+
+  async viewEducation() {
+    const modal = await this.modalController.create({
+      component: SingleComponent,
+      componentProps: {
+        data: this.randomEducational,
       },
     });
     await modal.present();
