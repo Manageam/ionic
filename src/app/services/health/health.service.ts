@@ -31,6 +31,10 @@ export class HealthService {
     });
   }
 
+  remove(id) {
+    return this.http.delete(`${this.url}/deleteHba1c/${id}`);
+  }
+
   addHba1c(data) {
     const {
       user_details: { id },

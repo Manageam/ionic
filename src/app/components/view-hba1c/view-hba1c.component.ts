@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { HealthService } from 'src/app/services/health/health.service';
+import dateFomart from 'dateformat';
+import { fetchTip } from 'src/assets/scripts/misc';
+import { GlobalService } from 'src/app/services/global/global.service';
 
 @Component({
   selector: 'app-view-hba1c',
@@ -8,14 +11,17 @@ import { HealthService } from 'src/app/services/health/health.service';
   styleUrls: ['./view-hba1c.component.scss'],
 })
 export class ViewHba1cComponent implements OnInit {
-  segment = 'current';
+  segment = 'history';
   expand = null;
   color = 'gray';
   hba1c: { unit; number } = null;
+  allHba1c = {};
+  allHba1cKeys = [];
   status = '';
   constructor(
     public modalController: ModalController,
-    private healthService: HealthService
+    private healthService: HealthService,
+    private global: GlobalService
   ) {}
 
   ngOnInit() {
@@ -25,6 +31,7 @@ export class ViewHba1cComponent implements OnInit {
   segmentChanged(e) {
     this.segment = e.detail.value;
   }
+
   toggle(i) {
     if (i == this.expand) {
       this.expand = null;
@@ -32,8 +39,28 @@ export class ViewHba1cComponent implements OnInit {
       this.expand = i;
     }
   }
-  remove(i) {}
+
+  async remove(id, key) {
+    const { role } = <{ role }>await this.global.alert(
+      'Remove Hba1c',
+      'Are you sure you want to remove Hba1c reading?',
+      [
+        { role: false, text: 'Cancel' },
+        { role: true, text: 'OK' },
+      ]
+    );
+    if (role) {
+      this.healthService.remove(id).subscribe(() => {
+        this.allHba1c[key] = this.allHba1c[key].filter(
+          (hba1c) => hba1c.id != id
+        );
+        this.fetchba1c();
+      });
+    }
+  }
+
   fetchba1c() {
+    const allHba1c = this.healthService.getHba1c();
     this.hba1c = this.healthService.getHba1c().slice(-1)[0];
     if (
       (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) < 42) ||
@@ -61,5 +88,24 @@ export class ViewHba1cComponent implements OnInit {
       this.status =
         'Your blood test shows that your A1C level is of a Diabetic person. Eating habits and lifestyle changes are recommended.';
     }
+    // group the hba1c
+    const hba1cGroups = {};
+
+    for (let hba1c of allHba1c) {
+      const key = dateFomart(new Date(hba1c.created_at), 'mmm-yyyy');
+      hba1c.time = dateFomart(
+        new Date(hba1c.created_at),
+        'dd mmm, yyyy-hh:MMtt'
+      );
+      hba1c.tip = fetchTip(hba1c);
+      if (hba1cGroups[key]) {
+        hba1cGroups[key].push(hba1c);
+      } else {
+        hba1cGroups[key] = [hba1c];
+      }
+    }
+
+    this.allHba1c = hba1cGroups;
+    this.allHba1cKeys = Object.keys(hba1cGroups);
   }
 }
