@@ -51,3 +51,54 @@ export function fetchTip(hba1c) {
     return '';
   }
 }
+
+export function fetchBloodSugarTips(bloodSugar) {
+  let tip = [];
+  if (bloodSugar.unit === 'mmol/L') {
+    switch (true) {
+      case bloodSugar.value < 4.4:
+        tip = [
+          'Your blood sugar is Lower than Desired Level.',
+          'Please eat or drink a moderate quantity of fast acting carbohydrate such as glucose tablets, sweets, sugary fizzy drinks or fruit juice to bring your sugar level to desired level.',
+          'A blood test should be taken after 15-20 minutes to check whether blood sugar is now within desired level.',
+          'If your reading is always LOW, talk to your doctor about your medication(s).',
+        ];
+        break;
+      case bloodSugar.value >= 4.4 && bloodSugar.value <= 7.2:
+        tip = ['Good Work'];
+        break;
+      case bloodSugar.value > 7.2:
+        tip = [
+          'Your blood sugar is Higher than Desired Level.',
+          'You should aim to bring your blood sugar down to less than 130mg/dl.',
+          'If your number remains high, talk to your doctor about your medications and make sure you are following recommended lifestyle changes.',
+        ];
+    }
+  } else {
+    switch (true) {
+      case bloodSugar.value < 80:
+        tip = [
+          'Your blood sugar is Lower than Desired Level.',
+          'Please eat or drink a moderate quantity of fast acting carbohydrate such as glucose tablets, sweets, sugary fizzy drinks or fruit juice to bring your sugar level to desired level.',
+          'A blood test should be taken after 15-20 minutes to check whether blood sugar is now within desired level.',
+          'If your reading is always LOW, talk to your doctor about your medication(s).',
+        ];
+        break;
+      case bloodSugar.value >= 80 && bloodSugar.value <= 130:
+        tip = ['Good Work'];
+        break;
+      case bloodSugar.value > 130:
+        tip = [
+          'Your blood sugar is Higher than Desired Level.',
+          'You should aim to bring your blood sugar down to less than 130mg/dl.',
+          'If your number remains high, talk to your doctor about your medications and make sure you are following recommended lifestyle changes.',
+        ];
+    }
+  }
+
+  if (tip.length == 1) return tip[0];
+
+  return `<ul class="space-y-5 list-disc pl-4">${tip
+    .map((t) => '<li>' + t + '</li>')
+    .join('')}</ul>`;
+}

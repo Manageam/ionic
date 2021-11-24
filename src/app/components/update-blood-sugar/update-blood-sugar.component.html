@@ -27,6 +27,7 @@
         <ion-select
           [value]="bloodSugar.unit"
           [(ngModel)]="bloodSugar.unit"
+          (ngModelChange)="updateTip()"
           class="w-full"
           placeholder="Choose unit of measurement"
         >
@@ -39,19 +40,20 @@
           >Reading time</ion-label
         >
         <ion-select
-          [value]="bloodSugar.time"
-          [(ngModel)]="bloodSugar.time"
+          [value]="bloodSugar.reading_time"
+          [(ngModel)]="bloodSugar.reading_time"
           class="w-full"
           placeholder="Choose reading time"
+          (ngModelChange)="updateTip()"
         >
-          <ion-select-option value="before">before</ion-select-option>
-          <ion-select-option value="2-hours-after-meal">
+          <ion-select-option value="before">Before meal</ion-select-option>
+          <ion-select-option value="after">
             2 hours after meal
           </ion-select-option>
         </ion-select>
       </ion-item>
 
-      <ion-item *ngIf="bloodSugar.time">
+      <ion-item *ngIf="bloodSugar.reading_time">
         <ion-label class="block font-calibre w-full" position="stacked"
           >Blood glucose ({{ bloodSugar.unit }})</ion-label
         >
@@ -59,6 +61,7 @@
           placeholder="Enter blood sugar level"
           [value]="bloodSugar.reading"
           [(ngModel)]="bloodSugar.reading"
+          (ngModelChange)="updateTip()"
         ></ion-input>
       </ion-item>
 
@@ -70,9 +73,7 @@
           ></ion-icon>
           <span>Health Tip</span>
         </div>
-        <p class="text-gray-400 mt-3">
-          {{ tip }}
-        </p>
+        <p class="text-gray-400 mt-3" [innerHTML]="tip"></p>
       </div>
 
       <span

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { HealthService } from 'src/app/services/health/health.service';
-import dateFomart from 'dateformat';
+import dateFormat from 'dateformat';
 import { fetchTip } from 'src/assets/scripts/misc';
 import { GlobalService } from 'src/app/services/global/global.service';
 
@@ -69,8 +69,8 @@ export class ViewHba1cComponent implements OnInit {
       this.formatStatus();
 
       for (let hba1c of allHba1c) {
-        const key = dateFomart(new Date(hba1c.created_at), 'mmm-yyyy');
-        hba1c.time = dateFomart(
+        const key = dateFormat(new Date(hba1c.created_at), 'mmm-yyyy');
+        hba1c.time = dateFormat(
           new Date(hba1c.created_at),
           'dd mmm, yyyy-hh:MMtt'
         );
