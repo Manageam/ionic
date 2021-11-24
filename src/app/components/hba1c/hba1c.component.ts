@@ -21,32 +21,33 @@ export class Hba1cComponent implements OnInit {
 
   ngOnInit() {
     this.fetchba1c();
-    this.view();
   }
 
   fetchba1c() {
-    this.hba1c = this.healthService.getHba1c().slice(-1)[0];
-    if (
-      (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) < 42) ||
-      (this.hba1c.unit == 'percentage' && Number(this.hba1c.number) < 6)
-    ) {
-      this.color = 'green';
-    } else if (
-      (this.hba1c.unit == 'mmol/mol' &&
-        Number(this.hba1c.number) >= 42 &&
-        Number(this.hba1c.number) <= 47) ||
-      (this.hba1c.unit == 'percentage' &&
-        Number(this.hba1c.number) >= 6 &&
-        Number(this.hba1c.number) <= 6.4)
-    ) {
-      this.color = 'orange';
-    } else if (
-      (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) >= 48) ||
-      (this.hba1c.unit == 'percentage' && Number(this.hba1c.number) >= 6.5)
-    ) {
-      this.color = 'red';
-    }
-    this.animation = requestAnimationFrame(() => this.fetchba1c());
+    this.healthService.getHba1c().subscribe((data) => {
+      this.hba1c = data.slice(-1)[0];
+
+      if (
+        (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) < 42) ||
+        (this.hba1c.unit == 'percentage' && Number(this.hba1c.number) < 6)
+      ) {
+        this.color = 'green';
+      } else if (
+        (this.hba1c.unit == 'mmol/mol' &&
+          Number(this.hba1c.number) >= 42 &&
+          Number(this.hba1c.number) <= 47) ||
+        (this.hba1c.unit == 'percentage' &&
+          Number(this.hba1c.number) >= 6 &&
+          Number(this.hba1c.number) <= 6.4)
+      ) {
+        this.color = 'orange';
+      } else if (
+        (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) >= 48) ||
+        (this.hba1c.unit == 'percentage' && Number(this.hba1c.number) >= 6.5)
+      ) {
+        this.color = 'red';
+      }
+    });
   }
 
   async view() {
@@ -65,7 +66,5 @@ export class Hba1cComponent implements OnInit {
     await modal.present();
   }
 
-  ngOnDestroy() {
-    cancelAnimationFrame(this.animation);
-  }
+  ngOnDestroy() {}
 }

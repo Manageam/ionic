@@ -94,11 +94,11 @@
           </div>
         </div>
 
-        <div class="">
+        <div class="" *ngIf="segment == 'history'">
           <p class="font-bold text-xl font-geomanist mb-4">
             All HbA1c readings
           </p>
-          <ul *ngIf="segment == 'history'">
+          <ul>
             <li
               class="rounded-xl grid grid-cols-4 mb-6"
               *ngFor="let key of allHba1cKeys"

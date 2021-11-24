@@ -11,7 +11,7 @@ import { GlobalService } from 'src/app/services/global/global.service';
   styleUrls: ['./view-hba1c.component.scss'],
 })
 export class ViewHba1cComponent implements OnInit {
-  segment = 'history';
+  segment = 'current';
   expand = null;
   color = 'gray';
   hba1c: { unit; number } = null;
@@ -54,14 +54,40 @@ export class ViewHba1cComponent implements OnInit {
         this.allHba1c[key] = this.allHba1c[key].filter(
           (hba1c) => hba1c.id != id
         );
-        this.fetchba1c();
+        this.healthService.updateHba1c();
       });
     }
   }
 
   fetchba1c() {
-    const allHba1c = this.healthService.getHba1c();
-    this.hba1c = this.healthService.getHba1c().slice(-1)[0];
+    this.healthService.getHba1c().subscribe((data) => {
+      const allHba1c = data;
+      this.hba1c = data.slice(-1)[0];
+
+      // group the hba1c
+      const hba1cGroups = {};
+      this.formatStatus();
+
+      for (let hba1c of allHba1c) {
+        const key = dateFomart(new Date(hba1c.created_at), 'mmm-yyyy');
+        hba1c.time = dateFomart(
+          new Date(hba1c.created_at),
+          'dd mmm, yyyy-hh:MMtt'
+        );
+        hba1c.tip = fetchTip(hba1c);
+        if (hba1cGroups[key]) {
+          hba1cGroups[key].push(hba1c);
+        } else {
+          hba1cGroups[key] = [hba1c];
+        }
+      }
+
+      this.allHba1c = hba1cGroups;
+      this.allHba1cKeys = Object.keys(hba1cGroups);
+    });
+  }
+
+  formatStatus() {
     if (
       (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) < 42) ||
       (this.hba1c.unit == 'percentage' && Number(this.hba1c.number) < 6)
@@ -88,24 +114,5 @@ export class ViewHba1cComponent implements OnInit {
       this.status =
         'Your blood test shows that your A1C level is of a Diabetic person. Eating habits and lifestyle changes are recommended.';
     }
-    // group the hba1c
-    const hba1cGroups = {};
-
-    for (let hba1c of allHba1c) {
-      const key = dateFomart(new Date(hba1c.created_at), 'mmm-yyyy');
-      hba1c.time = dateFomart(
-        new Date(hba1c.created_at),
-        'dd mmm, yyyy-hh:MMtt'
-      );
-      hba1c.tip = fetchTip(hba1c);
-      if (hba1cGroups[key]) {
-        hba1cGroups[key].push(hba1c);
-      } else {
-        hba1cGroups[key] = [hba1c];
-      }
-    }
-
-    this.allHba1c = hba1cGroups;
-    this.allHba1cKeys = Object.keys(hba1cGroups);
   }
 }
