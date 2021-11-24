@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { CholesterolService } from 'src/app/services/cholesterol/cholesterol.service';
+import dateFormat from 'dateformat';
+import { fetchBloodPressureTips } from 'src/assets/scripts/misc';
+import { GlobalService } from 'src/app/services/global/global.service';
 
 @Component({
   selector: 'app-view-cholesterol',
@@ -8,9 +12,25 @@ import { ModalController } from '@ionic/angular';
 })
 export class ViewCholesterolComponent implements OnInit {
   expand = null;
-  constructor(public modalController: ModalController) {}
+  allCholesterol = [];
+  subs = [];
+  constructor(
+    public modalController: ModalController,
+    private cholesterolService: CholesterolService,
+    private global: GlobalService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.cholesterolService.get().subscribe((data) => {
+      this.allCholesterol = data.map((d) => {
+        d.date = dateFormat(new Date(d.created_at), 'dd mmm, yyyy-hh:MMtt');
+        d.tip = fetchBloodPressureTips(d.unit, d.reading);
+        return d;
+      });
+    });
+
+    this.subs.push(sub);
+  }
   share() {}
   toggle(i) {
     if (i == this.expand) {
@@ -19,5 +39,21 @@ export class ViewCholesterolComponent implements OnInit {
       this.expand = i;
     }
   }
-  remove(i) {}
+  async remove(id) {
+    const { role } = <{ role }>await this.global.alert(
+      'Remove Cholesterol reading.',
+      'Are you sure you want to remove cholesterol reading?',
+      [
+        { role: false, text: 'Cancel' },
+        { role: true, text: 'OK' },
+      ]
+    );
+
+    if (!role) return;
+
+    this.cholesterolService.remove(id).subscribe((data) => {
+      this.allCholesterol = this.allCholesterol.filter((d) => d != id);
+      this.cholesterolService.update();
+    });
+  }
 }

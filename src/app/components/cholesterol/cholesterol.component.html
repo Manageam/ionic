@@ -1,8 +1,10 @@
 <div class="bg-white rounded-xl p-4 text-center relative" (click)="view()">
-  <app-guage value="80" color="green"></app-guage>
+  <app-guage value="100" [color]="color"></app-guage>
 
-  <p class="font-bold text-2xl mt-6">100</p>
-  <span class="text-sm mb-4 inline-block">mg/dl</span>
+  <p class="font-bold text-2xl mt-6">{{ cholesterol?.reading || 0 }}</p>
+  <span class="text-sm mb-4 inline-block">{{
+    cholesterol?.unit || "nil"
+  }}</span>
   <p class="font-bold">Total Cholesterol</p>
   <p
     class="border border-blue-500 py-2 mt-4 text-blue-500 rounded-xl"

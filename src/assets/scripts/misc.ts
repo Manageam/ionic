@@ -104,7 +104,6 @@ export function fetchBloodSugarTips(bloodSugar) {
 }
 
 export function fetchBloodPressureTips(upper, lower) {
-  console.log(upper, lower);
   let tip;
   switch (true) {
     case upper >= 90 && upper <= 120 && lower >= 60 && lower <= 80:
@@ -208,6 +207,58 @@ export function fetchBloodPressureTips(upper, lower) {
   if (tip.length == 1) return tip[0];
 
   return `<ul class="space-y-5 list-disc pl-4">${tip
+    .map((t) => '<li>' + t + '</li>')
+    .join('')}</ul>`;
+}
+
+export function fetchCholesterolTips(unit, value) {
+  let tips = [];
+  if (String(unit).toLowerCase() === 'mmol/l') {
+    switch (true) {
+      case value < 5.2:
+        tips = ['Good work.'];
+        break;
+      case value >= 5.2 && value < 6.3:
+        tips = [
+          'Total cholesterol in your blood is Borderline High.',
+          'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
+          'Educate yourself on how to manage cholesterol.',
+        ];
+        break;
+      case value >= 6.3:
+        tips = [
+          'Total cholesterol in your blood is High.',
+          'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
+          'Educate yourself on how to manage cholesterol.',
+        ];
+        break;
+    }
+    return false;
+  }
+
+  switch (true) {
+    case value < 200:
+      tips = ['Good work.'];
+      break;
+    case value >= 200 && value < 240:
+      tips = [
+        'Total cholesterol in your blood is Borderline High.',
+        'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
+        'Educate yourself on how to manage cholesterol.',
+      ];
+      break;
+    case value >= 240:
+      tips = [
+        'Total cholesterol in your blood is High.',
+        'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
+        'Educate yourself on how to manage cholesterol.',
+      ];
+      break;
+  }
+
+  if (tips.length == 1) return tips[0];
+
+  return `<ul class="space-y-5 list-disc pl-4">${tips
     .map((t) => '<li>' + t + '</li>')
     .join('')}</ul>`;
 }

@@ -31,8 +31,6 @@ export class BloodPressureComponent implements OnInit {
     });
 
     this.subs.push(sub);
-
-    this.view();
   }
 
   updateSugarColor(upper, lower) {
