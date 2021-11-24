@@ -25,8 +25,6 @@ export class CholesterolComponent implements OnInit {
         this.cholesterol.unit,
         this.cholesterol.reading
       );
-
-      console.log(this.color);
     });
 
     this.subs.push(sub);

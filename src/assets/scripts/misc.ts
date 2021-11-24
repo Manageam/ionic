@@ -262,3 +262,41 @@ export function fetchCholesterolTips(unit, value) {
     .map((t) => '<li>' + t + '</li>')
     .join('')}</ul>`;
 }
+
+export function fetchBMI(value) {
+  let tips = [];
+  switch (true) {
+    case value < 18.5:
+      tips = [
+        'Your BMI is Below Normal.',
+        'This may suggest lack of sufficient nutrients in your diet.',
+        'Change your food habits to make sure you are consuming enough calories and keep a healthy diet plan.',
+      ];
+      break;
+    case value >= 18.5 && value <= 24.9:
+      tips = ['Good work.'];
+      break;
+    case value >= 25 && value < 30:
+      tips = [
+        'Your BMI is of an Overweight Person.',
+        'This is a risk factor for developing diabetes and other medical conditions.',
+        'Change your eating habits and increase physical activity.',
+        'Educate yourself on weight management',
+      ];
+      break;
+    case value >= 30:
+      tips = [
+        'Your BMI is of an Obese Person.',
+        'This is a risk factor for developing diabetes and other medical conditions.',
+        'Change your eating habits and increase physical activity.',
+        'Educate yourself on weight management',
+      ];
+      break;
+  }
+
+  if (tips.length == 1) return tips[0];
+
+  return `<ul class="space-y-5 list-disc pl-4">${tips
+    .map((t) => '<li>' + t + '</li>')
+    .join('')}</ul>`;
+}
