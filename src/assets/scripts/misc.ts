@@ -102,3 +102,112 @@ export function fetchBloodSugarTips(bloodSugar) {
     .map((t) => '<li>' + t + '</li>')
     .join('')}</ul>`;
 }
+
+export function fetchBloodPressureTips(upper, lower) {
+  console.log(upper, lower);
+  let tip;
+  switch (true) {
+    case upper >= 90 && upper <= 120 && lower >= 60 && lower <= 80:
+      tip = ['Good work.'];
+      break;
+    case upper < 90:
+      tip = [
+        'Your blood pressure measurement is Lower than Desired Range.',
+        'You can also talk to your doctor if you are required to monitor your blood pressure daily from home. ',
+        'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see if you need medication. ',
+        'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
+        'Food habits for Low BP:',
+        'Increase consumption of fruits and vegetable (banana, apples',
+        'Increase consumption of foods rich Omega 3 (Salmon, Mackerel, etc.)',
+        'Increase consumption of Fiber foods (Oats, Beans, etc.)',
+        'Increase water consumption and a cup of caffeinated beverage.',
+        'Reduction in alcohol intake',
+      ];
+      break;
+    case upper > 120 && upper <= 129:
+      tip = [
+        'Your blood pressure measurement is Elevated.',
+        'If your measurements continue to rise, you will need to talk to your doctor about your rising blood pressure and how to monitor it.',
+
+        'Food habits  to reduce risk of High BP:',
+        'Reducing salt intake from food and snacks.',
+        'Increasing consumption of fruits and vegetables.',
+        'Reduction in  alcohol intake.',
+      ];
+      break;
+    case upper >= 130 && upper <= 139:
+      tip = [
+        'Your blood pressure measurement is Above the Desired Range. ',
+        'If your measurements continue to rise you may be at risk of developing hypertension.',
+        'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see if you need medication. ',
+        'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
+        'You can also talk to your doctor if you are required to monitor your blood pressure daily from home.  (*Link to BP page in education)',
+        'Food habits  to reduce risk of High BP:',
+        'Reducing salt intake from food and snacks.',
+        'Increasing consumption of fruits and vegetables.',
+        'Reduction in  alcohol intake.',
+      ];
+      break;
+    case upper >= 140 && upper <= 159:
+      tip = [
+        'Your blood pressure measurement is High.',
+        'If your measurements continue to rise you may be at risk of developing hypertension.',
+        'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see which medication is best for you.',
+        'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
+        'You can also talk to your doctor if you are required to monitor your blood pressure daily from home.',
+        'Food habits  to reduce risk of High BP:',
+        'Reducing salt intake from food and snacks.',
+        'Increasing consumption of fruits and vegetables.',
+        'Reduction in  alcohol intake.',
+      ];
+      break;
+    case upper >= 90 && upper <= 120 && lower > 80:
+      tip = [
+        'Your blood pressure measurement is High.',
+        'If your measurements continue to rise you may be at risk of developing hypertension.',
+        'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see which medication is best for you.',
+        'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
+        'You can also talk to your doctor if you are required to monitor your blood pressure daily from home.',
+        'Food habits  to reduce risk of High BP:',
+        'Reducing salt intake from food and snacks.',
+        'Increasing consumption of fruits and vegetables.',
+        'Reduction in  alcohol intake.',
+      ];
+      break;
+    case upper >= 90 && upper <= 120 && lower < 60:
+      tip = [
+        'Your blood pressure measurement is Lower than Desired Range.',
+        'You can also talk to your doctor if you are required to monitor your blood pressure daily from home. ',
+        'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see if you need medication. ',
+        'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
+        'Food habits for Low BP:',
+        'Increase consumption of fruits and vegetable (banana, apples',
+        'Increase consumption of foods rich Omega 3 (Salmon, Mackerel, etc.)',
+        'Increase consumption of Fiber foods (Oats, Beans, etc.)',
+        'Increase water consumption and a cup of caffeinated beverage.',
+        'Reduction in alcohol intake',
+      ];
+      break;
+    case upper >= 160:
+      tip = [
+        'Your blood pressure measurement is severely High.',
+        'If your measurements continue to rise you may be at risk of developing hypertension.',
+        'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see which medication is best for you.',
+        'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
+        'You can also talk to your doctor if you are required to monitor your blood pressure daily from home.',
+        'Food habits  to reduce risk of High BP:',
+        'Reducing salt intake from food and snacks.',
+        'Increasing consumption of fruits and vegetables.',
+        'Reduction in  alcohol intake.',
+      ];
+      break;
+    default:
+      tip = ['Invalid blood pressure range'];
+  }
+
+  if (tip.length == 1) return tip[0];
+
+  return `<ul class="space-y-5 list-disc pl-4">${tip
+    .map((t) => '<li>' + t + '</li>')
+    .join('')}</ul>`;
+}

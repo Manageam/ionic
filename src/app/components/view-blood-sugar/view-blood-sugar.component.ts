@@ -32,7 +32,6 @@ export class ViewBloodSugarComponent implements OnInit {
         });
         return datum;
       });
-      console.log(this.bloodSugar);
     });
 
     this.subs.push(sub);

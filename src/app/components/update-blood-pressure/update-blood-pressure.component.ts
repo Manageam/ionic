@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { BloodPressureService } from 'src/app/services/blood-pressure/blood-pressure.service';
+import { fetchBloodPressureTips } from 'src/assets/scripts/misc';
 
 @Component({
   selector: 'app-update-blood-pressure',
@@ -8,12 +10,33 @@ import { ModalController } from '@ionic/angular';
 })
 export class UpdateBloodPressureComponent implements OnInit {
   pressure = {
-    systolic: '',
-    diastolic: '',
+    upper: '',
+    lower: '',
   };
   tip = '';
-  constructor(public modalController: ModalController) {}
+  constructor(
+    public modalController: ModalController,
+    private bloodPressureService: BloodPressureService
+  ) {}
 
   ngOnInit() {}
-  save() {}
+
+  updateTip() {
+    if (this.pressure.upper == '' || this.pressure.lower == '') {
+      this.tip = '';
+      return;
+    }
+
+    this.tip = fetchBloodPressureTips(this.pressure.upper, this.pressure.lower);
+  }
+
+  save() {
+    this.bloodPressureService
+      .add({ time: new Date(), ...this.pressure, unit: 'mmhg' })
+      .subscribe((data) => {
+        console.log(data);
+        this.modalController.dismiss();
+        this.bloodPressureService.update();
+      });
+  }
 }

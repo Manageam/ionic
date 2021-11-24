@@ -19,7 +19,6 @@ export class BloodSugarComponent implements OnInit {
 
   ngOnInit() {
     this.fetch();
-    this.view();
   }
 
   fetch() {
