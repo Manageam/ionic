@@ -21,7 +21,6 @@ export class BmiComponent implements OnInit {
   ngOnInit() {
     const sub = this.bmiService.get().subscribe((data) => {
       this.bmi = data.slice(-1)[0];
-      console.log(this.bmi);
       this.color = this.updateColor(this.bmi?.mass);
     });
     this.subs.push(sub);

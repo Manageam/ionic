@@ -40,15 +40,15 @@
           >Height({{ this.bmi.unit == "kg/m" ? "M" : "Inch" }})</ion-label
         >
         <ion-input
-          placeholder="Enter hieght"
+          placeholder="Enter height"
           type="number"
-          [value]="bmi.hieght"
-          [(ngModel)]="bmi.hieght"
+          [value]="bmi.height"
+          [(ngModel)]="bmi.height"
           (ngModelChange)="updateTip()"
         ></ion-input>
       </ion-item>
 
-      <ion-item *ngIf="bmi.hieght">
+      <ion-item *ngIf="bmi.height">
         <ion-label class="block font-calibre w-full" position="stacked"
           >Weight({{ this.bmi.unit == "kg/m" ? "Kg" : "Pounds" }})</ion-label
         >

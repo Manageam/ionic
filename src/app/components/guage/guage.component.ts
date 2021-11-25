@@ -18,7 +18,6 @@ export class GuageComponent implements OnInit {
 
   @Input()
   set color(val) {
-    console.log(val);
     this.appearance = val;
   }
 }
