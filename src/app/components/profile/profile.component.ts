@@ -38,7 +38,7 @@ export class ProfileComponent implements OnInit {
     const modal = await this.modalController.create({
       component: UpdatePictureComponent,
       componentProps: {
-        user: this.user,
+        photo: this.user.photo,
       },
       cssClass: 'modal-50',
     });

@@ -56,8 +56,9 @@ export class UserService {
     return this.http.post(`${this.url}/register`, data);
   }
 
-  updatePhoto(id, data) {
-    return this.http.post(`${this.url}/photo/${id}`, data);
+  updatePhoto(data) {
+    const user = this.auth.loggedUser();
+    return this.http.post(`${this.url}/photo/${user.id}`, data);
   }
 
   resetPassword(data) {

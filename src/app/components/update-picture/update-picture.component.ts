@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActionSheetController, ModalController } from '@ionic/angular';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-update-picture',
@@ -8,10 +9,12 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
   styleUrls: ['./update-picture.component.scss'],
 })
 export class UpdatePictureComponent implements OnInit {
-  image = '';
+  image: any;
+  @Input() photo: any;
   constructor(
     public modalController: ModalController,
-    private actionSheetController: ActionSheetController
+    private actionSheetController: ActionSheetController,
+    private userService: UserService
   ) {}
 
   ngOnInit() {}
@@ -19,7 +22,13 @@ export class UpdatePictureComponent implements OnInit {
   save() {
     // do th api thingy here
     const image = this.DataURIToBlob(this.image);
-    console.log(image);
+    const data = new FormData();
+    data.append('file', image);
+    this.userService.updatePhoto(data).subscribe((data) => {
+      this.userService.getDetails().subscribe((data) => {
+        this.userService.setDetails(data);
+      });
+    });
   }
 
   async update() {
