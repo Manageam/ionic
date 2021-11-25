@@ -2,13 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment.prod';
 import { AuthenticationService } from '../authentication/authentication.service';
+import { BehaviorSubject, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
   url = environment.apiUrl + '/users';
   user: any = {};
-  constructor(private http: HttpClient, private auth: AuthenticationService) {}
+  details: Subject<any>;
+  constructor(private http: HttpClient, private auth: AuthenticationService) {
+    const { user_details } = this.fetchDetails();
+    this.details = new BehaviorSubject(user_details);
+  }
 
   getDetails() {
     const user = this.auth.loggedUser();
@@ -17,6 +22,10 @@ export class UserService {
 
   setDetails(details) {
     localStorage.details = JSON.stringify(details);
+  }
+
+  userDetails() {
+    return this.details;
   }
 
   fetchDetails() {
@@ -36,6 +45,9 @@ export class UserService {
 
   login(data) {
     return this.http.post(`${this.url}/login`, data);
+  }
+  logout() {
+    localStorage.clear();
   }
 
   register(data) {

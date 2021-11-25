@@ -12,8 +12,9 @@ export class HomePage implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    const { user_details } = this.userService.fetchDetails();
-    this.user = user_details;
+    this.userService.details.subscribe((data) => {
+      this.user = data;
+    });
     this.tip = this.userService.fetchTip();
   }
 }
