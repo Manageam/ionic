@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { MedicationsService } from 'src/app/services/medications/medications.service';
+
+import dateFormat from 'dateformat';
 
 @Component({
   selector: 'app-all-medications',
@@ -8,13 +11,25 @@ import { GlobalService } from 'src/app/services/global/global.service';
   styleUrls: ['./all-medications.component.scss'],
 })
 export class AllMedicationsComponent implements OnInit {
-  expand = 0;
+  expand = null;
+  allMedication = [];
   constructor(
     public modalController: ModalController,
-    private global: GlobalService
+    private global: GlobalService,
+    private medicationService: MedicationsService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.medicationService.get().subscribe((data) => {
+      this.allMedication = data.map((datum) => {
+        datum.date = dateFormat(
+          new Date(datum.created_at),
+          'dd mmm, yyyy-hh:MMtt'
+        );
+        return datum;
+      });
+    });
+  }
   share() {
     console.log('share shit');
   }
@@ -25,7 +40,7 @@ export class AllMedicationsComponent implements OnInit {
       this.expand = i;
     }
   }
-  async remove(i) {
+  async remove(id) {
     const { role } = <{ role }>await this.global.alert(
       'Remove Medication',
       'Are you sure you want to remove medication?',
@@ -34,6 +49,12 @@ export class AllMedicationsComponent implements OnInit {
         { role: true, text: 'OK' },
       ]
     );
-    console.log(role);
+
+    if (!role) return;
+
+    this.medicationService.remove(id).subscribe(() => {
+      this.medicationService.update();
+      this.allMedication = this.allMedication.filter((med) => (med.id! = id));
+    });
   }
 }

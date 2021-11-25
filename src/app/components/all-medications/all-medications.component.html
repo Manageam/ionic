@@ -23,12 +23,12 @@
       </div>
       <div>
         <ul class="">
-          <li *ngFor="let item of [1, 3, 4, 5]">
+          <li *ngFor="let item of allMedication">
             <div
               class="bg-white flex mt-1 p-4 justify-between items-center"
               (click)="toggle(item)"
             >
-              <p class="text-lg">Blasticide</p>
+              <p class="text-lg">{{ item.name }}</p>
               <ion-icon
                 name="chevron-forward"
                 class="text-xl {{ item == expand ? 'rotate-90' : '' }}"
@@ -37,19 +37,17 @@
             <app-expandable [expanded]="item == expand" expandHeight="500px">
               <div class="bg-white p-4 text-gray-600 space-y-4">
                 <p>
-                  <span class="font-bold">Used for</span>: Lorem ipsum dolor sit
-                  amet consectetur adipisicing elit. Odio, quod est accusamus
-                  doloremque illum ullam.
+                  <span class="font-bold">Used for</span>:
+                  <span [innerHTML]="item.used_for"></span>
                 </p>
                 <p class="text-green-600">
                   Contact your doctor if you have any of these symptoms
                 </p>
-                <ul class="text-gray-600">
-                  <li class="font-bold mb-2">Possible Side Effect:</li>
-                  <li *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8]">
-                    Cold Sweat
-                  </li>
-                </ul>
+
+                <div class="text-gray-600">
+                  <p class="font-bold mb-2">Possible Side Effect:</p>
+                  <p [innerHTML]="item.effect"></p>
+                </div>
 
                 <p
                   class="
@@ -60,7 +58,7 @@
                     text-center
                     rounded-full
                   "
-                  (click)="remove(item)"
+                  (click)="remove(item.id)"
                 >
                   Remove
                 </p>

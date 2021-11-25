@@ -11,18 +11,23 @@ import { MedicationsService } from 'src/app/services/medications/medications.ser
 })
 export class HealthPage implements OnInit {
   medication: any = null;
+  subs = [];
   constructor(
     private modalController: ModalController,
     private medicationService: MedicationsService
   ) {}
 
   ngOnInit() {
-    this.medication = this.medicationService.myMedications()[0];
+    let sub = this.medicationService.get().subscribe((data) => {
+      this.medication = data.slice(-1)[0];
+    });
+
+    this.subs.push(sub);
   }
   async addMedication() {
     const modal = await this.modalController.create({
       component: AddMedicationComponent,
-      cssClass: 'modal-40',
+      cssClass: 'modal-50',
     });
     modal.present();
   }
@@ -31,5 +36,9 @@ export class HealthPage implements OnInit {
       component: AllMedicationsComponent,
     });
     modal.present();
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }
