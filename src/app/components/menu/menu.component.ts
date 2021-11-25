@@ -27,14 +27,12 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     let sub = this.userService.details.subscribe((data) => {
       this.user = data;
-      this.showProfile();
     });
 
     this.subs.push(sub);
   }
 
   async showProfile() {
-    console.log(this.user);
     const modal = await this.modalController.create({
       component: ProfileComponent,
       componentProps: {
