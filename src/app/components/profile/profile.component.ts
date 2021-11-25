@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
+import { UpdatePasswordComponent } from '../update-password/update-password.component';
 import { UpdatePictureComponent } from '../update-picture/update-picture.component';
 import { UpdateProfileComponent } from '../update-profile/update-profile.component';
 
@@ -44,6 +45,15 @@ export class ProfileComponent implements OnInit {
     });
     await modal.present();
   }
+
+  async showChangePassword() {
+    const modal = await this.modalController.create({
+      component: UpdatePasswordComponent,
+      cssClass: 'modal-50',
+    });
+    await modal.present();
+  }
+
   async updateTipNotification() {
     const { role } = <{ role }>await this.global.alert(
       'Daily tip notification',

@@ -65,8 +65,9 @@ export class UserService {
     return this.http.post(`${this.url}/generateresetpassword`, data);
   }
 
-  changePassword(id, data) {
-    return this.http.post(`${this.url}/password/${id}`, data);
+  changePassword(data) {
+    const user = this.auth.loggedUser();
+    return this.http.post(`${this.url}/password/${user.id}`, data);
   }
 
   fetchTip() {
