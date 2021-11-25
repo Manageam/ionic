@@ -63,7 +63,11 @@
       </div>
       <div class="mt-4">
         <p class="p-4 font-bold">Related tip</p>
-        <a class="bg-white p-4 flex justify-between" routerLink="/education">
+        <a
+          class="bg-white p-4 flex justify-between"
+          routerLink="/education"
+          (click)="modalController.dismiss()"
+        >
           <p class="text-lg">Learn more about diabetes</p>
           <ion-icon name="chevron-forward" class="text-xl"></ion-icon>
         </a>
