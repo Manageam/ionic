@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { HealthService } from 'src/app/services/health/health.service';
+import { checkHealthStatus } from 'src/assets/scripts/misc';
 import { UpdateHealthStatusComponent } from '../update-health-status/update-health-status.component';
 import { ViewHealthStatusComponent } from '../view-health-status/view-health-status.component';
 
@@ -9,9 +11,21 @@ import { ViewHealthStatusComponent } from '../view-health-status/view-health-sta
   styleUrls: ['./health-status.component.scss'],
 })
 export class HealthStatusComponent implements OnInit {
-  constructor(private modalController: ModalController) {}
+  subs = [];
+  healthStatus: any = {};
+  constructor(
+    private modalController: ModalController,
+    private healthService: HealthService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.healthService.getHealth().subscribe((data) => {
+      this.healthStatus = data;
+      this.healthStatus.name = checkHealthStatus(data.diabetics);
+    });
+
+    this.subs.push(sub);
+  }
   async view() {
     const modal = await this.modalController.create({
       component: ViewHealthStatusComponent,
@@ -27,8 +41,13 @@ export class HealthStatusComponent implements OnInit {
     e?.stopPropagation();
     const modal = await this.modalController.create({
       component: UpdateHealthStatusComponent,
+      componentProps: { value: this.healthStatus.diabetics },
       cssClass: 'modal-60',
     });
     await modal.present();
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

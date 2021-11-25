@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { HealthService } from 'src/app/services/health/health.service';
+import { checkHealthStatus } from 'src/assets/scripts/misc';
+import dateFormat from 'dateformat';
 
 @Component({
   selector: 'app-view-health-status',
@@ -7,10 +10,32 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./view-health-status.component.scss'],
 })
 export class ViewHealthStatusComponent implements OnInit {
-  constructor(public modalController: ModalController) {}
+  healthStatus: any = {};
+  subs = [];
+  constructor(
+    public modalController: ModalController,
+    private healthService: HealthService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.healthService.getHealth().subscribe((data) => {
+      this.healthStatus = data;
+      if (data) {
+        this.healthStatus.name = checkHealthStatus(data.diabetics);
+        this.healthStatus.date = dateFormat(
+          new Date(data.created_at),
+          'dd mmm, yyyy-hh:MMtt'
+        );
+      }
+    });
+
+    this.subs.push(sub);
+  }
   update() {
-    console.log('hello');
+    this.modalController.dismiss(true);
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

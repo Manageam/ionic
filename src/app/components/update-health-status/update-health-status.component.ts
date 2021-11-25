@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { HealthService } from 'src/app/services/health/health.service';
 
 @Component({
   selector: 'app-update-health-status',
@@ -7,8 +8,18 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./update-health-status.component.scss'],
 })
 export class UpdateHealthStatusComponent implements OnInit {
-  constructor(public modalController: ModalController) {}
+  @Input() value = '';
+  constructor(
+    public modalController: ModalController,
+    private healthService: HealthService
+  ) {}
 
   ngOnInit() {}
-  save() {}
+
+  save() {
+    this.healthService.addHealth(this.value).subscribe((data) => {
+      this.healthService.updateHealth();
+      this.modalController.dismiss();
+    });
+  }
 }

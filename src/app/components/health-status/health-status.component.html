@@ -1,7 +1,7 @@
 <div class="bg-white rounded-xl p-4 text-center" (click)="view()">
   <img src="/assets/img/diabetic.svg" class="inline-block h-12" />
   <p class="font-bold text-xl mt-6">Health Status</p>
-  <p class="font-bold">Diabetic</p>
+  <p class="font-bold text-sm">{{ healthStatus?.name || "nil" }}</p>
   <p
     class="border border-blue-500 py-2 mt-4 text-blue-500 rounded-xl"
     (click)="change($event)"

@@ -300,3 +300,16 @@ export function fetchBMI(value) {
     .map((t) => '<li>' + t + '</li>')
     .join('')}</ul>`;
 }
+
+export function checkHealthStatus(status) {
+  switch (status) {
+    case 1:
+      return 'Diabetes';
+    case 2:
+      return 'High Blood Pressure';
+    case 3:
+      return 'Pre-diabetic';
+    case 4:
+      return 'Diabetes and HBP';
+  }
+}

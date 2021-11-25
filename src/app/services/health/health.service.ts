@@ -10,19 +10,24 @@ import { UserService } from '../user/user.service';
 export class HealthService {
   url = environment.apiUrl + '/health';
   allhbac1: Subject<any[]>;
+  health: Subject<any>;
   constructor(private http: HttpClient, private userService: UserService) {
     const user = this.userService.fetchDetails();
     const {
       user_details: { id },
     } = user;
-    const { hba1c } = user;
+    const { hba1c, health } = user;
     this.allhbac1 = new BehaviorSubject(hba1c);
+    this.health = new BehaviorSubject(health);
   }
 
   getHba1c() {
     return this.allhbac1;
   }
 
+  getHealth() {
+    return this.health;
+  }
   updateHba1c() {
     const user = this.userService.fetchDetails();
     const {
@@ -33,6 +38,33 @@ export class HealthService {
       this.userService.setDetails({ ...user, hba1c: data });
       this.allhbac1.next(data);
     });
+  }
+
+  addHealth(diabetics) {
+    const user = this.userService.fetchDetails();
+    const {
+      user_details: { id },
+    } = user;
+
+    return this.http.post(`${this.url}/update_health/${id}`, {
+      diabetics: Number(diabetics),
+      user_id: id,
+      time: new Date(),
+    });
+  }
+
+  updateHealth() {
+    const user = this.userService.fetchDetails();
+    const {
+      user_details: { id },
+    } = user;
+
+    this.http
+      .get(`${this.url}/all/${id}`)
+      .subscribe(({ diabetics }: { diabetics }) => {
+        this.userService.setDetails({ ...user, health: diabetics });
+        this.health.next(diabetics);
+      });
   }
 
   remove(d) {

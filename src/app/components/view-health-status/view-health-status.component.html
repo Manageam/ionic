@@ -24,8 +24,10 @@
       </div>
       <div class="bg-white px-4 py-10 mt-2">
         <div class="bg-gray-100 p-4 py-10 rounded-xl text-center">
-          <h3 class="font-bold text-3xl">Diabetes</h3>
-          <span class="text-blue-500">Last updated 9 Nov, 2021 - 9:53pm</span>
+          <h3 class="font-bold text-3xl">{{ healthStatus.name }}</h3>
+          <span class="text-blue-500"
+            >Last updated {{ healthStatus.date }}</span
+          >
         </div>
         <div class="flex justify-between mt-8">
           <span
