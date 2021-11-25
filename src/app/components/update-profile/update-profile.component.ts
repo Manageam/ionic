@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-update-profile',
@@ -7,6 +8,7 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./update-profile.component.scss'],
 })
 export class UpdateProfileComponent implements OnInit {
+  @Input() user: any = {};
   profile = {
     age: '',
     height: '',
@@ -16,8 +18,23 @@ export class UpdateProfileComponent implements OnInit {
     unit: '',
     gender: '',
   };
-  constructor(public modalController: ModalController) {}
 
-  ngOnInit() {}
-  save() {}
+  constructor(
+    public modalController: ModalController,
+    private userService: UserService
+  ) {}
+
+  ngOnInit() {
+    for (let key in this.profile) {
+      this.profile[key] = this.user[key];
+    }
+    this.profile.weight = this.user.body_weight;
+  }
+
+  save() {
+    this.userService.updateDetails(this.profile).subscribe((data) => {
+      const details = this.userService.fetchDetails();
+      this.userService.setDetails({ ...details, user_details: data });
+    });
+  }
 }

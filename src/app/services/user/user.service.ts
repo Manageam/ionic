@@ -21,6 +21,8 @@ export class UserService {
   }
 
   setDetails(details) {
+    console.log(details);
+    this.details.next(details.user_details);
     localStorage.details = JSON.stringify(details);
   }
 
