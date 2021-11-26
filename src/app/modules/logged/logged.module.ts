@@ -10,6 +10,7 @@ import { ProfileComponent } from 'src/app/components/profile/profile.component';
 import { UpdateProfileComponent } from 'src/app/components/update-profile/update-profile.component';
 import { UpdatePictureComponent } from 'src/app/components/update-picture/update-picture.component';
 import { FormsModule } from '@angular/forms';
+import { UpdatePasswordComponent } from 'src/app/components/update-password/update-password.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     ProfileComponent,
     UpdateProfileComponent,
     UpdatePictureComponent,
+    UpdatePasswordComponent,
   ],
   imports: [CommonModule, FormsModule, LoggedRoutingModule, IonicModule],
 })

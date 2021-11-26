@@ -12,7 +12,9 @@
   <ion-content>
     <div class="min-h-full bg-gray-100 py-4 font-calibre text-gray-900">
       <p class="px-4 font-bold text-lg tracking-wide">All Bookmarks</p>
-      <!-- <p class="p-4 text-gray-500">You have not added any bookmark</p> -->
+      <p class="p-4 text-gray-500" *ngIf="bookmarks.length == 0">
+        You have not added any bookmark
+      </p>
       <ul>
         <li
           *ngFor="let bookmark of bookmarks"
