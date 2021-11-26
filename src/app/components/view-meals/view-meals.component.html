@@ -38,11 +38,18 @@
               justify-center
             "
           >
+            <!-- border-gray-200
+          border-red-200
+          border-yellow-200
+          border-green-200 -->
             <div
               class="
                 h-52
                 w-52
-                border-8 border-gray-200
+                border-8
+                {{
+                calInfo ? 'border-' + calInfo.color + '-900' : 'border-gray-200'
+              }}
                 flex
                 items-center
                 justify-center
@@ -50,13 +57,152 @@
               "
             >
               <div class="">
-                <h3 class="text-3xl font-bold">0</h3>
+                <h3 class="text-3xl font-bold">{{ totalCals }}</h3>
                 <p>Total calories (kcal)</p>
               </div>
             </div>
           </div>
 
-          <div class="mt-8 px-4 py-3 flex justify-center">
+          <div
+            class="bg-white rounded-lg overflow-hidden mt-10 shadow-sm"
+            *ngIf="food"
+          >
+            <h2 class="text-xl p-4">Nutrition Information</h2>
+            <ul *ngIf="allCab.length > 0">
+              <h3 class="bg-gray-100 text-blue-500 p-4 flex justify-between">
+                <span>Carbohydrate</span> <span>{{ allCab.length }}</span>
+              </h3>
+              <li
+                class="
+                  bg-white
+                  text-gray-600
+                  p-4
+                  border-t border-gray-200
+                  flex
+                  justify-between
+                "
+                *ngFor="let item of allCab"
+              >
+                <span>{{ item.name }}</span> <span>{{ item.quantity }}</span>
+              </li>
+            </ul>
+
+            <ul *ngIf="allPro.length > 0">
+              <h3 class="bg-gray-100 text-blue-500 p-4 flex justify-between">
+                <span>Protein</span> <span>{{ allPro.length }}</span>
+              </h3>
+              <li
+                class="
+                  bg-white
+                  text-gray-600
+                  p-4
+                  border-t border-gray-200
+                  flex
+                  justify-between
+                "
+                *ngFor="let item of allFru"
+              >
+                <span>{{ item.name }}</span> <span>{{ item.quantity }}</span>
+              </li>
+            </ul>
+
+            <ul *ngIf="allFru.length > 0">
+              <h3 class="bg-gray-100 text-blue-500 p-4 flex justify-between">
+                <span>Fruit & Vegetables</span>
+                <span>{{ allFru.length }}</span>
+              </h3>
+              <li
+                class="
+                  bg-white
+                  text-gray-600
+                  p-4
+                  border-t border-gray-200
+                  flex
+                  justify-between
+                "
+                *ngFor="let item of allPro"
+              >
+                <span>{{ item.name }}</span> <span>{{ item.quantity }}</span>
+              </li>
+            </ul>
+
+            <div class="bg-gray-200 grid grid-cols-2">
+              <div
+                class="
+                  border-r border-gray-700
+                  p-4
+                  flex
+                  justify-between
+                  items-center
+                "
+              >
+                <p>Total</p>
+                <!-- text-green-900
+                text-yellow-900
+                text-red-900
+                bg-red-100
+                bg-yellow-100
+                bg-green-100 -->
+                <span
+                  class="text-{{ calInfo?.color }}-900 bg-{{
+                    calInfo?.color
+                  }}-100 inline-block px-3 py-1 rounded-full"
+                  >{{ calInfo?.state }}</span
+                >
+              </div>
+              <p class="self-end p-4 text-right">{{ totalCals }}kcal</p>
+            </div>
+            <div class="grid grid-cols-2 gap-x-2">
+              <span
+                class="
+                  bg-blue-500
+                  p-4
+                  font-semibold
+                  text-center
+                  block
+                  text-white
+                  uppercase
+                  rounded-xl
+                  m-4
+                "
+                (click)="save()"
+                >Save</span
+              >
+              <span
+                class="
+                  text-blue-500
+                  p-4
+                  font-semibold
+                  text-center
+                  block
+                  bg-white
+                  border border-blue-500
+                  uppercase
+                  rounded-xl
+                  m-4
+                "
+                (click)="change()"
+                >Change</span
+              >
+            </div>
+            <p
+              (click)="clear()"
+              class="
+                text-white
+                m-4
+                mt-2
+                bg-red-600
+                rounded-lg
+                p-4
+                uppercase
+                font-bold
+              "
+            >
+              Cancel
+            </p>
+          </div>
+
+          <div class="mt-8 px-4 py-3 flex justify-center" *ngIf="!food">
             <p
               class="
                 bg-white

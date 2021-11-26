@@ -11,13 +11,14 @@ export class MealsListComponent implements OnInit {
   segment = 1;
   @Input() type = '';
   search = '';
+  totalCals = 0;
   categogories = foodCategories.map((cat) => {
     if (cat.category.length > 13)
       cat.category = cat.category.slice(0, 10) + '...';
     return cat;
   });
   searchCat = foodCategories[0].category;
-  food = <any>food;
+  food = <any[]>food.map((d: any) => ({ ...d, amount: 0 }));
   filteredFood = [];
   constructor(public modalController: ModalController) {}
 
@@ -25,18 +26,30 @@ export class MealsListComponent implements OnInit {
     this.filterFoods(this.categogories[0].id);
   }
 
+  @Input()
+  set data(data) {
+    this.food = this.food.map((food) => {
+      data.forEach((d) => {
+        if (food.id == d.id) food = d;
+      });
+      return food;
+    });
+  }
+
   filterFoods(id) {
     const q = new RegExp(this.search, 'ig');
     this.filteredFood = this.food.filter(
       (f) => f.category == this.segment && q.test(f.name)
     );
+    this.calculateCalories();
   }
 
   inc(food) {
     this.food = this.food.map((f) => {
-      if (f.id == food.id) f.amount = f.amount ? f.amount + 1 : 1;
+      if (f.id == food.id) f.amount = f.amount + 1;
       return f;
     });
+    this.calculateCalories();
   }
 
   dec(food) {
@@ -44,6 +57,7 @@ export class MealsListComponent implements OnInit {
       if (f.id == food.id) f.amount = f.amount ? f.amount - 1 : 0;
       return f;
     });
+    this.calculateCalories();
   }
 
   toggle(food) {
@@ -53,11 +67,22 @@ export class MealsListComponent implements OnInit {
     });
   }
 
+  calculateCalories() {
+    this.totalCals = this.food
+      .reduce((a, b: any) => a + Number(b.amount || 0) * b.calories, 0)
+      .toFixed(2);
+  }
+
   segmentChanged(e) {
     this.segment = e.detail.value;
     this.searchCat = foodCategories.find(
       (cat) => cat.id == this.segment
     ).category;
     this.filterFoods(this.segment);
+  }
+
+  save() {
+    const foods = this.food.filter((f) => f.amount > 0);
+    this.modalController.dismiss(foods);
   }
 }

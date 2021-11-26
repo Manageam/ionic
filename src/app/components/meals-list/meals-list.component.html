@@ -74,10 +74,32 @@
           </div>
           <p class="text-center">
             {{ food.name }} - {{ food.quantity }}g
-            {{ " x " + food.amount }}
+            {{ food.amount ? " x " + food.amount : "" }}
           </p>
           <p class="text-center">{{ food.calories }} kcal</p>
         </li>
+
+        <li class="bg-gray-200 grid grid-cols-2">
+          <p class="border-r border-gray-700 p-4">Total</p>
+          <p class="self-end p-4 text-right">{{ totalCals }}kcal</p>
+        </li>
+
+        <p
+          (click)="save()"
+          class="
+            bg-blue-500
+            p-4
+            font-semibold
+            text-center
+            block
+            text-white
+            uppercase
+            rounded-xl
+            m-4
+          "
+        >
+          Done
+        </p>
       </ul>
     </div>
   </ion-content>

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { MenuController, ModalController } from '@ionic/angular';
+import { AddMealComponent } from 'src/app/components/add-meal/add-meal.component';
 import { LocationsComponent } from 'src/app/components/locations/locations.component';
+import { MealsListComponent } from 'src/app/components/meals-list/meals-list.component';
 import { ViewMealsComponent } from 'src/app/components/view-meals/view-meals.component';
 
 @Component({
@@ -23,6 +25,7 @@ export class HomeComponent implements OnInit {
         this.currentRoute = ev.url.split('/').slice(-1)[0];
       }
     });
+    this.showMeals();
   }
 
   async toggleMenu() {

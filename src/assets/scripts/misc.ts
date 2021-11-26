@@ -313,3 +313,101 @@ export function checkHealthStatus(status) {
       return 'Diabetes and HBP';
   }
 }
+
+export function calorieCounter(value, type) {
+  if (type == 'Breakfast') {
+    switch (true) {
+      case value < 450:
+        return {
+          state: 'Good',
+          color: 'green',
+          percentage: calculateDiabeticPercentage(value),
+        };
+      case value >= 450 && value < 500:
+        return {
+          state: 'Fair',
+          color: 'yellow',
+          percentage: calculateDiabeticPercentage(value),
+        };
+      case value > 500:
+        return {
+          state: 'Poor',
+          color: 'red',
+          percentage: calculateDiabeticPercentage(value),
+        };
+    }
+  }
+
+  if (type == 'Lunch') {
+    switch (true) {
+      case value < 500:
+        return {
+          state: 'Good',
+          color: 'green',
+          percentage: calculateDiabeticPercentage(value),
+        };
+      case value >= 500 && value < 600:
+        return {
+          state: 'Fair',
+          color: 'orange',
+          percentage: calculateDiabeticPercentage(value),
+        };
+      case value > 600:
+        return {
+          state: 'Poor',
+          color: 'red',
+          percentage: calculateDiabeticPercentage(value),
+        };
+    }
+  }
+
+  if (type == 'Dinner') {
+    switch (true) {
+      case value < 500:
+        return {
+          state: 'Good',
+          color: 'green',
+          percentage: calculateDiabeticPercentage(value),
+        };
+      case value >= 500 && value < 550:
+        return {
+          state: 'Fair',
+          color: 'orange',
+          percentage: calculateDiabeticPercentage(value),
+        };
+      case value > 550:
+        return {
+          state: 'Poor',
+          color: 'red',
+          percentage: calculateDiabeticPercentage(value),
+        };
+    }
+  }
+
+  if (type == 'Snack') {
+    switch (true) {
+      case value < 150:
+        return {
+          state: 'Good',
+          color: 'green',
+          percentage: calculateDiabeticPercentage(value),
+        };
+      case value >= 150 && value < 200:
+        return {
+          state: 'Fair',
+          color: 'orange',
+          percentage: calculateDiabeticPercentage(value),
+        };
+      case value > 200:
+        return {
+          state: 'Poor',
+          color: 'red',
+          percentage: calculateDiabeticPercentage(value),
+        };
+    }
+  }
+}
+
+export function calculateDiabeticPercentage(value) {
+  return ((value / 1600) * 100) / 100;
+}
