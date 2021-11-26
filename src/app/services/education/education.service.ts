@@ -15,8 +15,7 @@ export class EducationService {
   bookmarks: Subject<any>;
   constructor(private http: HttpClient, private userService: UserService) {
     const bookmarks = localStorage.bookmarks || '[]';
-    JSON.parse(bookmarks);
-    this.bookmarks = new BehaviorSubject(bookmarks);
+    this.bookmarks = new BehaviorSubject(JSON.parse(bookmarks));
 
     this.fetchBookmarks();
   }

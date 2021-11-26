@@ -13,11 +13,13 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { AuthService } from './services/auth/auth.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoaderInterceptor } from './interceptors/loader.interceptors';
+import { LoggedModule } from './modules/logged/logged.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
+    LoggedModule,
     SharedModule,
     BrowserModule,
     GaugeModule.forRoot(),
