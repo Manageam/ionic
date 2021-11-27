@@ -49,6 +49,7 @@ export class LoaderInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       finalize(() => hideLoader && this.global.hideLoader()),
       catchError(async (error) => {
+        if (error.status == 0) return;
         if (error.status === 401) {
           await this.auth.logout();
         }

@@ -315,7 +315,8 @@ export function checkHealthStatus(status) {
 }
 
 export function calorieCounter(value, type) {
-  if (type == 'Breakfast') {
+  type = String(type).toLowerCase();
+  if (type == 'breakfast') {
     switch (true) {
       case value < 450:
         return {
@@ -338,7 +339,7 @@ export function calorieCounter(value, type) {
     }
   }
 
-  if (type == 'Lunch') {
+  if (type == 'lunch') {
     switch (true) {
       case value < 500:
         return {
@@ -361,7 +362,7 @@ export function calorieCounter(value, type) {
     }
   }
 
-  if (type == 'Dinner') {
+  if (type == 'dinner') {
     switch (true) {
       case value < 500:
         return {
@@ -384,7 +385,7 @@ export function calorieCounter(value, type) {
     }
   }
 
-  if (type == 'Snack') {
+  if (type == 'snack') {
     switch (true) {
       case value < 150:
         return {

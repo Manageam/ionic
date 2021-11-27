@@ -4,14 +4,14 @@ import { MealService } from 'src/app/services/meal/meal.service';
 import { calorieCounter } from 'src/assets/scripts/misc';
 import { MealsListComponent } from '../meals-list/meals-list.component';
 import { ViewMealComponent } from '../view-meal/view-meal.component';
-
+import dateFormat from 'dateformat';
 @Component({
   selector: 'app-view-meals',
   templateUrl: './view-meals.component.html',
   styleUrls: ['./view-meals.component.scss'],
 })
 export class ViewMealsComponent implements OnInit {
-  segment = 'current';
+  segment = 'plan';
   food: any = null;
   allCab = [];
   allPro = [];
@@ -19,23 +19,49 @@ export class ViewMealsComponent implements OnInit {
   totalCals = 0;
   type = '';
   calInfo: any = null;
+  allMeals = [];
+  subs = [];
+  filter = '';
+  filteredMeals = [];
   constructor(
     public modalController: ModalController,
     private actionSheetController: ActionSheetController,
     private mealService: MealService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.mealService.get().subscribe((data) => {
+      this.allMeals = data.map((meal) => {
+        meal.total = meal.foods.length;
+        meal.date = dateFormat(new Date(meal.created_at), 'd, mmmm');
+        meal.info = calorieCounter(meal.calories, meal.type);
+        return meal;
+      });
+    });
+
+    this.filterMeals('');
+
+    this.subs.push(sub);
+  }
+
   segmentChanged(e) {
     this.segment = e.detail.value;
+    this.filterMeals('');
   }
+
   async showMeal(meal) {
     const modal = await this.modalController.create({
       component: ViewMealComponent,
-      componentProps: { meal },
+      componentProps: { data: meal },
     });
-    modal.onDidDismiss().then((data) => {
-      console.log(data);
+
+    modal.onDidDismiss().then(({ data }) => {
+      if (!data) return;
+      this.mealService.remove(data.id).subscribe((d) => {
+        this.allMeals = this.allMeals.filter((meal) => meal.id != data.id);
+        this.filterMeals(this.filter);
+        this.mealService.update();
+      });
     });
     await modal.present();
   }
@@ -115,5 +141,17 @@ export class ViewMealsComponent implements OnInit {
     this.food = null;
     this.type = '';
     this.calInfo = null;
+  }
+
+  filterMeals(meal) {
+    this.filter = meal;
+    const q = new RegExp(meal);
+    this.filteredMeals = this.allMeals.filter((m) =>
+      q.test(m.type.toLowerCase())
+    );
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }
