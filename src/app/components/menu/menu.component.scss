@@ -1,0 +1,24 @@
+.menu-container {
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  z-index: 1000;
+  position: relative;
+  height: 100vh;
+
+  .menu {
+    max-width: 70vw;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: 400ms linear all;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+  }
+
+  &--active {
+    .menu {
+      transform: translateX(0%);
+    }
+  }
+}

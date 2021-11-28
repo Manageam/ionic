@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MenuController, ModalController } from '@ionic/angular';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
@@ -17,6 +17,9 @@ import { SettingsComponent } from '../settings/settings.component';
 export class MenuComponent implements OnInit {
   user: any = {};
   subs = [];
+  isShow = false;
+  isShowBg = false;
+  @Output() onClose = new EventEmitter();
   constructor(
     private menuController: MenuController,
     private modalController: ModalController,
@@ -32,6 +35,21 @@ export class MenuComponent implements OnInit {
     this.subs.push(sub);
   }
 
+  @Input() set show(data) {
+    if (data) this.isShowBg = data;
+    setTimeout(() => {
+      this.isShow = data;
+    });
+  }
+
+  close(e) {
+    e.stopPropagation();
+    this.isShow = false;
+    this.onClose.emit(false);
+    setTimeout(() => {
+      this.isShowBg = false;
+    }, 400);
+  }
   async showProfile() {
     const modal = await this.modalController.create({
       component: ProfileComponent,

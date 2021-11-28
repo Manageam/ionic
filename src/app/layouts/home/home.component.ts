@@ -13,6 +13,7 @@ import { ViewMealsComponent } from 'src/app/components/view-meals/view-meals.com
 })
 export class HomeComponent implements OnInit {
   currentRoute = '';
+  showMenu = false;
   constructor(
     private menuController: MenuController,
     private router: Router,
@@ -25,11 +26,10 @@ export class HomeComponent implements OnInit {
         this.currentRoute = ev.url.split('/').slice(-1)[0];
       }
     });
-    this.showMeals();
   }
 
   async toggleMenu() {
-    await this.menuController.toggle();
+    this.showMenu = !this.showMenu;
   }
 
   async showLocation() {

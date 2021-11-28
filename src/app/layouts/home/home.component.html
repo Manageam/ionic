@@ -1,5 +1,5 @@
-<app-menu></app-menu>
-<ion-app>
+<app-menu [show]="showMenu" (onClose)="showMenu = false"></app-menu>
+<ion-app class="{{ showMenu ? 'show-menu' : '' }} home">
   <ion-header class="ion-no-border">
     <div
       class="flex justify-between p-4  {{

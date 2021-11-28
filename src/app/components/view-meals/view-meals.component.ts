@@ -11,7 +11,7 @@ import dateFormat from 'dateformat';
   styleUrls: ['./view-meals.component.scss'],
 })
 export class ViewMealsComponent implements OnInit {
-  segment = 'plan';
+  segment = 'current';
   food: any = null;
   allCab = [];
   allPro = [];

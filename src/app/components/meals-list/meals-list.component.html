@@ -45,7 +45,7 @@
   </ion-header>
   <ion-content>
     <div class="min-h-full p-4 meal pb-10 bg-gray-100">
-      <ul class="bg-white rounded-lg">
+      <ul class="bg-white rounded-lg pb-1">
         <li class="p-4 grid grid-cols-3">
           <span class="font-bold col-start-2 text-center">Food</span>
           <span class="font-bold col-start-3 text-center">Calories</span>
@@ -60,12 +60,18 @@
               name="add"
               class="text-white bg-gray-500 p-1 rounded-full"
             ></ion-icon>
-            <ion-checkbox
-              color="primary"
-              mode="ios"
-              [checked]="food.amount > 0"
+            <ion-icon
+              name="checkmark-circle-outline"
+              class="text-3xl text-gray-500"
+              *ngIf="food.amount == 0"
               (click)="toggle(food)"
-            ></ion-checkbox>
+            ></ion-icon>
+            <ion-icon
+              name="checkmark-circle"
+              class="text-3xl text-blue-500"
+              *ngIf="food.amount > 0"
+              (click)="toggle(food)"
+            ></ion-icon>
             <ion-icon
               (click)="dec(food)"
               name="remove"

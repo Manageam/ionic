@@ -65,6 +65,7 @@ export class MealsListComponent implements OnInit {
       if (f.id == food.id) f.amount = f.amount > 0 ? 0 : 1;
       return f;
     });
+    this.calculateCalories();
   }
 
   calculateCalories() {
