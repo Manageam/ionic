@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { EducationService } from 'src/app/services/education/education.service';
-
+import { Share } from '@capacitor/share';
 @Component({
   selector: 'app-single',
   templateUrl: './single.component.html',
@@ -27,7 +27,15 @@ export class SingleComponent implements OnInit {
     this.data = data;
   }
 
-  share() {}
+  share() {
+    this.educationService.share(this.data.id).subscribe((url: string) => {
+      Share.share({
+        title: this.data.title,
+        url,
+        dialogTitle: 'Share education tip',
+      });
+    });
+  }
   bookmark(id) {
     this.educationService.addBookmark(id).subscribe((data) => {
       this.educationService.fetchBookmarks();

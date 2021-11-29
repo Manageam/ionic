@@ -91,4 +91,15 @@ export class EducationService {
       user_id: id,
     });
   }
+
+  share(education_id) {
+    const {
+      user_details: { id },
+    } = this.userService.fetchDetails();
+
+    return this.http.post(`${environment.apiUrl}/share/shareEducationToken`, {
+      education_id,
+      user_id: id,
+    });
+  }
 }
