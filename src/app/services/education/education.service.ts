@@ -13,10 +13,14 @@ export class EducationService {
   url = environment.apiUrl + '/educations';
   educationBookmark = [];
   bookmarks: Subject<any>;
+  allTopics: Subject<any>;
   constructor(private http: HttpClient, private userService: UserService) {
+    this.fetchAllTopics();
     const bookmarks = localStorage.bookmarks || '[]';
     this.bookmarks = new BehaviorSubject(JSON.parse(bookmarks));
-
+    this.allTopics = new BehaviorSubject(
+      JSON.parse(localStorage.categoriesTopics || '[]')
+    );
     this.fetchBookmarks();
   }
 
@@ -33,13 +37,18 @@ export class EducationService {
   }
 
   fetchCategoryTopics(id) {
-    this.http.get(`${this.url}/all`).subscribe((data) => {
-      localStorage.categoriesTopics = JSON.stringify(data);
-    });
+    this.fetchAllTopics();
     let sTopics = localStorage.categoriesTopics || JSON.stringify(topics);
     localStorage.categoriesTopics = sTopics;
 
     return JSON.parse(sTopics).filter((data) => data.category == id);
+  }
+
+  fetchAllTopics() {
+    this.http.get(`${this.url}/all`).subscribe((data) => {
+      localStorage.categoriesTopics = JSON.stringify(data);
+      this.allTopics.next(data);
+    });
   }
 
   getRandomEducational() {
