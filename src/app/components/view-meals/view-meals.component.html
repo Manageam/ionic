@@ -6,7 +6,7 @@
         class="text-2xl"
         (click)="modalController.dismiss()"
       ></ion-icon>
-      <p class="ml-4 block text-gray-900 text-xl">Meals guide</p>
+      <p class="ml-4 block text-gray-900 text-xl">Meal guide</p>
     </div>
     <ion-segment
       (ionChange)="segmentChanged($event)"
@@ -15,7 +15,7 @@
       class="bg-white mt-6"
     >
       <ion-segment-button value="current">
-        <ion-label>Dinner</ion-label>
+        <ion-label>{{ mealType }} ({{ time }})</ion-label>
       </ion-segment-button>
       <ion-segment-button value="plan">
         <ion-label>Meal plans</ion-label>

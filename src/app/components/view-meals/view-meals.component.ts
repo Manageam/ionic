@@ -23,6 +23,9 @@ export class ViewMealsComponent implements OnInit {
   subs = [];
   filter = '';
   filteredMeals = [];
+
+  time = '';
+  mealType = '';
   constructor(
     public modalController: ModalController,
     private actionSheetController: ActionSheetController,
@@ -42,6 +45,33 @@ export class ViewMealsComponent implements OnInit {
     this.filterMeals('');
 
     this.subs.push(sub);
+
+    let today = new Date();
+    let months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+
+    const curHr = today.getHours();
+    this.time = today.getDate() + ', ' + months[today.getMonth()];
+
+    if (curHr < 12) {
+      this.mealType = 'Breakfast';
+    } else if (curHr < 16) {
+      this.mealType = 'Lunch';
+    } else {
+      this.mealType = 'Dinner';
+    }
   }
 
   segmentChanged(e) {
