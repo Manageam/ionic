@@ -12,7 +12,7 @@ export class UpdateProfileComponent implements OnInit {
   profile = {
     age: '',
     height: '',
-    weight: '',
+    body_weight: '',
     phone: '',
     name: '',
     unit: '',
@@ -28,7 +28,6 @@ export class UpdateProfileComponent implements OnInit {
     for (let key in this.profile) {
       this.profile[key] = this.user[key];
     }
-    this.profile.weight = this.user.body_weight;
   }
 
   save() {
