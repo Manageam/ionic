@@ -3,15 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { EducationService } from 'src/app/services/education/education.service';
 import { CategoryComponent } from './category/category.component';
 import { SingleComponent } from './single/single.component';
-const colors = [
-  'bg-red-300',
-  'bg-green-300',
-  'bg-indigo-300',
-  'bg-purple-300',
-  'bg-yellow-300',
-  'bg-pink-300',
-  'bg-gray-300',
-];
+import { shuffle } from 'lodash';
 @Component({
   selector: 'app-education',
   templateUrl: './education.page.html',
@@ -26,6 +18,15 @@ export class EducationPage implements OnInit {
   ) {}
 
   ngOnInit() {
+    const colors = shuffle([
+      'bg-red-300',
+      'bg-green-300',
+      'bg-indigo-300',
+      'bg-purple-300',
+      'bg-yellow-300',
+      'bg-pink-300',
+      'bg-gray-300',
+    ]);
     this.categories = this.educationService.fetchCategories();
     this.categories = this.categories.map((c, i) => ({ ...c, bg: colors[i] }));
     setTimeout(() => {
