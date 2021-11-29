@@ -19,12 +19,21 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: '',
+        path: 'intro',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_auth_home_home_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ../../pages/auth/home/home.module */ 7402)).then((m) => m.HomePageModule),
     },
     {
-        path: 'auth',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_auth_auth_auth_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ../../pages/auth/auth/auth.module */ 4060)).then((m) => m.AuthPageModule),
+        path: 'signin',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_auth_signin_signin_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ../../pages/auth/signin/signin.module */ 7382)).then((m) => m.SigninPageModule),
+    },
+    {
+        path: 'signup',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_auth_signup_signup_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ../../pages/auth/signup/signup.module */ 3732)).then((m) => m.SignupPageModule),
+    },
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'intro',
     },
 ];
 let AuthRoutingModule = class AuthRoutingModule {

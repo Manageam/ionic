@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Handling" transform="translate(-36 -377)">
+    <rect id="Rectangle_24" data-name="Rectangle 24" width="50" height="50" rx="12" transform="translate(36 377)" fill="#d6c2ed"/>
+    <g id="weight" transform="translate(0 -128)">
+      <path id="Union_1" data-name="Union 1" d="M-1033.283-979.365l-3.935-6.816,2.037-7.6,6.816-3.935,5.465,1.464,6.174-3.565,1.464-5.464,6.816-3.936,7.6,2.038,3.935,6.816-2.037,7.6-6.816,3.935-5.464-1.464-6.175,3.565-1.464,5.464-6.816,3.935Z" transform="translate(1078.063 1522.773)" fill="#fff"/>
+      <path id="Polygon_3" data-name="Polygon 3" d="M6.364,0,9,2.929V7.071L6.364,10H2.636L0,7.071V2.929L2.636,0Z" transform="translate(67.41 520.603) rotate(-30)" fill="#d6c2ed"/>
+    </g>
+  </g>
+</svg>
