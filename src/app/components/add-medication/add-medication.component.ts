@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { MedicationsService } from 'src/app/services/medications/medications.service';
-
 @Component({
   selector: 'app-add-medication',
   templateUrl: './add-medication.component.html',

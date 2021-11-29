@@ -38,15 +38,14 @@
         <p class="px-4 font-bold text-lg tracking-wide">Reminders</p>
         <!-- <p class="p-4 text-gray-500">You have not added any reminder</p> -->
         <ul>
-          <li
-            *ngFor="let item of [1, 3, 4, 5]"
-            class="bg-white p-4 mb-2"
-            (click)="toggle(item)"
-          >
-            <div class="flex justify-between items-center">
+          <li *ngFor="let item of reminders" class="bg-white p-4 mb-2">
+            <div
+              class="flex justify-between items-center"
+              (click)="toggle(item)"
+            >
               <div class="text-lg">
-                <p>Blasticide</p>
-                <p class="text-gray-500 text-sm">9 Nov, 2021 - 1:14pm</p>
+                <p>{{ item.title }}</p>
+                <p class="text-gray-500 text-sm">{{ item.date }}</p>
               </div>
               <ion-icon
                 name="chevron-forward"
@@ -55,14 +54,11 @@
             </div>
             <app-expandable [expanded]="item == expand" expandHeight="500px">
               <div class="bg-white mt-6 text-gray-600 space-y-4">
-                <p class="font-bold">Exercise</p>
+                <p class="font-bold">{{ item.category }}</p>
                 <div>
                   <p class="text-blue-500">Note:</p>
                   <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Maxime libero odit excepturi, recusandae dolore optio in,
-                    cum voluptate ducimus blanditiis animi nihil. Deserunt ipsum
-                    aut officia et provident blanditiis sequi!
+                    {{ item.note }}
                   </p>
                 </div>
                 <p
@@ -74,7 +70,7 @@
                     text-center
                     rounded-full
                   "
-                  (click)="remove(item)"
+                  (click)="remove(item.id)"
                 >
                   Remove
                 </p>

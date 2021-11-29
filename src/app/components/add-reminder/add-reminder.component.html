@@ -60,12 +60,12 @@
         >
         <ion-datetime
           placeholder="Pick date and time to be reminded"
-          [value]="reminder.date"
-          [(ngModel)]="reminder.date"
+          [value]="reminder.time"
+          [(ngModel)]="reminder.time"
         ></ion-datetime>
       </ion-item>
 
-      <ion-item *ngIf="reminder.date">
+      <ion-item *ngIf="reminder.time">
         <ion-label class="block font-calibre w-full" position="stacked"
           >Repeat</ion-label
         >
@@ -86,7 +86,7 @@
 
       <ion-item *ngIf="reminder.repeat">
         <ion-label class="block font-calibre w-full" position="stacked"
-          >Weight</ion-label
+          >Note</ion-label
         >
         <ion-textarea
           [value]="reminder.note"

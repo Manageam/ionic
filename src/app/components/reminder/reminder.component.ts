@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ReminderService } from 'src/app/services/reminder/reminder.service';
 import { AddReminderComponent } from '../add-reminder/add-reminder.component';
+import dateFormat from 'dateformat';
+import { GlobalService } from 'src/app/services/global/global.service';
 
 @Component({
   selector: 'app-reminder',
@@ -9,9 +12,22 @@ import { AddReminderComponent } from '../add-reminder/add-reminder.component';
 })
 export class ReminderComponent implements OnInit {
   expand = null;
-  constructor(public modalController: ModalController) {}
+  reminders = [];
+  constructor(
+    public modalController: ModalController,
+    private reminderService: ReminderService,
+    private global: GlobalService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.reminderService.get().subscribe((data) => {
+      this.reminders = data.map((d) => {
+        d.date = dateFormat(new Date(d.created_at), 'dd mmm, yyyy-hh:MMtt');
+        return d;
+      });
+    });
+  }
+
   toggle(i) {
     if (i == this.expand) {
       this.expand = null;
@@ -19,7 +35,23 @@ export class ReminderComponent implements OnInit {
       this.expand = i;
     }
   }
-  remove(i) {}
+
+  async remove(id) {
+    const { role } = <{ role }>await this.global.alert(
+      'Remove alert/reminder',
+      'Are you sure you want to remove alert/reminder?',
+      [
+        { role: false, text: 'Cancel' },
+        { role: true, text: 'OK' },
+      ]
+    );
+
+    if (!role) return;
+    this.reminderService.remove(id).subscribe((d) => {
+      this.reminders = this.reminders.filter((r) => r.id != id);
+      this.reminderService.update();
+    });
+  }
 
   async showAdd() {
     const modal = await this.modalController.create({
