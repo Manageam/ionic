@@ -15,6 +15,8 @@ export class HomePage implements OnInit {
     this.userService.details.subscribe((data) => {
       this.user = data;
     });
-    this.tip = this.userService.fetchTip();
+    this.userService.fetchTip().subscribe((data) => {
+      this.tip = data;
+    });
   }
 }

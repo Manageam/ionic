@@ -10,9 +10,12 @@ export class UserService {
   url = environment.apiUrl + '/users';
   user: any = {};
   details: Subject<any>;
+  tip = null;
+  tips: Subject<any>;
   constructor(private http: HttpClient, private auth: AuthenticationService) {
     const { user_details } = this.fetchDetails();
     this.details = new BehaviorSubject(user_details);
+    this.tips = new BehaviorSubject(JSON.parse(localStorage.tip || '{}'));
   }
 
   getDetails() {
@@ -21,7 +24,6 @@ export class UserService {
   }
 
   setDetails(details) {
-    console.log(details);
     this.details.next(details.user_details);
     localStorage.details = JSON.stringify(details);
   }
@@ -73,9 +75,9 @@ export class UserService {
   fetchTip() {
     this.http.get(`${environment.apiUrl}/dailytips/all`).subscribe((data) => {
       localStorage.tip = JSON.stringify(data[0]);
+      if (!this.tip) this.tips.next(data[0]);
     });
 
-    const tip = localStorage.tip || '{}';
-    return JSON.parse(tip);
+    return this.tips;
   }
 }

@@ -4,6 +4,7 @@ import { ReminderService } from 'src/app/services/reminder/reminder.service';
 import { AddReminderComponent } from '../add-reminder/add-reminder.component';
 import dateFormat from 'dateformat';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-reminder',
@@ -13,10 +14,12 @@ import { GlobalService } from 'src/app/services/global/global.service';
 export class ReminderComponent implements OnInit {
   expand = null;
   reminders = [];
+  tip: any = {};
   constructor(
     public modalController: ModalController,
     private reminderService: ReminderService,
-    private global: GlobalService
+    private global: GlobalService,
+    private userService: UserService
   ) {}
 
   ngOnInit() {
@@ -25,6 +28,10 @@ export class ReminderComponent implements OnInit {
         d.date = dateFormat(new Date(d.created_at), 'dd mmm, yyyy-hh:MMtt');
         return d;
       });
+    });
+
+    this.userService.fetchTip().subscribe((data) => {
+      this.tip = data;
     });
   }
 

@@ -6,21 +6,19 @@
         class="text-2xl"
         (click)="modalController.dismiss()"
       ></ion-icon>
-      <p class="ml-4 block text-gray-900 text-xl">All Reminders/p></p>
+      <p class="ml-4 block text-gray-900 text-xl">All Reminders</p>
     </div>
   </ion-header>
   <ion-content>
     <div class="min-h-full bg-gray-100 font-calibre text-gray-900">
       <p class="p-4 font-bold text-lg tracking-wide">Daily tip</p>
-      <div class="flex bg-white p-4">
-        <img src="/assets/img/tip.svg" />
-        <div class="ml-4 font-geomanist w-full">
-          <p class="text-lg font-bold">Taking the stair</p>
-          <p class="text-blue-500">Learn more about diabetes</p>
-          <p class="text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed est,
-            labore tempora illum, magni unde.
-          </p>
+      <div class="my-2 p-4 bg-white">
+        <div class="text-center">
+          <img src="/assets/img/tip.svg" />
+        </div>
+        <div class="mt-6">
+          <p class="font-bold mb-2 text-gray-900">{{ tip.title }}</p>
+          <p class="text-gray-500">{{ tip.note }}</p>
         </div>
       </div>
 
