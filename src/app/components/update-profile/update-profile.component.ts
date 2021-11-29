@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class UpdateProfileComponent implements OnInit {
   @Input() user: any = {};
+  subs = [];
   profile = {
     age: '',
     height: '',
@@ -21,13 +22,19 @@ export class UpdateProfileComponent implements OnInit {
 
   constructor(
     public modalController: ModalController,
-    private userService: UserService
+    private userService: UserService,
+    private platform: Platform
   ) {}
 
   ngOnInit() {
     for (let key in this.profile) {
       this.profile[key] = this.user[key];
     }
+
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
   }
 
   save() {
@@ -35,5 +42,9 @@ export class UpdateProfileComponent implements OnInit {
       const details = this.userService.fetchDetails();
       this.userService.setDetails({ ...details, user_details: data });
     });
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

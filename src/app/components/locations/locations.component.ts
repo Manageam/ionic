@@ -3,6 +3,7 @@ import {
   ActionSheetController,
   LoadingController,
   ModalController,
+  Platform,
 } from '@ionic/angular';
 import {} from 'googlemaps';
 import { GlobalService } from 'src/app/services/global/global.service';
@@ -17,15 +18,21 @@ export class LocationsComponent implements OnInit {
   @ViewChild('map') mapElement: any;
   map: google.maps.Map;
   location = '';
+  subs = [];
   constructor(
     private actionSheetController: ActionSheetController,
     public modalController: ModalController,
     private global: GlobalService,
-    private loadingController: LoadingController
+    private loadingController: LoadingController,
+    private platform: Platform
   ) {}
 
   ngOnInit() {
     this.fetchLocations();
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
   }
 
   async requestLocation() {
@@ -120,5 +127,9 @@ export class LocationsComponent implements OnInit {
       },
       { timeout: 20000, enableHighAccuracy: true, maximumAge: 75000 }
     );
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

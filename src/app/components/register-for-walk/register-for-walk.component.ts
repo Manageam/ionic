@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { WalkService } from 'src/app/services/walk/walk.service';
 
@@ -10,14 +10,21 @@ import { WalkService } from 'src/app/services/walk/walk.service';
 })
 export class RegisterForWalkComponent implements OnInit {
   walk: any = {};
+  subs = [];
   constructor(
     public modalController: ModalController,
     private walkService: WalkService,
-    private global: GlobalService
+    private global: GlobalService,
+    private platform: Platform
   ) {}
 
   ngOnInit() {
-    this.walkService.get().subscribe((data) => (this.walk = data));
+    let sub = this.walkService.get().subscribe((data) => (this.walk = data));
+    this.subs.push(sub);
+    sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
   }
   save() {
     console.log(this.walk);

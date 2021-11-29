@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { CholesterolService } from 'src/app/services/cholesterol/cholesterol.service';
 import { fetchCholesterolTips } from 'src/assets/scripts/misc';
 
@@ -14,12 +14,19 @@ export class UpdateCholesterolComponent implements OnInit {
     reading: '',
   };
   tip = '';
+  subs = [];
   constructor(
     public modalController: ModalController,
-    private cholesterolService: CholesterolService
+    private cholesterolService: CholesterolService,
+    private platform: Platform
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
+  }
 
   updateTip() {
     if (this.cholesterol.unit == '' || this.cholesterol.reading == '') {
@@ -37,5 +44,9 @@ export class UpdateCholesterolComponent implements OnInit {
       this.cholesterolService.update();
       this.modalController.dismiss();
     });
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

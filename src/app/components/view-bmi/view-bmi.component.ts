@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { BmiService } from 'src/app/services/bmi/bmi.service';
 import dateFormat from 'dateformat';
 import { fetchBMI } from 'src/assets/scripts/misc';
@@ -17,7 +17,8 @@ export class ViewBmiComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private bmiService: BmiService,
-    private global: GlobalService
+    private global: GlobalService,
+    private platform: Platform
   ) {}
 
   ngOnInit() {
@@ -32,6 +33,11 @@ export class ViewBmiComponent implements OnInit {
       });
     });
 
+    this.subs.push(sub);
+
+    sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
     this.subs.push(sub);
   }
   share() {}

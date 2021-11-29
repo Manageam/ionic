@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { UpdatePasswordComponent } from '../update-password/update-password.component';
@@ -13,16 +13,24 @@ import { UpdateProfileComponent } from '../update-profile/update-profile.compone
 })
 export class ProfileComponent implements OnInit {
   user: any = null;
+  subs = [];
   constructor(
     public modalController: ModalController,
     private global: GlobalService,
-    private userService: UserService
+    private userService: UserService,
+    private platform: Platform
   ) {}
 
   ngOnInit() {
-    this.userService.details.subscribe((data) => {
+    let sub = this.userService.details.subscribe((data) => {
       this.user = data;
     });
+    this.subs.push(sub);
+
+    sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
   }
   async showUpdateProfile() {
     const modal = await this.modalController.create({
@@ -64,5 +72,9 @@ export class ProfileComponent implements OnInit {
       ]
     );
     console.log(role);
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

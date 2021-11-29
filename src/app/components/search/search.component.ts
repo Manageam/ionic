@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { SingleComponent } from 'src/app/pages/logged/education/single/single.component';
 import { EducationService } from 'src/app/services/education/education.service';
 
@@ -12,15 +12,23 @@ export class SearchComponent implements OnInit {
   searched = [];
   searchText = '';
   allTopics = [];
+  subs = [];
   constructor(
     private educationService: EducationService,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private platform: Platform
   ) {}
 
   ngOnInit() {
-    this.educationService.allTopics.subscribe((data) => {
+    let sub = this.educationService.allTopics.subscribe((data) => {
       this.allTopics = data;
     });
+
+    this.subs.push(sub);
+    sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
   }
 
   search() {
@@ -39,5 +47,9 @@ export class SearchComponent implements OnInit {
       },
     });
     await modal.present();
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

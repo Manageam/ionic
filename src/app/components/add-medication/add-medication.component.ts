@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { MedicationsService } from 'src/app/services/medications/medications.service';
 @Component({
@@ -12,14 +12,20 @@ export class AddMedicationComponent implements OnInit {
   allMedication = [];
   searched = [];
   med: any = null;
+  subs = [];
   constructor(
     public modalController: ModalController,
     private global: GlobalService,
-    private medicationService: MedicationsService
+    private medicationService: MedicationsService,
+    private platform: Platform
   ) {}
 
   ngOnInit() {
-    this.allMedication = this.medicationService.all();
+    const sub = (this.allMedication = this.medicationService.all());
+    this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
   }
 
   search() {
@@ -46,5 +52,9 @@ export class AddMedicationComponent implements OnInit {
       this.medicationService.update();
       this.modalController.dismiss();
     });
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

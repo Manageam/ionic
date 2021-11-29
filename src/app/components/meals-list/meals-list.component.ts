@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import foodCategories from 'src/assets/data/food-categories';
 import food from 'src/assets/data/food';
 @Component({
@@ -12,6 +12,7 @@ export class MealsListComponent implements OnInit {
   @Input() type = '';
   search = '';
   totalCals = 0;
+  subs = [];
   categogories = foodCategories.map((cat) => {
     if (cat.category.length > 13)
       cat.category = cat.category.slice(0, 10) + '...';
@@ -20,10 +21,17 @@ export class MealsListComponent implements OnInit {
   searchCat = foodCategories[0].category;
   food = <any[]>food.map((d: any) => ({ ...d, amount: 0 }));
   filteredFood = [];
-  constructor(public modalController: ModalController) {}
+  constructor(
+    public modalController: ModalController,
+    private platform: Platform
+  ) {}
 
   ngOnInit() {
     this.filterFoods(this.categogories[0].id);
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
   }
 
   @Input()
@@ -85,5 +93,9 @@ export class MealsListComponent implements OnInit {
   save() {
     const foods = this.food.filter((f) => f.amount > 0);
     this.modalController.dismiss(foods);
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

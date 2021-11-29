@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import exercises from 'src/assets/data/exercise';
 
 @Component({
@@ -9,7 +9,20 @@ import exercises from 'src/assets/data/exercise';
 })
 export class ExerciseComponent implements OnInit {
   exercises = exercises;
-  constructor(public modalController: ModalController) {}
+  subs = [];
+  constructor(
+    public modalController: ModalController,
+    private platform: Platform
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
+  }
 }

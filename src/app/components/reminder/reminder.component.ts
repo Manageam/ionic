@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { ReminderService } from 'src/app/services/reminder/reminder.service';
 import { AddReminderComponent } from '../add-reminder/add-reminder.component';
 import dateFormat from 'dateformat';
@@ -15,24 +15,34 @@ export class ReminderComponent implements OnInit {
   expand = null;
   reminders = [];
   tip: any = {};
+  subs = [];
   constructor(
     public modalController: ModalController,
     private reminderService: ReminderService,
     private global: GlobalService,
-    private userService: UserService
+    private userService: UserService,
+    private platform: Platform
   ) {}
 
   ngOnInit() {
-    this.reminderService.get().subscribe((data) => {
+    let sub = this.reminderService.get().subscribe((data) => {
       this.reminders = data.map((d) => {
         d.date = dateFormat(new Date(d.created_at), 'dd mmm, yyyy-hh:MMtt');
         return d;
       });
     });
+    this.subs.push(sub);
 
-    this.userService.fetchTip().subscribe((data) => {
+    sub = this.userService.fetchTip().subscribe((data) => {
       this.tip = data;
     });
+
+    this.subs.push(sub);
+
+    sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
   }
 
   toggle(i) {
@@ -66,5 +76,9 @@ export class ReminderComponent implements OnInit {
       cssClass: 'modal-80',
     });
     modal.present();
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

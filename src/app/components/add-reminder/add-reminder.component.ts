@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { ReminderService } from 'src/app/services/reminder/reminder.service';
 
 @Component({
@@ -15,12 +15,19 @@ export class AddReminderComponent implements OnInit {
     repeat: '',
     note: '',
   };
+  subs = [];
   constructor(
     public modalController: ModalController,
-    private reminderService: ReminderService
+    private reminderService: ReminderService,
+    private platform: Platform
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
+  }
   save() {
     const data = {
       ...this.reminder,
@@ -30,5 +37,9 @@ export class AddReminderComponent implements OnInit {
       this.reminderService.update();
       this.modalController.dismiss();
     });
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

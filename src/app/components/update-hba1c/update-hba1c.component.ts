@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { HealthService } from 'src/app/services/health/health.service';
 
 @Component({
@@ -13,9 +13,11 @@ export class UpdateHba1cComponent implements OnInit {
     number: '',
   };
   tip = '';
+  subs = [];
   constructor(
     public modalController: ModalController,
-    private healthService: HealthService
+    private healthService: HealthService,
+    private platform: Platform
   ) {}
   updateTip() {
     if (this.hba1c.number == '') {
@@ -68,11 +70,19 @@ export class UpdateHba1cComponent implements OnInit {
       this.tip = '';
     }
   }
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+  }
   save() {
     this.healthService.addHba1c(this.hba1c).subscribe((data) => {
       this.healthService.updateHba1c();
       this.modalController.dismiss();
     });
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

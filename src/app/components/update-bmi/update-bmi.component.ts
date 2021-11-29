@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { BmiService } from 'src/app/services/bmi/bmi.service';
 import { fetchBMI } from 'src/assets/scripts/misc';
 
@@ -19,10 +19,16 @@ export class UpdateBmiComponent implements OnInit {
   subs = [];
   constructor(
     public modalController: ModalController,
-    private bmiService: BmiService
+    private bmiService: BmiService,
+    private platform: Platform
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
+  }
 
   updateTip() {
     const unit = this.bmi.unit;
@@ -52,5 +58,9 @@ export class UpdateBmiComponent implements OnInit {
       this.bmiService.update();
       this.modalController.dismiss();
     });
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

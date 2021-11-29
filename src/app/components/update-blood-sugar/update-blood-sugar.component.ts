@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { BloodSugarService } from 'src/app/services/blood-sugar/blood-sugar.service';
 import { fetchBloodSugarTips } from 'src/assets/scripts/misc';
 
@@ -15,12 +15,19 @@ export class UpdateBloodSugarComponent implements OnInit {
     reading: '',
   };
   tip = '';
+  subs = [];
   constructor(
     public modalController: ModalController,
-    private bloodSugarService: BloodSugarService
+    private bloodSugarService: BloodSugarService,
+    private platform: Platform
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
+  }
   updateTip() {
     if (
       this.bloodSugar.unit == '' ||
@@ -44,5 +51,9 @@ export class UpdateBloodSugarComponent implements OnInit {
         this.bloodSugarService.update();
         this.modalController.dismiss();
       });
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

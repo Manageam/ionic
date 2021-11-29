@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { CholesterolService } from 'src/app/services/cholesterol/cholesterol.service';
 import dateFormat from 'dateformat';
 import { fetchBloodPressureTips } from 'src/assets/scripts/misc';
@@ -17,7 +17,8 @@ export class ViewCholesterolComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private cholesterolService: CholesterolService,
-    private global: GlobalService
+    private global: GlobalService,
+    private platform: Platform
   ) {}
 
   ngOnInit() {
@@ -29,6 +30,11 @@ export class ViewCholesterolComponent implements OnInit {
       });
     });
 
+    this.subs.push(sub);
+
+    sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
     this.subs.push(sub);
   }
   share() {}
@@ -55,5 +61,9 @@ export class ViewCholesterolComponent implements OnInit {
       this.allCholesterol = this.allCholesterol.filter((d) => d != id);
       this.cholesterolService.update();
     });
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

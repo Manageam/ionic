@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActionSheetController, ModalController } from '@ionic/angular';
+import {
+  ActionSheetController,
+  ModalController,
+  Platform,
+} from '@ionic/angular';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { UserService } from 'src/app/services/user/user.service';
 
@@ -11,13 +15,20 @@ import { UserService } from 'src/app/services/user/user.service';
 export class UpdatePictureComponent implements OnInit {
   image: any;
   @Input() photo: any;
+  subs = [];
   constructor(
     public modalController: ModalController,
     private actionSheetController: ActionSheetController,
-    private userService: UserService
+    private userService: UserService,
+    private platform: Platform
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
+  }
 
   save() {
     // do th api thingy here
@@ -78,5 +89,9 @@ export class UpdatePictureComponent implements OnInit {
       ia[i] = byteString.charCodeAt(i);
 
     return new Blob([ia], { type: mimeString });
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

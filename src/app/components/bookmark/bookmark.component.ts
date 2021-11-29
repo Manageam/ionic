@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { EducationService } from 'src/app/services/education/education.service';
 import { GlobalService } from 'src/app/services/global/global.service';
 
@@ -10,12 +10,19 @@ import { GlobalService } from 'src/app/services/global/global.service';
 })
 export class BookmarkComponent implements OnInit {
   @Input() data: any = {};
+  subs = [];
   constructor(
     public modalController: ModalController,
     private global: GlobalService,
-    private educationService: EducationService
+    private educationService: EducationService,
+    private platform: Platform
   ) {}
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
+  }
   async remove(id) {
     const { role } = <{ role }>await this.global.alert(
       'Remove bookmark',
@@ -32,5 +39,9 @@ export class BookmarkComponent implements OnInit {
       this.modalController.dismiss();
       this.educationService.fetchBookmarks();
     });
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

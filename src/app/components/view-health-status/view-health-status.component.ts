@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { HealthService } from 'src/app/services/health/health.service';
 import { checkHealthStatus } from 'src/assets/scripts/misc';
 import dateFormat from 'dateformat';
@@ -14,7 +14,8 @@ export class ViewHealthStatusComponent implements OnInit {
   subs = [];
   constructor(
     public modalController: ModalController,
-    private healthService: HealthService
+    private healthService: HealthService,
+    private platform: Platform
   ) {}
 
   ngOnInit() {
@@ -29,6 +30,11 @@ export class ViewHealthStatusComponent implements OnInit {
       }
     });
 
+    this.subs.push(sub);
+
+    sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
     this.subs.push(sub);
   }
   update() {

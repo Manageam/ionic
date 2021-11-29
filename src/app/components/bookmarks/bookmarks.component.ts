@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { BookmarkComponent } from '../bookmark/bookmark.component';
 import { EducationService } from 'src/app/services/education/education.service';
 import dateFormat from 'dateformat';
@@ -10,13 +10,15 @@ import dateFormat from 'dateformat';
 })
 export class BookmarksComponent implements OnInit {
   bookmarks = [];
+  subs = [];
   constructor(
     public modalController: ModalController,
-    private educationService: EducationService
+    private educationService: EducationService,
+    private platform: Platform
   ) {}
 
   ngOnInit() {
-    this.educationService.getBookmarks().subscribe((data) => {
+    let sub = this.educationService.getBookmarks().subscribe((data) => {
       this.bookmarks = data.map((data) => {
         const date = dateFormat(
           new Date(data.created_at),
@@ -25,6 +27,12 @@ export class BookmarksComponent implements OnInit {
         return { ...data.education, id: data.id, date };
       });
     });
+    this.subs.push(sub);
+
+    sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
   }
 
   async viewBookmark(data) {
@@ -35,5 +43,9 @@ export class BookmarksComponent implements OnInit {
       },
     });
     modal.present();
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

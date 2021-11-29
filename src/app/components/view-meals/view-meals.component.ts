@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController, ModalController } from '@ionic/angular';
+import {
+  ActionSheetController,
+  ModalController,
+  Platform,
+} from '@ionic/angular';
 import { MealService } from 'src/app/services/meal/meal.service';
 import { calorieCounter } from 'src/assets/scripts/misc';
 import { MealsListComponent } from '../meals-list/meals-list.component';
@@ -29,7 +33,8 @@ export class ViewMealsComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private actionSheetController: ActionSheetController,
-    private mealService: MealService
+    private mealService: MealService,
+    private platform: Platform
   ) {}
 
   ngOnInit() {
@@ -44,6 +49,11 @@ export class ViewMealsComponent implements OnInit {
 
     this.filterMeals('');
 
+    this.subs.push(sub);
+
+    sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
     this.subs.push(sub);
 
     let today = new Date();

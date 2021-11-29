@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
 
@@ -10,13 +10,20 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class UpdatePasswordComponent implements OnInit {
   password = { password: '', confirmPassword: '' };
+  subs = [];
   constructor(
     public modalController: ModalController,
     private userService: UserService,
-    private global: GlobalService
+    private global: GlobalService,
+    private platform: Platform
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
+  }
 
   async save() {
     if (this.password.password != this.password.confirmPassword)
@@ -32,5 +39,9 @@ export class UpdatePasswordComponent implements OnInit {
         'Okay',
       ]);
     });
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

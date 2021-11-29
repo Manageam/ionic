@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { BloodPressureService } from 'src/app/services/blood-pressure/blood-pressure.service';
 import { fetchBloodPressureTips } from 'src/assets/scripts/misc';
 
@@ -14,12 +14,19 @@ export class UpdateBloodPressureComponent implements OnInit {
     lower: '',
   };
   tip = '';
+  subs = [];
   constructor(
     public modalController: ModalController,
-    private bloodPressureService: BloodPressureService
+    private bloodPressureService: BloodPressureService,
+    private platform: Platform
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
+  }
 
   updateTip() {
     if (this.pressure.upper == '' || this.pressure.lower == '') {
@@ -38,5 +45,9 @@ export class UpdateBloodPressureComponent implements OnInit {
         this.modalController.dismiss();
         this.bloodPressureService.update();
       });
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

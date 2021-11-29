@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { GlobalService } from 'src/app/services/global/global.service';
 
 @Component({
@@ -12,9 +12,11 @@ export class ViewMealComponent implements OnInit {
   allCab = [];
   allPro = [];
   allFru = [];
+  subs = [];
   constructor(
     public modalController: ModalController,
-    private global: GlobalService
+    private global: GlobalService,
+    private platform: Platform
   ) {}
   @Input()
   set data(val) {
@@ -23,7 +25,12 @@ export class ViewMealComponent implements OnInit {
     this.allPro = val.foods.filter((f) => f.category == 2);
     this.allFru = val.foods.filter((f) => f.category == 3);
   }
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
+  }
 
   async remove() {
     const { role } = <{ role }>await this.global.alert(
@@ -36,5 +43,9 @@ export class ViewMealComponent implements OnInit {
     );
     if (!role) return;
     return this.modalController.dismiss(this.meal);
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

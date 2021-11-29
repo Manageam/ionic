@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { LanguageSettingsComponent } from '../language-settings/language-settings.component';
 
 @Component({
@@ -8,14 +8,27 @@ import { LanguageSettingsComponent } from '../language-settings/language-setting
   styleUrls: ['./settings.component.scss'],
 })
 export class SettingsComponent implements OnInit {
-  constructor(public modalController: ModalController) {}
+  subs = [];
+  constructor(
+    public modalController: ModalController,
+    private platform: Platform
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
+  }
   async openLanguages() {
     const modal = await this.modalController.create({
       component: LanguageSettingsComponent,
       cssClass: 'modal-70',
     });
     modal.present();
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

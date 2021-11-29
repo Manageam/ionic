@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { HealthService } from 'src/app/services/health/health.service';
 import dateFormat from 'dateformat';
 import { fetchTip } from 'src/assets/scripts/misc';
@@ -18,14 +18,20 @@ export class ViewHba1cComponent implements OnInit {
   allHba1c = {};
   allHba1cKeys = [];
   status = '';
+  subs = [];
   constructor(
     public modalController: ModalController,
     private healthService: HealthService,
-    private global: GlobalService
+    private global: GlobalService,
+    private platform: Platform
   ) {}
 
   ngOnInit() {
     this.fetchba1c();
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
   }
   share() {}
   segmentChanged(e) {
@@ -114,5 +120,9 @@ export class ViewHba1cComponent implements OnInit {
       this.status =
         'Your blood test shows that your A1C level is of a Diabetic person. Eating habits and lifestyle changes are recommended.';
     }
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

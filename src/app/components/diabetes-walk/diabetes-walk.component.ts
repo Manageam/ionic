@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { RegisterForWalkComponent } from '../register-for-walk/register-for-walk.component';
 
 @Component({
@@ -8,7 +8,11 @@ import { RegisterForWalkComponent } from '../register-for-walk/register-for-walk
   styleUrls: ['./diabetes-walk.component.scss'],
 })
 export class DiabetesWalkComponent implements OnInit {
-  constructor(public modalController: ModalController) {}
+  subs = [];
+  constructor(
+    public modalController: ModalController,
+    private platform: Platform
+  ) {}
 
   ngOnInit() {}
   async showRegistration() {
@@ -17,5 +21,13 @@ export class DiabetesWalkComponent implements OnInit {
       cssClass: 'modal-50',
     });
     modal.present();
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }
