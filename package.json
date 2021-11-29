@@ -31,6 +31,7 @@
     "@capacitor/status-bar": "1.0.6",
     "@ionic/angular": "^5.5.2",
     "@ngneat/tailwind": "^7.0.3",
+    "@types/googlemaps": "^3.43.3",
     "angular-gauge": "^4.0.0",
     "dateformat": "^5.0.2",
     "lodash": "^4.17.21",

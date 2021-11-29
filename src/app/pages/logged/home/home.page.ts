@@ -23,8 +23,6 @@ export class HomePage implements OnInit {
     this.userService.fetchTip().subscribe((data) => {
       this.tip = data;
     });
-
-    this.showSearch();
   }
 
   async showSearch() {

@@ -13,27 +13,40 @@
     <span class="text-blue-500 text-xl" (click)="fetchLocations()">Change</span>
   </ion-header>
   <ion-content>
-    <div class="pt-6 py-4 px-4 font-geomanist bg-gray-100 h-full">
-      <h3 class="text-xl text-gray-900 my-4">Hospitals</h3>
+    <div class="pt-6 py-4 px-4 font-geomanist bg-gray-100 min-h-full">
+      <h3 class="text-xl text-gray-900 my-4 capitalize">{{ location }}</h3>
       <ul>
-        <li
-          class="flex items-center bg-white border-b border-gray-100 p-4"
-          *ngFor="let item of [1, 2, 3, 4, 5]"
-        >
-          <div class="grid">
-            <p class="truncate">
-              Lorem ipsum, dolor sit amet consectetur adipisicing.
-            </p>
-            <p class="text-blue-500 text-sm">
-              Lorem ipsum, dolor sit amet consectetur adipisicing .
-            </p>
-          </div>
-          <ion-icon
-            name="chevron-forward"
-            class="inline-block ml-2 text-xl"
-          ></ion-icon>
+        <li class="" *ngFor="let item of locations">
+          <a
+            href="https://www.google.com/maps/search/{{ item.name }}/@{{
+              item.geometry.location.toUrlValue()
+            }},17z/"
+            target="_blank"
+            class="
+              flex
+              items-center
+              bg-white
+              border-b border-gray-100
+              p-4
+              justify-between
+            "
+          >
+            <div class="grid">
+              <p class="truncate">
+                {{ item.name }}
+              </p>
+              <p class="text-blue-500 text-sm">
+                {{ item.vicinity }}
+              </p>
+            </div>
+            <ion-icon
+              name="chevron-forward"
+              class="inline-block ml-2 text-xl"
+            ></ion-icon>
+          </a>
         </li>
       </ul>
     </div>
+    <div #map style="width: 0%; height: 0px"></div>
   </ion-content>
 </ion-app>
