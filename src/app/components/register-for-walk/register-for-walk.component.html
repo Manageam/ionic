@@ -27,8 +27,8 @@
         <ion-input
           placeholder="Enter your email address"
           type="text"
-          [value]="walk.title"
-          [(ngModel)]="walk.title"
+          [value]="walk.email"
+          [(ngModel)]="walk.email"
         ></ion-input>
       </ion-item>
 
@@ -42,12 +42,10 @@
           class="w-full"
           placeholder="Choose a location for the walk"
         >
-          <ion-select-option value="never">Never</ion-select-option>
-          <ion-select-option value="hour">Every hour</ion-select-option>
-          <ion-select-option value="day">Every hour</ion-select-option>
-          <ion-select-option value="week">Every week</ion-select-option>
-          <ion-select-option value="month">Every month</ion-select-option>
-          <ion-select-option value="year">Every year</ion-select-option>
+          <ion-select-option value="lagos">Lagos</ion-select-option>
+          <ion-select-option value="akwa-ibom">Akwa Ibom</ion-select-option>
+          <ion-select-option value="abuja">Abuja</ion-select-option>
+          <ion-select-option value="enugu">Enugu</ion-select-option>
         </ion-select>
       </ion-item>
       <p class="text text-gray-500 text-center">
