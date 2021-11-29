@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { EducationService } from 'src/app/services/education/education.service';
 import topics from 'src/assets/data/topics';
 import { SingleComponent } from '../single/single.component';
@@ -11,12 +11,19 @@ import { SingleComponent } from '../single/single.component';
 export class CategoryComponent implements OnInit {
   category: any = {};
   topics = [];
+  subs = [];
   constructor(
     public modalController: ModalController,
-    private educationService: EducationService
+    private educationService: EducationService,
+    private platform: Platform
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let sub = this.platform.backButton.subscribe(() => {
+      this.modalController.dismiss();
+    });
+    this.subs.push(sub);
+  }
 
   @Input()
   set data(data) {
@@ -32,5 +39,9 @@ export class CategoryComponent implements OnInit {
     });
 
     await modal.present();
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }
