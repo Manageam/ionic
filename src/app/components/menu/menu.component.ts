@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuController, ModalController } from '@ionic/angular';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
@@ -24,7 +25,8 @@ export class MenuComponent implements OnInit {
     private menuController: MenuController,
     private modalController: ModalController,
     private userService: UserService,
-    private global: GlobalService
+    private global: GlobalService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -72,6 +74,7 @@ export class MenuComponent implements OnInit {
 
     if (!role) return;
     this.userService.logout();
+    this.router.navigate(['/auth']);
   }
 
   async showExercise() {
