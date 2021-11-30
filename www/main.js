@@ -1913,6 +1913,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw_loader_menu_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./menu.component.html */ 4300);
 /* harmony import */ var _menu_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu.component.scss */ 3847);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 9895);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic/angular */ 476);
 /* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
 /* harmony import */ var src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user/user.service */ 9709);
@@ -1935,12 +1936,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 let MenuComponent = class MenuComponent {
-    constructor(menuController, modalController, userService, global) {
+    constructor(menuController, modalController, userService, global, router) {
         this.menuController = menuController;
         this.modalController = modalController;
         this.userService = userService;
         this.global = global;
+        this.router = router;
         this.user = {};
         this.subs = [];
         this.isShow = false;
@@ -1988,6 +1991,7 @@ let MenuComponent = class MenuComponent {
             if (!role)
                 return;
             this.userService.logout();
+            this.router.navigate(['/auth']);
         });
     }
     showExercise() {
@@ -2038,7 +2042,8 @@ MenuComponent.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_12__.MenuController },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_12__.ModalController },
     { type: src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_3__.UserService },
-    { type: src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__.GlobalService }
+    { type: src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__.GlobalService },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_13__.Router }
 ];
 MenuComponent.propDecorators = {
     onClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__.Output }],
@@ -5813,11 +5818,9 @@ let UserService = class UserService {
         this.url = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.apiUrl + '/users';
         this.user = {};
         this.tip = null;
-        if (this.fetchDetails()) {
-            const { user_details } = this.fetchDetails();
-            this.details = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(user_details);
-            this.tips = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(JSON.parse(localStorage.tip || '{}'));
-        }
+        const { user_details } = this.fetchDetails();
+        this.details = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(user_details || {});
+        this.tips = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(JSON.parse(localStorage.tip || '{}'));
     }
     getDetails() {
         const user = this.auth.loggedUser();
@@ -5832,7 +5835,7 @@ let UserService = class UserService {
     }
     fetchDetails() {
         const details = localStorage.details;
-        return JSON.parse(details || 'null');
+        return JSON.parse(details || '{}');
     }
     getPhoto() {
         const user = this.auth.loggedUser();

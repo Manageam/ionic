@@ -8,7 +8,7 @@
       ></ion-icon>
       <p class="ml-4 block text-gray-900 text-xl">Add food ({{ type }})</p>
     </div>
-    <ion-segment
+    <ion-segment scrollable
       (ionChange)="segmentChanged($event)"
       [value]="segment"
       mode="md"
@@ -16,7 +16,7 @@
     >
       <ion-segment-button
         [value]="category.id"
-        *ngFor="let category of categogories"
+        *ngFor="let category of categories"
       >
         <ion-label>{{ category.category }}</ion-label>
       </ion-segment-button>
@@ -51,17 +51,17 @@
           <span class="font-bold col-start-3 text-center">Calories</span>
         </li>
         <li
-          class="p-4 grid grid-cols-3 border-t border-gray-200 items-center"
+          class="p-4 grid grid-cols-3 grid-cols-12 border-t border-gray-200 items-center"
           *ngFor="let food of filteredFood"
         >
-          <div class="flex space-x-2 items-center">
+          <div class="flex space-x-1 items-center text-left col-span-4">
             <ion-icon
-              (click)="inc(food)"
-              name="add"
-              class="text-white bg-gray-500 p-1 rounded-full"
+                    (click)="dec(food)"
+                    name="remove"
+                    class="text-white bg-gray-500 p-1 rounded-full"
             ></ion-icon>
             <ion-icon
-              name="checkmark-circle-outline"
+              name="ellipse-outline"
               class="text-3xl text-gray-500"
               *ngIf="food.amount == 0"
               (click)="toggle(food)"
@@ -73,16 +73,16 @@
               (click)="toggle(food)"
             ></ion-icon>
             <ion-icon
-              (click)="dec(food)"
-              name="remove"
-              class="text-white bg-gray-500 p-1 rounded-full"
+                    (click)="inc(food)"
+                    name="add"
+                    class="text-white bg-gray-500 p-1 rounded-full"
             ></ion-icon>
           </div>
-          <p class="text-center">
+          <small class="text-left col-span-6">
             {{ food.name }} - {{ food.quantity }}g
             {{ food.amount ? " x " + food.amount : "" }}
-          </p>
-          <p class="text-center">{{ food.calories }} kcal</p>
+          </small>
+          <small class="text-right col-span-2">{{ food.calories }} kcal</small>
         </li>
 
         <li class="bg-gray-200 grid grid-cols-2">
