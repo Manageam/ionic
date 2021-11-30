@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "manageam-app",
+	"appId": "com.app.shei.manageam",
+	"appName": "ManageAm",
 	"bundledWebRuntime": false,
 	"npmClient": "npm",
 	"webDir": "www",
@@ -9,6 +9,9 @@
 			"launchShowDuration": 5000,
 			"showSpinner": true,
 			"launchAutoHide": true
+		},
+		"PushNotifications": {
+			"presentationOptions": ["badge", "sound", "alert"]
 		}
 	}
 }
