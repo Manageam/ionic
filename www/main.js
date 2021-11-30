@@ -83,20 +83,58 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./app.component.html */ 1106);
 /* harmony import */ var _app_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component.scss */ 3069);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _capacitor_status_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @capacitor/status-bar */ 4909);
+/* harmony import */ var _capacitor_splash_screen__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @capacitor/splash-screen */ 8592);
+/* harmony import */ var _services_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/authentication/authentication.service */ 7020);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 9895);
+
+
+
+
+
 
 
 
 
 let AppComponent = class AppComponent {
-    constructor() { }
+    constructor(platform, authenticationService, router) {
+        this.platform = platform;
+        this.authenticationService = authenticationService;
+        this.router = router;
+        if (this.platform.is('hybrid')) {
+            if (this.platform.is('ios')) {
+                _capacitor_splash_screen__WEBPACK_IMPORTED_MODULE_3__.SplashScreen.hide();
+            }
+            else {
+                setTimeout(() => {
+                    _capacitor_splash_screen__WEBPACK_IMPORTED_MODULE_3__.SplashScreen.hide();
+                }, 5000);
+            }
+            this.platform.is('ios')
+                ? _capacitor_status_bar__WEBPACK_IMPORTED_MODULE_2__.StatusBar.setStyle({ style: _capacitor_status_bar__WEBPACK_IMPORTED_MODULE_2__.Style.Light })
+                : _capacitor_status_bar__WEBPACK_IMPORTED_MODULE_2__.StatusBar.setStyle({ style: _capacitor_status_bar__WEBPACK_IMPORTED_MODULE_2__.Style.Dark });
+        }
+        this.initializeApp();
+    }
+    initializeApp() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+            if (!this.authenticationService.isAuthenticated())
+                yield this.router.navigate(['/auth']);
+        });
+    }
 };
-AppComponent.ctorParameters = () => [];
-AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+AppComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.Platform },
+    { type: _services_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_4__.AuthenticationService },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__.Router }
+];
+AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-root',
         template: _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_app_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -1223,6 +1261,65 @@ ExpandableComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
         styles: [_expandable_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
     })
 ], ExpandableComponent);
+
+
+
+/***/ }),
+
+/***/ 3368:
+/*!*************************************************************************!*\
+  !*** ./src/app/components/forgot-password/forgot-password.component.ts ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ForgotPasswordComponent": () => (/* binding */ ForgotPasswordComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _raw_loader_forgot_password_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./forgot-password.component.html */ 1328);
+/* harmony import */ var _forgot_password_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./forgot-password.component.scss */ 469);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user/user.service */ 9709);
+
+
+
+
+
+
+
+let ForgotPasswordComponent = class ForgotPasswordComponent {
+    constructor(modalController, global, userService) {
+        this.modalController = modalController;
+        this.global = global;
+        this.userService = userService;
+        this.user = { email: '' };
+    }
+    ngOnInit() { }
+    save() {
+        if (!this.user.email)
+            return this.global.alert('ManageAm account', 'Email address is required!', 'OK');
+        this.userService.resetPassword(this.user).subscribe((data) => {
+            this.global.alert('ManageAm account', data, 'OK');
+            this.modalController.dismiss();
+        });
+    }
+};
+ForgotPasswordComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.ModalController },
+    { type: src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__.GlobalService },
+    { type: src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_3__.UserService }
+];
+ForgotPasswordComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
+        selector: 'app-forgot-password',
+        template: _raw_loader_forgot_password_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
+        styles: [_forgot_password_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
+    })
+], ForgotPasswordComponent);
 
 
 
@@ -4377,10 +4474,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SharedModule": () => (/* binding */ SharedModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @angular/common */ 8583);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @angular/common */ 8583);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @ionic/angular */ 476);
 /* harmony import */ var src_app_components_blood_sugar_blood_sugar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/components/blood-sugar/blood-sugar.component */ 8770);
 /* harmony import */ var src_app_components_blood_pressure_blood_pressure_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/components/blood-pressure/blood-pressure.component */ 5853);
 /* harmony import */ var src_app_components_bmi_bmi_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/components/bmi/bmi.component */ 2349);
@@ -4408,7 +4505,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_pages_logged_home_home_page__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! src/app/pages/logged/home/home.page */ 4550);
 /* harmony import */ var src_app_pages_logged_health_health_page__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! src/app/pages/logged/health/health.page */ 3173);
 /* harmony import */ var src_app_components_expandable_expandable_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! src/app/components/expandable/expandable.component */ 8932);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @angular/forms */ 3679);
 /* harmony import */ var src_app_components_reminder_reminder_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! src/app/components/reminder/reminder.component */ 6533);
 /* harmony import */ var src_app_components_add_reminder_add_reminder_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! src/app/components/add-reminder/add-reminder.component */ 1302);
 /* harmony import */ var src_app_components_bookmarks_bookmarks_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! src/app/components/bookmarks/bookmarks.component */ 7705);
@@ -4421,6 +4518,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_components_meals_list_meals_list_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! src/app/components/meals-list/meals-list.component */ 4794);
 /* harmony import */ var src_app_pages_auth_signup_health_profile_health_profile_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! src/app/pages/auth/signup/health-profile/health-profile.component */ 2966);
 /* harmony import */ var src_app_components_search_search_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! src/app/components/search/search.component */ 9055);
+/* harmony import */ var src_app_components_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! src/app/components/forgot-password/forgot-password.component */ 3368);
+
 
 
 
@@ -4467,8 +4566,8 @@ __webpack_require__.r(__webpack_exports__);
 
 let SharedModule = class SharedModule {
 };
-SharedModule = (0,tslib__WEBPACK_IMPORTED_MODULE_39__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_40__.NgModule)({
+SharedModule = (0,tslib__WEBPACK_IMPORTED_MODULE_40__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_41__.NgModule)({
         declarations: [
             src_app_components_blood_sugar_blood_sugar_component__WEBPACK_IMPORTED_MODULE_0__.BloodSugarComponent,
             src_app_components_blood_pressure_blood_pressure_component__WEBPACK_IMPORTED_MODULE_1__.BloodPressureComponent,
@@ -4510,8 +4609,9 @@ SharedModule = (0,tslib__WEBPACK_IMPORTED_MODULE_39__.__decorate)([
             src_app_components_meals_list_meals_list_component__WEBPACK_IMPORTED_MODULE_36__.MealsListComponent,
             src_app_pages_auth_signup_health_profile_health_profile_component__WEBPACK_IMPORTED_MODULE_37__.HealthProfileComponent,
             src_app_components_search_search_component__WEBPACK_IMPORTED_MODULE_38__.SearchComponent,
+            src_app_components_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_39__.ForgotPasswordComponent,
         ],
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_41__.CommonModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_42__.IonicModule, _angular_forms__WEBPACK_IMPORTED_MODULE_43__.FormsModule],
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_42__.CommonModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_43__.IonicModule, _angular_forms__WEBPACK_IMPORTED_MODULE_44__.FormsModule],
     })
 ], SharedModule);
 
@@ -5713,9 +5813,11 @@ let UserService = class UserService {
         this.url = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.apiUrl + '/users';
         this.user = {};
         this.tip = null;
-        const { user_details } = this.fetchDetails();
-        this.details = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(user_details);
-        this.tips = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(JSON.parse(localStorage.tip || '{}'));
+        if (this.fetchDetails()) {
+            const { user_details } = this.fetchDetails();
+            this.details = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(user_details);
+            this.tips = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(JSON.parse(localStorage.tip || '{}'));
+        }
     }
     getDetails() {
         const user = this.auth.loggedUser();
@@ -5730,7 +5832,7 @@ let UserService = class UserService {
     }
     fetchDetails() {
         const details = localStorage.details;
-        return JSON.parse(details);
+        return JSON.parse(details || 'null');
     }
     getPhoto() {
         const user = this.auth.loggedUser();
@@ -8676,6 +8778,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 469:
+/*!***************************************************************************!*\
+  !*** ./src/app/components/forgot-password/forgot-password.component.scss ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJmb3Jnb3QtcGFzc3dvcmQuY29tcG9uZW50LnNjc3MifQ== */");
+
+/***/ }),
+
 /***/ 7534:
 /*!*******************************************************!*\
   !*** ./src/app/components/guage/guage.component.scss ***!
@@ -9393,6 +9510,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<div #expandWrapper class=\"expand-wrapper\" [class.collapsed]=\"!expanded\">\n  <ng-content></ng-content>\n</div>\n");
+
+/***/ }),
+
+/***/ 1328:
+/*!*****************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/forgot-password/forgot-password.component.html ***!
+  \*****************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">Forgot password?</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 space-y-4\">\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Account email</ion-label\n        >\n        <ion-input\n          type=\"text\"\n          placeholder=\"Enter password\"\n          [(ngModel)]=\"user.email\"\n        ></ion-input>\n      </ion-item>\n\n      <span\n        (click)=\"save()\"\n        class=\"\n          w-full\n          bg-blue-500\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n        >Reset my Account</span\n      >\n    </div>\n  </ion-content>\n</ion-app>\n");
 
 /***/ }),
 
