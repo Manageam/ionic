@@ -13,11 +13,9 @@ export class UserService {
   tip = null;
   tips: Subject<any>;
   constructor(private http: HttpClient, private auth: AuthenticationService) {
-    if (this.fetchDetails()) {
-      const { user_details } = this.fetchDetails();
-      this.details = new BehaviorSubject(user_details);
-      this.tips = new BehaviorSubject(JSON.parse(localStorage.tip || '{}'));
-    }
+    const { user_details } = this.fetchDetails();
+    this.details = new BehaviorSubject(user_details || {});
+    this.tips = new BehaviorSubject(JSON.parse(localStorage.tip || '{}'));
   }
 
   getDetails() {
@@ -36,7 +34,7 @@ export class UserService {
 
   fetchDetails() {
     const details = localStorage.details;
-    return JSON.parse(details || 'null');
+    return JSON.parse(details || '{}');
   }
 
   getPhoto() {
