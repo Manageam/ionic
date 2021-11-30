@@ -35,7 +35,9 @@
               [(ngModel)]="data.password"
             ></ion-input>
           </ion-item>
-          <p class="text-blue-500 text-right">Forgot password?</p>
+          <p class="text-blue-500 text-right" (click)="resetPassword()">
+            Forgot password?
+          </p>
           <span
             (click)="login()"
             class="

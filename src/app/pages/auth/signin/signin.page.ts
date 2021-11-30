@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { ForgotPasswordComponent } from 'src/app/components/forgot-password/forgot-password.component';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
@@ -19,10 +21,18 @@ export class SigninPage implements OnInit {
     private globalService: GlobalService,
     private userService: UserService,
     private router: Router,
-    private auth: AuthenticationService
+    private auth: AuthenticationService,
+    private modalController: ModalController
   ) {}
 
   ngOnInit() {}
+  async resetPassword() {
+    const modal = await this.modalController.create({
+      component: ForgotPasswordComponent,
+      cssClass: 'modal-40',
+    });
+    await modal.present();
+  }
   login() {
     if (!this.data.email || !this.data.password) {
       return this.globalService.alert(
