@@ -1,5 +1,5 @@
 <app-menu [show]="showMenu" (onClose)="showMenu = false"></app-menu>
-<ion-app class="{{ showMenu ? 'show-menu' : '' }} home">
+<ion-app class="{{ showMenu ? 'show-menu' : '' }} home font-calibre">
   <ion-header class="ion-no-border">
     <div
       class="flex justify-between p-4  {{
@@ -35,9 +35,11 @@
     <router-outlet></router-outlet>
   </ion-content>
   <ion-footer class="ion-no-border">
-    <div class="flex justify-between p-4 uppercase">
+    <div class="flex justify-between p-4 uppercase bg-white">
       <div
-        class="text-center {{ currentRoute == 'home' ? 'text-blue-500' : '' }}"
+        class="text-center {{
+          currentRoute == 'home' ? 'text-blue-500' : ' text-gray-900'
+        }}"
         routerLink="/home"
       >
         <ion-icon name="home" class="text-2xl"></ion-icon>
@@ -45,7 +47,7 @@
       </div>
       <div
         class="text-center {{
-          currentRoute == 'education' ? 'text-blue-500' : ''
+          currentRoute == 'education' ? 'text-blue-500' : 'text-gray-900'
         }}"
         routerLink="/education"
       >
@@ -54,7 +56,7 @@
       </div>
       <div
         class="text-center {{
-          currentRoute == 'health' ? 'text-blue-500' : ''
+          currentRoute == 'health' ? 'text-blue-500' : 'text-gray-900'
         }}"
         routerLink="/health"
       >
