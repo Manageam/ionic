@@ -1,0 +1,21 @@
+{
+	"appId": "com.app.shei.manageam",
+	"appName": "ManageAm",
+	"bundledWebRuntime": false,
+	"npmClient": "npm",
+	"webDir": "www",
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 5000,
+			"showSpinner": true,
+			"launchAutoHide": true
+		},
+		"PushNotifications": {
+			"presentationOptions": [
+				"badge",
+				"sound",
+				"alert"
+			]
+		}
+	}
+}
