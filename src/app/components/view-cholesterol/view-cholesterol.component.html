@@ -8,14 +8,14 @@
       ></ion-icon>
       <p class="ml-4 block text-gray-900 text-xl">Total cholesterol history</p>
     </div>
-    <span class="text-blue-500 text-xl" (click)="share()">Share</span>
+    <span class="text-accentBlue text-xl" (click)="share()">Share</span>
   </ion-header>
   <ion-content>
     <div class="pale-bg-default p-4 font-bold min-h-full">
       <p class="mb-4">Cholesterol history</p>
       <ul>
         <li *ngFor="let item of allCholesterol" class="bg-white p-4 mb-2">
-          <p class="text-blue-500">{{ item.date }}</p>
+          <p class="text-accentBlue">{{ item.date }}</p>
           <div class="flex justify-between items-center" (click)="toggle(item)">
             <p class="text-lg">{{ item.reading }} {{ item.unit }}</p>
             <ion-icon

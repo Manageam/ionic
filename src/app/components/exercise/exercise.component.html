@@ -29,9 +29,9 @@
         <li *ngFor="let exercise of exercises">
           <h3 class="font-bold text-lg">{{ exercise.name }}</h3>
           <p>
-            Duration: <span class="text-blue-500">{{ exercise.duration }}</span>
+            Duration: <span class="text-accentBlue">{{ exercise.duration }}</span>
           </p>
-          <p class="text-blue-500">{{ exercise.part }}</p>
+          <p class="text-accentBlue">{{ exercise.part }}</p>
           <ul class="text-gray-600">
             <li *ngFor="let form of exercise.form">
               {{ form }}
