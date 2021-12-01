@@ -1,5 +1,7 @@
 .meal {
   background-image: url("/assets/img/meal.jpg");
+  background: linear-gradient(to bottom, #f0f4fca6, #ddedfe),
+    url("/assets/img/meal.jpg");
   background-size: cover;
   background-color: hsl(0deg, 0%, 90%);
 }

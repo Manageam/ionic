@@ -2,12 +2,12 @@
 <ion-app
   class="{{
     showMenu ? 'show-menu' : ''
-  }} home font-calibre pale-bg-default bg-accent"
+  }} home font-calibre pale-bg-default bg-accent text-accent"
 >
   <ion-header class="ion-no-border">
     <div
       class="flex justify-between p-4 {{
-        currentRoute == 'health' ? 'bg-accent text-white' : ''
+        currentRoute == 'health' ? 'bg-accent white-text' : ''
       }}"
     >
       <div class="flex items-center">
@@ -16,7 +16,7 @@
           class="text-2xl"
           (click)="toggleMenu()"
         ></ion-icon>
-        <span class="ml-4 capitalize">{{ currentRoute }}</span>
+        <span class="ml-4 capitalize mt-2">{{ currentRoute }}</span>
       </div>
 
       <div class="space-x-4">

@@ -1,9 +1,7 @@
 <div class="pale-bg-default">
   <div class="p-4">
-    <p class="text-gray-900 text-2xl font-bold font-calibre">
-      Hello, {{ user.name }}
-    </p>
-    <p class="mt-2">
+    <p class="text-3xl font-bold font-calibre">Hello, {{ user.name }}</p>
+    <p class="mt-2 font-geomanist">
       Let's keep you up to date on your health, learn something new today.
     </p>
     <div
@@ -15,18 +13,22 @@
     </div>
   </div>
   <div>
-    <p class="p-4 text-gray-900 capitalize">Daily health tip</p>
-    <div class="my-2 p-4 bg-white grid grid-cols-2 grid-cols-12">
+    <p class="px-4 py-2 capitalize text-xl font-bold">Daily health tip</p>
+    <a
+      class="p-4 bg-white grid grid-cols-12"
+      (click)="router.navigate(['/education'])"
+    >
       <div class="text-center col-span-3">
         <img src="/assets/img/tip.svg" />
       </div>
       <div class="col-span-9">
-        <p class="font-bold mb-1 text-gray-900">{{tip.title}}</p>
-        <p class="text-gray-500">{{tip.note}}</p>
+        <p class="font-bold mb-1 text-xl">{{tip.title}}</p>
+        <p class="text-accentBlue font-geomanist">Learn more About diabetes</p>
+        <p class="text-gray-500 font-geomanist">{{tip.note}}</p>
       </div>
-    </div>
+    </a>
   </div>
-  <div class="py-8 px-4 grid grid-cols-2 gap-5 text-gray-900">
+  <div class="py-8 px-4 grid grid-cols-2 gap-5">
     <app-blood-sugar></app-blood-sugar>
     <app-blood-pressure></app-blood-pressure>
   </div>
