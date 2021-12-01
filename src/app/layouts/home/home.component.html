@@ -10,12 +10,8 @@
         currentRoute == 'health' ? 'bg-accent white-text' : ''
       }}"
     >
-      <div class="flex items-center">
-        <ion-icon
-          name="menu"
-          class="text-2xl"
-          (click)="toggleMenu()"
-        ></ion-icon>
+      <div class="flex items-center" (click)="toggleMenu()">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
         <span class="ml-4 capitalize mt-2">{{ currentRoute }}</span>
       </div>
 

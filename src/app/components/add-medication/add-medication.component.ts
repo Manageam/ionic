@@ -21,8 +21,8 @@ export class AddMedicationComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const sub = (this.allMedication = this.medicationService.all());
-    this.platform.backButton.subscribe(() => {
+    this.allMedication = this.medicationService.all();
+    const sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
