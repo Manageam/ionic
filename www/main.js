@@ -1806,17 +1806,18 @@ let MealsListComponent = class MealsListComponent {
         this.search = '';
         this.totalCals = 0;
         this.subs = [];
-        this.categogories = src_assets_data_food_categories__WEBPACK_IMPORTED_MODULE_2__.default.map((cat) => {
-            if (cat.category.length > 13)
-                cat.category = cat.category.slice(0, 10) + '...';
-            return cat;
-        });
+        this.categories = src_assets_data_food_categories__WEBPACK_IMPORTED_MODULE_2__.default;
+        /*categories = foodCategories.map((cat) => {
+          if (cat.category.length > 13)
+            cat.category = cat.category.slice(0, 10) + '...';
+          return cat;
+        });*/
         this.searchCat = src_assets_data_food_categories__WEBPACK_IMPORTED_MODULE_2__.default[0].category;
         this.food = src_assets_data_food__WEBPACK_IMPORTED_MODULE_3__.default.map((d) => (Object.assign(Object.assign({}, d), { amount: 0 })));
         this.filteredFood = [];
     }
     ngOnInit() {
-        this.filterFoods(this.categogories[0].id);
+        this.filterFoods(this.categories[0].id);
         let sub = this.platform.backButton.subscribe(() => {
             this.modalController.dismiss();
         });
@@ -1913,6 +1914,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw_loader_menu_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./menu.component.html */ 4300);
 /* harmony import */ var _menu_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu.component.scss */ 3847);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 9895);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic/angular */ 476);
 /* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
 /* harmony import */ var src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user/user.service */ 9709);
@@ -1935,12 +1937,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 let MenuComponent = class MenuComponent {
-    constructor(menuController, modalController, userService, global) {
+    constructor(menuController, modalController, userService, global, router) {
         this.menuController = menuController;
         this.modalController = modalController;
         this.userService = userService;
         this.global = global;
+        this.router = router;
         this.user = {};
         this.subs = [];
         this.isShow = false;
@@ -1988,6 +1992,7 @@ let MenuComponent = class MenuComponent {
             if (!role)
                 return;
             this.userService.logout();
+            this.router.navigate(['/auth']);
         });
     }
     showExercise() {
@@ -2038,7 +2043,8 @@ MenuComponent.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_12__.MenuController },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_12__.ModalController },
     { type: src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_3__.UserService },
-    { type: src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__.GlobalService }
+    { type: src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__.GlobalService },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_13__.Router }
 ];
 MenuComponent.propDecorators = {
     onClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_10__.Output }],
@@ -5813,11 +5819,9 @@ let UserService = class UserService {
         this.url = _environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.apiUrl + '/users';
         this.user = {};
         this.tip = null;
-        if (this.fetchDetails()) {
-            const { user_details } = this.fetchDetails();
-            this.details = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(user_details);
-            this.tips = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(JSON.parse(localStorage.tip || '{}'));
-        }
+        const { user_details } = this.fetchDetails();
+        this.details = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(user_details || {});
+        this.tips = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(JSON.parse(localStorage.tip || '{}'));
     }
     getDetails() {
         const user = this.auth.loggedUser();
@@ -5832,7 +5836,7 @@ let UserService = class UserService {
     }
     fetchDetails() {
         const details = localStorage.details;
-        return JSON.parse(details || 'null');
+        return JSON.parse(details || '{}');
     }
     getPhoto() {
         const user = this.auth.loggedUser();
@@ -9614,7 +9618,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\n  <ion-header class=\"ion-no-border p-4 font-geomanist\">\n    <div class=\"flex\">\n      <ion-icon\n        name=\"arrow-back\"\n        class=\"text-2xl\"\n        (click)=\"modalController.dismiss()\"\n      ></ion-icon>\n      <p class=\"ml-4 block text-gray-900 text-xl\">Add food ({{ type }})</p>\n    </div>\n    <ion-segment\n      (ionChange)=\"segmentChanged($event)\"\n      [value]=\"segment\"\n      mode=\"md\"\n      class=\"bg-white mt-6\"\n    >\n      <ion-segment-button\n        [value]=\"category.id\"\n        *ngFor=\"let category of categogories\"\n      >\n        <ion-label>{{ category.category }}</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    <div\n      class=\"\n        bg-white\n        mt-4\n        flex\n        px-2\n        items-center\n        rounded\n        border border-gray-200\n      \"\n    >\n      <ion-icon name=\"search\" class=\"text-2xl p-2\"></ion-icon>\n      <input\n        [(ngModel)]=\"search\"\n        (ngModelChange)=\"filterFoods(segment)\"\n        type=\"text\"\n        class=\"\"\n        [placeholder]=\"'Search ' + searchCat\"\n        class=\"py-4 w-full outline-none\"\n      />\n    </div>\n  </ion-header>\n  <ion-content>\n    <div class=\"min-h-full p-4 meal pb-10 bg-gray-100\">\n      <ul class=\"bg-white rounded-lg pb-1\">\n        <li class=\"p-4 grid grid-cols-3\">\n          <span class=\"font-bold col-start-2 text-center\">Food</span>\n          <span class=\"font-bold col-start-3 text-center\">Calories</span>\n        </li>\n        <li\n          class=\"p-4 grid grid-cols-3 border-t border-gray-200 items-center\"\n          *ngFor=\"let food of filteredFood\"\n        >\n          <div class=\"flex space-x-2 items-center\">\n            <ion-icon\n              (click)=\"inc(food)\"\n              name=\"add\"\n              class=\"text-white bg-gray-500 p-1 rounded-full\"\n            ></ion-icon>\n            <ion-icon\n              name=\"checkmark-circle-outline\"\n              class=\"text-3xl text-gray-500\"\n              *ngIf=\"food.amount == 0\"\n              (click)=\"toggle(food)\"\n            ></ion-icon>\n            <ion-icon\n              name=\"checkmark-circle\"\n              class=\"text-3xl text-blue-500\"\n              *ngIf=\"food.amount > 0\"\n              (click)=\"toggle(food)\"\n            ></ion-icon>\n            <ion-icon\n              (click)=\"dec(food)\"\n              name=\"remove\"\n              class=\"text-white bg-gray-500 p-1 rounded-full\"\n            ></ion-icon>\n          </div>\n          <p class=\"text-center\">\n            {{ food.name }} - {{ food.quantity }}g\n            {{ food.amount ? \" x \" + food.amount : \"\" }}\n          </p>\n          <p class=\"text-center\">{{ food.calories }} kcal</p>\n        </li>\n\n        <li class=\"bg-gray-200 grid grid-cols-2\">\n          <p class=\"border-r border-gray-700 p-4\">Total</p>\n          <p class=\"self-end p-4 text-right\">{{ totalCals }}kcal</p>\n        </li>\n\n        <p\n          (click)=\"save()\"\n          class=\"\n            bg-blue-500\n            p-4\n            font-semibold\n            text-center\n            block\n            text-white\n            uppercase\n            rounded-xl\n            m-4\n          \"\n        >\n          Done\n        </p>\n      </ul>\n    </div>\n  </ion-content>\n</ion-app>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\n  <ion-header class=\"ion-no-border p-4 font-geomanist\">\n    <div class=\"flex\">\n      <ion-icon\n        name=\"arrow-back\"\n        class=\"text-2xl\"\n        (click)=\"modalController.dismiss()\"\n      ></ion-icon>\n      <p class=\"ml-4 block text-gray-900 text-xl\">Add food ({{ type }})</p>\n    </div>\n    <ion-segment scrollable\n      (ionChange)=\"segmentChanged($event)\"\n      [value]=\"segment\"\n      mode=\"md\"\n      class=\"bg-white mt-6\"\n    >\n      <ion-segment-button\n        [value]=\"category.id\"\n        *ngFor=\"let category of categories\"\n      >\n        <ion-label>{{ category.category }}</ion-label>\n      </ion-segment-button>\n    </ion-segment>\n    <div\n      class=\"\n        bg-white\n        mt-4\n        flex\n        px-2\n        items-center\n        rounded\n        border border-gray-200\n      \"\n    >\n      <ion-icon name=\"search\" class=\"text-2xl p-2\"></ion-icon>\n      <input\n        [(ngModel)]=\"search\"\n        (ngModelChange)=\"filterFoods(segment)\"\n        type=\"text\"\n        class=\"\"\n        [placeholder]=\"'Search ' + searchCat\"\n        class=\"py-4 w-full outline-none\"\n      />\n    </div>\n  </ion-header>\n  <ion-content>\n    <div class=\"min-h-full p-4 meal pb-10 bg-gray-100\">\n      <ul class=\"bg-white rounded-lg pb-1\">\n        <li class=\"p-4 grid grid-cols-3\">\n          <span class=\"font-bold col-start-2 text-center\">Food</span>\n          <span class=\"font-bold col-start-3 text-center\">Calories</span>\n        </li>\n        <li\n          class=\"p-4 grid grid-cols-3 grid-cols-12 border-t border-gray-200 items-center\"\n          *ngFor=\"let food of filteredFood\"\n        >\n          <div class=\"flex space-x-1 items-center text-left col-span-4\">\n            <ion-icon\n                    (click)=\"dec(food)\"\n                    name=\"remove\"\n                    class=\"text-white bg-gray-500 p-1 rounded-full\"\n            ></ion-icon>\n            <ion-icon\n              name=\"ellipse-outline\"\n              class=\"text-3xl text-gray-500\"\n              *ngIf=\"food.amount == 0\"\n              (click)=\"toggle(food)\"\n            ></ion-icon>\n            <ion-icon\n              name=\"checkmark-circle\"\n              class=\"text-3xl text-blue-500\"\n              *ngIf=\"food.amount > 0\"\n              (click)=\"toggle(food)\"\n            ></ion-icon>\n            <ion-icon\n                    (click)=\"inc(food)\"\n                    name=\"add\"\n                    class=\"text-white bg-gray-500 p-1 rounded-full\"\n            ></ion-icon>\n          </div>\n          <small class=\"text-left col-span-6\">\n            {{ food.name }} - {{ food.quantity }}g\n            {{ food.amount ? \" x \" + food.amount : \"\" }}\n          </small>\n          <small class=\"text-right col-span-2\">{{ food.calories }} kcal</small>\n        </li>\n\n        <li class=\"bg-gray-200 grid grid-cols-2\">\n          <p class=\"border-r border-gray-700 p-4\">Total</p>\n          <p class=\"self-end p-4 text-right\">{{ totalCals }}kcal</p>\n        </li>\n\n        <p\n          (click)=\"save()\"\n          class=\"\n            bg-blue-500\n            p-4\n            font-semibold\n            text-center\n            block\n            text-white\n            uppercase\n            rounded-xl\n            m-4\n          \"\n        >\n          Done\n        </p>\n      </ul>\n    </div>\n  </ion-content>\n</ion-app>\n");
 
 /***/ }),
 

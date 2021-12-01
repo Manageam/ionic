@@ -4,7 +4,7 @@
       Hello, {{ user.name }}
     </p>
     <p class="mt-2">
-      Let's keep you up to date on your health, learn somthing new today.
+      Let's keep you up to date on your health, learn something new today.
     </p>
     <div
       class="bg-white mt-4 flex px-2 items-center rounded"
@@ -14,14 +14,14 @@
       <p type="text" class="py-4 w-full text-gray-500">Search on diabetes...</p>
     </div>
   </div>
-  <div class="mt-8">
+  <div>
     <p class="p-4 text-gray-900 capitalize">Daily health tip</p>
-    <div class="my-2 p-4 bg-white">
-      <div class="text-center">
+    <div class="my-2 p-4 bg-white grid grid-cols-2 grid-cols-12">
+      <div class="text-center col-span-3">
         <img src="/assets/img/tip.svg" />
       </div>
-      <div class="mt-6">
-        <p class="font-bold mb-2 text-gray-900">{{tip.title}}</p>
+      <div class="col-span-9">
+        <p class="font-bold mb-1 text-gray-900">{{tip.title}}</p>
         <p class="text-gray-500">{{tip.note}}</p>
       </div>
     </div>

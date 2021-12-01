@@ -13,11 +13,12 @@ export class MealsListComponent implements OnInit {
   search = '';
   totalCals = 0;
   subs = [];
-  categogories = foodCategories.map((cat) => {
+  categories = foodCategories;
+  /*categories = foodCategories.map((cat) => {
     if (cat.category.length > 13)
       cat.category = cat.category.slice(0, 10) + '...';
     return cat;
-  });
+  });*/
   searchCat = foodCategories[0].category;
   food = <any[]>food.map((d: any) => ({ ...d, amount: 0 }));
   filteredFood = [];
@@ -27,7 +28,7 @@ export class MealsListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.filterFoods(this.categogories[0].id);
+    this.filterFoods(this.categories[0].id);
     let sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
