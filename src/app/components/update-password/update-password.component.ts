@@ -35,7 +35,7 @@ export class UpdatePasswordComponent implements OnInit {
     const data = { password: this.password.password };
 
     this.userService.changePassword(data).subscribe(() => {
-      this.global.alert('Change password', 'Your password has been changed!', [
+      this.global.alert('Update password', 'Password successfully updated!', [
         'Okay',
       ]);
     });

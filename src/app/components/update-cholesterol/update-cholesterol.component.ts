@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { CholesterolService } from 'src/app/services/cholesterol/cholesterol.service';
+import { GlobalService } from 'src/app/services/global/global.service';
 import { fetchCholesterolTips } from 'src/assets/scripts/misc';
 
 @Component({
@@ -18,7 +19,8 @@ export class UpdateCholesterolComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private cholesterolService: CholesterolService,
-    private platform: Platform
+    private platform: Platform,
+    private global: GlobalService
   ) {}
 
   ngOnInit() {
@@ -43,6 +45,11 @@ export class UpdateCholesterolComponent implements OnInit {
     this.cholesterolService.add(this.cholesterol).subscribe(() => {
       this.cholesterolService.update();
       this.modalController.dismiss();
+      this.global.alert(
+        'Update cholesterol',
+        'Cholesterol sucessfully updated!',
+        ['OK']
+      );
     });
   }
 

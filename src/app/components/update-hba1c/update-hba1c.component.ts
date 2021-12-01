@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { GlobalService } from 'src/app/services/global/global.service';
 import { HealthService } from 'src/app/services/health/health.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class UpdateHba1cComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private healthService: HealthService,
-    private platform: Platform
+    private platform: Platform,
+    private global: GlobalService
   ) {}
   updateTip() {
     if (this.hba1c.number == '') {
@@ -79,6 +81,7 @@ export class UpdateHba1cComponent implements OnInit {
     this.healthService.addHba1c(this.hba1c).subscribe((data) => {
       this.healthService.updateHba1c();
       this.modalController.dismiss();
+      this.global.alert('Update Hba1c', 'Hba1c sucessfully updated!', ['OK']);
     });
   }
 

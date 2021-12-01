@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { BmiService } from 'src/app/services/bmi/bmi.service';
+import { GlobalService } from 'src/app/services/global/global.service';
 import { fetchBMI } from 'src/assets/scripts/misc';
 
 @Component({
@@ -20,7 +21,8 @@ export class UpdateBmiComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private bmiService: BmiService,
-    private platform: Platform
+    private platform: Platform,
+    private global: GlobalService
   ) {}
 
   ngOnInit() {
@@ -57,6 +59,7 @@ export class UpdateBmiComponent implements OnInit {
     this.bmiService.add({ ...data, time: new Date() }).subscribe(() => {
       this.bmiService.update();
       this.modalController.dismiss();
+      this.global.alert('Update BMI', 'BMI sucessfully updated!', ['OK']);
     });
   }
 

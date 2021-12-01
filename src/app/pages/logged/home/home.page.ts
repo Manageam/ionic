@@ -19,7 +19,7 @@ export class HomePage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.userService.details.subscribe((data) => {
+    this.userService.userDetails().subscribe((data) => {
       this.user = data;
     });
     this.userService.fetchTip().subscribe((data) => {

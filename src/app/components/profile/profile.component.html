@@ -2,12 +2,8 @@
   <ion-header
     class="ion-no-border p-4 flex justify-between font-geomanist bg-white"
   >
-    <div class="flex">
-      <ion-icon
-        name="arrow-back"
-        class="text-2xl"
-        (click)="modalController.dismiss()"
-      ></ion-icon>
+    <div class="flex" (click)="modalController.dismiss()">
+      <ion-icon name="arrow-back" class="text-2xl"></ion-icon>
       <p class="ml-4 block text-gray-900 text-xl">Profile</p>
     </div>
   </ion-header>

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -23,7 +24,8 @@ export class UpdateProfileComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private userService: UserService,
-    private platform: Platform
+    private platform: Platform,
+    private global: GlobalService
   ) {}
 
   ngOnInit() {
@@ -41,6 +43,10 @@ export class UpdateProfileComponent implements OnInit {
     this.userService.updateDetails(this.profile).subscribe((data) => {
       const details = this.userService.fetchDetails();
       this.userService.setDetails({ ...details, user_details: data });
+      this.global.alert('Update Profile', 'Profile sucessfully updated!', [
+        'OK',
+      ]);
+      this.modalController.dismiss();
     });
   }
 

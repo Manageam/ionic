@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { BloodPressureService } from 'src/app/services/blood-pressure/blood-pressure.service';
+import { GlobalService } from 'src/app/services/global/global.service';
 import { fetchBloodPressureTips } from 'src/assets/scripts/misc';
 
 @Component({
@@ -18,7 +19,8 @@ export class UpdateBloodPressureComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private bloodPressureService: BloodPressureService,
-    private platform: Platform
+    private platform: Platform,
+    private global: GlobalService
   ) {}
 
   ngOnInit() {
@@ -44,6 +46,11 @@ export class UpdateBloodPressureComponent implements OnInit {
         console.log(data);
         this.modalController.dismiss();
         this.bloodPressureService.update();
+        this.global.alert(
+          'Update blood pressure',
+          'Blood pressure sucessfully updated!',
+          ['OK']
+        );
       });
   }
 

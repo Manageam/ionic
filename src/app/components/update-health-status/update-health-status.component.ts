@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { GlobalService } from 'src/app/services/global/global.service';
 import { HealthService } from 'src/app/services/health/health.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class UpdateHealthStatusComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private healthService: HealthService,
-    private platform: Platform
+    private platform: Platform,
+    private global: GlobalService
   ) {}
 
   ngOnInit() {
@@ -27,6 +29,11 @@ export class UpdateHealthStatusComponent implements OnInit {
     this.healthService.addHealth(this.value).subscribe((data) => {
       this.healthService.updateHealth();
       this.modalController.dismiss();
+      this.global.alert(
+        'Update health status',
+        'Health status sucessfully updated!',
+        ['OK']
+      );
     });
   }
 

@@ -6,6 +6,7 @@ import {
 } from '@ionic/angular';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { UserService } from 'src/app/services/user/user.service';
+import { GlobalService } from 'src/app/services/global/global.service';
 
 @Component({
   selector: 'app-update-picture',
@@ -20,7 +21,8 @@ export class UpdatePictureComponent implements OnInit {
     public modalController: ModalController,
     private actionSheetController: ActionSheetController,
     private userService: UserService,
-    private platform: Platform
+    private platform: Platform,
+    private global: GlobalService
   ) {}
 
   ngOnInit() {
@@ -38,6 +40,12 @@ export class UpdatePictureComponent implements OnInit {
     this.userService.updatePhoto(data).subscribe((data) => {
       this.userService.getDetails().subscribe((data) => {
         this.userService.setDetails(data);
+        this.global.alert(
+          'Update profile',
+          'Profile picture sucessfully updated!',
+          ['OK']
+        );
+        this.modalController.dismiss();
       });
     });
   }

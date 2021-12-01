@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { BloodSugarService } from 'src/app/services/blood-sugar/blood-sugar.service';
+import { GlobalService } from 'src/app/services/global/global.service';
 import { fetchBloodSugarTips } from 'src/assets/scripts/misc';
 
 @Component({
@@ -19,7 +20,8 @@ export class UpdateBloodSugarComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private bloodSugarService: BloodSugarService,
-    private platform: Platform
+    private platform: Platform,
+    private global: GlobalService
   ) {}
 
   ngOnInit() {
@@ -50,6 +52,11 @@ export class UpdateBloodSugarComponent implements OnInit {
         console.log(data);
         this.bloodSugarService.update();
         this.modalController.dismiss();
+        this.global.alert(
+          'Update blood sugar',
+          'Blood sugar sucessfully updated!',
+          ['OK']
+        );
       });
   }
 
