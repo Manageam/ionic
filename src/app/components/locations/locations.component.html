@@ -1,6 +1,6 @@
 <ion-app class="">
   <ion-header
-    class="ion-no-border p-4 flex justify-between font-geomanist bg-gray-100"
+    class="ion-no-border p-4 flex justify-between font-geomanist pale-bg-default"
   >
     <div class="flex">
       <ion-icon
@@ -13,7 +13,7 @@
     <span class="text-blue-500 text-xl" (click)="fetchLocations()">Change</span>
   </ion-header>
   <ion-content>
-    <div class="pt-6 py-4 px-4 font-geomanist bg-gray-100 min-h-full">
+    <div class="pt-6 py-4 px-4 font-geomanist pale-bg-default min-h-full">
       <h3 class="text-xl text-gray-900 my-4 capitalize">{{ location }}</h3>
       <ul>
         <li class="" *ngFor="let item of locations">
