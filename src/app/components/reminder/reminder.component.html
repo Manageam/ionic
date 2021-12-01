@@ -11,15 +11,25 @@
   </ion-header>
   <ion-content>
     <div class="min-h-full pale-bg-default font-calibre text-gray-900">
-      <p class="p-4 font-bold text-lg tracking-wide">Daily tip</p>
-      <div class="my-2 p-4 bg-white">
-        <div class="text-center">
-          <img src="/assets/img/tip.svg" />
-        </div>
-        <div class="mt-6">
-          <p class="font-bold mb-2 text-gray-900">{{ tip.title }}</p>
-          <p class="text-gray-500">{{ tip.note }}</p>
-        </div>
+      <div>
+        <p class="px-4 py-2 capitalize text-xl font-bold">Daily health tip</p>
+        <a
+          class="p-4 bg-white grid grid-cols-12"
+          (click)="
+            router.navigate(['/education']); this.modalController.dismiss()
+          "
+        >
+          <div class="text-center col-span-3">
+            <img src="/assets/img/tip.svg" />
+          </div>
+          <div class="col-span-9">
+            <p class="font-bold mb-1 text-xl">{{ tip.title }}</p>
+            <p class="text-accentBlue font-geomanist">
+              Learn more About diabetes
+            </p>
+            <p class="text-gray-500 font-geomanist">{{ tip.note }}</p>
+          </div>
+        </a>
       </div>
 
       <div class="flex justify-center my-6 items-center">

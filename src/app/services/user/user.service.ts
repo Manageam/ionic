@@ -29,7 +29,14 @@ export class UserService {
   }
 
   userDetails() {
+    this.refectchDetails()
     return this.details;
+  }
+
+  refectchDetails() {
+    this.getDetails().subscribe(data => {
+      this.setDetails(data)
+    })
   }
 
   fetchDetails() {

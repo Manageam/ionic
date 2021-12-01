@@ -18,6 +18,7 @@ export class BmiService {
   }
 
   get() {
+    this.update();
     return this.bmi;
   }
 

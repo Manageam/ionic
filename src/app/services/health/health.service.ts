@@ -22,10 +22,12 @@ export class HealthService {
   }
 
   getHba1c() {
+    this.updateHba1c();
     return this.allhbac1;
   }
 
   getHealth() {
+    this.updateHealth();
     return this.health;
   }
   updateHba1c() {

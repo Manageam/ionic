@@ -199,3 +199,11 @@ ion-item {
 .bg-blue-200 {
   background-color: #8ecff0 !important;
 }
+
+.content ul {
+  list-style: disc !important;
+  margin-left: 10px;
+  li {
+    margin-bottom: 10px;
+  }
+}

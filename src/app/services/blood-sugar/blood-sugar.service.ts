@@ -18,6 +18,7 @@ export class BloodSugarService {
   }
 
   get() {
+    this.update();
     return this.allBloodSugar;
   }
 

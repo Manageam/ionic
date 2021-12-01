@@ -18,6 +18,7 @@ export class BloodPressureService {
   }
 
   get() {
+    this.update();
     return this.allBloodPressure;
   }
 

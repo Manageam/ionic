@@ -1,27 +1,28 @@
 <ion-app>
   <ion-header
-    class="p-4 flex items-center ion-no-border font-geomanist font-bold text-xl"
+    class="
+      p-4
+      flex
+      items-center
+      justify-end justify-items-end
+      ion-no-border
+      font-geomanist font-bold
+      text-xl
+    "
   >
-    <ion-icon
-      name="arrow-back"
-      class="text-2xl"
-      (click)="modalController.dismiss()"
-    ></ion-icon>
-    <span class="inline-block ml-4">Category</span>
+    <span class="text-accentBlue font-bold" (click)="modalController.dismiss()"
+      >Close</span
+    >
   </ion-header>
   <ion-content>
-    <div class="p-4 content" [innerHtml]="data.description"></div>
+    <div class="p-4 border-b border-gray-200 mb-4">
+      <span>Topic</span>
+      <h2 class="text-2xl font-bold">{{ data.topic }}</h2>
+    </div>
+    <div class="p-4 content content" [innerHtml]="data.description"></div>
     <div class="flex justify-between p-4">
       <p
-        class="
-          py-2
-          px-6
-          text-accentBlue
-          rounded-xl
-          flex
-          items-center
-          border border-accentBlue
-        "
+        class="py-2 px-6 text-accentBlue rounded-xl flex items-center"
         (click)="bookmark(data.id)"
       >
         <ion-icon name="bookmark" class="text-2xl"></ion-icon>
@@ -30,7 +31,7 @@
       <p
         class="
           py-2
-          px-6
+          px-14
           text-accentBlue
           rounded-xl
           flex
@@ -38,11 +39,6 @@
           border border-accentBlue
         "
       >
-        <ion-icon
-          name="share-social"
-          class="text-2xl"
-          (click)="share()"
-        ></ion-icon>
         <span class="text-xl">Share</span>
       </p>
     </div>

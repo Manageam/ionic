@@ -5,6 +5,7 @@ import { AddReminderComponent } from '../add-reminder/add-reminder.component';
 import dateFormat from 'dateformat';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reminder',
@@ -21,7 +22,8 @@ export class ReminderComponent implements OnInit {
     private reminderService: ReminderService,
     private global: GlobalService,
     private userService: UserService,
-    private platform: Platform
+    private platform: Platform,
+    public router: Router
   ) {}
 
   ngOnInit() {
