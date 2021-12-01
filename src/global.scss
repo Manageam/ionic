@@ -35,7 +35,13 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+* {
+  font-family: "Calibre Regular";
+}
 
+.pale-bg-default {
+  background: linear-gradient(to bottom, #f0f4fc, #ddedfe);
+}
 .modal-60 {
   bottom: 0;
   min-height: initial;
@@ -184,11 +190,10 @@ ion-item {
   --padding-start: 0px !important;
 }
 
-
 .bg-pink-200 {
-  background-color: #D6C2ED !important;
+  background-color: #d6c2ed !important;
 }
 
 .bg-blue-200 {
-  background-color: #8ECFF0 !important;
+  background-color: #8ecff0 !important;
 }
