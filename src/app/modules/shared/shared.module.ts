@@ -42,6 +42,7 @@ import { MealsListComponent } from 'src/app/components/meals-list/meals-list.com
 import { HealthProfileComponent } from 'src/app/pages/auth/signup/health-profile/health-profile.component';
 import { SearchComponent } from 'src/app/components/search/search.component';
 import { ForgotPasswordComponent } from 'src/app/components/forgot-password/forgot-password.component';
+import { TermsComponent } from 'src/app/components/terms/terms.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { ForgotPasswordComponent } from 'src/app/components/forgot-password/forg
     HealthProfileComponent,
     SearchComponent,
     ForgotPasswordComponent,
+    TermsComponent,
   ],
   imports: [CommonModule, IonicModule, FormsModule],
 })

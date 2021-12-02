@@ -9,6 +9,7 @@ import { ExerciseComponent } from '../exercise/exercise.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { ReminderComponent } from '../reminder/reminder.component';
 import { SettingsComponent } from '../settings/settings.component';
+import { TermsComponent } from '../terms/terms.component';
 
 @Component({
   selector: 'app-menu',
@@ -80,6 +81,13 @@ export class MenuComponent implements OnInit {
   async showExercise() {
     const modal = await this.modalController.create({
       component: ExerciseComponent,
+    });
+    modal.present();
+  }
+
+  async showTerms() {
+    const modal = await this.modalController.create({
+      component: TermsComponent,
     });
     modal.present();
   }
