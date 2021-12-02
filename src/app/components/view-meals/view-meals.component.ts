@@ -9,6 +9,7 @@ import { calorieCounter } from 'src/assets/scripts/misc';
 import { MealsListComponent } from '../meals-list/meals-list.component';
 import { ViewMealComponent } from '../view-meal/view-meal.component';
 import dateFormat from 'dateformat';
+import { GlobalService } from 'src/app/services/global/global.service';
 @Component({
   selector: 'app-view-meals',
   templateUrl: './view-meals.component.html',
@@ -34,7 +35,8 @@ export class ViewMealsComponent implements OnInit {
     public modalController: ModalController,
     private actionSheetController: ActionSheetController,
     private mealService: MealService,
-    private platform: Platform
+    private platform: Platform,
+    private global: GlobalService
   ) {}
 
   ngOnInit() {
@@ -169,6 +171,7 @@ export class ViewMealsComponent implements OnInit {
       })
       .subscribe((data) => {
         this.mealService.update();
+        this.global.alert('Meal Plan', 'Meal plan successfully saved', ['OK']);
         this.clear();
       });
   }

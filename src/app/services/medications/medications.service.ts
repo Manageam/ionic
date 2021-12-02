@@ -47,6 +47,7 @@ export class MedicationsService {
   }
 
   get() {
+    this.update();
     return this.myMedications;
   }
 
