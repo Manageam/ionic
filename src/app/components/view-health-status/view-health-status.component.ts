@@ -3,6 +3,7 @@ import { ModalController, Platform } from '@ionic/angular';
 import { HealthService } from 'src/app/services/health/health.service';
 import { checkHealthStatus } from 'src/assets/scripts/misc';
 import dateFormat from 'dateformat';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-health-status',
@@ -15,7 +16,8 @@ export class ViewHealthStatusComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private healthService: HealthService,
-    private platform: Platform
+    private platform: Platform,
+    public router: Router
   ) {}
 
   ngOnInit() {
