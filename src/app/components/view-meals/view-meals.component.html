@@ -1,12 +1,8 @@
 <ion-app class="meal">
   <ion-header class="ion-no-border p-4 font-geomanist">
-    <div class="flex">
-      <ion-icon
-        name="arrow-back"
-        class="text-2xl text-gray-900"
-        (click)="modalController.dismiss()"
-      ></ion-icon>
-      <p class="ml-4 block text-gray-900 text-xl">Meal guide</p>
+    <div class="flex" (click)="modalController.dismiss()">
+      <ion-icon name="arrow-back" class="text-2xl"></ion-icon>
+      <p class="ml-4 block text-xl">Meal guide</p>
     </div>
     <ion-segment
       (ionChange)="segmentChanged($event)"
@@ -69,7 +65,9 @@
           >
             <h2 class="text-xl p-4">Nutrition Information</h2>
             <ul *ngIf="allCab.length > 0">
-              <h3 class="pale-bg-default text-accentBlue p-4 flex justify-between">
+              <h3
+                class="pale-bg-default text-accentBlue p-4 flex justify-between"
+              >
                 <span>Carbohydrate</span> <span>{{ allCab.length }}</span>
               </h3>
               <li
@@ -88,7 +86,9 @@
             </ul>
 
             <ul *ngIf="allPro.length > 0">
-              <h3 class="pale-bg-default text-accentBlue p-4 flex justify-between">
+              <h3
+                class="pale-bg-default text-accentBlue p-4 flex justify-between"
+              >
                 <span>Protein</span> <span>{{ allPro.length }}</span>
               </h3>
               <li
@@ -107,7 +107,9 @@
             </ul>
 
             <ul *ngIf="allFru.length > 0">
-              <h3 class="pale-bg-default text-accentBlue p-4 flex justify-between">
+              <h3
+                class="pale-bg-default text-accentBlue p-4 flex justify-between"
+              >
                 <span>Fruit & Vegetables</span>
                 <span>{{ allFru.length }}</span>
               </h3>
@@ -379,7 +381,7 @@
             class="dinner meal_icon"
           />
         </svg>
-        <p class="mt-1 {{ filter == 'dinner' ? 'text-tea' : 'hidden' }}">
+        <p class="mt-1 {{ filter == 'dinner' ? 'text-teal' : 'hidden' }}">
           dinner
         </p>
       </div>

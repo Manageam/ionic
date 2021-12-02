@@ -213,3 +213,8 @@ ion-item {
   font-family: "Geomanist Regular";
   font-weight: lighter;
 }
+
+ion-app {
+  padding-top: calc(var(--ion-safe-area-top));
+  padding-bottom: calc(var(--ion-safe-area-bottom));
+}

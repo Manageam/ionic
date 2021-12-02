@@ -13,6 +13,8 @@ export class MealsListComponent implements OnInit {
   search = '';
   totalCals = 0;
   subs = [];
+  currentPage = 0;
+  pagination = 8;
   categories = foodCategories;
   /*categories = foodCategories.map((cat) => {
     if (cat.category.length > 13)
@@ -98,5 +100,12 @@ export class MealsListComponent implements OnInit {
 
   ngOnDestroy() {
     this.subs.forEach((sub) => sub.unsubscribe());
+  }
+
+  generatePagination(page) {
+    page = Math.round(page);
+    return Array(page)
+      .fill(null)
+      .map((_, i) => i);
   }
 }
