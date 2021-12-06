@@ -34,6 +34,8 @@ export class UserService {
   }
 
   refectchDetails() {
+    const user = this.auth.loggedUser();
+    if (!user) return;
     this.getDetails().subscribe((data) => {
       this.setDetails(data);
     });

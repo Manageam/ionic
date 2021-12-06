@@ -46,6 +46,6 @@ export class AuthenticationService {
   }
 
   loggedUser() {
-    return JSON.parse(localStorage.user);
+    return JSON.parse(localStorage.user || 'null');
   }
 }
