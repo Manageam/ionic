@@ -14,13 +14,8 @@ export class MealsListComponent implements OnInit {
   totalCals = 0;
   subs = [];
   currentPage = 0;
-  pagination = 8;
+  pagination = 7;
   categories = foodCategories;
-  /*categories = foodCategories.map((cat) => {
-    if (cat.category.length > 13)
-      cat.category = cat.category.slice(0, 10) + '...';
-    return cat;
-  });*/
   searchCat = foodCategories[0].category;
   food = <any[]>food.map((d: any) => ({ ...d, amount: 0 }));
   filteredFood = [];
@@ -91,6 +86,7 @@ export class MealsListComponent implements OnInit {
       (cat) => cat.id == this.segment
     ).category;
     this.filterFoods(this.segment);
+    this.currentPage = 0;
   }
 
   save() {

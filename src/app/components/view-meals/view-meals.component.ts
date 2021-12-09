@@ -147,7 +147,10 @@ export class ViewMealsComponent implements OnInit {
       },
     });
     modal.onDidDismiss().then(({ data }: { data }) => {
-      if (data.length == 0) return;
+      if (!data || (data && data.length == 0)) {
+        this.type = '';
+        return;
+      }
       this.food = data;
       this.allCab = this.food.filter((f) => f.category == 1);
       this.allPro = this.food.filter((f) => f.category == 2);
