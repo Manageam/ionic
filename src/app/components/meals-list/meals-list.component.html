@@ -154,7 +154,16 @@
           >
         </li>
         <li class="bg-gray-200 grid grid-cols-2">
-          <p class="border-r border-gray-700 px-4 py-3">Total</p>
+          <p class="border-r border-gray-700 px-4 py-3 flex justify-between">
+            Total
+            <span
+              *ngIf="totalCals > 0"
+              class="text-{{ calInfo?.color }}-900 bg-{{
+                calInfo?.color
+              }}-100 inline-block px-3 pt-1 rounded-full"
+              >{{ calInfo?.state }}</span
+            >
+          </p>
           <p class="self-end px-4 py-3 text-right">{{ totalCals }}kcal</p>
         </li>
 

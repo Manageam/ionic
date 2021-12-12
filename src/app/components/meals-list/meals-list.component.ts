@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import foodCategories from 'src/assets/data/food-categories';
 import food from 'src/assets/data/food';
+import { calorieCounter } from 'src/assets/scripts/misc';
 @Component({
   selector: 'app-meals-list',
   templateUrl: './meals-list.component.html',
@@ -19,6 +20,7 @@ export class MealsListComponent implements OnInit {
   searchCat = foodCategories[0].category;
   food = <any[]>food.map((d: any) => ({ ...d, amount: 0 }));
   filteredFood = [];
+  calInfo: any = null;
   constructor(
     public modalController: ModalController,
     private platform: Platform
@@ -78,6 +80,7 @@ export class MealsListComponent implements OnInit {
     this.totalCals = this.food
       .reduce((a, b: any) => a + Number(b.amount || 0) * b.calories, 0)
       .toFixed(2);
+    this.calInfo = calorieCounter(this.totalCals, this.type);
   }
 
   segmentChanged(e) {
