@@ -97,7 +97,7 @@ export class BloodSugarComponent implements OnInit {
     e?.stopPropagation();
     const modal = await this.modalController.create({
       component: UpdateBloodSugarComponent,
-      cssClass: 'modal-50',
+      cssClass: 'modal-80',
     });
     await modal.present();
   }

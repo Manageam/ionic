@@ -27,7 +27,7 @@ export class HealthPage implements OnInit {
   async addMedication() {
     const modal = await this.modalController.create({
       component: AddMedicationComponent,
-      cssClass: 'modal-50',
+      cssClass: 'modal-80',
     });
     modal.present();
   }

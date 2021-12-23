@@ -59,6 +59,7 @@
         >
         <ion-input
           placeholder="Enter blood sugar level"
+          type="number"
           [value]="bloodSugar.reading"
           [(ngModel)]="bloodSugar.reading"
           (ngModelChange)="updateTip()"

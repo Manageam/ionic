@@ -1,6 +1,6 @@
 (self["webpackChunkcom_app_shei_manageam"] = self["webpackChunkcom_app_shei_manageam"] || []).push([["main"],{
 
-/***/ 8255:
+/***/ 98255:
 /*!*******************************************************!*\
   !*** ./$_lazy_route_resources/ lazy namespace object ***!
   \*******************************************************/
@@ -17,12 +17,12 @@ function webpackEmptyAsyncContext(req) {
 }
 webpackEmptyAsyncContext.keys = () => ([]);
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 8255;
+webpackEmptyAsyncContext.id = 98255;
 module.exports = webpackEmptyAsyncContext;
 
 /***/ }),
 
-/***/ 158:
+/***/ 90158:
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
   \***************************************/
@@ -33,10 +33,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppRoutingModule": () => (/* binding */ AppRoutingModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _services_auth_auth_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./services/auth/auth.service */ 1228);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _services_auth_auth_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./services/auth/auth.service */ 51228);
 
 
 
@@ -44,11 +44,11 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: 'auth',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_modules_auth_auth_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./modules/auth/auth.module */ 3970)).then((m) => m.AuthModule),
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_modules_auth_auth_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./modules/auth/auth.module */ 83970)).then((m) => m.AuthModule),
     },
     {
         path: '',
-        loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/logged/logged.module */ 1355)).then((m) => m.LoggedModule),
+        loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/logged/logged.module */ 55443)).then((m) => m.LoggedModule),
         canActivate: [_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_0__.AuthService],
     },
     {
@@ -72,7 +72,7 @@ AppRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
-/***/ 5041:
+/***/ 55041:
 /*!**********************************!*\
   !*** ./src/app/app.component.ts ***!
   \**********************************/
@@ -83,15 +83,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./app.component.html */ 1106);
-/* harmony import */ var _app_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component.scss */ 3069);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var _capacitor_status_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @capacitor/status-bar */ 4909);
-/* harmony import */ var _capacitor_splash_screen__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @capacitor/splash-screen */ 8592);
-/* harmony import */ var _services_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/authentication/authentication.service */ 7020);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./app.component.html */ 91106);
+/* harmony import */ var _app_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component.scss */ 43069);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _capacitor_status_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @capacitor/status-bar */ 64909);
+/* harmony import */ var _capacitor_splash_screen__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @capacitor/splash-screen */ 88592);
+/* harmony import */ var _services_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/authentication/authentication.service */ 97020);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 39895);
 
 
 
@@ -145,7 +145,7 @@ AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 6747:
+/***/ 36747:
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
   \*******************************/
@@ -156,21 +156,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 5041);
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 158);
-/* harmony import */ var angular_gauge__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! angular-gauge */ 6627);
-/* harmony import */ var _modules_shared_shared_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/shared/shared.module */ 2271);
-/* harmony import */ var _services_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/authentication/authentication.service */ 7020);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ 39075);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 55041);
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 90158);
+/* harmony import */ var angular_gauge__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! angular-gauge */ 66627);
+/* harmony import */ var _modules_shared_shared_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/shared/shared.module */ 72271);
+/* harmony import */ var _services_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/authentication/authentication.service */ 97020);
 /* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @auth0/angular-jwt */ 6686);
-/* harmony import */ var _services_auth_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/auth/auth.service */ 1228);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ 1841);
-/* harmony import */ var _interceptors_loader_interceptors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./interceptors/loader.interceptors */ 8989);
-/* harmony import */ var _modules_logged_logged_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/logged/logged.module */ 1355);
+/* harmony import */ var _services_auth_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/auth/auth.service */ 51228);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ 91841);
+/* harmony import */ var _interceptors_loader_interceptors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./interceptors/loader.interceptors */ 28989);
+/* harmony import */ var _modules_logged_logged_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/logged/logged.module */ 55443);
 
 
 
@@ -222,7 +222,7 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
 
 /***/ }),
 
-/***/ 984:
+/***/ 60984:
 /*!***********************************************************!*\
   !*** ./src/app/components/add-meal/add-meal.component.ts ***!
   \***********************************************************/
@@ -233,10 +233,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AddMealComponent": () => (/* binding */ AddMealComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_add_meal_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./add-meal.component.html */ 2192);
-/* harmony import */ var _add_meal_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./add-meal.component.scss */ 4243);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_add_meal_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./add-meal.component.html */ 52192);
+/* harmony import */ var _add_meal_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./add-meal.component.scss */ 44243);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 37716);
 
 
 
@@ -258,7 +258,7 @@ AddMealComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 1741:
+/***/ 91741:
 /*!***********************************************************************!*\
   !*** ./src/app/components/add-medication/add-medication.component.ts ***!
   \***********************************************************************/
@@ -269,13 +269,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AddMedicationComponent": () => (/* binding */ AddMedicationComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_add_medication_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./add-medication.component.html */ 5510);
-/* harmony import */ var _add_medication_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./add-medication.component.scss */ 2783);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
-/* harmony import */ var src_app_services_medications_medications_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/medications/medications.service */ 6652);
+/* harmony import */ var _add_medication_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./add-medication.component.scss */ 22783);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+/* harmony import */ var src_app_services_medications_medications_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/medications/medications.service */ 66652);
 
 
 
@@ -304,12 +304,14 @@ let AddMedicationComponent = class AddMedicationComponent {
     }
     search() {
         this.med = null;
-        if (this.medication.name.length < 3) {
+        if (this.medication.name.length < 1) {
             this.searched = [];
             return;
         }
         const regx = new RegExp(this.medication.name, 'i');
-        this.searched = this.allMedication.filter((med) => regx.test(med.name));
+        this.searched = this.allMedication
+            .filter((med) => regx.test(med.name))
+            .slice(0, 6);
     }
     save() {
         if (!this.medication.name)
@@ -324,6 +326,9 @@ let AddMedicationComponent = class AddMedicationComponent {
             this.medicationService.update();
             this.modalController.dismiss();
         });
+    }
+    scrollIntoView(el) {
+        el.scrollIntoView();
     }
     ngOnDestroy() {
         this.subs.forEach((sub) => sub.unsubscribe());
@@ -347,7 +352,7 @@ AddMedicationComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 1302:
+/***/ 81302:
 /*!*******************************************************************!*\
   !*** ./src/app/components/add-reminder/add-reminder.component.ts ***!
   \*******************************************************************/
@@ -358,12 +363,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AddReminderComponent": () => (/* binding */ AddReminderComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_add_reminder_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./add-reminder.component.html */ 2843);
-/* harmony import */ var _add_reminder_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./add-reminder.component.scss */ 9362);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_reminder_reminder_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/reminder/reminder.service */ 1333);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_add_reminder_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./add-reminder.component.html */ 72843);
+/* harmony import */ var _add_reminder_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./add-reminder.component.scss */ 59362);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_reminder_reminder_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/reminder/reminder.service */ 71333);
 
 
 
@@ -418,7 +423,7 @@ AddReminderComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 8965:
+/***/ 18965:
 /*!*************************************************************************!*\
   !*** ./src/app/components/all-medications/all-medications.component.ts ***!
   \*************************************************************************/
@@ -429,14 +434,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AllMedicationsComponent": () => (/* binding */ AllMedicationsComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_all_medications_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./all-medications.component.html */ 2052);
-/* harmony import */ var _all_medications_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./all-medications.component.scss */ 7668);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
-/* harmony import */ var src_app_services_medications_medications_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/medications/medications.service */ 6652);
-/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! dateformat */ 7877);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_all_medications_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./all-medications.component.html */ 92052);
+/* harmony import */ var _all_medications_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./all-medications.component.scss */ 37668);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+/* harmony import */ var src_app_services_medications_medications_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/medications/medications.service */ 66652);
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! dateformat */ 67877);
+/* harmony import */ var _calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../calendar-modal/calendar-modal.component */ 3293);
+/* harmony import */ var _share_email_share_email_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../share-email/share-email.component */ 56954);
+/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/services/health/health.service */ 63286);
+
+
+
 
 
 
@@ -446,10 +457,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AllMedicationsComponent = class AllMedicationsComponent {
-    constructor(modalController, global, medicationService) {
+    constructor(modalController, global, medicationService, healthService) {
         this.modalController = modalController;
         this.global = global;
         this.medicationService = medicationService;
+        this.healthService = healthService;
         this.expand = null;
         this.allMedication = [];
     }
@@ -462,7 +474,35 @@ let AllMedicationsComponent = class AllMedicationsComponent {
         });
     }
     share() {
-        console.log('share shit');
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
+            this.modalController.dismiss();
+            const modal = yield this.modalController.create({
+                component: _calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_5__.CalendarModalComponent,
+                cssClass: 'modal-80',
+            });
+            modal.onDidDismiss().then(({ data }) => (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
+                if (!data)
+                    return;
+                const modal = yield this.modalController.create({
+                    component: _share_email_share_email_component__WEBPACK_IMPORTED_MODULE_6__.ShareEmailComponent,
+                    cssClass: 'modal-50',
+                });
+                const date = data;
+                modal.onDidDismiss().then(({ data }) => {
+                    if (!data)
+                        return;
+                    this.healthService
+                        .share(Object.assign(Object.assign({ email: data }, date), { type: 'medications' }))
+                        .subscribe((data) => {
+                        return this.global.alert('Share record', data, [
+                            { role: true, text: 'OK' },
+                        ]);
+                    });
+                });
+                yield modal.present();
+            }));
+            yield modal.present();
+        });
     }
     toggle(i) {
         if (i == this.expand) {
@@ -473,7 +513,7 @@ let AllMedicationsComponent = class AllMedicationsComponent {
         }
     }
     remove(id) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
             const { role } = yield this.global.alert('Remove Medication', 'Are you sure you want to remove medication?', [
                 { role: false, text: 'Cancel' },
                 { role: true, text: 'OK' },
@@ -488,12 +528,13 @@ let AllMedicationsComponent = class AllMedicationsComponent {
     }
 };
 AllMedicationsComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ModalController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.ModalController },
     { type: src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__.GlobalService },
-    { type: src_app_services_medications_medications_service__WEBPACK_IMPORTED_MODULE_3__.MedicationsService }
+    { type: src_app_services_medications_medications_service__WEBPACK_IMPORTED_MODULE_3__.MedicationsService },
+    { type: src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_7__.HealthService }
 ];
-AllMedicationsComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
+AllMedicationsComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_10__.Component)({
         selector: 'app-all-medications',
         template: _raw_loader_all_medications_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_all_medications_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -504,7 +545,7 @@ AllMedicationsComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 5853:
+/***/ 75853:
 /*!***********************************************************************!*\
   !*** ./src/app/components/blood-pressure/blood-pressure.component.ts ***!
   \***********************************************************************/
@@ -515,14 +556,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BloodPressureComponent": () => (/* binding */ BloodPressureComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_blood_pressure_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./blood-pressure.component.html */ 9378);
-/* harmony import */ var _blood_pressure_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blood-pressure.component.scss */ 3554);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _blood_pressure_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blood-pressure.component.scss */ 23554);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
 /* harmony import */ var src_app_services_blood_pressure_blood_pressure_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/blood-pressure/blood-pressure.service */ 8);
-/* harmony import */ var _update_blood_pressure_update_blood_pressure_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../update-blood-pressure/update-blood-pressure.component */ 6463);
-/* harmony import */ var _view_blood_pressure_view_blood_pressure_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../view-blood-pressure/view-blood-pressure.component */ 9910);
+/* harmony import */ var _update_blood_pressure_update_blood_pressure_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../update-blood-pressure/update-blood-pressure.component */ 36463);
+/* harmony import */ var _view_blood_pressure_view_blood_pressure_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../view-blood-pressure/view-blood-pressure.component */ 49910);
 
 
 
@@ -579,7 +620,7 @@ let BloodPressureComponent = class BloodPressureComponent {
             e === null || e === void 0 ? void 0 : e.stopPropagation();
             const modal = yield this.modalController.create({
                 component: _update_blood_pressure_update_blood_pressure_component__WEBPACK_IMPORTED_MODULE_3__.UpdateBloodPressureComponent,
-                cssClass: 'modal-50',
+                cssClass: 'modal-80',
             });
             yield modal.present();
         });
@@ -604,7 +645,7 @@ BloodPressureComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 8770:
+/***/ 68770:
 /*!*****************************************************************!*\
   !*** ./src/app/components/blood-sugar/blood-sugar.component.ts ***!
   \*****************************************************************/
@@ -615,14 +656,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BloodSugarComponent": () => (/* binding */ BloodSugarComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_blood_sugar_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./blood-sugar.component.html */ 6442);
-/* harmony import */ var _blood_sugar_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blood-sugar.component.scss */ 4535);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _blood_sugar_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blood-sugar.component.scss */ 14535);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
 /* harmony import */ var src_app_services_blood_sugar_blood_sugar_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/blood-sugar/blood-sugar.service */ 8734);
-/* harmony import */ var _update_blood_sugar_update_blood_sugar_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../update-blood-sugar/update-blood-sugar.component */ 6065);
-/* harmony import */ var _view_blood_sugar_view_blood_sugar_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../view-blood-sugar/view-blood-sugar.component */ 6527);
+/* harmony import */ var _update_blood_sugar_update_blood_sugar_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../update-blood-sugar/update-blood-sugar.component */ 46065);
+/* harmony import */ var _view_blood_sugar_view_blood_sugar_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../view-blood-sugar/view-blood-sugar.component */ 76527);
 
 
 
@@ -712,7 +753,7 @@ let BloodSugarComponent = class BloodSugarComponent {
             e === null || e === void 0 ? void 0 : e.stopPropagation();
             const modal = yield this.modalController.create({
                 component: _update_blood_sugar_update_blood_sugar_component__WEBPACK_IMPORTED_MODULE_3__.UpdateBloodSugarComponent,
-                cssClass: 'modal-50',
+                cssClass: 'modal-80',
             });
             yield modal.present();
         });
@@ -734,7 +775,7 @@ BloodSugarComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 2349:
+/***/ 62349:
 /*!*************************************************!*\
   !*** ./src/app/components/bmi/bmi.component.ts ***!
   \*************************************************/
@@ -745,14 +786,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BmiComponent": () => (/* binding */ BmiComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_bmi_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./bmi.component.html */ 8176);
-/* harmony import */ var _bmi_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bmi.component.scss */ 7727);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_bmi_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./bmi.component.html */ 38176);
+/* harmony import */ var _bmi_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bmi.component.scss */ 17727);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
 /* harmony import */ var src_app_services_bmi_bmi_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/bmi/bmi.service */ 9264);
-/* harmony import */ var _update_bmi_update_bmi_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../update-bmi/update-bmi.component */ 5204);
-/* harmony import */ var _view_bmi_view_bmi_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../view-bmi/view-bmi.component */ 264);
+/* harmony import */ var _update_bmi_update_bmi_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../update-bmi/update-bmi.component */ 65204);
+/* harmony import */ var _view_bmi_view_bmi_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../view-bmi/view-bmi.component */ 70264);
 
 
 
@@ -806,7 +847,7 @@ let BmiComponent = class BmiComponent {
             e === null || e === void 0 ? void 0 : e.stopPropagation();
             const modal = yield this.modalController.create({
                 component: _update_bmi_update_bmi_component__WEBPACK_IMPORTED_MODULE_3__.UpdateBmiComponent,
-                cssClass: 'modal-50',
+                cssClass: 'modal-80',
             });
             yield modal.present();
         });
@@ -831,7 +872,7 @@ BmiComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 3794:
+/***/ 13794:
 /*!***********************************************************!*\
   !*** ./src/app/components/bookmark/bookmark.component.ts ***!
   \***********************************************************/
@@ -842,13 +883,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BookmarkComponent": () => (/* binding */ BookmarkComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_bookmark_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./bookmark.component.html */ 2084);
-/* harmony import */ var _bookmark_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bookmark.component.scss */ 8337);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_education_education_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/education/education.service */ 1788);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_bookmark_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./bookmark.component.html */ 72084);
+/* harmony import */ var _bookmark_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bookmark.component.scss */ 38337);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_education_education_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/education/education.service */ 81788);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
 
 
 
@@ -910,7 +951,7 @@ BookmarkComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 7705:
+/***/ 27705:
 /*!*************************************************************!*\
   !*** ./src/app/components/bookmarks/bookmarks.component.ts ***!
   \*************************************************************/
@@ -921,14 +962,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BookmarksComponent": () => (/* binding */ BookmarksComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_bookmarks_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./bookmarks.component.html */ 8517);
-/* harmony import */ var _bookmarks_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bookmarks.component.scss */ 8745);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var _bookmark_bookmark_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../bookmark/bookmark.component */ 3794);
-/* harmony import */ var src_app_services_education_education_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/education/education.service */ 1788);
-/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! dateformat */ 7877);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_bookmarks_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./bookmarks.component.html */ 88517);
+/* harmony import */ var _bookmarks_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bookmarks.component.scss */ 98745);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _bookmark_bookmark_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../bookmark/bookmark.component */ 13794);
+/* harmony import */ var src_app_services_education_education_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/education/education.service */ 81788);
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! dateformat */ 67877);
 
 
 
@@ -990,7 +1031,63 @@ BookmarksComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 2654:
+/***/ 3293:
+/*!***********************************************************************!*\
+  !*** ./src/app/components/calendar-modal/calendar-modal.component.ts ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CalendarModalComponent": () => (/* binding */ CalendarModalComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_calendar_modal_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./calendar-modal.component.html */ 55756);
+/* harmony import */ var _calendar_modal_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./calendar-modal.component.scss */ 7359);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 80476);
+
+
+
+
+
+let CalendarModalComponent = class CalendarModalComponent {
+    constructor(modalController) {
+        this.modalController = modalController;
+        this.optionsRange = {
+            pickMode: 'range',
+            canBackwardsSelected: true,
+        };
+    }
+    ngOnInit() { }
+    save() {
+        let data;
+        if (this.dateRange && this.dateRange.from && this.dateRange.to) {
+            data = {
+                from: this.dateRange.from.toString(),
+                to: this.dateRange.to.toString(),
+            };
+        }
+        this.modalController.dismiss(data);
+    }
+};
+CalendarModalComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__.ModalController }
+];
+CalendarModalComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
+        selector: 'app-calendar-modal',
+        template: _raw_loader_calendar_modal_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
+        styles: [_calendar_modal_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
+    })
+], CalendarModalComponent);
+
+
+
+/***/ }),
+
+/***/ 52654:
 /*!*****************************************************************!*\
   !*** ./src/app/components/cholesterol/cholesterol.component.ts ***!
   \*****************************************************************/
@@ -1001,14 +1098,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CholesterolComponent": () => (/* binding */ CholesterolComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_cholesterol_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./cholesterol.component.html */ 2779);
-/* harmony import */ var _cholesterol_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cholesterol.component.scss */ 9574);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_cholesterol_cholesterol_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/cholesterol/cholesterol.service */ 4884);
-/* harmony import */ var _update_cholesterol_update_cholesterol_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../update-cholesterol/update-cholesterol.component */ 6949);
-/* harmony import */ var _view_cholesterol_view_cholesterol_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../view-cholesterol/view-cholesterol.component */ 7679);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_cholesterol_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./cholesterol.component.html */ 12779);
+/* harmony import */ var _cholesterol_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cholesterol.component.scss */ 89574);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_cholesterol_cholesterol_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/cholesterol/cholesterol.service */ 54884);
+/* harmony import */ var _update_cholesterol_update_cholesterol_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../update-cholesterol/update-cholesterol.component */ 96949);
+/* harmony import */ var _view_cholesterol_view_cholesterol_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../view-cholesterol/view-cholesterol.component */ 57679);
 
 
 
@@ -1073,7 +1170,7 @@ let CholesterolComponent = class CholesterolComponent {
             e === null || e === void 0 ? void 0 : e.stopPropagation();
             const modal = yield this.modalController.create({
                 component: _update_cholesterol_update_cholesterol_component__WEBPACK_IMPORTED_MODULE_3__.UpdateCholesterolComponent,
-                cssClass: 'modal-50',
+                cssClass: 'modal-80',
             });
             yield modal.present();
         });
@@ -1098,7 +1195,7 @@ CholesterolComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 3423:
+/***/ 33423:
 /*!*********************************************************************!*\
   !*** ./src/app/components/diabetes-walk/diabetes-walk.component.ts ***!
   \*********************************************************************/
@@ -1109,12 +1206,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DiabetesWalkComponent": () => (/* binding */ DiabetesWalkComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_diabetes_walk_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./diabetes-walk.component.html */ 5061);
-/* harmony import */ var _diabetes_walk_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./diabetes-walk.component.scss */ 3470);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var _register_for_walk_register_for_walk_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../register-for-walk/register-for-walk.component */ 2112);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_diabetes_walk_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./diabetes-walk.component.html */ 15061);
+/* harmony import */ var _diabetes_walk_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./diabetes-walk.component.scss */ 75435);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _register_for_walk_register_for_walk_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../register-for-walk/register-for-walk.component */ 12112);
 
 
 
@@ -1172,12 +1269,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ExerciseComponent": () => (/* binding */ ExerciseComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_exercise_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./exercise.component.html */ 4038);
-/* harmony import */ var _exercise_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./exercise.component.scss */ 2193);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_assets_data_exercise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/assets/data/exercise */ 2956);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_exercise_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./exercise.component.html */ 64038);
+/* harmony import */ var _exercise_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./exercise.component.scss */ 22193);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_assets_data_exercise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/assets/data/exercise */ 52956);
 
 
 
@@ -1217,7 +1314,7 @@ ExerciseComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 8932:
+/***/ 38932:
 /*!***************************************************************!*\
   !*** ./src/app/components/expandable/expandable.component.ts ***!
   \***************************************************************/
@@ -1228,10 +1325,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ExpandableComponent": () => (/* binding */ ExpandableComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_expandable_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./expandable.component.html */ 3032);
-/* harmony import */ var _expandable_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./expandable.component.scss */ 3680);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_expandable_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./expandable.component.html */ 93032);
+/* harmony import */ var _expandable_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./expandable.component.scss */ 63680);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
 
 
 
@@ -1266,7 +1363,7 @@ ExpandableComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 3368:
+/***/ 53368:
 /*!*************************************************************************!*\
   !*** ./src/app/components/forgot-password/forgot-password.component.ts ***!
   \*************************************************************************/
@@ -1277,12 +1374,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ForgotPasswordComponent": () => (/* binding */ ForgotPasswordComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_forgot_password_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./forgot-password.component.html */ 1328);
-/* harmony import */ var _forgot_password_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./forgot-password.component.scss */ 469);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_forgot_password_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./forgot-password.component.html */ 51328);
+/* harmony import */ var _forgot_password_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./forgot-password.component.scss */ 70469);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
 /* harmony import */ var src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user/user.service */ 9709);
 
 
@@ -1325,7 +1422,7 @@ ForgotPasswordComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 688:
+/***/ 80688:
 /*!*****************************************************!*\
   !*** ./src/app/components/guage/guage.component.ts ***!
   \*****************************************************/
@@ -1336,10 +1433,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "GuageComponent": () => (/* binding */ GuageComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_guage_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./guage.component.html */ 6010);
-/* harmony import */ var _guage_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./guage.component.scss */ 7534);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _guage_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./guage.component.scss */ 17534);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
 
 
 
@@ -1374,7 +1471,7 @@ GuageComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 2406:
+/***/ 82406:
 /*!*****************************************************!*\
   !*** ./src/app/components/hba1c/hba1c.component.ts ***!
   \*****************************************************/
@@ -1385,14 +1482,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Hba1cComponent": () => (/* binding */ Hba1cComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_hba1c_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./hba1c.component.html */ 2745);
-/* harmony import */ var _hba1c_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hba1c.component.scss */ 1737);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/health/health.service */ 3286);
-/* harmony import */ var _update_hba1c_update_hba1c_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../update-hba1c/update-hba1c.component */ 7187);
-/* harmony import */ var _view_hba1c_view_hba1c_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../view-hba1c/view-hba1c.component */ 6116);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_hba1c_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./hba1c.component.html */ 72745);
+/* harmony import */ var _hba1c_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hba1c.component.scss */ 41737);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/health/health.service */ 63286);
+/* harmony import */ var _update_hba1c_update_hba1c_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../update-hba1c/update-hba1c.component */ 97187);
+/* harmony import */ var _view_hba1c_view_hba1c_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../view-hba1c/view-hba1c.component */ 56116);
 
 
 
@@ -1447,7 +1544,7 @@ let Hba1cComponent = class Hba1cComponent {
             e === null || e === void 0 ? void 0 : e.stopPropagation();
             const modal = yield this.modalController.create({
                 component: _update_hba1c_update_hba1c_component__WEBPACK_IMPORTED_MODULE_3__.UpdateHba1cComponent,
-                cssClass: 'modal-50',
+                cssClass: 'modal-80',
             });
             yield modal.present();
         });
@@ -1470,7 +1567,7 @@ Hba1cComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 5005:
+/***/ 65005:
 /*!*********************************************************************!*\
   !*** ./src/app/components/health-status/health-status.component.ts ***!
   \*********************************************************************/
@@ -1481,15 +1578,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HealthStatusComponent": () => (/* binding */ HealthStatusComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_health_status_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./health-status.component.html */ 2081);
-/* harmony import */ var _health_status_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./health-status.component.scss */ 7264);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/health/health.service */ 3286);
-/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/assets/scripts/misc */ 5765);
-/* harmony import */ var _update_health_status_update_health_status_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../update-health-status/update-health-status.component */ 545);
-/* harmony import */ var _view_health_status_view_health_status_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../view-health-status/view-health-status.component */ 7340);
+/* harmony import */ var _health_status_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./health-status.component.scss */ 17264);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/health/health.service */ 63286);
+/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/assets/scripts/misc */ 65765);
+/* harmony import */ var _update_health_status_update_health_status_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../update-health-status/update-health-status.component */ 30545);
+/* harmony import */ var _view_health_status_view_health_status_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../view-health-status/view-health-status.component */ 37340);
 
 
 
@@ -1557,7 +1654,7 @@ HealthStatusComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
 
 /***/ }),
 
-/***/ 1400:
+/***/ 21400:
 /*!*****************************************************************************!*\
   !*** ./src/app/components/language-settings/language-settings.component.ts ***!
   \*****************************************************************************/
@@ -1568,12 +1665,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LanguageSettingsComponent": () => (/* binding */ LanguageSettingsComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_language_settings_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./language-settings.component.html */ 2457);
-/* harmony import */ var _language_settings_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./language-settings.component.scss */ 7871);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_language_settings_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./language-settings.component.html */ 92457);
+/* harmony import */ var _language_settings_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./language-settings.component.scss */ 67871);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
 
 
 
@@ -1628,7 +1725,7 @@ LanguageSettingsComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 6384:
+/***/ 76384:
 /*!*************************************************************!*\
   !*** ./src/app/components/locations/locations.component.ts ***!
   \*************************************************************/
@@ -1639,12 +1736,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LocationsComponent": () => (/* binding */ LocationsComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_locations_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./locations.component.html */ 7376);
-/* harmony import */ var _locations_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./locations.component.scss */ 9722);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var _locations_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./locations.component.scss */ 19722);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
 
 
 
@@ -1772,7 +1869,7 @@ LocationsComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 4794:
+/***/ 34794:
 /*!***************************************************************!*\
   !*** ./src/app/components/meals-list/meals-list.component.ts ***!
   \***************************************************************/
@@ -1783,14 +1880,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "MealsListComponent": () => (/* binding */ MealsListComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_meals_list_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./meals-list.component.html */ 7750);
-/* harmony import */ var _meals_list_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./meals-list.component.scss */ 9159);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_assets_data_food_categories__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/assets/data/food-categories */ 6559);
-/* harmony import */ var src_assets_data_food__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/assets/data/food */ 1528);
-/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 5765);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_meals_list_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./meals-list.component.html */ 97750);
+/* harmony import */ var _meals_list_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./meals-list.component.scss */ 59159);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_assets_data_food_categories__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/assets/data/food-categories */ 26559);
+/* harmony import */ var src_assets_data_food__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/assets/data/food */ 71528);
+/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 65765);
 
 
 
@@ -1907,7 +2004,7 @@ MealsListComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
 
 /***/ }),
 
-/***/ 5819:
+/***/ 85819:
 /*!***************************************************!*\
   !*** ./src/app/components/menu/menu.component.ts ***!
   \***************************************************/
@@ -1918,21 +2015,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "MenuComponent": () => (/* binding */ MenuComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_menu_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./menu.component.html */ 4300);
-/* harmony import */ var _menu_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu.component.scss */ 3847);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_menu_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./menu.component.html */ 44300);
+/* harmony import */ var _menu_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu.component.scss */ 93847);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
 /* harmony import */ var src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user/user.service */ 9709);
-/* harmony import */ var _bookmarks_bookmarks_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../bookmarks/bookmarks.component */ 7705);
-/* harmony import */ var _diabetes_walk_diabetes_walk_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../diabetes-walk/diabetes-walk.component */ 3423);
+/* harmony import */ var _bookmarks_bookmarks_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../bookmarks/bookmarks.component */ 27705);
+/* harmony import */ var _diabetes_walk_diabetes_walk_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../diabetes-walk/diabetes-walk.component */ 33423);
 /* harmony import */ var _exercise_exercise_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../exercise/exercise.component */ 4692);
-/* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../profile/profile.component */ 7094);
+/* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../profile/profile.component */ 87094);
 /* harmony import */ var _reminder_reminder_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../reminder/reminder.component */ 6533);
-/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../settings/settings.component */ 6577);
-/* harmony import */ var _terms_terms_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../terms/terms.component */ 1317);
+/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../settings/settings.component */ 66577);
+/* harmony import */ var _terms_terms_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../terms/terms.component */ 51317);
 
 
 
@@ -2080,7 +2177,7 @@ MenuComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_12__.__decorate)([
 
 /***/ }),
 
-/***/ 7094:
+/***/ 87094:
 /*!*********************************************************!*\
   !*** ./src/app/components/profile/profile.component.ts ***!
   \*********************************************************/
@@ -2091,16 +2188,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ProfileComponent": () => (/* binding */ ProfileComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_profile_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./profile.component.html */ 5473);
-/* harmony import */ var _profile_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile.component.scss */ 8064);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_profile_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./profile.component.html */ 95473);
+/* harmony import */ var _profile_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile.component.scss */ 18064);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
 /* harmony import */ var src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user/user.service */ 9709);
-/* harmony import */ var _update_password_update_password_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../update-password/update-password.component */ 1513);
-/* harmony import */ var _update_picture_update_picture_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../update-picture/update-picture.component */ 8999);
-/* harmony import */ var _update_profile_update_profile_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../update-profile/update-profile.component */ 7878);
+/* harmony import */ var _update_password_update_password_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../update-password/update-password.component */ 11513);
+/* harmony import */ var _update_picture_update_picture_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../update-picture/update-picture.component */ 58999);
+/* harmony import */ var _update_profile_update_profile_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../update-profile/update-profile.component */ 97878);
 
 
 
@@ -2194,7 +2291,7 @@ ProfileComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
 
 /***/ }),
 
-/***/ 2112:
+/***/ 12112:
 /*!*****************************************************************************!*\
   !*** ./src/app/components/register-for-walk/register-for-walk.component.ts ***!
   \*****************************************************************************/
@@ -2205,12 +2302,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RegisterForWalkComponent": () => (/* binding */ RegisterForWalkComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_register_for_walk_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./register-for-walk.component.html */ 8695);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_register_for_walk_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./register-for-walk.component.html */ 28695);
 /* harmony import */ var _register_for_walk_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./register-for-walk.component.scss */ 8971);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
 /* harmony import */ var src_app_services_walk_walk_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/walk/walk.service */ 1655);
 
 
@@ -2272,17 +2369,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ReminderComponent": () => (/* binding */ ReminderComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_reminder_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./reminder.component.html */ 4797);
-/* harmony import */ var _reminder_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reminder.component.scss */ 1295);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_reminder_reminder_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/reminder/reminder.service */ 1333);
-/* harmony import */ var _add_reminder_add_reminder_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../add-reminder/add-reminder.component */ 1302);
-/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! dateformat */ 7877);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_reminder_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./reminder.component.html */ 24797);
+/* harmony import */ var _reminder_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reminder.component.scss */ 41295);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_reminder_reminder_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/reminder/reminder.service */ 71333);
+/* harmony import */ var _add_reminder_add_reminder_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../add-reminder/add-reminder.component */ 81302);
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! dateformat */ 67877);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
 /* harmony import */ var src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/user/user.service */ 9709);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ 39895);
 
 
 
@@ -2379,7 +2476,7 @@ ReminderComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
 
 /***/ }),
 
-/***/ 9055:
+/***/ 29055:
 /*!*******************************************************!*\
   !*** ./src/app/components/search/search.component.ts ***!
   \*******************************************************/
@@ -2390,13 +2487,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SearchComponent": () => (/* binding */ SearchComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_search_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./search.component.html */ 1452);
-/* harmony import */ var _search_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search.component.scss */ 4223);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_pages_logged_education_single_single_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/pages/logged/education/single/single.component */ 8385);
-/* harmony import */ var src_app_services_education_education_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/education/education.service */ 1788);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_search_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./search.component.html */ 51452);
+/* harmony import */ var _search_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search.component.scss */ 44223);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_pages_logged_education_single_single_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/pages/logged/education/single/single.component */ 18385);
+/* harmony import */ var src_app_services_education_education_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/education/education.service */ 81788);
 
 
 
@@ -2465,7 +2562,7 @@ SearchComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 6577:
+/***/ 66577:
 /*!***********************************************************!*\
   !*** ./src/app/components/settings/settings.component.ts ***!
   \***********************************************************/
@@ -2476,12 +2573,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SettingsComponent": () => (/* binding */ SettingsComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_settings_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./settings.component.html */ 4190);
-/* harmony import */ var _settings_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./settings.component.scss */ 2252);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var _language_settings_language_settings_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../language-settings/language-settings.component */ 1400);
+/* harmony import */ var _settings_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./settings.component.scss */ 62252);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _language_settings_language_settings_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../language-settings/language-settings.component */ 21400);
 
 
 
@@ -2529,7 +2626,61 @@ SettingsComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 1317:
+/***/ 56954:
+/*!*****************************************************************!*\
+  !*** ./src/app/components/share-email/share-email.component.ts ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ShareEmailComponent": () => (/* binding */ ShareEmailComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_share_email_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./share-email.component.html */ 66448);
+/* harmony import */ var _share_email_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./share-email.component.scss */ 63209);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+
+
+
+
+
+
+let ShareEmailComponent = class ShareEmailComponent {
+    constructor(modalController, global) {
+        this.modalController = modalController;
+        this.global = global;
+        this.email = '';
+    }
+    ngOnInit() { }
+    save() {
+        if (!this.email)
+            return this.global.alert('Share Medication', 'Email is required!', [
+                { role: true, text: 'OK' },
+            ]);
+        return this.modalController.dismiss(this.email);
+    }
+};
+ShareEmailComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.ModalController },
+    { type: src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__.GlobalService }
+];
+ShareEmailComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
+        selector: 'app-share-email',
+        template: _raw_loader_share_email_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
+        styles: [_share_email_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
+    })
+], ShareEmailComponent);
+
+
+
+/***/ }),
+
+/***/ 51317:
 /*!*****************************************************!*\
   !*** ./src/app/components/terms/terms.component.ts ***!
   \*****************************************************/
@@ -2540,11 +2691,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "TermsComponent": () => (/* binding */ TermsComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_terms_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./terms.component.html */ 2509);
-/* harmony import */ var _terms_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./terms.component.scss */ 188);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _terms_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./terms.component.scss */ 40188);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 80476);
 
 
 
@@ -2571,7 +2722,7 @@ TermsComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 6463:
+/***/ 36463:
 /*!*************************************************************************************!*\
   !*** ./src/app/components/update-blood-pressure/update-blood-pressure.component.ts ***!
   \*************************************************************************************/
@@ -2582,14 +2733,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "UpdateBloodPressureComponent": () => (/* binding */ UpdateBloodPressureComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_update_blood_pressure_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-blood-pressure.component.html */ 7218);
-/* harmony import */ var _update_blood_pressure_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-blood-pressure.component.scss */ 2723);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_update_blood_pressure_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-blood-pressure.component.html */ 97218);
+/* harmony import */ var _update_blood_pressure_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-blood-pressure.component.scss */ 32723);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 80476);
 /* harmony import */ var src_app_services_blood_pressure_blood_pressure_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/blood-pressure/blood-pressure.service */ 8);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
-/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 5765);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 65765);
 
 
 
@@ -2624,6 +2775,9 @@ let UpdateBloodPressureComponent = class UpdateBloodPressureComponent {
         }
         this.tip = (0,src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__.fetchBloodPressureTips)(this.pressure.upper, this.pressure.lower);
     }
+    scrollIntoView(el) {
+        el.scrollIntoView();
+    }
     save() {
         this.bloodPressureService
             .add(Object.assign(Object.assign({ time: new Date() }, this.pressure), { unit: 'mmhg' }))
@@ -2656,7 +2810,7 @@ UpdateBloodPressureComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)
 
 /***/ }),
 
-/***/ 6065:
+/***/ 46065:
 /*!*******************************************************************************!*\
   !*** ./src/app/components/update-blood-sugar/update-blood-sugar.component.ts ***!
   \*******************************************************************************/
@@ -2667,14 +2821,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "UpdateBloodSugarComponent": () => (/* binding */ UpdateBloodSugarComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_update_blood_sugar_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-blood-sugar.component.html */ 3654);
-/* harmony import */ var _update_blood_sugar_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-blood-sugar.component.scss */ 6075);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _update_blood_sugar_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-blood-sugar.component.scss */ 26075);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 80476);
 /* harmony import */ var src_app_services_blood_sugar_blood_sugar_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/blood-sugar/blood-sugar.service */ 8734);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
-/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 5765);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 65765);
 
 
 
@@ -2722,6 +2876,9 @@ let UpdateBloodSugarComponent = class UpdateBloodSugarComponent {
             this.global.alert('Update blood sugar', 'Blood sugar sucessfully updated!', ['OK']);
         });
     }
+    scrollIntoView(el) {
+        el.scrollIntoView();
+    }
     ngOnDestroy() {
         this.subs.forEach((sub) => sub.unsubscribe());
     }
@@ -2744,7 +2901,7 @@ UpdateBloodSugarComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
 
 /***/ }),
 
-/***/ 5204:
+/***/ 65204:
 /*!***************************************************************!*\
   !*** ./src/app/components/update-bmi/update-bmi.component.ts ***!
   \***************************************************************/
@@ -2755,14 +2912,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "UpdateBmiComponent": () => (/* binding */ UpdateBmiComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_update_bmi_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-bmi.component.html */ 8863);
-/* harmony import */ var _update_bmi_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-bmi.component.scss */ 9441);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_update_bmi_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-bmi.component.html */ 88863);
+/* harmony import */ var _update_bmi_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-bmi.component.scss */ 29441);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 80476);
 /* harmony import */ var src_app_services_bmi_bmi_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/bmi/bmi.service */ 9264);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
-/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 5765);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 65765);
 
 
 
@@ -2819,6 +2976,9 @@ let UpdateBmiComponent = class UpdateBmiComponent {
             this.global.alert('Update BMI', 'BMI sucessfully updated!', ['OK']);
         });
     }
+    scrollIntoView(el) {
+        el.scrollIntoView();
+    }
     ngOnDestroy() {
         this.subs.forEach((sub) => sub.unsubscribe());
     }
@@ -2841,7 +3001,7 @@ UpdateBmiComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
 
 /***/ }),
 
-/***/ 6949:
+/***/ 96949:
 /*!*******************************************************************************!*\
   !*** ./src/app/components/update-cholesterol/update-cholesterol.component.ts ***!
   \*******************************************************************************/
@@ -2852,14 +3012,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "UpdateCholesterolComponent": () => (/* binding */ UpdateCholesterolComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_update_cholesterol_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-cholesterol.component.html */ 8753);
-/* harmony import */ var _update_cholesterol_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-cholesterol.component.scss */ 9045);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_cholesterol_cholesterol_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/cholesterol/cholesterol.service */ 4884);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
-/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 5765);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_update_cholesterol_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-cholesterol.component.html */ 48753);
+/* harmony import */ var _update_cholesterol_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-cholesterol.component.scss */ 99045);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_cholesterol_cholesterol_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/cholesterol/cholesterol.service */ 54884);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 65765);
 
 
 
@@ -2901,6 +3061,9 @@ let UpdateCholesterolComponent = class UpdateCholesterolComponent {
             this.global.alert('Update cholesterol', 'Cholesterol sucessfully updated!', ['OK']);
         });
     }
+    scrollIntoView(el) {
+        el.scrollIntoView();
+    }
     ngOnDestroy() {
         this.subs.forEach((sub) => sub.unsubscribe());
     }
@@ -2923,7 +3086,7 @@ UpdateCholesterolComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
 
 /***/ }),
 
-/***/ 7187:
+/***/ 97187:
 /*!*******************************************************************!*\
   !*** ./src/app/components/update-hba1c/update-hba1c.component.ts ***!
   \*******************************************************************/
@@ -2934,13 +3097,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "UpdateHba1cComponent": () => (/* binding */ UpdateHba1cComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_update_hba1c_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-hba1c.component.html */ 6111);
-/* harmony import */ var _update_hba1c_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-hba1c.component.scss */ 7938);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
-/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/health/health.service */ 3286);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_update_hba1c_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-hba1c.component.html */ 76111);
+/* harmony import */ var _update_hba1c_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-hba1c.component.scss */ 57938);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/health/health.service */ 63286);
 
 
 
@@ -3022,6 +3185,9 @@ let UpdateHba1cComponent = class UpdateHba1cComponent {
             this.global.alert('Update Hba1c', 'Hba1c sucessfully updated!', ['OK']);
         });
     }
+    scrollIntoView(el) {
+        el.scrollIntoView();
+    }
     ngOnDestroy() {
         this.subs.forEach((sub) => sub.unsubscribe());
     }
@@ -3044,7 +3210,7 @@ UpdateHba1cComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 545:
+/***/ 30545:
 /*!***********************************************************************************!*\
   !*** ./src/app/components/update-health-status/update-health-status.component.ts ***!
   \***********************************************************************************/
@@ -3055,13 +3221,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "UpdateHealthStatusComponent": () => (/* binding */ UpdateHealthStatusComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_update_health_status_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-health-status.component.html */ 8515);
-/* harmony import */ var _update_health_status_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-health-status.component.scss */ 6269);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
-/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/health/health.service */ 3286);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_update_health_status_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-health-status.component.html */ 88515);
+/* harmony import */ var _update_health_status_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-health-status.component.scss */ 66269);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/health/health.service */ 63286);
 
 
 
@@ -3116,7 +3282,7 @@ UpdateHealthStatusComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)(
 
 /***/ }),
 
-/***/ 1513:
+/***/ 11513:
 /*!*************************************************************************!*\
   !*** ./src/app/components/update-password/update-password.component.ts ***!
   \*************************************************************************/
@@ -3127,12 +3293,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "UpdatePasswordComponent": () => (/* binding */ UpdatePasswordComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_update_password_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-password.component.html */ 2774);
-/* harmony import */ var _update_password_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-password.component.scss */ 6081);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_update_password_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-password.component.html */ 82774);
+/* harmony import */ var _update_password_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-password.component.scss */ 96081);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
 /* harmony import */ var src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user/user.service */ 9709);
 
 
@@ -3190,7 +3356,7 @@ UpdatePasswordComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 8999:
+/***/ 58999:
 /*!***********************************************************************!*\
   !*** ./src/app/components/update-picture/update-picture.component.ts ***!
   \***********************************************************************/
@@ -3201,14 +3367,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "UpdatePictureComponent": () => (/* binding */ UpdatePictureComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_update_picture_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-picture.component.html */ 334);
-/* harmony import */ var _update_picture_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-picture.component.scss */ 8785);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var _capacitor_camera__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @capacitor/camera */ 7673);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_update_picture_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-picture.component.html */ 90334);
+/* harmony import */ var _update_picture_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-picture.component.scss */ 27010);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _capacitor_camera__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @capacitor/camera */ 37673);
 /* harmony import */ var src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user/user.service */ 9709);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
 
 
 
@@ -3314,7 +3480,7 @@ UpdatePictureComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 7878:
+/***/ 97878:
 /*!***********************************************************************!*\
   !*** ./src/app/components/update-profile/update-profile.component.ts ***!
   \***********************************************************************/
@@ -3325,12 +3491,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "UpdateProfileComponent": () => (/* binding */ UpdateProfileComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_update_profile_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-profile.component.html */ 8720);
-/* harmony import */ var _update_profile_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-profile.component.scss */ 5403);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_update_profile_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./update-profile.component.html */ 38720);
+/* harmony import */ var _update_profile_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./update-profile.component.scss */ 45403);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
 /* harmony import */ var src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user/user.service */ 9709);
 
 
@@ -3401,7 +3567,7 @@ UpdateProfileComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
 
 /***/ }),
 
-/***/ 9910:
+/***/ 49910:
 /*!*********************************************************************************!*\
   !*** ./src/app/components/view-blood-pressure/view-blood-pressure.component.ts ***!
   \*********************************************************************************/
@@ -3412,15 +3578,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ViewBloodPressureComponent": () => (/* binding */ ViewBloodPressureComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_view_blood_pressure_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-blood-pressure.component.html */ 7429);
-/* harmony import */ var _view_blood_pressure_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-blood-pressure.component.scss */ 458);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_view_blood_pressure_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-blood-pressure.component.html */ 37429);
+/* harmony import */ var _view_blood_pressure_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-blood-pressure.component.scss */ 20458);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/angular */ 80476);
 /* harmony import */ var src_app_services_blood_pressure_blood_pressure_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/blood-pressure/blood-pressure.service */ 8);
-/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dateformat */ 7877);
-/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 5765);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dateformat */ 67877);
+/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 65765);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+/* harmony import */ var _calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../calendar-modal/calendar-modal.component */ 3293);
+/* harmony import */ var _share_email_share_email_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../share-email/share-email.component */ 56954);
+/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/health/health.service */ 63286);
+
+
+
 
 
 
@@ -3431,18 +3603,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ViewBloodPressureComponent = class ViewBloodPressureComponent {
-    constructor(modalController, bloodPressureService, global, platform) {
+    constructor(modalController, bloodPressureService, global, platform, healthService) {
         this.modalController = modalController;
         this.bloodPressureService = bloodPressureService;
         this.global = global;
         this.platform = platform;
+        this.healthService = healthService;
         this.expand = null;
         this.allBloodPressure = [];
         this.subs = [];
     }
     ngOnInit() {
         let sub = this.bloodPressureService.get().subscribe((data) => {
-            this.allBloodPressure = data.map((datum) => {
+            this.allBloodPressure = data
+                .sort((a, z) => new Date(z.created_at).getTime() - new Date(a.created_at).getTime())
+                .map((datum) => {
                 datum.date = (0,dateformat__WEBPACK_IMPORTED_MODULE_3__.default)(new Date(datum.created_at), 'dd mmm, yyyy-hh:MMtt');
                 datum.tip = (0,src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__.fetchBloodPressureTips)(datum.upper, datum.lower);
                 return datum;
@@ -3454,7 +3629,37 @@ let ViewBloodPressureComponent = class ViewBloodPressureComponent {
         });
         this.subs.push(sub);
     }
-    share() { }
+    share() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+            this.modalController.dismiss();
+            const modal = yield this.modalController.create({
+                component: _calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_6__.CalendarModalComponent,
+                cssClass: 'modal-80',
+            });
+            modal.onDidDismiss().then(({ data }) => (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+                if (!data)
+                    return;
+                const modal = yield this.modalController.create({
+                    component: _share_email_share_email_component__WEBPACK_IMPORTED_MODULE_7__.ShareEmailComponent,
+                    cssClass: 'modal-50',
+                });
+                const date = data;
+                modal.onDidDismiss().then(({ data }) => {
+                    if (!data)
+                        return;
+                    this.healthService
+                        .share(Object.assign(Object.assign({ email: data }, date), { type: 'blood_pressure' }))
+                        .subscribe((data) => {
+                        return this.global.alert('Share record', data, [
+                            { role: true, text: 'OK' },
+                        ]);
+                    });
+                });
+                yield modal.present();
+            }));
+            yield modal.present();
+        });
+    }
     toggle(i) {
         if (i == this.expand) {
             this.expand = null;
@@ -3464,7 +3669,7 @@ let ViewBloodPressureComponent = class ViewBloodPressureComponent {
         }
     }
     remove(id) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
             const { role } = yield this.global.alert('Remove Blood Pressure', 'Are you sure you want to remove blood pressure reading?', [
                 { role: false, text: 'Cancel' },
                 { role: true, text: 'OK' },
@@ -3483,13 +3688,14 @@ let ViewBloodPressureComponent = class ViewBloodPressureComponent {
     }
 };
 ViewBloodPressureComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ModalController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.ModalController },
     { type: src_app_services_blood_pressure_blood_pressure_service__WEBPACK_IMPORTED_MODULE_2__.BloodPressureService },
     { type: src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__.GlobalService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.Platform }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.Platform },
+    { type: src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_8__.HealthService }
 ];
-ViewBloodPressureComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
+ViewBloodPressureComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_11__.Component)({
         selector: 'app-view-blood-pressure',
         template: _raw_loader_view_blood_pressure_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_view_blood_pressure_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -3500,7 +3706,7 @@ ViewBloodPressureComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
 
 /***/ }),
 
-/***/ 6527:
+/***/ 76527:
 /*!***************************************************************************!*\
   !*** ./src/app/components/view-blood-sugar/view-blood-sugar.component.ts ***!
   \***************************************************************************/
@@ -3511,15 +3717,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ViewBloodSugarComponent": () => (/* binding */ ViewBloodSugarComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_view_blood_sugar_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-blood-sugar.component.html */ 9375);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_view_blood_sugar_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-blood-sugar.component.html */ 49375);
 /* harmony import */ var _view_blood_sugar_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-blood-sugar.component.scss */ 7532);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/angular */ 80476);
 /* harmony import */ var src_app_services_blood_sugar_blood_sugar_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/blood-sugar/blood-sugar.service */ 8734);
-/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dateformat */ 7877);
-/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 5765);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dateformat */ 67877);
+/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 65765);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+/* harmony import */ var _calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../calendar-modal/calendar-modal.component */ 3293);
+/* harmony import */ var _share_email_share_email_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../share-email/share-email.component */ 56954);
+/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/health/health.service */ 63286);
+
+
+
 
 
 
@@ -3530,18 +3742,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ViewBloodSugarComponent = class ViewBloodSugarComponent {
-    constructor(modalController, bloodSugarService, global, platform) {
+    constructor(modalController, bloodSugarService, global, platform, healthService) {
         this.modalController = modalController;
         this.bloodSugarService = bloodSugarService;
         this.global = global;
         this.platform = platform;
+        this.healthService = healthService;
         this.expand = null;
         this.bloodSugar = [];
         this.subs = [];
     }
     ngOnInit() {
         let sub = this.bloodSugarService.get().subscribe((data) => {
-            this.bloodSugar = data.map((datum) => {
+            this.bloodSugar = data
+                .sort((a, z) => new Date(z.created_at).getTime() - new Date(a.created_at).getTime())
+                .map((datum) => {
                 datum.date = (0,dateformat__WEBPACK_IMPORTED_MODULE_3__.default)(new Date(datum.created_at), 'dd mmm, yyyy-hh:MMtt');
                 datum.tip = (0,src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__.fetchBloodSugarTips)(Object.assign(Object.assign({}, datum), { value: datum.reading }));
                 return datum;
@@ -3553,7 +3768,37 @@ let ViewBloodSugarComponent = class ViewBloodSugarComponent {
         });
         this.subs.push(sub);
     }
-    share() { }
+    share() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+            this.modalController.dismiss();
+            const modal = yield this.modalController.create({
+                component: _calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_6__.CalendarModalComponent,
+                cssClass: 'modal-80',
+            });
+            modal.onDidDismiss().then(({ data }) => (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+                if (!data)
+                    return;
+                const modal = yield this.modalController.create({
+                    component: _share_email_share_email_component__WEBPACK_IMPORTED_MODULE_7__.ShareEmailComponent,
+                    cssClass: 'modal-50',
+                });
+                const date = data;
+                modal.onDidDismiss().then(({ data }) => {
+                    if (!data)
+                        return;
+                    this.healthService
+                        .share(Object.assign(Object.assign({ email: data }, date), { type: 'blood_sugar' }))
+                        .subscribe((data) => {
+                        return this.global.alert('Share record', data, [
+                            { role: true, text: 'OK' },
+                        ]);
+                    });
+                });
+                yield modal.present();
+            }));
+            yield modal.present();
+        });
+    }
     toggle(i) {
         if (i == this.expand) {
             this.expand = null;
@@ -3563,7 +3808,7 @@ let ViewBloodSugarComponent = class ViewBloodSugarComponent {
         }
     }
     remove(id) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
             const { role } = yield this.global.alert('Remove Blood Sugar', 'Are you sure you want to remove blood sugar reading?', [
                 { role: false, text: 'Cancel' },
                 { role: true, text: 'OK' },
@@ -3581,13 +3826,14 @@ let ViewBloodSugarComponent = class ViewBloodSugarComponent {
     }
 };
 ViewBloodSugarComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ModalController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.ModalController },
     { type: src_app_services_blood_sugar_blood_sugar_service__WEBPACK_IMPORTED_MODULE_2__.BloodSugarService },
     { type: src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__.GlobalService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.Platform }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.Platform },
+    { type: src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_8__.HealthService }
 ];
-ViewBloodSugarComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
+ViewBloodSugarComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_11__.Component)({
         selector: 'app-view-blood-sugar',
         template: _raw_loader_view_blood_sugar_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_view_blood_sugar_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -3598,7 +3844,7 @@ ViewBloodSugarComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
 
 /***/ }),
 
-/***/ 264:
+/***/ 70264:
 /*!***********************************************************!*\
   !*** ./src/app/components/view-bmi/view-bmi.component.ts ***!
   \***********************************************************/
@@ -3609,15 +3855,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ViewBmiComponent": () => (/* binding */ ViewBmiComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_view_bmi_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-bmi.component.html */ 3700);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_view_bmi_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-bmi.component.html */ 83700);
 /* harmony import */ var _view_bmi_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-bmi.component.scss */ 6253);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/angular */ 80476);
 /* harmony import */ var src_app_services_bmi_bmi_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/bmi/bmi.service */ 9264);
-/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dateformat */ 7877);
-/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 5765);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dateformat */ 67877);
+/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 65765);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+/* harmony import */ var _calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../calendar-modal/calendar-modal.component */ 3293);
+/* harmony import */ var _share_email_share_email_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../share-email/share-email.component */ 56954);
+/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/health/health.service */ 63286);
+
+
+
 
 
 
@@ -3628,18 +3880,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ViewBmiComponent = class ViewBmiComponent {
-    constructor(modalController, bmiService, global, platform) {
+    constructor(modalController, bmiService, global, platform, healthService) {
         this.modalController = modalController;
         this.bmiService = bmiService;
         this.global = global;
         this.platform = platform;
+        this.healthService = healthService;
         this.expand = null;
         this.subs = [];
         this.allBmi = [];
     }
     ngOnInit() {
         let sub = this.bmiService.get().subscribe((data) => {
-            this.allBmi = data.map((datum) => {
+            this.allBmi = data
+                .sort((a, z) => new Date(z.created_at).getTime() - new Date(a.created_at).getTime())
+                .map((datum) => {
                 datum.date = (0,dateformat__WEBPACK_IMPORTED_MODULE_3__.default)(new Date(datum.created_at), 'dd mmm, yyyy-hh:MMtt');
                 datum.tip = (0,src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__.fetchBMI)(datum.mass);
                 return datum;
@@ -3651,7 +3906,37 @@ let ViewBmiComponent = class ViewBmiComponent {
         });
         this.subs.push(sub);
     }
-    share() { }
+    share() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+            this.modalController.dismiss();
+            const modal = yield this.modalController.create({
+                component: _calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_6__.CalendarModalComponent,
+                cssClass: 'modal-80',
+            });
+            modal.onDidDismiss().then(({ data }) => (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+                if (!data)
+                    return;
+                const modal = yield this.modalController.create({
+                    component: _share_email_share_email_component__WEBPACK_IMPORTED_MODULE_7__.ShareEmailComponent,
+                    cssClass: 'modal-50',
+                });
+                const date = data;
+                modal.onDidDismiss().then(({ data }) => {
+                    if (!data)
+                        return;
+                    this.healthService
+                        .share(Object.assign(Object.assign({ email: data }, date), { type: 'body_mass' }))
+                        .subscribe((data) => {
+                        return this.global.alert('Share record', data, [
+                            { role: true, text: 'OK' },
+                        ]);
+                    });
+                });
+                yield modal.present();
+            }));
+            yield modal.present();
+        });
+    }
     toggle(i) {
         if (i == this.expand) {
             this.expand = null;
@@ -3661,7 +3946,7 @@ let ViewBmiComponent = class ViewBmiComponent {
         }
     }
     remove(id) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
             const { role } = yield this.global.alert('Remove BMI', 'Are you sure you want to remove BMI reading?', [
                 { role: false, text: 'Cancel' },
                 { role: true, text: 'OK' },
@@ -3680,13 +3965,14 @@ let ViewBmiComponent = class ViewBmiComponent {
     }
 };
 ViewBmiComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ModalController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.ModalController },
     { type: src_app_services_bmi_bmi_service__WEBPACK_IMPORTED_MODULE_2__.BmiService },
     { type: src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__.GlobalService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.Platform }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.Platform },
+    { type: src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_8__.HealthService }
 ];
-ViewBmiComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
+ViewBmiComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_11__.Component)({
         selector: 'app-view-bmi',
         template: _raw_loader_view_bmi_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_view_bmi_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -3697,7 +3983,7 @@ ViewBmiComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
 
 /***/ }),
 
-/***/ 7679:
+/***/ 57679:
 /*!***************************************************************************!*\
   !*** ./src/app/components/view-cholesterol/view-cholesterol.component.ts ***!
   \***************************************************************************/
@@ -3708,15 +3994,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ViewCholesterolComponent": () => (/* binding */ ViewCholesterolComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_view_cholesterol_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-cholesterol.component.html */ 5282);
-/* harmony import */ var _view_cholesterol_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-cholesterol.component.scss */ 1863);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_cholesterol_cholesterol_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/cholesterol/cholesterol.service */ 4884);
-/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dateformat */ 7877);
-/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 5765);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var _view_cholesterol_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-cholesterol.component.scss */ 41863);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_cholesterol_cholesterol_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/cholesterol/cholesterol.service */ 54884);
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dateformat */ 67877);
+/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 65765);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+/* harmony import */ var _calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../calendar-modal/calendar-modal.component */ 3293);
+/* harmony import */ var _share_email_share_email_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../share-email/share-email.component */ 56954);
+/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/health/health.service */ 63286);
+
+
+
 
 
 
@@ -3727,18 +4019,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ViewCholesterolComponent = class ViewCholesterolComponent {
-    constructor(modalController, cholesterolService, global, platform) {
+    constructor(modalController, cholesterolService, global, platform, healthService) {
         this.modalController = modalController;
         this.cholesterolService = cholesterolService;
         this.global = global;
         this.platform = platform;
+        this.healthService = healthService;
         this.expand = null;
         this.allCholesterol = [];
         this.subs = [];
     }
     ngOnInit() {
         let sub = this.cholesterolService.get().subscribe((data) => {
-            this.allCholesterol = data.map((d) => {
+            this.allCholesterol = data
+                .sort((a, z) => new Date(z.created_at).getTime() - new Date(a.created_at).getTime())
+                .map((d) => {
                 d.date = (0,dateformat__WEBPACK_IMPORTED_MODULE_3__.default)(new Date(d.created_at), 'dd mmm, yyyy-hh:MMtt');
                 d.tip = (0,src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__.fetchBloodPressureTips)(d.unit, d.reading);
                 return d;
@@ -3750,7 +4045,37 @@ let ViewCholesterolComponent = class ViewCholesterolComponent {
         });
         this.subs.push(sub);
     }
-    share() { }
+    share() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+            this.modalController.dismiss();
+            const modal = yield this.modalController.create({
+                component: _calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_6__.CalendarModalComponent,
+                cssClass: 'modal-80',
+            });
+            modal.onDidDismiss().then(({ data }) => (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
+                if (!data)
+                    return;
+                const modal = yield this.modalController.create({
+                    component: _share_email_share_email_component__WEBPACK_IMPORTED_MODULE_7__.ShareEmailComponent,
+                    cssClass: 'modal-50',
+                });
+                const date = data;
+                modal.onDidDismiss().then(({ data }) => {
+                    if (!data)
+                        return;
+                    this.healthService
+                        .share(Object.assign(Object.assign({ email: data }, date), { type: 'body_mass' }))
+                        .subscribe((data) => {
+                        return this.global.alert('Share record', data, [
+                            { role: true, text: 'OK' },
+                        ]);
+                    });
+                });
+                yield modal.present();
+            }));
+            yield modal.present();
+        });
+    }
     toggle(i) {
         if (i == this.expand) {
             this.expand = null;
@@ -3760,7 +4085,7 @@ let ViewCholesterolComponent = class ViewCholesterolComponent {
         }
     }
     remove(id) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__awaiter)(this, void 0, void 0, function* () {
             const { role } = yield this.global.alert('Remove Cholesterol reading.', 'Are you sure you want to remove cholesterol reading?', [
                 { role: false, text: 'Cancel' },
                 { role: true, text: 'OK' },
@@ -3778,13 +4103,14 @@ let ViewCholesterolComponent = class ViewCholesterolComponent {
     }
 };
 ViewCholesterolComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ModalController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.ModalController },
     { type: src_app_services_cholesterol_cholesterol_service__WEBPACK_IMPORTED_MODULE_2__.CholesterolService },
     { type: src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__.GlobalService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.Platform }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.Platform },
+    { type: src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_8__.HealthService }
 ];
-ViewCholesterolComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
+ViewCholesterolComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_9__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_11__.Component)({
         selector: 'app-view-cholesterol',
         template: _raw_loader_view_cholesterol_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_view_cholesterol_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -3795,7 +4121,7 @@ ViewCholesterolComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
 
 /***/ }),
 
-/***/ 6116:
+/***/ 56116:
 /*!***************************************************************!*\
   !*** ./src/app/components/view-hba1c/view-hba1c.component.ts ***!
   \***************************************************************/
@@ -3806,15 +4132,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ViewHba1cComponent": () => (/* binding */ ViewHba1cComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_view_hba1c_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-hba1c.component.html */ 3972);
-/* harmony import */ var _view_hba1c_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-hba1c.component.scss */ 5376);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/health/health.service */ 3286);
-/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dateformat */ 7877);
-/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 5765);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_view_hba1c_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-hba1c.component.html */ 43972);
+/* harmony import */ var _view_hba1c_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-hba1c.component.scss */ 75376);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/health/health.service */ 63286);
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dateformat */ 67877);
+/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/scripts/misc */ 65765);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
+/* harmony import */ var _calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../calendar-modal/calendar-modal.component */ 3293);
+/* harmony import */ var _share_email_share_email_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../share-email/share-email.component */ 56954);
+
+
 
 
 
@@ -3846,7 +4176,37 @@ let ViewHba1cComponent = class ViewHba1cComponent {
         });
         this.subs.push(sub);
     }
-    share() { }
+    share() {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
+            this.modalController.dismiss();
+            const modal = yield this.modalController.create({
+                component: _calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_6__.CalendarModalComponent,
+                cssClass: 'modal-80',
+            });
+            modal.onDidDismiss().then(({ data }) => (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
+                if (!data)
+                    return;
+                const modal = yield this.modalController.create({
+                    component: _share_email_share_email_component__WEBPACK_IMPORTED_MODULE_7__.ShareEmailComponent,
+                    cssClass: 'modal-50',
+                });
+                const date = data;
+                modal.onDidDismiss().then(({ data }) => {
+                    if (!data)
+                        return;
+                    this.healthService
+                        .share(Object.assign(Object.assign({ email: data }, date), { type: 'hba1c' }))
+                        .subscribe((data) => {
+                        return this.global.alert('Share record', data, [
+                            { role: true, text: 'OK' },
+                        ]);
+                    });
+                });
+                yield modal.present();
+            }));
+            yield modal.present();
+        });
+    }
     segmentChanged(e) {
         this.segment = e.detail.value;
     }
@@ -3859,7 +4219,7 @@ let ViewHba1cComponent = class ViewHba1cComponent {
         }
     }
     remove(id, key) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__awaiter)(this, void 0, void 0, function* () {
             const { role } = yield this.global.alert('Remove Hba1c', 'Are you sure you want to remove Hba1c reading?', [
                 { role: false, text: 'Cancel' },
                 { role: true, text: 'OK' },
@@ -3890,8 +4250,12 @@ let ViewHba1cComponent = class ViewHba1cComponent {
                     hba1cGroups[key] = [hba1c];
                 }
             }
+            //sort
+            for (const key in hba1cGroups) {
+                hba1cGroups[key] = hba1cGroups[key].sort((a, z) => new Date(z.created_at).getTime() - new Date(a.created_at).getTime());
+            }
             this.allHba1c = hba1cGroups;
-            this.allHba1cKeys = Object.keys(hba1cGroups);
+            this.allHba1cKeys = Object.keys(hba1cGroups).sort((a, z) => new Date(z).getTime() - new Date(a).getTime());
         });
     }
     formatStatus() {
@@ -3923,13 +4287,13 @@ let ViewHba1cComponent = class ViewHba1cComponent {
     }
 };
 ViewHba1cComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ModalController },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.ModalController },
     { type: src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_2__.HealthService },
     { type: src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_5__.GlobalService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.Platform }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.Platform }
 ];
-ViewHba1cComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
+ViewHba1cComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_10__.Component)({
         selector: 'app-view-hba1c',
         template: _raw_loader_view_hba1c_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_view_hba1c_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -3940,7 +4304,7 @@ ViewHba1cComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
 
 /***/ }),
 
-/***/ 7340:
+/***/ 37340:
 /*!*******************************************************************************!*\
   !*** ./src/app/components/view-health-status/view-health-status.component.ts ***!
   \*******************************************************************************/
@@ -3951,15 +4315,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ViewHealthStatusComponent": () => (/* binding */ ViewHealthStatusComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_view_health_status_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-health-status.component.html */ 4371);
-/* harmony import */ var _view_health_status_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-health-status.component.scss */ 2728);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/health/health.service */ 3286);
-/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/assets/scripts/misc */ 5765);
-/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! dateformat */ 7877);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_view_health_status_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-health-status.component.html */ 14371);
+/* harmony import */ var _view_health_status_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-health-status.component.scss */ 62728);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_health_health_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/health/health.service */ 63286);
+/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/assets/scripts/misc */ 65765);
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! dateformat */ 67877);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 39895);
 
 
 
@@ -4017,7 +4381,7 @@ ViewHealthStatusComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_7__.__decorate)([
 
 /***/ }),
 
-/***/ 6843:
+/***/ 64487:
 /*!*************************************************************!*\
   !*** ./src/app/components/view-meal/view-meal.component.ts ***!
   \*************************************************************/
@@ -4028,12 +4392,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ViewMealComponent": () => (/* binding */ ViewMealComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_view_meal_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-meal.component.html */ 1719);
-/* harmony import */ var _view_meal_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-meal.component.scss */ 7391);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_view_meal_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-meal.component.html */ 21719);
+/* harmony import */ var _view_meal_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-meal.component.scss */ 17391);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
 
 
 
@@ -4098,7 +4462,7 @@ ViewMealComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 184:
+/***/ 80184:
 /*!***************************************************************!*\
   !*** ./src/app/components/view-meals/view-meals.component.ts ***!
   \***************************************************************/
@@ -4109,17 +4473,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ViewMealsComponent": () => (/* binding */ ViewMealsComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_view_meals_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-meals.component.html */ 6733);
-/* harmony import */ var _view_meals_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-meals.component.scss */ 6827);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_meal_meal_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/meal/meal.service */ 4946);
-/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/assets/scripts/misc */ 5765);
-/* harmony import */ var _meals_list_meals_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../meals-list/meals-list.component */ 4794);
-/* harmony import */ var _view_meal_view_meal_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../view-meal/view-meal.component */ 6843);
-/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! dateformat */ 7877);
-/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/services/global/global.service */ 4031);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_view_meals_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./view-meals.component.html */ 36733);
+/* harmony import */ var _view_meals_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./view-meals.component.scss */ 66827);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_meal_meal_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/meal/meal.service */ 84946);
+/* harmony import */ var src_assets_scripts_misc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/assets/scripts/misc */ 65765);
+/* harmony import */ var _meals_list_meals_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../meals-list/meals-list.component */ 34794);
+/* harmony import */ var _view_meal_view_meal_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../view-meal/view-meal.component */ 64487);
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! dateformat */ 67877);
+/* harmony import */ var src_app_services_global_global_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/services/global/global.service */ 84031);
 
 
 
@@ -4322,7 +4686,7 @@ ViewMealsComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
 
 /***/ }),
 
-/***/ 8989:
+/***/ 28989:
 /*!*****************************************************!*\
   !*** ./src/app/interceptors/loader.interceptors.ts ***!
   \*****************************************************/
@@ -4333,12 +4697,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LoaderInterceptor": () => (/* binding */ LoaderInterceptor)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 8939);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 68939);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 5304);
-/* harmony import */ var _services_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/authentication/authentication.service */ 7020);
-/* harmony import */ var _services_global_global_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/global/global.service */ 4031);
+/* harmony import */ var _services_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/authentication/authentication.service */ 97020);
+/* harmony import */ var _services_global_global_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/global/global.service */ 84031);
 
 
 
@@ -4392,7 +4756,7 @@ LoaderInterceptor = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 7372:
+/***/ 27372:
 /*!************************************************!*\
   !*** ./src/app/layouts/home/home.component.ts ***!
   \************************************************/
@@ -4403,14 +4767,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HomeComponent": () => (/* binding */ HomeComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_home_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./home.component.html */ 202);
-/* harmony import */ var _home_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.component.scss */ 9625);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_components_locations_locations_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/components/locations/locations.component */ 6384);
-/* harmony import */ var src_app_components_view_meals_view_meals_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/components/view-meals/view-meals.component */ 184);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_home_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./home.component.html */ 20202);
+/* harmony import */ var _home_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.component.scss */ 99625);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_components_locations_locations_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/components/locations/locations.component */ 76384);
+/* harmony import */ var src_app_components_view_meals_view_meals_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/components/view-meals/view-meals.component */ 80184);
 
 
 
@@ -4430,7 +4794,7 @@ let HomeComponent = class HomeComponent {
     ngOnInit() {
         this.router.events.subscribe((ev) => {
             if (ev instanceof _angular_router__WEBPACK_IMPORTED_MODULE_4__.NavigationEnd) {
-                this.currentRoute = ev.url.split('/').slice(-1)[0];
+                this.currentRoute = ev.url.split('/').slice(-1)[0] || 'home';
             }
         });
     }
@@ -4473,7 +4837,7 @@ HomeComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 4363:
+/***/ 34363:
 /*!*********************************************************!*\
   !*** ./src/app/modules/logged/logged-routing.module.ts ***!
   \*********************************************************/
@@ -4484,10 +4848,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LoggedRoutingModule": () => (/* binding */ LoggedRoutingModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var src_app_layouts_home_home_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/layouts/home/home.component */ 7372);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var src_app_layouts_home_home_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/layouts/home/home.component */ 27372);
 
 
 
@@ -4499,15 +4863,15 @@ const routes = [
         children: [
             {
                 path: 'home',
-                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_logged_home_home_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ../../pages/logged/home/home.module */ 6200)).then((m) => m.HomePageModule),
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_logged_home_home_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ../../pages/logged/home/home.module */ 36200)).then((m) => m.HomePageModule),
             },
             {
                 path: 'education',
-                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_logged_education_education_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ../../pages/logged/education/education.module */ 2637)).then((m) => m.EducationPageModule),
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_logged_education_education_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ../../pages/logged/education/education.module */ 22637)).then((m) => m.EducationPageModule),
             },
             {
                 path: 'health',
-                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_logged_health_health_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ../../pages/logged/health/health.module */ 2829)).then((m) => m.HealthPageModule),
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_logged_health_health_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ../../pages/logged/health/health.module */ 12829)).then((m) => m.HealthPageModule),
             },
             {
                 path: '',
@@ -4530,7 +4894,7 @@ LoggedRoutingModule = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
 
 /***/ }),
 
-/***/ 1355:
+/***/ 55443:
 /*!*************************************************!*\
   !*** ./src/app/modules/logged/logged.module.ts ***!
   \*************************************************/
@@ -4541,19 +4905,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LoggedModule": () => (/* binding */ LoggedModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ 8583);
-/* harmony import */ var _logged_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./logged-routing.module */ 4363);
-/* harmony import */ var src_app_layouts_home_home_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/layouts/home/home.component */ 7372);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_components_menu_menu_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/components/menu/menu.component */ 5819);
-/* harmony import */ var src_app_components_locations_locations_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/components/locations/locations.component */ 6384);
-/* harmony import */ var src_app_components_profile_profile_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/components/profile/profile.component */ 7094);
-/* harmony import */ var src_app_components_update_profile_update_profile_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/components/update-profile/update-profile.component */ 7878);
-/* harmony import */ var src_app_components_update_picture_update_picture_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/components/update-picture/update-picture.component */ 8999);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ 38583);
+/* harmony import */ var _logged_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./logged-routing.module */ 34363);
+/* harmony import */ var src_app_layouts_home_home_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/layouts/home/home.component */ 27372);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_components_menu_menu_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/components/menu/menu.component */ 85819);
+/* harmony import */ var src_app_components_locations_locations_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/components/locations/locations.component */ 76384);
+/* harmony import */ var src_app_components_profile_profile_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/components/profile/profile.component */ 87094);
+/* harmony import */ var src_app_components_update_profile_update_profile_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/components/update-profile/update-profile.component */ 97878);
+/* harmony import */ var src_app_components_update_picture_update_picture_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/components/update-picture/update-picture.component */ 58999);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ 3679);
-/* harmony import */ var src_app_components_update_password_update_password_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/components/update-password/update-password.component */ 1513);
+/* harmony import */ var src_app_components_update_password_update_password_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/components/update-password/update-password.component */ 11513);
 
 
 
@@ -4588,7 +4952,7 @@ LoggedModule = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
 
 /***/ }),
 
-/***/ 2271:
+/***/ 72271:
 /*!*************************************************!*\
   !*** ./src/app/modules/shared/shared.module.ts ***!
   \*************************************************/
@@ -4599,52 +4963,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SharedModule": () => (/* binding */ SharedModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @angular/common */ 8583);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_components_blood_sugar_blood_sugar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/components/blood-sugar/blood-sugar.component */ 8770);
-/* harmony import */ var src_app_components_blood_pressure_blood_pressure_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/components/blood-pressure/blood-pressure.component */ 5853);
-/* harmony import */ var src_app_components_bmi_bmi_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/components/bmi/bmi.component */ 2349);
-/* harmony import */ var src_app_components_cholesterol_cholesterol_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/components/cholesterol/cholesterol.component */ 2654);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @angular/common */ 38583);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_components_blood_sugar_blood_sugar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/components/blood-sugar/blood-sugar.component */ 68770);
+/* harmony import */ var src_app_components_blood_pressure_blood_pressure_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/components/blood-pressure/blood-pressure.component */ 75853);
+/* harmony import */ var src_app_components_bmi_bmi_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/components/bmi/bmi.component */ 62349);
+/* harmony import */ var src_app_components_cholesterol_cholesterol_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/components/cholesterol/cholesterol.component */ 52654);
 /* harmony import */ var src_app_components_exercise_exercise_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/components/exercise/exercise.component */ 4692);
-/* harmony import */ var src_app_components_hba1c_hba1c_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/components/hba1c/hba1c.component */ 2406);
-/* harmony import */ var src_app_components_add_meal_add_meal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/components/add-meal/add-meal.component */ 984);
-/* harmony import */ var src_app_components_add_medication_add_medication_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/components/add-medication/add-medication.component */ 1741);
-/* harmony import */ var src_app_components_all_medications_all_medications_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/components/all-medications/all-medications.component */ 8965);
-/* harmony import */ var src_app_components_guage_guage_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/components/guage/guage.component */ 688);
-/* harmony import */ var src_app_components_health_status_health_status_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/components/health-status/health-status.component */ 5005);
-/* harmony import */ var src_app_components_update_blood_pressure_update_blood_pressure_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/components/update-blood-pressure/update-blood-pressure.component */ 6463);
-/* harmony import */ var src_app_components_update_blood_sugar_update_blood_sugar_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/app/components/update-blood-sugar/update-blood-sugar.component */ 6065);
-/* harmony import */ var src_app_components_update_bmi_update_bmi_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! src/app/components/update-bmi/update-bmi.component */ 5204);
-/* harmony import */ var src_app_components_update_cholesterol_update_cholesterol_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! src/app/components/update-cholesterol/update-cholesterol.component */ 6949);
-/* harmony import */ var src_app_components_update_hba1c_update_hba1c_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! src/app/components/update-hba1c/update-hba1c.component */ 7187);
-/* harmony import */ var src_app_components_update_health_status_update_health_status_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! src/app/components/update-health-status/update-health-status.component */ 545);
-/* harmony import */ var src_app_components_view_blood_pressure_view_blood_pressure_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! src/app/components/view-blood-pressure/view-blood-pressure.component */ 9910);
-/* harmony import */ var src_app_components_view_blood_sugar_view_blood_sugar_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! src/app/components/view-blood-sugar/view-blood-sugar.component */ 6527);
-/* harmony import */ var src_app_components_view_bmi_view_bmi_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! src/app/components/view-bmi/view-bmi.component */ 264);
-/* harmony import */ var src_app_components_view_cholesterol_view_cholesterol_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! src/app/components/view-cholesterol/view-cholesterol.component */ 7679);
-/* harmony import */ var src_app_components_view_hba1c_view_hba1c_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! src/app/components/view-hba1c/view-hba1c.component */ 6116);
-/* harmony import */ var src_app_components_view_health_status_view_health_status_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! src/app/components/view-health-status/view-health-status.component */ 7340);
-/* harmony import */ var src_app_components_view_meal_view_meal_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! src/app/components/view-meal/view-meal.component */ 6843);
-/* harmony import */ var src_app_pages_logged_home_home_page__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! src/app/pages/logged/home/home.page */ 4550);
-/* harmony import */ var src_app_pages_logged_health_health_page__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! src/app/pages/logged/health/health.page */ 3173);
-/* harmony import */ var src_app_components_expandable_expandable_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! src/app/components/expandable/expandable.component */ 8932);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @angular/forms */ 3679);
+/* harmony import */ var src_app_components_hba1c_hba1c_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/components/hba1c/hba1c.component */ 82406);
+/* harmony import */ var src_app_components_add_meal_add_meal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/components/add-meal/add-meal.component */ 60984);
+/* harmony import */ var src_app_components_add_medication_add_medication_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/components/add-medication/add-medication.component */ 91741);
+/* harmony import */ var src_app_components_all_medications_all_medications_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/components/all-medications/all-medications.component */ 18965);
+/* harmony import */ var src_app_components_guage_guage_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/components/guage/guage.component */ 80688);
+/* harmony import */ var src_app_components_health_status_health_status_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/components/health-status/health-status.component */ 65005);
+/* harmony import */ var src_app_components_update_blood_pressure_update_blood_pressure_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/components/update-blood-pressure/update-blood-pressure.component */ 36463);
+/* harmony import */ var src_app_components_update_blood_sugar_update_blood_sugar_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/app/components/update-blood-sugar/update-blood-sugar.component */ 46065);
+/* harmony import */ var src_app_components_update_bmi_update_bmi_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! src/app/components/update-bmi/update-bmi.component */ 65204);
+/* harmony import */ var src_app_components_update_cholesterol_update_cholesterol_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! src/app/components/update-cholesterol/update-cholesterol.component */ 96949);
+/* harmony import */ var src_app_components_update_hba1c_update_hba1c_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! src/app/components/update-hba1c/update-hba1c.component */ 97187);
+/* harmony import */ var src_app_components_update_health_status_update_health_status_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! src/app/components/update-health-status/update-health-status.component */ 30545);
+/* harmony import */ var src_app_components_view_blood_pressure_view_blood_pressure_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! src/app/components/view-blood-pressure/view-blood-pressure.component */ 49910);
+/* harmony import */ var src_app_components_view_blood_sugar_view_blood_sugar_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! src/app/components/view-blood-sugar/view-blood-sugar.component */ 76527);
+/* harmony import */ var src_app_components_view_bmi_view_bmi_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! src/app/components/view-bmi/view-bmi.component */ 70264);
+/* harmony import */ var src_app_components_view_cholesterol_view_cholesterol_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! src/app/components/view-cholesterol/view-cholesterol.component */ 57679);
+/* harmony import */ var src_app_components_view_hba1c_view_hba1c_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! src/app/components/view-hba1c/view-hba1c.component */ 56116);
+/* harmony import */ var src_app_components_view_health_status_view_health_status_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! src/app/components/view-health-status/view-health-status.component */ 37340);
+/* harmony import */ var src_app_components_view_meal_view_meal_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! src/app/components/view-meal/view-meal.component */ 64487);
+/* harmony import */ var src_app_pages_logged_home_home_page__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! src/app/pages/logged/home/home.page */ 34550);
+/* harmony import */ var src_app_pages_logged_health_health_page__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! src/app/pages/logged/health/health.page */ 43173);
+/* harmony import */ var src_app_components_expandable_expandable_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! src/app/components/expandable/expandable.component */ 38932);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! @angular/forms */ 3679);
 /* harmony import */ var src_app_components_reminder_reminder_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! src/app/components/reminder/reminder.component */ 6533);
-/* harmony import */ var src_app_components_add_reminder_add_reminder_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! src/app/components/add-reminder/add-reminder.component */ 1302);
-/* harmony import */ var src_app_components_bookmarks_bookmarks_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! src/app/components/bookmarks/bookmarks.component */ 7705);
-/* harmony import */ var src_app_components_bookmark_bookmark_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! src/app/components/bookmark/bookmark.component */ 3794);
-/* harmony import */ var src_app_components_diabetes_walk_diabetes_walk_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! src/app/components/diabetes-walk/diabetes-walk.component */ 3423);
-/* harmony import */ var src_app_components_register_for_walk_register_for_walk_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! src/app/components/register-for-walk/register-for-walk.component */ 2112);
-/* harmony import */ var src_app_components_settings_settings_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! src/app/components/settings/settings.component */ 6577);
-/* harmony import */ var src_app_components_language_settings_language_settings_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! src/app/components/language-settings/language-settings.component */ 1400);
-/* harmony import */ var src_app_components_view_meals_view_meals_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! src/app/components/view-meals/view-meals.component */ 184);
-/* harmony import */ var src_app_components_meals_list_meals_list_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! src/app/components/meals-list/meals-list.component */ 4794);
-/* harmony import */ var src_app_pages_auth_signup_health_profile_health_profile_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! src/app/pages/auth/signup/health-profile/health-profile.component */ 2966);
-/* harmony import */ var src_app_components_search_search_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! src/app/components/search/search.component */ 9055);
-/* harmony import */ var src_app_components_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! src/app/components/forgot-password/forgot-password.component */ 3368);
-/* harmony import */ var src_app_components_terms_terms_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! src/app/components/terms/terms.component */ 1317);
+/* harmony import */ var src_app_components_add_reminder_add_reminder_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! src/app/components/add-reminder/add-reminder.component */ 81302);
+/* harmony import */ var src_app_components_bookmarks_bookmarks_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! src/app/components/bookmarks/bookmarks.component */ 27705);
+/* harmony import */ var src_app_components_bookmark_bookmark_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! src/app/components/bookmark/bookmark.component */ 13794);
+/* harmony import */ var src_app_components_diabetes_walk_diabetes_walk_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! src/app/components/diabetes-walk/diabetes-walk.component */ 33423);
+/* harmony import */ var src_app_components_register_for_walk_register_for_walk_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! src/app/components/register-for-walk/register-for-walk.component */ 12112);
+/* harmony import */ var src_app_components_settings_settings_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! src/app/components/settings/settings.component */ 66577);
+/* harmony import */ var src_app_components_language_settings_language_settings_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! src/app/components/language-settings/language-settings.component */ 21400);
+/* harmony import */ var src_app_components_view_meals_view_meals_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! src/app/components/view-meals/view-meals.component */ 80184);
+/* harmony import */ var src_app_components_meals_list_meals_list_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! src/app/components/meals-list/meals-list.component */ 34794);
+/* harmony import */ var src_app_pages_auth_signup_health_profile_health_profile_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! src/app/pages/auth/signup/health-profile/health-profile.component */ 42966);
+/* harmony import */ var src_app_components_search_search_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! src/app/components/search/search.component */ 29055);
+/* harmony import */ var src_app_components_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! src/app/components/forgot-password/forgot-password.component */ 53368);
+/* harmony import */ var src_app_components_terms_terms_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! src/app/components/terms/terms.component */ 51317);
+/* harmony import */ var ion2_calendar__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ion2-calendar */ 18834);
+/* harmony import */ var ion2_calendar__WEBPACK_IMPORTED_MODULE_41___default = /*#__PURE__*/__webpack_require__.n(ion2_calendar__WEBPACK_IMPORTED_MODULE_41__);
+/* harmony import */ var src_app_components_calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! src/app/components/calendar-modal/calendar-modal.component */ 3293);
+/* harmony import */ var src_app_components_share_email_share_email_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! src/app/components/share-email/share-email.component */ 56954);
+
+
+
 
 
 
@@ -4693,8 +5064,8 @@ __webpack_require__.r(__webpack_exports__);
 
 let SharedModule = class SharedModule {
 };
-SharedModule = (0,tslib__WEBPACK_IMPORTED_MODULE_41__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_42__.NgModule)({
+SharedModule = (0,tslib__WEBPACK_IMPORTED_MODULE_44__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_45__.NgModule)({
         declarations: [
             src_app_components_blood_sugar_blood_sugar_component__WEBPACK_IMPORTED_MODULE_0__.BloodSugarComponent,
             src_app_components_blood_pressure_blood_pressure_component__WEBPACK_IMPORTED_MODULE_1__.BloodPressureComponent,
@@ -4738,8 +5109,18 @@ SharedModule = (0,tslib__WEBPACK_IMPORTED_MODULE_41__.__decorate)([
             src_app_components_search_search_component__WEBPACK_IMPORTED_MODULE_38__.SearchComponent,
             src_app_components_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_39__.ForgotPasswordComponent,
             src_app_components_terms_terms_component__WEBPACK_IMPORTED_MODULE_40__.TermsComponent,
+            src_app_components_calendar_modal_calendar_modal_component__WEBPACK_IMPORTED_MODULE_42__.CalendarModalComponent,
+            src_app_components_share_email_share_email_component__WEBPACK_IMPORTED_MODULE_43__.ShareEmailComponent,
         ],
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_43__.CommonModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_44__.IonicModule, _angular_forms__WEBPACK_IMPORTED_MODULE_45__.FormsModule],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_46__.CommonModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_47__.IonicModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_48__.FormsModule,
+            ion2_calendar__WEBPACK_IMPORTED_MODULE_41__.CalendarModule.forRoot({
+                doneLabel: 'Save',
+                closeIcon: true,
+            }),
+        ],
     })
 ], SharedModule);
 
@@ -4747,7 +5128,7 @@ SharedModule = (0,tslib__WEBPACK_IMPORTED_MODULE_41__.__decorate)([
 
 /***/ }),
 
-/***/ 2966:
+/***/ 42966:
 /*!******************************************************************************!*\
   !*** ./src/app/pages/auth/signup/health-profile/health-profile.component.ts ***!
   \******************************************************************************/
@@ -4758,11 +5139,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HealthProfileComponent": () => (/* binding */ HealthProfileComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_health_profile_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./health-profile.component.html */ 5443);
-/* harmony import */ var _health_profile_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./health-profile.component.scss */ 2594);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_health_profile_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./health-profile.component.html */ 25443);
+/* harmony import */ var _health_profile_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./health-profile.component.scss */ 62594);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ 80476);
 
 
 
@@ -4803,7 +5184,7 @@ HealthProfileComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 8385:
+/***/ 18385:
 /*!*******************************************************************!*\
   !*** ./src/app/pages/logged/education/single/single.component.ts ***!
   \*******************************************************************/
@@ -4814,13 +5195,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SingleComponent": () => (/* binding */ SingleComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_single_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./single.component.html */ 944);
-/* harmony import */ var _single_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./single.component.scss */ 3560);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_education_education_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/education/education.service */ 1788);
-/* harmony import */ var _capacitor_share__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @capacitor/share */ 6380);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_single_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./single.component.html */ 20944);
+/* harmony import */ var _single_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./single.component.scss */ 93560);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_services_education_education_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/education/education.service */ 81788);
+/* harmony import */ var _capacitor_share__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @capacitor/share */ 16380);
 
 
 
@@ -4883,7 +5264,7 @@ SingleComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
 
 /***/ }),
 
-/***/ 3173:
+/***/ 43173:
 /*!****************************************************!*\
   !*** ./src/app/pages/logged/health/health.page.ts ***!
   \****************************************************/
@@ -4894,14 +5275,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HealthPage": () => (/* binding */ HealthPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_health_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./health.page.html */ 6210);
-/* harmony import */ var _health_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./health.page.scss */ 4508);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_components_add_medication_add_medication_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/components/add-medication/add-medication.component */ 1741);
-/* harmony import */ var src_app_components_all_medications_all_medications_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/components/all-medications/all-medications.component */ 8965);
-/* harmony import */ var src_app_services_medications_medications_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/medications/medications.service */ 6652);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_health_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./health.page.html */ 56210);
+/* harmony import */ var _health_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./health.page.scss */ 84508);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_components_add_medication_add_medication_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/components/add-medication/add-medication.component */ 91741);
+/* harmony import */ var src_app_components_all_medications_all_medications_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/components/all-medications/all-medications.component */ 18965);
+/* harmony import */ var src_app_services_medications_medications_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/medications/medications.service */ 66652);
 
 
 
@@ -4927,7 +5308,7 @@ let HealthPage = class HealthPage {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
             const modal = yield this.modalController.create({
                 component: src_app_components_add_medication_add_medication_component__WEBPACK_IMPORTED_MODULE_2__.AddMedicationComponent,
-                cssClass: 'modal-50',
+                cssClass: 'modal-80',
             });
             modal.present();
         });
@@ -4960,7 +5341,7 @@ HealthPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 4550:
+/***/ 34550:
 /*!************************************************!*\
   !*** ./src/app/pages/logged/home/home.page.ts ***!
   \************************************************/
@@ -4971,13 +5352,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HomePage": () => (/* binding */ HomePage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_home_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./home.page.html */ 2833);
-/* harmony import */ var _home_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.page.scss */ 582);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_components_search_search_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/components/search/search.component */ 9055);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _raw_loader_home_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./home.page.html */ 82833);
+/* harmony import */ var _home_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.page.scss */ 40582);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var src_app_components_search_search_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/components/search/search.component */ 29055);
 /* harmony import */ var src_app_services_user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user/user.service */ 9709);
 
 
@@ -5030,7 +5411,7 @@ HomePage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 1228:
+/***/ 51228:
 /*!***********************************************!*\
   !*** ./src/app/services/auth/auth.service.ts ***!
   \***********************************************/
@@ -5041,10 +5422,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AuthService": () => (/* binding */ AuthService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _authentication_authentication_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../authentication/authentication.service */ 7020);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _authentication_authentication_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../authentication/authentication.service */ 97020);
 
 
 
@@ -5078,7 +5459,7 @@ AuthService = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
 
 /***/ }),
 
-/***/ 7020:
+/***/ 97020:
 /*!*******************************************************************!*\
   !*** ./src/app/services/authentication/authentication.service.ts ***!
   \*******************************************************************/
@@ -5089,11 +5470,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AuthenticationService": () => (/* binding */ AuthenticationService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 6215);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 26215);
 /* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @auth0/angular-jwt */ 6686);
 
 
@@ -5163,11 +5544,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BloodPressureService": () => (/* binding */ BloodPressureService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 1841);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6215);
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 9019);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 91841);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 26215);
+/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 89019);
 /* harmony import */ var _user_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user/user.service */ 9709);
 
 
@@ -5233,11 +5614,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BloodSugarService": () => (/* binding */ BloodSugarService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 1841);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6215);
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 9019);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 91841);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 26215);
+/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 89019);
 /* harmony import */ var _user_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user/user.service */ 9709);
 
 
@@ -5303,11 +5684,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BmiService": () => (/* binding */ BmiService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 1841);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6215);
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 9019);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 91841);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 26215);
+/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 89019);
 /* harmony import */ var _user_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user/user.service */ 9709);
 
 
@@ -5362,7 +5743,7 @@ BmiService = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 4884:
+/***/ 54884:
 /*!*************************************************************!*\
   !*** ./src/app/services/cholesterol/cholesterol.service.ts ***!
   \*************************************************************/
@@ -5373,11 +5754,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CholesterolService": () => (/* binding */ CholesterolService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 1841);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6215);
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 9019);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 91841);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 26215);
+/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 89019);
 /* harmony import */ var _user_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user/user.service */ 9709);
 
 
@@ -5432,7 +5813,7 @@ CholesterolService = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 1788:
+/***/ 81788:
 /*!*********************************************************!*\
   !*** ./src/app/services/education/education.service.ts ***!
   \*********************************************************/
@@ -5443,14 +5824,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "EducationService": () => (/* binding */ EducationService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ 1841);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 9019);
-/* harmony import */ var src_assets_data_education_category__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/assets/data/education-category */ 2763);
-/* harmony import */ var src_assets_data_topics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/assets/data/topics */ 3805);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ 91841);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 89019);
+/* harmony import */ var src_assets_data_education_category__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/assets/data/education-category */ 32763);
+/* harmony import */ var src_assets_data_topics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/assets/data/topics */ 73805);
 /* harmony import */ var _user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../user/user.service */ 9709);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 6215);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 26215);
 
 
 
@@ -5544,7 +5925,7 @@ EducationService = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
 
 /***/ }),
 
-/***/ 4031:
+/***/ 84031:
 /*!***************************************************!*\
   !*** ./src/app/services/global/global.service.ts ***!
   \***************************************************/
@@ -5555,9 +5936,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "GlobalService": () => (/* binding */ GlobalService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ 80476);
 
 
 
@@ -5610,7 +5991,7 @@ GlobalService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
 
 /***/ }),
 
-/***/ 3286:
+/***/ 63286:
 /*!***************************************************!*\
   !*** ./src/app/services/health/health.service.ts ***!
   \***************************************************/
@@ -5621,11 +6002,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HealthService": () => (/* binding */ HealthService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 1841);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6215);
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 9019);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 91841);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 26215);
+/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 89019);
 /* harmony import */ var _user_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user/user.service */ 9709);
 
 
@@ -5688,6 +6069,10 @@ let HealthService = class HealthService {
         const { user_details: { id }, } = this.userService.fetchDetails();
         return this.http.post(`${this.url}/addHba1c`, Object.assign(Object.assign({}, data), { user_id: id }));
     }
+    share(data) {
+        const { user_details: { id }, } = this.userService.fetchDetails();
+        return this.http.post(`${src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.apiUrl}/share/shareMail`, Object.assign(Object.assign({}, data), { user_id: id }));
+    }
 };
 HealthService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient },
@@ -5703,7 +6088,7 @@ HealthService = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 4946:
+/***/ 84946:
 /*!***********************************************!*\
   !*** ./src/app/services/meal/meal.service.ts ***!
   \***********************************************/
@@ -5714,11 +6099,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "MealService": () => (/* binding */ MealService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 1841);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6215);
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 9019);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 91841);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 26215);
+/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 89019);
 /* harmony import */ var _user_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user/user.service */ 9709);
 
 
@@ -5770,7 +6155,7 @@ MealService = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
 
 /***/ }),
 
-/***/ 6652:
+/***/ 66652:
 /*!*************************************************************!*\
   !*** ./src/app/services/medications/medications.service.ts ***!
   \*************************************************************/
@@ -5781,13 +6166,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "MedicationsService": () => (/* binding */ MedicationsService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ 1841);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 6215);
-/* harmony import */ var src_assets_data_medications__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/assets/data/medications */ 2217);
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment.prod */ 9019);
-/* harmony import */ var _authentication_authentication_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../authentication/authentication.service */ 7020);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ 91841);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 26215);
+/* harmony import */ var src_assets_data_medications__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/assets/data/medications */ 52217);
+/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment.prod */ 89019);
+/* harmony import */ var _authentication_authentication_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../authentication/authentication.service */ 97020);
 /* harmony import */ var _user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../user/user.service */ 9709);
 
 
@@ -5854,7 +6239,7 @@ MedicationsService = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
 
 /***/ }),
 
-/***/ 1333:
+/***/ 71333:
 /*!*******************************************************!*\
   !*** ./src/app/services/reminder/reminder.service.ts ***!
   \*******************************************************/
@@ -5865,11 +6250,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ReminderService": () => (/* binding */ ReminderService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6215);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 1841);
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 9019);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 26215);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 91841);
+/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 89019);
 /* harmony import */ var _user_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user/user.service */ 9709);
 
 
@@ -5933,12 +6318,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "UserService": () => (/* binding */ UserService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 1841);
-/* harmony import */ var _environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../environments/environment.prod */ 9019);
-/* harmony import */ var _authentication_authentication_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../authentication/authentication.service */ 7020);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6215);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 91841);
+/* harmony import */ var _environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../environments/environment.prod */ 89019);
+/* harmony import */ var _authentication_authentication_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../authentication/authentication.service */ 97020);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 26215);
 
 
 
@@ -6043,10 +6428,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "WalkService": () => (/* binding */ WalkService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6215);
-/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 9019);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 26215);
+/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 89019);
 /* harmony import */ var _user_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../user/user.service */ 9709);
 
 
@@ -6087,7 +6472,7 @@ WalkService = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 2763:
+/***/ 32763:
 /*!***********************************************!*\
   !*** ./src/assets/data/education-category.ts ***!
   \***********************************************/
@@ -6153,7 +6538,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2956:
+/***/ 52956:
 /*!*************************************!*\
   !*** ./src/assets/data/exercise.ts ***!
   \*************************************/
@@ -6442,7 +6827,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 6559:
+/***/ 26559:
 /*!********************************************!*\
   !*** ./src/assets/data/food-categories.ts ***!
   \********************************************/
@@ -6471,7 +6856,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1528:
+/***/ 71528:
 /*!*********************************!*\
   !*** ./src/assets/data/food.ts ***!
   \*********************************/
@@ -7016,7 +7401,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2217:
+/***/ 52217:
 /*!****************************************!*\
   !*** ./src/assets/data/medications.ts ***!
   \****************************************/
@@ -7447,7 +7832,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3805:
+/***/ 73805:
 /*!***********************************!*\
   !*** ./src/assets/data/topics.ts ***!
   \***********************************/
@@ -7986,7 +8371,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 5765:
+/***/ 65765:
 /*!************************************!*\
   !*** ./src/assets/scripts/misc.ts ***!
   \************************************/
@@ -8405,7 +8790,7 @@ function calculateDiabeticPercentage(value) {
 
 /***/ }),
 
-/***/ 9019:
+/***/ 89019:
 /*!**********************************************!*\
   !*** ./src/environments/environment.prod.ts ***!
   \**********************************************/
@@ -8424,7 +8809,7 @@ const environment = {
 
 /***/ }),
 
-/***/ 2340:
+/***/ 92340:
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
   \*****************************************/
@@ -8455,7 +8840,7 @@ const environment = {
 
 /***/ }),
 
-/***/ 4431:
+/***/ 14431:
 /*!*********************!*\
   !*** ./src/main.ts ***!
   \*********************/
@@ -8463,10 +8848,10 @@ const environment = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ 4608);
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/app.module */ 6747);
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./environments/environment */ 2340);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ 24608);
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/app.module */ 36747);
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./environments/environment */ 92340);
 
 
 
@@ -8480,7 +8865,7 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.productio
 
 /***/ }),
 
-/***/ 863:
+/***/ 50863:
 /*!******************************************************************************************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/ lazy ^\.\/.*\.entry\.js$ include: \.entry\.js$ exclude: \.system\.entry\.js$ namespace object ***!
   \******************************************************************************************************************************************/
@@ -8488,88 +8873,88 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.productio
 
 var map = {
 	"./ion-action-sheet.entry.js": [
-		7321,
+		47321,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-action-sheet_entry_js"
 	],
 	"./ion-alert.entry.js": [
-		6108,
+		36108,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-alert_entry_js"
 	],
 	"./ion-app_8.entry.js": [
-		1489,
+		31489,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-app_8_entry_js"
 	],
 	"./ion-avatar_3.entry.js": [
-		305,
+		10305,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-avatar_3_entry_js"
 	],
 	"./ion-back-button.entry.js": [
-		5830,
+		15830,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-back-button_entry_js"
 	],
 	"./ion-backdrop.entry.js": [
-		7757,
+		37757,
 		"node_modules_ionic_core_dist_esm_ion-backdrop_entry_js"
 	],
 	"./ion-button_2.entry.js": [
-		392,
+		30392,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-button_2_entry_js"
 	],
 	"./ion-card_5.entry.js": [
-		6911,
+		66911,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-card_5_entry_js"
 	],
 	"./ion-checkbox.entry.js": [
-		937,
+		30937,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-checkbox_entry_js"
 	],
 	"./ion-chip.entry.js": [
-		5285,
+		78695,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-chip_entry_js"
 	],
 	"./ion-col_3.entry.js": [
-		6034,
+		16034,
 		"node_modules_ionic_core_dist_esm_ion-col_3_entry_js"
 	],
 	"./ion-datetime_3.entry.js": [
-		8837,
+		68837,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-datetime_3_entry_js"
 	],
 	"./ion-fab_3.entry.js": [
-		4195,
+		34195,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-fab_3_entry_js"
 	],
 	"./ion-img.entry.js": [
-		1709,
+		41709,
 		"node_modules_ionic_core_dist_esm_ion-img_entry_js"
 	],
 	"./ion-infinite-scroll_2.entry.js": [
-		5931,
+		33087,
 		"node_modules_ionic_core_dist_esm_ion-infinite-scroll_2_entry_js"
 	],
 	"./ion-input.entry.js": [
-		4513,
+		84513,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-input_entry_js"
 	],
 	"./ion-item-option_3.entry.js": [
-		8056,
+		58056,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-item-option_3_entry_js"
 	],
 	"./ion-item_8.entry.js": [
-		862,
+		10862,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-item_8_entry_js"
 	],
@@ -8579,56 +8964,56 @@ var map = {
 		"node_modules_ionic_core_dist_esm_ion-loading_entry_js"
 	],
 	"./ion-menu_3.entry.js": [
-		6272,
+		86030,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-menu_3_entry_js"
 	],
 	"./ion-modal.entry.js": [
-		1855,
+		71855,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-modal_entry_js"
 	],
 	"./ion-nav_2.entry.js": [
-		8708,
+		38708,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-nav_2_entry_js"
 	],
 	"./ion-popover.entry.js": [
-		3527,
+		23527,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-popover_entry_js"
 	],
 	"./ion-progress-bar.entry.js": [
-		4694,
+		24694,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-progress-bar_entry_js"
 	],
 	"./ion-radio_2.entry.js": [
-		9222,
+		19222,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-radio_2_entry_js"
 	],
 	"./ion-range.entry.js": [
-		5277,
+		25277,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-range_entry_js"
 	],
 	"./ion-refresher_2.entry.js": [
-		9921,
+		39921,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-refresher_2_entry_js"
 	],
 	"./ion-reorder_2.entry.js": [
-		3122,
+		83122,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-reorder_2_entry_js"
 	],
 	"./ion-ripple-effect.entry.js": [
-		1602,
+		51602,
 		"node_modules_ionic_core_dist_esm_ion-ripple-effect_entry_js"
 	],
 	"./ion-route_4.entry.js": [
-		5174,
+		45174,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-route_4_entry_js"
 	],
@@ -8638,60 +9023,60 @@ var map = {
 		"node_modules_ionic_core_dist_esm_ion-searchbar_entry_js"
 	],
 	"./ion-segment_2.entry.js": [
-		6164,
+		76164,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-segment_2_entry_js"
 	],
 	"./ion-select_3.entry.js": [
-		592,
+		20592,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-select_3_entry_js"
 	],
 	"./ion-slide_2.entry.js": [
-		7162,
+		27162,
 		"node_modules_ionic_core_dist_esm_ion-slide_2_entry_js"
 	],
 	"./ion-spinner.entry.js": [
-		1374,
+		81374,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-spinner_entry_js"
 	],
 	"./ion-split-pane.entry.js": [
-		7896,
+		97896,
 		"node_modules_ionic_core_dist_esm_ion-split-pane_entry_js"
 	],
 	"./ion-tab-bar_2.entry.js": [
-		5043,
+		25043,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-tab-bar_2_entry_js"
 	],
 	"./ion-tab_2.entry.js": [
-		7802,
+		77802,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-tab_2_entry_js"
 	],
 	"./ion-text.entry.js": [
-		9072,
+		29072,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-text_entry_js"
 	],
 	"./ion-textarea.entry.js": [
-		2191,
+		32191,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-textarea_entry_js"
 	],
 	"./ion-toast.entry.js": [
-		801,
+		40801,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-toast_entry_js"
 	],
 	"./ion-toggle.entry.js": [
-		7110,
+		67110,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-toggle_entry_js"
 	],
 	"./ion-virtual-scroll.entry.js": [
-		431,
+		10431,
 		"node_modules_ionic_core_dist_esm_ion-virtual-scroll_entry_js"
 	]
 };
@@ -8710,12 +9095,313 @@ function webpackAsyncContext(req) {
 	});
 }
 webpackAsyncContext.keys = () => (Object.keys(map));
-webpackAsyncContext.id = 863;
+webpackAsyncContext.id = 50863;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 3069:
+/***/ 46700:
+/*!***************************************************!*\
+  !*** ./node_modules/moment/locale/ sync ^\.\/.*$ ***!
+  \***************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var map = {
+	"./af": 26431,
+	"./af.js": 26431,
+	"./ar": 81286,
+	"./ar-dz": 1616,
+	"./ar-dz.js": 1616,
+	"./ar-kw": 9759,
+	"./ar-kw.js": 9759,
+	"./ar-ly": 43160,
+	"./ar-ly.js": 43160,
+	"./ar-ma": 62551,
+	"./ar-ma.js": 62551,
+	"./ar-sa": 79989,
+	"./ar-sa.js": 79989,
+	"./ar-tn": 6962,
+	"./ar-tn.js": 6962,
+	"./ar.js": 81286,
+	"./az": 15887,
+	"./az.js": 15887,
+	"./be": 14572,
+	"./be.js": 14572,
+	"./bg": 3276,
+	"./bg.js": 3276,
+	"./bm": 93344,
+	"./bm.js": 93344,
+	"./bn": 58985,
+	"./bn-bd": 83990,
+	"./bn-bd.js": 83990,
+	"./bn.js": 58985,
+	"./bo": 94391,
+	"./bo.js": 94391,
+	"./br": 46728,
+	"./br.js": 46728,
+	"./bs": 5536,
+	"./bs.js": 5536,
+	"./ca": 41043,
+	"./ca.js": 41043,
+	"./cs": 70420,
+	"./cs.js": 70420,
+	"./cv": 33513,
+	"./cv.js": 33513,
+	"./cy": 6771,
+	"./cy.js": 6771,
+	"./da": 47978,
+	"./da.js": 47978,
+	"./de": 46061,
+	"./de-at": 25204,
+	"./de-at.js": 25204,
+	"./de-ch": 2653,
+	"./de-ch.js": 2653,
+	"./de.js": 46061,
+	"./dv": 85,
+	"./dv.js": 85,
+	"./el": 8579,
+	"./el.js": 8579,
+	"./en-au": 25724,
+	"./en-au.js": 25724,
+	"./en-ca": 10525,
+	"./en-ca.js": 10525,
+	"./en-gb": 52847,
+	"./en-gb.js": 52847,
+	"./en-ie": 67216,
+	"./en-ie.js": 67216,
+	"./en-il": 39305,
+	"./en-il.js": 39305,
+	"./en-in": 73364,
+	"./en-in.js": 73364,
+	"./en-nz": 79130,
+	"./en-nz.js": 79130,
+	"./en-sg": 11161,
+	"./en-sg.js": 11161,
+	"./eo": 50802,
+	"./eo.js": 50802,
+	"./es": 40328,
+	"./es-do": 45551,
+	"./es-do.js": 45551,
+	"./es-mx": 75615,
+	"./es-mx.js": 75615,
+	"./es-us": 64790,
+	"./es-us.js": 64790,
+	"./es.js": 40328,
+	"./et": 96389,
+	"./et.js": 96389,
+	"./eu": 52961,
+	"./eu.js": 52961,
+	"./fa": 26151,
+	"./fa.js": 26151,
+	"./fi": 7997,
+	"./fi.js": 7997,
+	"./fil": 58898,
+	"./fil.js": 58898,
+	"./fo": 37779,
+	"./fo.js": 37779,
+	"./fr": 28174,
+	"./fr-ca": 3287,
+	"./fr-ca.js": 3287,
+	"./fr-ch": 38867,
+	"./fr-ch.js": 38867,
+	"./fr.js": 28174,
+	"./fy": 50452,
+	"./fy.js": 50452,
+	"./ga": 45014,
+	"./ga.js": 45014,
+	"./gd": 74127,
+	"./gd.js": 74127,
+	"./gl": 72124,
+	"./gl.js": 72124,
+	"./gom-deva": 6444,
+	"./gom-deva.js": 6444,
+	"./gom-latn": 37953,
+	"./gom-latn.js": 37953,
+	"./gu": 76604,
+	"./gu.js": 76604,
+	"./he": 1222,
+	"./he.js": 1222,
+	"./hi": 74235,
+	"./hi.js": 74235,
+	"./hr": 622,
+	"./hr.js": 622,
+	"./hu": 37735,
+	"./hu.js": 37735,
+	"./hy-am": 90402,
+	"./hy-am.js": 90402,
+	"./id": 59187,
+	"./id.js": 59187,
+	"./is": 30536,
+	"./is.js": 30536,
+	"./it": 35007,
+	"./it-ch": 94667,
+	"./it-ch.js": 94667,
+	"./it.js": 35007,
+	"./ja": 62093,
+	"./ja.js": 62093,
+	"./jv": 80059,
+	"./jv.js": 80059,
+	"./ka": 66870,
+	"./ka.js": 66870,
+	"./kk": 80880,
+	"./kk.js": 80880,
+	"./km": 1083,
+	"./km.js": 1083,
+	"./kn": 68785,
+	"./kn.js": 68785,
+	"./ko": 21721,
+	"./ko.js": 21721,
+	"./ku": 37851,
+	"./ku.js": 37851,
+	"./ky": 1727,
+	"./ky.js": 1727,
+	"./lb": 40346,
+	"./lb.js": 40346,
+	"./lo": 93002,
+	"./lo.js": 93002,
+	"./lt": 64035,
+	"./lt.js": 64035,
+	"./lv": 56927,
+	"./lv.js": 56927,
+	"./me": 5634,
+	"./me.js": 5634,
+	"./mi": 94173,
+	"./mi.js": 94173,
+	"./mk": 86320,
+	"./mk.js": 86320,
+	"./ml": 11705,
+	"./ml.js": 11705,
+	"./mn": 31062,
+	"./mn.js": 31062,
+	"./mr": 92805,
+	"./mr.js": 92805,
+	"./ms": 11341,
+	"./ms-my": 59900,
+	"./ms-my.js": 59900,
+	"./ms.js": 11341,
+	"./mt": 37734,
+	"./mt.js": 37734,
+	"./my": 19034,
+	"./my.js": 19034,
+	"./nb": 9324,
+	"./nb.js": 9324,
+	"./ne": 46495,
+	"./ne.js": 46495,
+	"./nl": 70673,
+	"./nl-be": 76272,
+	"./nl-be.js": 76272,
+	"./nl.js": 70673,
+	"./nn": 72486,
+	"./nn.js": 72486,
+	"./oc-lnc": 46219,
+	"./oc-lnc.js": 46219,
+	"./pa-in": 2829,
+	"./pa-in.js": 2829,
+	"./pl": 78444,
+	"./pl.js": 78444,
+	"./pt": 53170,
+	"./pt-br": 66117,
+	"./pt-br.js": 66117,
+	"./pt.js": 53170,
+	"./ro": 96587,
+	"./ro.js": 96587,
+	"./ru": 39264,
+	"./ru.js": 39264,
+	"./sd": 42135,
+	"./sd.js": 42135,
+	"./se": 95366,
+	"./se.js": 95366,
+	"./si": 93379,
+	"./si.js": 93379,
+	"./sk": 46143,
+	"./sk.js": 46143,
+	"./sl": 196,
+	"./sl.js": 196,
+	"./sq": 21082,
+	"./sq.js": 21082,
+	"./sr": 91621,
+	"./sr-cyrl": 98963,
+	"./sr-cyrl.js": 98963,
+	"./sr.js": 91621,
+	"./ss": 41404,
+	"./ss.js": 41404,
+	"./sv": 55685,
+	"./sv.js": 55685,
+	"./sw": 3872,
+	"./sw.js": 3872,
+	"./ta": 54106,
+	"./ta.js": 54106,
+	"./te": 39204,
+	"./te.js": 39204,
+	"./tet": 83692,
+	"./tet.js": 83692,
+	"./tg": 86361,
+	"./tg.js": 86361,
+	"./th": 31735,
+	"./th.js": 31735,
+	"./tk": 1568,
+	"./tk.js": 1568,
+	"./tl-ph": 96129,
+	"./tl-ph.js": 96129,
+	"./tlh": 13759,
+	"./tlh.js": 13759,
+	"./tr": 81644,
+	"./tr.js": 81644,
+	"./tzl": 90875,
+	"./tzl.js": 90875,
+	"./tzm": 16878,
+	"./tzm-latn": 11041,
+	"./tzm-latn.js": 11041,
+	"./tzm.js": 16878,
+	"./ug-cn": 74357,
+	"./ug-cn.js": 74357,
+	"./uk": 74810,
+	"./uk.js": 74810,
+	"./ur": 86794,
+	"./ur.js": 86794,
+	"./uz": 28966,
+	"./uz-latn": 77959,
+	"./uz-latn.js": 77959,
+	"./uz.js": 28966,
+	"./vi": 35386,
+	"./vi.js": 35386,
+	"./x-pseudo": 23156,
+	"./x-pseudo.js": 23156,
+	"./yo": 68028,
+	"./yo.js": 68028,
+	"./zh-cn": 9330,
+	"./zh-cn.js": 9330,
+	"./zh-hk": 89380,
+	"./zh-hk.js": 89380,
+	"./zh-mo": 60874,
+	"./zh-mo.js": 60874,
+	"./zh-tw": 96508,
+	"./zh-tw.js": 96508
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 46700;
+
+/***/ }),
+
+/***/ 43069:
 /*!************************************!*\
   !*** ./src/app/app.component.scss ***!
   \************************************/
@@ -8730,7 +9416,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4243:
+/***/ 44243:
 /*!*************************************************************!*\
   !*** ./src/app/components/add-meal/add-meal.component.scss ***!
   \*************************************************************/
@@ -8745,7 +9431,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2783:
+/***/ 22783:
 /*!*************************************************************************!*\
   !*** ./src/app/components/add-medication/add-medication.component.scss ***!
   \*************************************************************************/
@@ -8760,7 +9446,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 9362:
+/***/ 59362:
 /*!*********************************************************************!*\
   !*** ./src/app/components/add-reminder/add-reminder.component.scss ***!
   \*********************************************************************/
@@ -8775,7 +9461,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7668:
+/***/ 37668:
 /*!***************************************************************************!*\
   !*** ./src/app/components/all-medications/all-medications.component.scss ***!
   \***************************************************************************/
@@ -8790,7 +9476,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3554:
+/***/ 23554:
 /*!*************************************************************************!*\
   !*** ./src/app/components/blood-pressure/blood-pressure.component.scss ***!
   \*************************************************************************/
@@ -8805,7 +9491,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4535:
+/***/ 14535:
 /*!*******************************************************************!*\
   !*** ./src/app/components/blood-sugar/blood-sugar.component.scss ***!
   \*******************************************************************/
@@ -8820,7 +9506,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7727:
+/***/ 17727:
 /*!***************************************************!*\
   !*** ./src/app/components/bmi/bmi.component.scss ***!
   \***************************************************/
@@ -8835,7 +9521,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 8337:
+/***/ 38337:
 /*!*************************************************************!*\
   !*** ./src/app/components/bookmark/bookmark.component.scss ***!
   \*************************************************************/
@@ -8850,7 +9536,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 8745:
+/***/ 98745:
 /*!***************************************************************!*\
   !*** ./src/app/components/bookmarks/bookmarks.component.scss ***!
   \***************************************************************/
@@ -8865,7 +9551,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 9574:
+/***/ 7359:
+/*!*************************************************************************!*\
+  !*** ./src/app/components/calendar-modal/calendar-modal.component.scss ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjYWxlbmRhci1tb2RhbC5jb21wb25lbnQuc2NzcyJ9 */");
+
+/***/ }),
+
+/***/ 89574:
 /*!*******************************************************************!*\
   !*** ./src/app/components/cholesterol/cholesterol.component.scss ***!
   \*******************************************************************/
@@ -8880,7 +9581,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3470:
+/***/ 75435:
 /*!***********************************************************************!*\
   !*** ./src/app/components/diabetes-walk/diabetes-walk.component.scss ***!
   \***********************************************************************/
@@ -8895,7 +9596,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2193:
+/***/ 22193:
 /*!*************************************************************!*\
   !*** ./src/app/components/exercise/exercise.component.scss ***!
   \*************************************************************/
@@ -8910,7 +9611,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3680:
+/***/ 63680:
 /*!*****************************************************************!*\
   !*** ./src/app/components/expandable/expandable.component.scss ***!
   \*****************************************************************/
@@ -8925,7 +9626,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 469:
+/***/ 70469:
 /*!***************************************************************************!*\
   !*** ./src/app/components/forgot-password/forgot-password.component.scss ***!
   \***************************************************************************/
@@ -8940,7 +9641,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7534:
+/***/ 17534:
 /*!*******************************************************!*\
   !*** ./src/app/components/guage/guage.component.scss ***!
   \*******************************************************/
@@ -8955,7 +9656,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1737:
+/***/ 41737:
 /*!*******************************************************!*\
   !*** ./src/app/components/hba1c/hba1c.component.scss ***!
   \*******************************************************/
@@ -8970,7 +9671,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7264:
+/***/ 17264:
 /*!***********************************************************************!*\
   !*** ./src/app/components/health-status/health-status.component.scss ***!
   \***********************************************************************/
@@ -8985,7 +9686,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7871:
+/***/ 67871:
 /*!*******************************************************************************!*\
   !*** ./src/app/components/language-settings/language-settings.component.scss ***!
   \*******************************************************************************/
@@ -9000,7 +9701,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 9722:
+/***/ 19722:
 /*!***************************************************************!*\
   !*** ./src/app/components/locations/locations.component.scss ***!
   \***************************************************************/
@@ -9015,7 +9716,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 9159:
+/***/ 59159:
 /*!*****************************************************************!*\
   !*** ./src/app/components/meals-list/meals-list.component.scss ***!
   \*****************************************************************/
@@ -9030,7 +9731,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3847:
+/***/ 93847:
 /*!*****************************************************!*\
   !*** ./src/app/components/menu/menu.component.scss ***!
   \*****************************************************/
@@ -9045,7 +9746,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 8064:
+/***/ 18064:
 /*!***********************************************************!*\
   !*** ./src/app/components/profile/profile.component.scss ***!
   \***********************************************************/
@@ -9075,7 +9776,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1295:
+/***/ 41295:
 /*!*************************************************************!*\
   !*** ./src/app/components/reminder/reminder.component.scss ***!
   \*************************************************************/
@@ -9090,7 +9791,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4223:
+/***/ 44223:
 /*!*********************************************************!*\
   !*** ./src/app/components/search/search.component.scss ***!
   \*********************************************************/
@@ -9105,7 +9806,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2252:
+/***/ 62252:
 /*!*************************************************************!*\
   !*** ./src/app/components/settings/settings.component.scss ***!
   \*************************************************************/
@@ -9120,7 +9821,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 188:
+/***/ 63209:
+/*!*******************************************************************!*\
+  !*** ./src/app/components/share-email/share-email.component.scss ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzaGFyZS1lbWFpbC5jb21wb25lbnQuc2NzcyJ9 */");
+
+/***/ }),
+
+/***/ 40188:
 /*!*******************************************************!*\
   !*** ./src/app/components/terms/terms.component.scss ***!
   \*******************************************************/
@@ -9135,7 +9851,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2723:
+/***/ 32723:
 /*!***************************************************************************************!*\
   !*** ./src/app/components/update-blood-pressure/update-blood-pressure.component.scss ***!
   \***************************************************************************************/
@@ -9150,7 +9866,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 6075:
+/***/ 26075:
 /*!*********************************************************************************!*\
   !*** ./src/app/components/update-blood-sugar/update-blood-sugar.component.scss ***!
   \*********************************************************************************/
@@ -9165,7 +9881,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 9441:
+/***/ 29441:
 /*!*****************************************************************!*\
   !*** ./src/app/components/update-bmi/update-bmi.component.scss ***!
   \*****************************************************************/
@@ -9180,7 +9896,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 9045:
+/***/ 99045:
 /*!*********************************************************************************!*\
   !*** ./src/app/components/update-cholesterol/update-cholesterol.component.scss ***!
   \*********************************************************************************/
@@ -9195,7 +9911,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7938:
+/***/ 57938:
 /*!*********************************************************************!*\
   !*** ./src/app/components/update-hba1c/update-hba1c.component.scss ***!
   \*********************************************************************/
@@ -9210,7 +9926,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 6269:
+/***/ 66269:
 /*!*************************************************************************************!*\
   !*** ./src/app/components/update-health-status/update-health-status.component.scss ***!
   \*************************************************************************************/
@@ -9225,7 +9941,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 6081:
+/***/ 96081:
 /*!***************************************************************************!*\
   !*** ./src/app/components/update-password/update-password.component.scss ***!
   \***************************************************************************/
@@ -9240,7 +9956,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 8785:
+/***/ 27010:
 /*!*************************************************************************!*\
   !*** ./src/app/components/update-picture/update-picture.component.scss ***!
   \*************************************************************************/
@@ -9255,7 +9971,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 5403:
+/***/ 45403:
 /*!*************************************************************************!*\
   !*** ./src/app/components/update-profile/update-profile.component.scss ***!
   \*************************************************************************/
@@ -9270,7 +9986,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 458:
+/***/ 20458:
 /*!***********************************************************************************!*\
   !*** ./src/app/components/view-blood-pressure/view-blood-pressure.component.scss ***!
   \***********************************************************************************/
@@ -9315,7 +10031,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1863:
+/***/ 41863:
 /*!*****************************************************************************!*\
   !*** ./src/app/components/view-cholesterol/view-cholesterol.component.scss ***!
   \*****************************************************************************/
@@ -9330,7 +10046,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 5376:
+/***/ 75376:
 /*!*****************************************************************!*\
   !*** ./src/app/components/view-hba1c/view-hba1c.component.scss ***!
   \*****************************************************************/
@@ -9345,7 +10061,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2728:
+/***/ 62728:
 /*!*********************************************************************************!*\
   !*** ./src/app/components/view-health-status/view-health-status.component.scss ***!
   \*********************************************************************************/
@@ -9360,7 +10076,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7391:
+/***/ 17391:
 /*!***************************************************************!*\
   !*** ./src/app/components/view-meal/view-meal.component.scss ***!
   \***************************************************************/
@@ -9375,7 +10091,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 6827:
+/***/ 66827:
 /*!*****************************************************************!*\
   !*** ./src/app/components/view-meals/view-meals.component.scss ***!
   \*****************************************************************/
@@ -9390,7 +10106,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 9625:
+/***/ 99625:
 /*!**************************************************!*\
   !*** ./src/app/layouts/home/home.component.scss ***!
   \**************************************************/
@@ -9405,7 +10121,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2594:
+/***/ 62594:
 /*!********************************************************************************!*\
   !*** ./src/app/pages/auth/signup/health-profile/health-profile.component.scss ***!
   \********************************************************************************/
@@ -9420,7 +10136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3560:
+/***/ 93560:
 /*!*********************************************************************!*\
   !*** ./src/app/pages/logged/education/single/single.component.scss ***!
   \*********************************************************************/
@@ -9435,7 +10151,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4508:
+/***/ 84508:
 /*!******************************************************!*\
   !*** ./src/app/pages/logged/health/health.page.scss ***!
   \******************************************************/
@@ -9450,7 +10166,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 582:
+/***/ 40582:
 /*!**************************************************!*\
   !*** ./src/app/pages/logged/home/home.page.scss ***!
   \**************************************************/
@@ -9465,7 +10181,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1106:
+/***/ 91106:
 /*!**************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
   \**************************************************************************/
@@ -9480,7 +10196,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2192:
+/***/ 52192:
 /*!***************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/add-meal/add-meal.component.html ***!
   \***************************************************************************************************/
@@ -9506,11 +10222,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">New Medication</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 space-y-4\">\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Medication type</ion-label\n        >\n        <ion-select\n          value=\"prescribed\"\n          class=\"w-full\"\n          [(ngModel)]=\"medication.type\"\n        >\n          <ion-select-option value=\"prescribed\">Prescribed</ion-select-option>\n          <ion-select-option value=\"self\">Self</ion-select-option>\n        </ion-select>\n      </ion-item>\n\n      <div>\n        <ion-item>\n          <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n            >Name of medication</ion-label\n          >\n          <ion-input\n            placeholder=\"Enter name of medication\"\n            [(ngModel)]=\"medication.name\"\n            (ngModelChange)=\"search()\"\n          ></ion-input>\n        </ion-item>\n        <div class=\"-top-2 relative shadow-xl rounded-xl\">\n          <ion-list *ngIf=\"searched.length > 0\">\n            <ion-item\n              *ngFor=\"let item of searched\"\n              (click)=\"med = item; medication.name = item.name; searched = []\"\n            >\n              <p class=\"px-4 py-2\">{{ item.name }}</p>\n            </ion-item>\n          </ion-list>\n        </div>\n\n        <div *ngIf=\"med\" class=\"mt-4\">\n          <div class=\"flex items-center\">\n            <ion-icon\n              name=\"information-circle-outline\"\n              class=\"text-blue-600 text-xl inline-block mr-2 relative -top-1\"\n            ></ion-icon>\n            <span>Health Tip</span>\n          </div>\n          <span class=\"text-gray-400 mt-3 font-bold inline-block\"\n            >Used For:</span\n          >\n          <p class=\"text-gray-400 mt-1\" [innerHTML]=\"med.used_for\"></p>\n\n          <p class=\"text-green-900 my-3\">\n            Contact your doctor if you have any of these syptoms\n          </p>\n          <p class=\"my-4 text-gray-500 font-bold\">Possible side effects:</p>\n          <p class=\"text-gray-400 mt-3\" [innerHTML]=\"med.effect\"></p>\n        </div>\n      </div>\n\n      <span\n        (click)=\"save()\"\n        class=\"\n          w-full\n          bg-accentBlue\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n        >Done</span\n      >\n    </div>\n  </ion-content>\n</ion-app>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">New Medication</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 space-y-4\">\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Medication type</ion-label\n        >\n        <ion-select\n          value=\"prescribed\"\n          class=\"w-full\"\n          [(ngModel)]=\"medication.type\"\n        >\n          <ion-select-option value=\"prescribed\">Prescribed</ion-select-option>\n          <ion-select-option value=\"self\">Self</ion-select-option>\n        </ion-select>\n      </ion-item>\n\n      <div>\n        <ion-item onclick=\"scrollIntoView(this)\">\n          <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n            >Name of medication</ion-label\n          >\n          <ion-input\n            placeholder=\"Enter name of medication\"\n            [(ngModel)]=\"medication.name\"\n            (ngModelChange)=\"search()\"\n          ></ion-input>\n        </ion-item>\n        <div class=\"-top-2 relative shadow-xl rounded-xl\">\n          <ion-list *ngIf=\"searched.length > 0\">\n            <ion-item\n              *ngFor=\"let item of searched\"\n              (click)=\"med = item; medication.name = item.name; searched = []\"\n            >\n              <p class=\"px-4 py-2\">{{ item.name }}</p>\n            </ion-item>\n          </ion-list>\n        </div>\n\n        <div *ngIf=\"med\" class=\"mt-4\">\n          <div class=\"flex items-center\">\n            <ion-icon\n              name=\"information-circle-outline\"\n              class=\"text-blue-600 text-xl inline-block mr-2 relative -top-1\"\n            ></ion-icon>\n            <span>Health Tip</span>\n          </div>\n          <span class=\"text-gray-400 mt-3 font-bold inline-block\"\n            >Used For:</span\n          >\n          <p class=\"text-gray-400 mt-1\" [innerHTML]=\"med.used_for\"></p>\n\n          <p class=\"text-green-900 my-3\">\n            Contact your doctor if you have any of these syptoms\n          </p>\n          <p class=\"my-4 text-gray-500 font-bold\">Possible side effects:</p>\n          <p class=\"text-gray-400 mt-3\" [innerHTML]=\"med.effect\"></p>\n        </div>\n      </div>\n\n      <span\n        (click)=\"save()\"\n        class=\"\n          w-full\n          bg-accentBlue\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n        >Done</span\n      >\n    </div>\n  </ion-content>\n</ion-app>\n");
 
 /***/ }),
 
-/***/ 2843:
+/***/ 72843:
 /*!***********************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/add-reminder/add-reminder.component.html ***!
   \***********************************************************************************************************/
@@ -9525,7 +10241,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2052:
+/***/ 92052:
 /*!*****************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/all-medications/all-medications.component.html ***!
   \*****************************************************************************************************************/
@@ -9570,7 +10286,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 8176:
+/***/ 38176:
 /*!*****************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/bmi/bmi.component.html ***!
   \*****************************************************************************************/
@@ -9585,7 +10301,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2084:
+/***/ 72084:
 /*!***************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/bookmark/bookmark.component.html ***!
   \***************************************************************************************************/
@@ -9600,7 +10316,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 8517:
+/***/ 88517:
 /*!*****************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/bookmarks/bookmarks.component.html ***!
   \*****************************************************************************************************/
@@ -9615,7 +10331,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2779:
+/***/ 55756:
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/calendar-modal/calendar-modal.component.html ***!
+  \***************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">Choose date range</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content class=\"p-4 space-y-4\">\n    <div class=\"mt-4\">\n      <ion-calendar\n        [(ngModel)]=\"dateRange\"\n        [options]=\"optionsRange\"\n        [type]=\"type\"\n        [format]=\"'YYYY-MM-DD'\"\n      >\n      </ion-calendar>\n\n      <div\n        (click)=\"save()\"\n        *ngIf=\"dateRange && dateRange.from && dateRange.to\"\n        class=\"\n          bg-accentBlue\n          p-4\n          mx-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n      >\n        Continue\n      </div>\n    </div>\n  </ion-content>\n</ion-app>\n");
+
+/***/ }),
+
+/***/ 12779:
 /*!*********************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/cholesterol/cholesterol.component.html ***!
   \*********************************************************************************************************/
@@ -9630,7 +10361,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 5061:
+/***/ 15061:
 /*!*************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/diabetes-walk/diabetes-walk.component.html ***!
   \*************************************************************************************************************/
@@ -9645,7 +10376,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4038:
+/***/ 64038:
 /*!***************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/exercise/exercise.component.html ***!
   \***************************************************************************************************/
@@ -9660,7 +10391,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3032:
+/***/ 93032:
 /*!*******************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/expandable/expandable.component.html ***!
   \*******************************************************************************************************/
@@ -9675,7 +10406,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1328:
+/***/ 51328:
 /*!*****************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/forgot-password/forgot-password.component.html ***!
   \*****************************************************************************************************************/
@@ -9705,7 +10436,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2745:
+/***/ 72745:
 /*!*********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/hba1c/hba1c.component.html ***!
   \*********************************************************************************************/
@@ -9735,7 +10466,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2457:
+/***/ 92457:
 /*!*********************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/language-settings/language-settings.component.html ***!
   \*********************************************************************************************************************/
@@ -9765,7 +10496,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7750:
+/***/ 97750:
 /*!*******************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/meals-list/meals-list.component.html ***!
   \*******************************************************************************************************/
@@ -9780,7 +10511,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4300:
+/***/ 44300:
 /*!*******************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/menu/menu.component.html ***!
   \*******************************************************************************************/
@@ -9795,7 +10526,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 5473:
+/***/ 95473:
 /*!*************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/profile/profile.component.html ***!
   \*************************************************************************************************/
@@ -9810,7 +10541,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 8695:
+/***/ 28695:
 /*!*********************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/register-for-walk/register-for-walk.component.html ***!
   \*********************************************************************************************************************/
@@ -9825,7 +10556,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4797:
+/***/ 24797:
 /*!***************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/reminder/reminder.component.html ***!
   \***************************************************************************************************/
@@ -9840,7 +10571,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1452:
+/***/ 51452:
 /*!***********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/search/search.component.html ***!
   \***********************************************************************************************/
@@ -9870,6 +10601,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 66448:
+/*!*********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/share-email/share-email.component.html ***!
+  \*********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">Choose email</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4\">\n      <p class=\"mb-4\">What email address would you like to share record with</p>\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Email</ion-label\n        >\n        <ion-input\n          type=\"text\"\n          placeholder=\"Enter email\"\n          [(ngModel)]=\"email\"\n        ></ion-input>\n      </ion-item>\n\n      <div\n        (click)=\"save()\"\n        class=\"\n          bg-accentBlue\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n      >\n        Continue\n      </div>\n    </div>\n  </ion-content>\n</ion-app>\n");
+
+/***/ }),
+
 /***/ 2509:
 /*!*********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/terms/terms.component.html ***!
@@ -9885,7 +10631,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7218:
+/***/ 97218:
 /*!*****************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/update-blood-pressure/update-blood-pressure.component.html ***!
   \*****************************************************************************************************************************/
@@ -9896,7 +10642,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">Record Blood pressure</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 space-y-4\">\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Systolic - upper number(mmHg)</ion-label\n        >\n        <ion-input\n          placeholder=\"Enter systolic reading\"\n          type=\"number\"\n          [value]=\"pressure.upper\"\n          [(ngModel)]=\"pressure.upper\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <ion-item *ngIf=\"pressure.upper\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Diastolic - lower number (mmHg)</ion-label\n        >\n        <ion-input\n          type=\"number\"\n          placeholder=\"Enter diastolic reading\"\n          [value]=\"pressure.lower\"\n          [(ngModel)]=\"pressure.lower\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <div *ngIf=\"tip\">\n        <div class=\"flex items-center\">\n          <ion-icon\n            name=\"information-circle-outline\"\n            class=\"text-blue-600 text-xl inline-block mr-2 relative -top-1\"\n          ></ion-icon>\n          <span>Health Tip</span>\n        </div>\n        <p class=\"text-gray-400 mt-3 font-geomanist\" [innerHTML]=\"tip\"></p>\n      </div>\n\n      <span\n        (click)=\"save()\"\n        *ngIf=\"pressure.lower\"\n        class=\"\n          w-full\n          bg-accentBlue\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n        >Done</span\n      >\n    </div>\n  </ion-content>\n</ion-app>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">Record Blood pressure</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 space-y-4\">\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Systolic - upper number(mmHg)</ion-label\n        >\n        <ion-input\n          placeholder=\"Enter systolic reading\"\n          type=\"number\"\n          [value]=\"pressure.upper\"\n          [(ngModel)]=\"pressure.upper\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <ion-item *ngIf=\"pressure.upper\" onclick=\"scrollIntoView(this)\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Diastolic - lower number (mmHg)</ion-label\n        >\n        <ion-input\n          type=\"number\"\n          placeholder=\"Enter diastolic reading\"\n          [value]=\"pressure.lower\"\n          [(ngModel)]=\"pressure.lower\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <div *ngIf=\"tip\">\n        <div class=\"flex items-center\">\n          <ion-icon\n            name=\"information-circle-outline\"\n            class=\"text-blue-600 text-xl inline-block mr-2 relative -top-1\"\n          ></ion-icon>\n          <span>Health Tip</span>\n        </div>\n        <p class=\"text-gray-400 mt-3 font-geomanist\" [innerHTML]=\"tip\"></p>\n      </div>\n\n      <span\n        (click)=\"save()\"\n        *ngIf=\"pressure.lower\"\n        class=\"\n          w-full\n          bg-accentBlue\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n        >Done</span\n      >\n    </div>\n  </ion-content>\n</ion-app>\n");
 
 /***/ }),
 
@@ -9911,11 +10657,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">Record blood sugar level</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 space-y-4\">\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Unit of measurement</ion-label\n        >\n        <ion-select\n          [value]=\"bloodSugar.unit\"\n          [(ngModel)]=\"bloodSugar.unit\"\n          (ngModelChange)=\"updateTip()\"\n          class=\"w-full\"\n          placeholder=\"Choose unit of measurement\"\n        >\n          <ion-select-option value=\"mmol/l\">mmol/L</ion-select-option>\n          <ion-select-option value=\"mg/dl\">mg/dl</ion-select-option>\n        </ion-select>\n      </ion-item>\n      <ion-item *ngIf=\"bloodSugar.unit\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Reading time</ion-label\n        >\n        <ion-select\n          [value]=\"bloodSugar.reading_time\"\n          [(ngModel)]=\"bloodSugar.reading_time\"\n          class=\"w-full\"\n          placeholder=\"Choose reading time\"\n          (ngModelChange)=\"updateTip()\"\n        >\n          <ion-select-option value=\"before\">Before meal</ion-select-option>\n          <ion-select-option value=\"after\">\n            2 hours after meal\n          </ion-select-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item *ngIf=\"bloodSugar.reading_time\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Blood glucose ({{ bloodSugar.unit }})</ion-label\n        >\n        <ion-input\n          placeholder=\"Enter blood sugar level\"\n          [value]=\"bloodSugar.reading\"\n          [(ngModel)]=\"bloodSugar.reading\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <div *ngIf=\"tip\">\n        <div class=\"flex items-center\">\n          <ion-icon\n            name=\"information-circle-outline\"\n            class=\"text-blue-600 text-xl inline-block mr-2 relative -top-1\"\n          ></ion-icon>\n          <span>Health Tip</span>\n        </div>\n        <p class=\"text-gray-400 mt-3 font-geomanist\" [innerHTML]=\"tip\"></p>\n      </div>\n\n      <span\n        (click)=\"save()\"\n        *ngIf=\"bloodSugar.reading\"\n        class=\"\n          w-full\n          bg-accentBlue\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n        >Done</span\n      >\n    </div>\n  </ion-content>\n</ion-app>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">Record blood sugar level</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 space-y-4\">\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Unit of measurement</ion-label\n        >\n        <ion-select\n          [value]=\"bloodSugar.unit\"\n          [(ngModel)]=\"bloodSugar.unit\"\n          (ngModelChange)=\"updateTip()\"\n          class=\"w-full\"\n          placeholder=\"Choose unit of measurement\"\n        >\n          <ion-select-option value=\"mmol/l\">mmol/L</ion-select-option>\n          <ion-select-option value=\"mg/dl\">mg/dl</ion-select-option>\n        </ion-select>\n      </ion-item>\n      <ion-item *ngIf=\"bloodSugar.unit\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Reading time</ion-label\n        >\n        <ion-select\n          [value]=\"bloodSugar.reading_time\"\n          [(ngModel)]=\"bloodSugar.reading_time\"\n          class=\"w-full\"\n          placeholder=\"Choose reading time\"\n          (ngModelChange)=\"updateTip()\"\n        >\n          <ion-select-option value=\"before\">Before meal</ion-select-option>\n          <ion-select-option value=\"after\">\n            2 hours after meal\n          </ion-select-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item *ngIf=\"bloodSugar.reading_time\" onclick=\"scrollIntoView(this)\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Blood glucose ({{ bloodSugar.unit }})</ion-label\n        >\n        <ion-input\n          placeholder=\"Enter blood sugar level\"\n          type=\"number\"\n          [value]=\"bloodSugar.reading\"\n          [(ngModel)]=\"bloodSugar.reading\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <div *ngIf=\"tip\">\n        <div class=\"flex items-center\">\n          <ion-icon\n            name=\"information-circle-outline\"\n            class=\"text-blue-600 text-xl inline-block mr-2 relative -top-1\"\n          ></ion-icon>\n          <span>Health Tip</span>\n        </div>\n        <p class=\"text-gray-400 mt-3 font-geomanist\" [innerHTML]=\"tip\"></p>\n      </div>\n\n      <span\n        (click)=\"save()\"\n        *ngIf=\"bloodSugar.reading\"\n        class=\"\n          w-full\n          bg-accentBlue\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n        >Done</span\n      >\n    </div>\n  </ion-content>\n</ion-app>\n");
 
 /***/ }),
 
-/***/ 8863:
+/***/ 88863:
 /*!*******************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/update-bmi/update-bmi.component.html ***!
   \*******************************************************************************************************/
@@ -9926,11 +10672,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">Record BMI</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 space-y-4\">\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Unit of measurement</ion-label\n        >\n        <ion-select\n          [value]=\"bmi.unit\"\n          [(ngModel)]=\"bmi.unit\"\n          class=\"w-full\"\n          placeholder=\"Choose unit of measurement\"\n          (ngModelChange)=\"updateTip()\"\n        >\n          <ion-select-option value=\"pounds/inch\">Pounds/Inch</ion-select-option>\n          <ion-select-option value=\"kg/m\">kg/m</ion-select-option>\n        </ion-select>\n      </ion-item>\n      <ion-item *ngIf=\"bmi.unit\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Height({{ this.bmi.unit == \"kg/m\" ? \"M\" : \"Inch\" }})</ion-label\n        >\n        <ion-input\n          placeholder=\"Enter height\"\n          type=\"number\"\n          [value]=\"bmi.height\"\n          [(ngModel)]=\"bmi.height\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <ion-item *ngIf=\"bmi.height\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Weight({{ this.bmi.unit == \"kg/m\" ? \"Kg\" : \"Pounds\" }})</ion-label\n        >\n        <ion-input\n          type=\"number\"\n          placeholder=\"Enter weight\"\n          [value]=\"bmi.weight\"\n          [(ngModel)]=\"bmi.weight\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <ion-item *ngIf=\"bmi.weight\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >BMI({{ this.bmi.unit }})</ion-label\n        >\n        <ion-input\n          type=\"number\"\n          placeholder=\"Enter weight\"\n          [value]=\"bmi.mass\"\n          [(ngModel)]=\"bmi.mass\"\n          disabled\n        ></ion-input>\n      </ion-item>\n\n      <div *ngIf=\"tip\">\n        <div class=\"flex items-center\">\n          <ion-icon\n            name=\"information-circle-outline\"\n            class=\"text-blue-600 text-xl inline-block mr-2 relative -top-1\"\n          ></ion-icon>\n          <span>Health Tip</span>\n        </div>\n        <p class=\"text-gray-400 mt-3 font-geomanist\" [innerHTML]=\"tip\"></p>\n      </div>\n      <span\n        (click)=\"save()\"\n        *ngIf=\"bmi.weight\"\n        class=\"\n          w-full\n          bg-accentBlue\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n        >Done</span\n      >\n    </div>\n  </ion-content>\n</ion-app>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">Record BMI</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 space-y-4\">\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Unit of measurement</ion-label\n        >\n        <ion-select\n          [value]=\"bmi.unit\"\n          [(ngModel)]=\"bmi.unit\"\n          class=\"w-full\"\n          placeholder=\"Choose unit of measurement\"\n          (ngModelChange)=\"updateTip()\"\n        >\n          <ion-select-option value=\"pounds/inch\">Pounds/Inch</ion-select-option>\n          <ion-select-option value=\"kg/m\">kg/m</ion-select-option>\n        </ion-select>\n      </ion-item>\n      <ion-item *ngIf=\"bmi.unit\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Height({{ this.bmi.unit == \"kg/m\" ? \"M\" : \"Inch\" }})</ion-label\n        >\n        <ion-input\n          placeholder=\"Enter height\"\n          type=\"number\"\n          [value]=\"bmi.height\"\n          [(ngModel)]=\"bmi.height\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <ion-item *ngIf=\"bmi.height\" onclick=\"scrollIntoView(this)\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Weight({{ this.bmi.unit == \"kg/m\" ? \"Kg\" : \"Pounds\" }})</ion-label\n        >\n        <ion-input\n          type=\"number\"\n          placeholder=\"Enter weight\"\n          [value]=\"bmi.weight\"\n          [(ngModel)]=\"bmi.weight\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <ion-item *ngIf=\"bmi.weight\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >BMI({{ this.bmi.unit }})</ion-label\n        >\n        <ion-input\n          type=\"number\"\n          placeholder=\"Enter weight\"\n          [value]=\"bmi.mass\"\n          [(ngModel)]=\"bmi.mass\"\n          disabled\n        ></ion-input>\n      </ion-item>\n\n      <div *ngIf=\"tip\">\n        <div class=\"flex items-center\">\n          <ion-icon\n            name=\"information-circle-outline\"\n            class=\"text-blue-600 text-xl inline-block mr-2 relative -top-1\"\n          ></ion-icon>\n          <span>Health Tip</span>\n        </div>\n        <p class=\"text-gray-400 mt-3 font-geomanist\" [innerHTML]=\"tip\"></p>\n      </div>\n      <span\n        (click)=\"save()\"\n        *ngIf=\"bmi.weight\"\n        class=\"\n          w-full\n          bg-accentBlue\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n        >Done</span\n      >\n    </div>\n  </ion-content>\n</ion-app>\n");
 
 /***/ }),
 
-/***/ 8753:
+/***/ 48753:
 /*!***********************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/update-cholesterol/update-cholesterol.component.html ***!
   \***********************************************************************************************************************/
@@ -9941,11 +10687,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">Record total cholesterol level</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 space-y-4\">\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Unit of measurement</ion-label\n        >\n        <ion-select\n          [value]=\"cholesterol.unit\"\n          [(ngModel)]=\"cholesterol.unit\"\n          class=\"w-full\"\n          placeholder=\"Choose unit of measurement\"\n          (ngModelChange)=\"updateTip()\"\n        >\n          <ion-select-option value=\"mmol/l\">mmol/L</ion-select-option>\n          <ion-select-option value=\"mg/dl\">mg/dl</ion-select-option>\n        </ion-select>\n      </ion-item>\n      <ion-item *ngIf=\"cholesterol.unit\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Cholesterol level ({{ cholesterol.unit }})</ion-label\n        >\n        <ion-input\n          placeholder=\"Enter total cholesterol reading\"\n          [value]=\"cholesterol.reading\"\n          type=\"number\"\n          [(ngModel)]=\"cholesterol.reading\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <div *ngIf=\"tip\">\n        <div class=\"flex items-center\">\n          <ion-icon\n            name=\"information-circle-outline\"\n            class=\"text-blue-600 text-xl inline-block mr-2 relative -top-1\"\n          ></ion-icon>\n          <span>Health Tip</span>\n        </div>\n        <p class=\"text-gray-400 mt-3 font-geomanist\" [innerHTML]=\"tip\"></p>\n      </div>\n\n      <span\n        (click)=\"save()\"\n        *ngIf=\"cholesterol.reading\"\n        class=\"\n          w-full\n          bg-accentBlue\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n        >Done</span\n      >\n    </div>\n  </ion-content>\n</ion-app>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">Record total cholesterol level</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 space-y-4\">\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Unit of measurement</ion-label\n        >\n        <ion-select\n          [value]=\"cholesterol.unit\"\n          [(ngModel)]=\"cholesterol.unit\"\n          class=\"w-full\"\n          placeholder=\"Choose unit of measurement\"\n          (ngModelChange)=\"updateTip()\"\n        >\n          <ion-select-option value=\"mmol/l\">mmol/L</ion-select-option>\n          <ion-select-option value=\"mg/dl\">mg/dl</ion-select-option>\n        </ion-select>\n      </ion-item>\n      <ion-item *ngIf=\"cholesterol.unit\" onclick=\"scrollIntoView(this)\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Cholesterol level ({{ cholesterol.unit }})</ion-label\n        >\n        <ion-input\n          placeholder=\"Enter total cholesterol reading\"\n          [value]=\"cholesterol.reading\"\n          type=\"number\"\n          [(ngModel)]=\"cholesterol.reading\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <div *ngIf=\"tip\">\n        <div class=\"flex items-center\">\n          <ion-icon\n            name=\"information-circle-outline\"\n            class=\"text-blue-600 text-xl inline-block mr-2 relative -top-1\"\n          ></ion-icon>\n          <span>Health Tip</span>\n        </div>\n        <p class=\"text-gray-400 mt-3 font-geomanist\" [innerHTML]=\"tip\"></p>\n      </div>\n\n      <span\n        (click)=\"save()\"\n        *ngIf=\"cholesterol.reading\"\n        class=\"\n          w-full\n          bg-accentBlue\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n        >Done</span\n      >\n    </div>\n  </ion-content>\n</ion-app>\n");
 
 /***/ }),
 
-/***/ 6111:
+/***/ 76111:
 /*!***********************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/update-hba1c/update-hba1c.component.html ***!
   \***********************************************************************************************************/
@@ -9956,11 +10702,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">Record HbA1c</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 space-y-4\">\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Unit of measurement</ion-label\n        >\n        <ion-select\n          value=\"mmol/mol\"\n          class=\"w-full\"\n          [value]=\"hba1c.unit\"\n          [(ngModel)]=\"hba1c.unit\"\n          (ngModelChange)=\"updateTip()\"\n          placeholder=\"Choose unit of measurement\"\n        >\n          <ion-select-option value=\"mmol/mol\">mmol/mol</ion-select-option>\n          <ion-select-option value=\"percentage\">percentage</ion-select-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item *ngIf=\"hba1c.unit\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Measured HbA1c</ion-label\n        >\n        <ion-input\n          placeholder=\"Enter HbA1c or A1c number\"\n          [value]=\"hba1c.number\"\n          [(ngModel)]=\"hba1c.number\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <div *ngIf=\"tip\">\n        <div class=\"flex items-center\">\n          <ion-icon\n            name=\"information-circle-outline\"\n            class=\"text-blue-600 text-xl inline-block mr-2 relative -top-1\"\n          ></ion-icon>\n          <span>Health Tip</span>\n        </div>\n        <p class=\"text-gray-400 mt-3 font-geomanist\" [innerHTML]=\"tip\"></p>\n      </div>\n\n      <span\n        *ngIf=\"hba1c.number\"\n        (click)=\"save()\"\n        class=\"\n          w-full\n          bg-accentBlue\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n        >Done</span\n      >\n    </div>\n  </ion-content>\n</ion-app>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app class=\"text-gray-900\">\n  <ion-header\n    class=\"\n      bg-blue-100\n      px-4\n      py-6\n      ion-no-border\n      text-xl\n      flex\n      justify-between\n      items-center\n    \"\n  >\n    <p class=\"font-bold\">Record HbA1c</p>\n    <ion-icon\n      (click)=\"modalController.dismiss()\"\n      name=\"close\"\n      class=\"bg-gray-500 text-2xl text-white rounded-full\"\n    ></ion-icon>\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 space-y-4\">\n      <ion-item>\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Unit of measurement</ion-label\n        >\n        <ion-select\n          value=\"mmol/mol\"\n          class=\"w-full\"\n          [value]=\"hba1c.unit\"\n          [(ngModel)]=\"hba1c.unit\"\n          (ngModelChange)=\"updateTip()\"\n          placeholder=\"Choose unit of measurement\"\n        >\n          <ion-select-option value=\"mmol/mol\">mmol/mol</ion-select-option>\n          <ion-select-option value=\"percentage\">percentage</ion-select-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item *ngIf=\"hba1c.unit\" onclick=\"scrollIntoView(this)\">\n        <ion-label class=\"block font-calibre w-full\" position=\"stacked\"\n          >Measured HbA1c</ion-label\n        >\n        <ion-input\n          placeholder=\"Enter HbA1c or A1c number\"\n          [value]=\"hba1c.number\"\n          [(ngModel)]=\"hba1c.number\"\n          (ngModelChange)=\"updateTip()\"\n        ></ion-input>\n      </ion-item>\n\n      <div *ngIf=\"tip\">\n        <div class=\"flex items-center\">\n          <ion-icon\n            name=\"information-circle-outline\"\n            class=\"text-blue-600 text-xl inline-block mr-2 relative -top-1\"\n          ></ion-icon>\n          <span>Health Tip</span>\n        </div>\n        <p class=\"text-gray-400 mt-3 font-geomanist\" [innerHTML]=\"tip\"></p>\n      </div>\n\n      <span\n        *ngIf=\"hba1c.number\"\n        (click)=\"save()\"\n        class=\"\n          w-full\n          bg-accentBlue\n          p-4\n          font-semibold\n          text-center\n          block\n          text-white\n          uppercase\n          rounded-xl\n          mt-10\n        \"\n        >Done</span\n      >\n    </div>\n  </ion-content>\n</ion-app>\n");
 
 /***/ }),
 
-/***/ 8515:
+/***/ 88515:
 /*!***************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/update-health-status/update-health-status.component.html ***!
   \***************************************************************************************************************************/
@@ -9975,7 +10721,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2774:
+/***/ 82774:
 /*!*****************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/update-password/update-password.component.html ***!
   \*****************************************************************************************************************/
@@ -9990,7 +10736,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 334:
+/***/ 90334:
 /*!***************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/update-picture/update-picture.component.html ***!
   \***************************************************************************************************************/
@@ -10005,7 +10751,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 8720:
+/***/ 38720:
 /*!***************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/update-profile/update-profile.component.html ***!
   \***************************************************************************************************************/
@@ -10020,7 +10766,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7429:
+/***/ 37429:
 /*!*************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/view-blood-pressure/view-blood-pressure.component.html ***!
   \*************************************************************************************************************************/
@@ -10035,7 +10781,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 9375:
+/***/ 49375:
 /*!*******************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/view-blood-sugar/view-blood-sugar.component.html ***!
   \*******************************************************************************************************************/
@@ -10050,7 +10796,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3700:
+/***/ 83700:
 /*!***************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/view-bmi/view-bmi.component.html ***!
   \***************************************************************************************************/
@@ -10080,7 +10826,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 3972:
+/***/ 43972:
 /*!*******************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/view-hba1c/view-hba1c.component.html ***!
   \*******************************************************************************************************/
@@ -10095,7 +10841,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4371:
+/***/ 14371:
 /*!***********************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/view-health-status/view-health-status.component.html ***!
   \***********************************************************************************************************************/
@@ -10110,7 +10856,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1719:
+/***/ 21719:
 /*!*****************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/view-meal/view-meal.component.html ***!
   \*****************************************************************************************************/
@@ -10125,7 +10871,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 6733:
+/***/ 36733:
 /*!*******************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/view-meals/view-meals.component.html ***!
   \*******************************************************************************************************/
@@ -10140,7 +10886,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 202:
+/***/ 20202:
 /*!****************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/layouts/home/home.component.html ***!
   \****************************************************************************************/
@@ -10151,11 +10897,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<app-menu [show]=\"showMenu\" (onClose)=\"showMenu = false\"></app-menu>\n<ion-app\n  class=\"{{\n    showMenu ? 'show-menu' : ''\n  }} home font-calibre pale-bg-default bg-accent text-accent\"\n>\n  <ion-header class=\"ion-no-border\">\n    <div\n      class=\"flex justify-between p-4 {{\n        currentRoute == 'health' ? 'bg-accent white-text' : ''\n      }}\"\n    >\n      <div class=\"flex items-center\" (click)=\"toggleMenu()\">\n        <ion-icon name=\"menu\" class=\"text-2xl\"></ion-icon>\n        <span class=\"ml-4 capitalize mt-2\">{{ currentRoute }}</span>\n      </div>\n\n      <div class=\"space-x-4\">\n        <ion-icon\n          name=\"location-outline\"\n          class=\"text-2xl\"\n          (click)=\"showLocation()\"\n        ></ion-icon>\n        <ion-icon\n          name=\"fast-food-outline\"\n          class=\"text-2xl\"\n          (click)=\"showMeals()\"\n        ></ion-icon>\n      </div>\n    </div>\n  </ion-header>\n  <ion-content>\n    <router-outlet></router-outlet>\n  </ion-content>\n  <ion-footer class=\"ion-no-border\">\n    <div class=\"flex justify-between p-4 uppercase bg-white rounded-t-3xl\">\n      <div\n        class=\"text-center {{\n          currentRoute == 'home' ? 'text-accentBlue' : ' text-gray-900'\n        }}\"\n        routerLink=\"/home\"\n      >\n        <ion-icon name=\"home\" class=\"text-2xl\"></ion-icon>\n        <span class=\"block text-sm\">HOME</span>\n      </div>\n      <div\n        class=\"text-center {{\n          currentRoute == 'education' ? 'text-accentBlue' : 'text-gray-900'\n        }}\"\n        routerLink=\"/education\"\n      >\n        <ion-icon name=\"person\" class=\"text-2xl\"></ion-icon>\n        <span class=\"block text-sm\">Education</span>\n      </div>\n      <div\n        class=\"text-center {{\n          currentRoute == 'health' ? 'text-accentBlue' : 'text-gray-900'\n        }}\"\n        routerLink=\"/health\"\n      >\n        <ion-icon name=\"heart\" class=\"text-2xl\"></ion-icon>\n        <span class=\"block text-sm\">Health</span>\n      </div>\n    </div>\n  </ion-footer>\n</ion-app>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<app-menu [show]=\"showMenu\" (onClose)=\"showMenu = false\"></app-menu>\n<ion-app\n  class=\"{{\n    showMenu ? 'show-menu' : ''\n  }} home font-calibre pale-bg-default bg-accent text-accent\"\n>\n  <ion-header class=\"ion-no-border\">\n    <div\n      class=\"flex justify-between p-4 {{\n        currentRoute == 'health' ? 'bg-accent white-text' : ''\n      }}\"\n    >\n      <div class=\"flex items-center\" (click)=\"toggleMenu()\">\n        <ion-icon name=\"menu\" class=\"text-2xl\"></ion-icon>\n        <span class=\"ml-4 capitalize mt-2\">{{ currentRoute }}</span>\n      </div>\n\n      <div class=\"space-x-4\">\n        <ion-icon\n          name=\"location-outline\"\n          class=\"text-2xl\"\n          (click)=\"showLocation()\"\n        ></ion-icon>\n\n        <!-- height=\"10\" -->\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          width=\"33\"\n          viewBox=\"0 0 463 255\"\n          class=\"inline-block -top-2 relative\"\n          (click)=\"showMeals()\"\n        >\n          <g id=\"_106563\" data-name=\"106563\" transform=\"translate(0 -104)\">\n            <path\n              id=\"Path_1\"\n              data-name=\"Path 1\"\n              d=\"M455.5,272H398.975c.011-.166.025-.331.025-.5a23.543,23.543,0,0,0-16.934-22.566A23.542,23.542,0,0,0,359.5,232a23.305,23.305,0,0,0-4.372.414,31.348,31.348,0,0,0-40.042-13.823,23.379,23.379,0,0,0-37.786-1.869,23.413,23.413,0,0,0-24,8,23.657,23.657,0,0,0-10.172-.308,31.347,31.347,0,0,0-50.413-6.525A23.324,23.324,0,0,0,183.5,216a23.584,23.584,0,0,0-17.714,8.068c-.579.042-1.154.1-1.724.181L63.491,111.557a22.616,22.616,0,1,0-31.933,31.932l109.233,97.485-4.6,4.6-.07-.07a23.527,23.527,0,0,0-33.233,0L76.393,272H7.5a7.5,7.5,0,0,0,0,15h24a33.307,33.307,0,0,1,29.1,17.122l12.342,22.217A63.538,63.538,0,0,0,128.451,359h206.1a63.536,63.536,0,0,0,55.509-32.661L402.4,304.122A33.3,33.3,0,0,1,431.5,287h24a7.5,7.5,0,0,0,0-15ZM195.692,235.4a7.5,7.5,0,0,0,5.442-3.792,16.377,16.377,0,0,1,30.391,4.169,7.5,7.5,0,0,0,11.382,4.6,8.558,8.558,0,0,1,9.345.075,7.5,7.5,0,0,0,11.284-3.735,8.434,8.434,0,0,1,12.716-4.266,7.5,7.5,0,0,0,11.284-3.735,8.408,8.408,0,0,1,16.339,1.915,7.5,7.5,0,0,0,12.529,4.76,16.364,16.364,0,0,1,27.122,8.381,7.5,7.5,0,0,0,11.382,4.6A8.465,8.465,0,0,1,368,255.5a7.5,7.5,0,0,0,7.5,7.5,8.51,8.51,0,0,1,8.5,8.5c0,.169.014.334.025.5H258.607l-26.49-26.49a23.527,23.527,0,0,0-33.233,0l-.07.07-14.542-14.542a8.47,8.47,0,0,1,5.1,2.352A7.5,7.5,0,0,0,195.692,235.4ZM225.234,272,209.42,256.187l.069-.069a8.5,8.5,0,0,1,12.02,0L237.393,272ZM39,126.833a7.617,7.617,0,0,1,7.6-7.833c.075,0,.149,0,.224,0a7.546,7.546,0,0,1,5.467,2.542l89.23,99.983L41.545,132.3A7.547,7.547,0,0,1,39,126.833ZM161.49,241.489a8.5,8.5,0,0,1,12.02,0L204.02,272H162.607l-15.814-15.813Zm-48,14.628a8.51,8.51,0,0,1,12.021,0L141.393,272H97.607Zm275.8,40.72-12.342,22.217A48.53,48.53,0,0,1,334.549,344h-206.1a48.527,48.527,0,0,1-42.4-24.946L73.712,296.837A48.188,48.188,0,0,0,66.455,287H396.546A48.085,48.085,0,0,0,389.289,296.837Z\"\n              fill=\"currentColor\"\n            />\n            <path\n              id=\"Path_2\"\n              data-name=\"Path 2\"\n              d=\"M327.5,263a7.511,7.511,0,1,0-5.3-2.2A7.527,7.527,0,0,0,327.5,263Z\"\n              fill=\"currentColor\"\n            />\n            <path\n              id=\"Path_3\"\n              data-name=\"Path 3\"\n              d=\"M295.5,255a7.511,7.511,0,1,0-5.3-2.2A7.528,7.528,0,0,0,295.5,255Z\"\n              fill=\"currentColor\"\n            />\n            <path\n              id=\"Path_4\"\n              data-name=\"Path 4\"\n              d=\"M271.5,263a7.511,7.511,0,1,0-5.3-2.2A7.527,7.527,0,0,0,271.5,263Z\"\n              fill=\"currentColor\"\n            />\n          </g>\n        </svg>\n      </div>\n    </div>\n  </ion-header>\n  <ion-content>\n    <router-outlet></router-outlet>\n  </ion-content>\n  <ion-footer class=\"ion-no-border\">\n    <div class=\"flex justify-between p-4 uppercase bg-white rounded-t-3xl\">\n      <div\n        class=\"text-center {{\n          currentRoute == 'home' ? 'text-accentBlue' : ' text-gray-900'\n        }}\"\n        routerLink=\"/home\"\n      >\n        <ion-icon name=\"home\" class=\"text-2xl\"></ion-icon>\n        <span class=\"block text-sm\">HOME</span>\n      </div>\n      <div\n        class=\"text-center {{\n          currentRoute == 'education' ? 'text-accentBlue' : 'text-gray-900'\n        }}\"\n        routerLink=\"/education\"\n      >\n        <ion-icon name=\"person\" class=\"text-2xl\"></ion-icon>\n        <span class=\"block text-sm\">Education</span>\n      </div>\n      <div\n        class=\"text-center {{\n          currentRoute == 'health' ? 'text-accentBlue' : 'text-gray-900'\n        }}\"\n        routerLink=\"/health\"\n      >\n        <ion-icon name=\"heart\" class=\"text-2xl\"></ion-icon>\n        <span class=\"block text-sm\">Health</span>\n      </div>\n    </div>\n  </ion-footer>\n</ion-app>\n");
 
 /***/ }),
 
-/***/ 5443:
+/***/ 25443:
 /*!**********************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/auth/signup/health-profile/health-profile.component.html ***!
   \**********************************************************************************************************************/
@@ -10170,7 +10916,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 944:
+/***/ 20944:
 /*!***********************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/logged/education/single/single.component.html ***!
   \***********************************************************************************************************/
@@ -10181,11 +10927,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\n  <ion-header\n    class=\"\n      p-4\n      flex\n      items-center\n      justify-end justify-items-end\n      ion-no-border\n      font-geomanist font-bold\n      text-xl\n    \"\n  >\n    <span class=\"text-accentBlue font-bold\" (click)=\"modalController.dismiss()\"\n      >Close</span\n    >\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 border-b border-gray-200 mb-4\">\n      <span>Topic</span>\n      <h2 class=\"text-2xl font-bold\">{{ data.topic }}</h2>\n    </div>\n    <div class=\"p-4 content content\" [innerHtml]=\"data.description\"></div>\n    <div class=\"flex justify-between p-4\">\n      <p\n        class=\"py-2 px-6 text-accentBlue rounded-xl flex items-center\"\n        (click)=\"bookmark(data.id)\"\n      >\n        <ion-icon name=\"bookmark\" class=\"text-2xl\"></ion-icon>\n        <span class=\"text-xl\">Bookmark</span>\n      </p>\n      <p\n        class=\"\n          py-2\n          px-14\n          text-accentBlue\n          rounded-xl\n          flex\n          items-center\n          border border-accentBlue\n        \"\n      >\n        <span class=\"text-xl\">Share</span>\n      </p>\n    </div>\n  </ion-content>\n</ion-app>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\n  <ion-header\n    class=\"\n      p-4\n      flex\n      items-center\n      justify-end justify-items-end\n      ion-no-border\n      font-geomanist font-bold\n      text-xl\n    \"\n  >\n    <span class=\"text-accentBlue font-bold\" (click)=\"modalController.dismiss()\"\n      >Close</span\n    >\n  </ion-header>\n  <ion-content>\n    <div class=\"p-4 border-b border-gray-200 mb-4\">\n      <span>Topic</span>\n      <h2 class=\"text-2xl font-bold\">{{ data.topic }}</h2>\n    </div>\n    <div class=\"p-4 content content\" [innerHtml]=\"data.description\"></div>\n    <div class=\"flex justify-between p-4\">\n      <p\n        class=\"py-2 px-6 text-accentBlue rounded-xl flex items-center\"\n        (click)=\"bookmark(data.id)\"\n      >\n        <ion-icon name=\"bookmark\" class=\"text-2xl\"></ion-icon>\n        <span class=\"text-xl\">Bookmark</span>\n      </p>\n      <p\n        class=\"\n          py-2\n          px-14\n          text-accentBlue\n          rounded-xl\n          flex\n          items-center\n          border border-accentBlue\n        \"\n        (click)=\"share()\"\n      >\n        <span class=\"text-xl\">Share</span>\n      </p>\n    </div>\n  </ion-content>\n</ion-app>\n");
 
 /***/ }),
 
-/***/ 6210:
+/***/ 56210:
 /*!********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/logged/health/health.page.html ***!
   \********************************************************************************************/
@@ -10200,7 +10946,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2833:
+/***/ 82833:
 /*!****************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/logged/home/home.page.html ***!
   \****************************************************************************************/
@@ -10220,7 +10966,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ "use strict";
 /******/ 
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ __webpack_require__.O(0, ["vendor"], () => (__webpack_exec__(4431)));
+/******/ __webpack_require__.O(0, ["vendor"], () => (__webpack_exec__(14431)));
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);

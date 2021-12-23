@@ -53,7 +53,7 @@ export class BmiComponent implements OnInit {
     e?.stopPropagation();
     const modal = await this.modalController.create({
       component: UpdateBmiComponent,
-      cssClass: 'modal-50',
+      cssClass: 'modal-80',
     });
     await modal.present();
   }
