@@ -43,6 +43,9 @@ import { HealthProfileComponent } from 'src/app/pages/auth/signup/health-profile
 import { SearchComponent } from 'src/app/components/search/search.component';
 import { ForgotPasswordComponent } from 'src/app/components/forgot-password/forgot-password.component';
 import { TermsComponent } from 'src/app/components/terms/terms.component';
+import { CalendarModule } from 'ion2-calendar';
+import { CalendarModalComponent } from 'src/app/components/calendar-modal/calendar-modal.component';
+import { ShareEmailComponent } from 'src/app/components/share-email/share-email.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +91,18 @@ import { TermsComponent } from 'src/app/components/terms/terms.component';
     SearchComponent,
     ForgotPasswordComponent,
     TermsComponent,
+    CalendarModalComponent,
+    ShareEmailComponent,
   ],
-  imports: [CommonModule, IonicModule, FormsModule],
+
+  imports: [
+    CommonModule,
+    IonicModule,
+    FormsModule,
+    CalendarModule.forRoot({
+      doneLabel: 'Save',
+      closeIcon: true,
+    }),
+  ],
 })
 export class SharedModule {}

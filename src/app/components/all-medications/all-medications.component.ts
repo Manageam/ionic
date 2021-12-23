@@ -4,6 +4,9 @@ import { GlobalService } from 'src/app/services/global/global.service';
 import { MedicationsService } from 'src/app/services/medications/medications.service';
 
 import dateFormat from 'dateformat';
+import { CalendarModalComponent } from '../calendar-modal/calendar-modal.component';
+import { ShareEmailComponent } from '../share-email/share-email.component';
+import { HealthService } from 'src/app/services/health/health.service';
 
 @Component({
   selector: 'app-all-medications',
@@ -16,7 +19,8 @@ export class AllMedicationsComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private global: GlobalService,
-    private medicationService: MedicationsService
+    private medicationService: MedicationsService,
+    private healthService: HealthService
   ) {}
 
   ngOnInit() {
@@ -30,9 +34,37 @@ export class AllMedicationsComponent implements OnInit {
       });
     });
   }
-  share() {
-    console.log('share shit');
+
+  async share() {
+    this.modalController.dismiss();
+    const modal = await this.modalController.create({
+      component: CalendarModalComponent,
+      cssClass: 'modal-80',
+    });
+
+    modal.onDidDismiss().then(async ({ data }) => {
+      if (!data) return;
+      const modal = await this.modalController.create({
+        component: ShareEmailComponent,
+        cssClass: 'modal-50',
+      });
+      const date = data;
+      modal.onDidDismiss().then(({ data }) => {
+        if (!data) return;
+        this.healthService
+          .share({ email: data, ...date, type: 'medications' })
+          .subscribe((data: string) => {
+            return this.global.alert('Share record', data, [
+              { role: true, text: 'OK' },
+            ]);
+          });
+      });
+      await modal.present();
+    });
+
+    await modal.present();
   }
+
   toggle(i) {
     if (i == this.expand) {
       this.expand = null;

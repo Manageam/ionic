@@ -83,4 +83,14 @@ export class HealthService {
     } = this.userService.fetchDetails();
     return this.http.post(`${this.url}/addHba1c`, { ...data, user_id: id });
   }
+
+  share(data) {
+    const {
+      user_details: { id },
+    } = this.userService.fetchDetails();
+    return this.http.post(`${environment.apiUrl}/share/shareMail`, {
+      ...data,
+      user_id: id,
+    });
+  }
 }
