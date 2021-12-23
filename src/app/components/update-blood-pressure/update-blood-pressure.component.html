@@ -33,7 +33,7 @@
         ></ion-input>
       </ion-item>
 
-      <ion-item *ngIf="pressure.upper">
+      <ion-item *ngIf="pressure.upper" onclick="scrollIntoView(this)">
         <ion-label class="block font-calibre w-full" position="stacked"
           >Diastolic - lower number (mmHg)</ion-label
         >

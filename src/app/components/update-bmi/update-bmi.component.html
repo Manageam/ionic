@@ -48,7 +48,7 @@
         ></ion-input>
       </ion-item>
 
-      <ion-item *ngIf="bmi.height">
+      <ion-item *ngIf="bmi.height" onclick="scrollIntoView(this)">
         <ion-label class="block font-calibre w-full" position="stacked"
           >Weight({{ this.bmi.unit == "kg/m" ? "Kg" : "Pounds" }})</ion-label
         >

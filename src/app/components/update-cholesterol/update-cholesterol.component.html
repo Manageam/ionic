@@ -35,7 +35,7 @@
           <ion-select-option value="mg/dl">mg/dl</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-item *ngIf="cholesterol.unit">
+      <ion-item *ngIf="cholesterol.unit" onclick="scrollIntoView(this)">
         <ion-label class="block font-calibre w-full" position="stacked"
           >Cholesterol level ({{ cholesterol.unit }})</ion-label
         >

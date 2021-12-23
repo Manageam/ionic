@@ -30,13 +30,15 @@ export class AddMedicationComponent implements OnInit {
 
   search() {
     this.med = null;
-    if (this.medication.name.length < 3) {
+    if (this.medication.name.length < 1) {
       this.searched = [];
       return;
     }
 
     const regx = new RegExp(this.medication.name, 'i');
-    this.searched = this.allMedication.filter((med) => regx.test(med.name));
+    this.searched = this.allMedication
+      .filter((med) => regx.test(med.name))
+      .slice(0, 6);
   }
 
   save() {
@@ -52,6 +54,10 @@ export class AddMedicationComponent implements OnInit {
       this.medicationService.update();
       this.modalController.dismiss();
     });
+  }
+
+  scrollIntoView(el: Element) {
+    el.scrollIntoView();
   }
 
   ngOnDestroy() {

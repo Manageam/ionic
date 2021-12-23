@@ -39,6 +39,10 @@ export class UpdateBloodPressureComponent implements OnInit {
     this.tip = fetchBloodPressureTips(this.pressure.upper, this.pressure.lower);
   }
 
+  scrollIntoView(el: Element) {
+    el.scrollIntoView();
+  }
+
   save() {
     this.bloodPressureService
       .add({ time: new Date(), ...this.pressure, unit: 'mmhg' })

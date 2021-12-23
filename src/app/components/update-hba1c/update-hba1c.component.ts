@@ -85,6 +85,10 @@ export class UpdateHba1cComponent implements OnInit {
     });
   }
 
+  scrollIntoView(el: Element) {
+    el.scrollIntoView();
+  }
+
   ngOnDestroy() {
     this.subs.forEach((sub) => sub.unsubscribe());
   }

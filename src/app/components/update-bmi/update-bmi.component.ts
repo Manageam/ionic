@@ -63,6 +63,10 @@ export class UpdateBmiComponent implements OnInit {
     });
   }
 
+  scrollIntoView(el: Element) {
+    el.scrollIntoView();
+  }
+
   ngOnDestroy() {
     this.subs.forEach((sub) => sub.unsubscribe());
   }
