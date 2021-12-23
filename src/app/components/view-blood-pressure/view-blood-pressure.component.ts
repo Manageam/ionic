@@ -23,14 +23,19 @@ export class ViewBloodPressureComponent implements OnInit {
 
   ngOnInit() {
     let sub = this.bloodPressureService.get().subscribe((data) => {
-      this.allBloodPressure = data.map((datum) => {
-        datum.date = dateFormat(
-          new Date(datum.created_at),
-          'dd mmm, yyyy-hh:MMtt'
-        );
-        datum.tip = fetchBloodPressureTips(datum.upper, datum.lower);
-        return datum;
-      });
+      this.allBloodPressure = data
+        .sort(
+          (a, z) =>
+            new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
+        )
+        .map((datum) => {
+          datum.date = dateFormat(
+            new Date(datum.created_at),
+            'dd mmm, yyyy-hh:MMtt'
+          );
+          datum.tip = fetchBloodPressureTips(datum.upper, datum.lower);
+          return datum;
+        });
     });
 
     this.subs.push(sub);

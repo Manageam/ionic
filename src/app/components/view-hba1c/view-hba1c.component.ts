@@ -88,8 +88,19 @@ export class ViewHba1cComponent implements OnInit {
         }
       }
 
+      //sort
+
+      for (const key in hba1cGroups) {
+        hba1cGroups[key] = hba1cGroups[key].sort(
+          (a, z) =>
+            new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
+        );
+      }
+
       this.allHba1c = hba1cGroups;
-      this.allHba1cKeys = Object.keys(hba1cGroups);
+      this.allHba1cKeys = Object.keys(hba1cGroups).sort(
+        (a, z) => new Date(z).getTime() - new Date(a).getTime()
+      );
     });
   }
 

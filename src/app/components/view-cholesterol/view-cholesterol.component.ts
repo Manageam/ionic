@@ -23,11 +23,16 @@ export class ViewCholesterolComponent implements OnInit {
 
   ngOnInit() {
     let sub = this.cholesterolService.get().subscribe((data) => {
-      this.allCholesterol = data.map((d) => {
-        d.date = dateFormat(new Date(d.created_at), 'dd mmm, yyyy-hh:MMtt');
-        d.tip = fetchBloodPressureTips(d.unit, d.reading);
-        return d;
-      });
+      this.allCholesterol = data
+        .sort(
+          (a, z) =>
+            new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
+        )
+        .map((d) => {
+          d.date = dateFormat(new Date(d.created_at), 'dd mmm, yyyy-hh:MMtt');
+          d.tip = fetchBloodPressureTips(d.unit, d.reading);
+          return d;
+        });
     });
 
     this.subs.push(sub);

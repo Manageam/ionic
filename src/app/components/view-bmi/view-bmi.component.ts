@@ -23,14 +23,19 @@ export class ViewBmiComponent implements OnInit {
 
   ngOnInit() {
     let sub = this.bmiService.get().subscribe((data) => {
-      this.allBmi = data.map((datum) => {
-        datum.date = dateFormat(
-          new Date(datum.created_at),
-          'dd mmm, yyyy-hh:MMtt'
-        );
-        datum.tip = fetchBMI(datum.mass);
-        return datum;
-      });
+      this.allBmi = data
+        .sort(
+          (a, z) =>
+            new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
+        )
+        .map((datum) => {
+          datum.date = dateFormat(
+            new Date(datum.created_at),
+            'dd mmm, yyyy-hh:MMtt'
+          );
+          datum.tip = fetchBMI(datum.mass);
+          return datum;
+        });
     });
 
     this.subs.push(sub);

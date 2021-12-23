@@ -22,17 +22,22 @@ export class ViewBloodSugarComponent implements OnInit {
 
   ngOnInit() {
     let sub = this.bloodSugarService.get().subscribe((data) => {
-      this.bloodSugar = data.map((datum) => {
-        datum.date = dateFormat(
-          new Date(datum.created_at),
-          'dd mmm, yyyy-hh:MMtt'
-        );
-        datum.tip = fetchBloodSugarTips({
-          ...datum,
-          value: datum.reading,
+      this.bloodSugar = data
+        .sort(
+          (a, z) =>
+            new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
+        )
+        .map((datum) => {
+          datum.date = dateFormat(
+            new Date(datum.created_at),
+            'dd mmm, yyyy-hh:MMtt'
+          );
+          datum.tip = fetchBloodSugarTips({
+            ...datum,
+            value: datum.reading,
+          });
+          return datum;
         });
-        return datum;
-      });
     });
 
     this.subs.push(sub);
