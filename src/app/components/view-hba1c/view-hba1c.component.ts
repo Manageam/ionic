@@ -53,7 +53,7 @@ export class ViewHba1cComponent implements OnInit {
       modal.onDidDismiss().then(({ data }) => {
         if (!data) return;
         this.healthService
-          .share({ email: data, ...date, type: 'blood_sugar' })
+          .share({ email: data, ...date, type: 'hba1c' })
           .subscribe((data: string) => {
             return this.global.alert('Share record', data, [
               { role: true, text: 'OK' },

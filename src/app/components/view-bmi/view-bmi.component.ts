@@ -67,7 +67,7 @@ export class ViewBmiComponent implements OnInit {
       modal.onDidDismiss().then(({ data }) => {
         if (!data) return;
         this.healthService
-          .share({ email: data, ...date, type: 'blood_sugar' })
+          .share({ email: data, ...date, type: 'body_mass' })
           .subscribe((data: string) => {
             return this.global.alert('Share record', data, [
               { role: true, text: 'OK' },
