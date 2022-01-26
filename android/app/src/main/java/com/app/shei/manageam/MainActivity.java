@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.app.shei.manageam;
 
 import com.getcapacitor.BridgeActivity;
 
