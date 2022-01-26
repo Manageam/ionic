@@ -8,7 +8,7 @@
     "dev": "ng serve --host=0.0.0.0 --hmr",
     "start": "ng serve",
     "build": "ng build",
-    "android": "ionic cap sync android",
+    "android": "ionic cap build android --prod --release",
     "studio": "ionic cap open android",
     "sync-ios": "npm run build && npx cap sync android",
     "ios": "npx cap open ios",
