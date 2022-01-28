@@ -21,6 +21,7 @@ export class CholesterolComponent implements OnInit {
   ngOnInit() {
     let sub = this.cholesterolService.get().subscribe((data) => {
       this.cholesterol = data.slice(-1)[0];
+      if (!this.cholesterol) return;
       this.color = this.changeColor(
         this.cholesterol.unit,
         this.cholesterol.reading

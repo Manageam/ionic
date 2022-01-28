@@ -13,6 +13,9 @@
   <ion-content>
     <div class="pale-bg-default p-4 font-bold min-h-full">
       <p class="mb-4">BMI history</p>
+      <p *ngIf="allBmi.length == 0" class="text-gray-500">
+        You have not added any BMI reading yet
+      </p>
       <ul>
         <li *ngFor="let item of allBmi" class="bg-white p-4 mb-2">
           <p class="text-accentBlue">{{ item.date }}</p>
@@ -38,14 +41,7 @@
               ></p>
 
               <p
-                class="
-                  bg-red-600
-                  font-bold
-                  text-white
-                  p-3
-                  text-center
-                  rounded-full
-                "
+                class="bg-red-600 font-bold text-white p-3 text-center rounded-full"
                 (click)="remove(item.id)"
               >
                 Remove

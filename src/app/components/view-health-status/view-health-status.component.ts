@@ -25,10 +25,9 @@ export class ViewHealthStatusComponent implements OnInit {
       this.healthStatus = data;
       if (data) {
         this.healthStatus.name = checkHealthStatus(data.diabetics);
-        this.healthStatus.date = dateFormat(
-          new Date(data.created_at),
-          'dd mmm, yyyy-hh:MMtt'
-        );
+        this.healthStatus.date = this.healthStatus.name
+          ? dateFormat(new Date(data.created_at), 'dd mmm, yyyy-hh:MMtt')
+          : '';
       }
     });
 

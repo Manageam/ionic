@@ -28,20 +28,12 @@
       <div class="mt-4">
         <div *ngIf="segment == 'current'">
           <div
-            class="
-              bg-white
-              shadow-sm
-              px-8
-              py-14
-              rounded-xl
-              text-center
-              relative
-            "
+            class="bg-white shadow-sm px-8 py-14 rounded-xl text-center relative"
           >
             <app-guage value="100" [color]="color"></app-guage>
             <div class="px-6 mt-6 font-calibre">
               <h2 class="font-bold text-6xl">
-                {{ hba1c.number }}
+                {{ hba1c?.number || 0 }}
                 {{
                   hba1c?.unit == "percentage" || hba1c?.unit == "percent"
                     ? "%"
@@ -60,7 +52,7 @@
               <p class="text-gray-500 mb-2">
                 HbA1c refers to glycated haemoglobin(A1c). This is your reading.
               </p>
-              <p class="text-accentBlue">Last updated 12-10-2020</p>
+              <p class="text-accentBlue">Last updated {{ hba1c?.date }}</p>
             </div>
           </div>
 
@@ -84,9 +76,13 @@
               <img src="/assets/img/status.svg" class="inline-block h-16" />
               <div class="ml-4">
                 <h3 class="font-bold text-2xl mb-1">
-                  Your levels are critical
+                  Your levels are {{ color == "green" ? "Very Good" : "" }}
+                  {{ color == "yellow" ? "at Risk" : "" }}
+                  {{ color == "red" ? "Critical" : "Empty" }}
                 </h3>
-                <p class="text-gray-500">{{ status }}</p>
+                <p class="text-gray-500">
+                  {{ status || "Your recordings will show here" }}
+                </p>
               </div>
             </div>
           </div>
@@ -95,6 +91,9 @@
         <div class="" *ngIf="segment == 'history'">
           <p class="font-bold text-xl font-geomanist mb-4">
             All HbA1c readings
+          </p>
+          <p *ngIf="allHba1cKeys.length == 0" class="text-gray-500">
+            You have not added any hba1c reading yet
           </p>
           <ul>
             <li
@@ -130,12 +129,7 @@
                       <div class="flex items-center">
                         <ion-icon
                           name="information-circle-outline"
-                          class="
-                            text-blue-600 text-xl
-                            inline-block
-                            mr-2
-                            relative
-                          "
+                          class="text-blue-600 text-xl inline-block mr-2 relative"
                         ></ion-icon>
                         <span>Health Tip</span>
                       </div>
@@ -145,14 +139,7 @@
                       ></p>
 
                       <p
-                        class="
-                          bg-red-600
-                          font-bold
-                          text-white
-                          p-3
-                          text-center
-                          rounded-full
-                        "
+                        class="bg-red-600 font-bold text-white p-3 text-center rounded-full"
                         (click)="remove(item.id, key)"
                       >
                         Remove

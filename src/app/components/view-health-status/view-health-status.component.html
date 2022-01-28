@@ -24,39 +24,22 @@
       </div>
       <div class="bg-white px-4 py-10 mt-2">
         <div class="pale-bg-default p-4 py-10 rounded-xl text-center">
-          <h3 class="font-bold text-3xl">{{ healthStatus.name }}</h3>
-          <span class="text-accentBlue"
+          <h3 class="font-bold text-3xl">
+            {{ healthStatus.name || "Not record yet" }}
+          </h3>
+          <span class="text-accentBlue" *ngIf="healthStatus.date"
             >Last updated {{ healthStatus.date }}</span
           >
         </div>
         <div class="flex justify-between mt-8">
           <span
             (click)="modalController.dismiss(true)"
-            class="
-              bg-accentBlue
-              p-3
-              px-9
-              font-semibold
-              text-center
-              block
-              text-white
-              uppercase
-              rounded-xl
-            "
+            class="bg-accentBlue p-3 px-9 font-semibold text-center block text-white uppercase rounded-xl"
             >Update</span
           >
           <span
             (click)="modalController.dismiss()"
-            class="
-              p-3
-              px-9
-              text-center
-              block
-              text-accentBlue
-              border border-accentBlue
-              uppercase
-              rounded-xl
-            "
+            class="p-3 px-9 text-center block text-accentBlue border border-accentBlue uppercase rounded-xl"
             >close</span
           >
         </div>

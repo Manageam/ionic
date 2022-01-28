@@ -13,6 +13,9 @@
   <ion-content>
     <div class="pale-bg-default p-4 font-bold min-h-full">
       <p class="mb-4">Blood sugar history</p>
+      <p *ngIf="bloodSugar.length == 0" class="text-gray-500">
+        You have not added any Blood sugar reading yet
+      </p>
       <ul>
         <li *ngFor="let item of bloodSugar" class="bg-white p-4 mb-1">
           <p class="text-accentBlue">
@@ -40,14 +43,7 @@
               ></p>
 
               <p
-                class="
-                  bg-red-600
-                  font-bold
-                  text-white
-                  p-3
-                  text-center
-                  rounded-full
-                "
+                class="bg-red-600 font-bold text-white p-3 text-center rounded-full"
                 (click)="remove(item.id)"
               >
                 Remove

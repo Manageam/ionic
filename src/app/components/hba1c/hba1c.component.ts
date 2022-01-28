@@ -26,7 +26,7 @@ export class Hba1cComponent implements OnInit {
   fetchba1c() {
     this.healthService.getHba1c().subscribe((data) => {
       this.hba1c = data.slice(-1)[0];
-
+      if (!this.hba1c) return;
       if (
         (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) < 42) ||
         (this.hba1c.unit == 'percentage' && Number(this.hba1c.number) < 6)

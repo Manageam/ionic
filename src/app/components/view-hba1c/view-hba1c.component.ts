@@ -16,7 +16,7 @@ export class ViewHba1cComponent implements OnInit {
   segment = 'current';
   expand = null;
   color = 'gray';
-  hba1c: { unit; number } = null;
+  hba1c: { unit; number; date } = null;
   allHba1c = {};
   allHba1cKeys = [];
   status = '';
@@ -100,8 +100,8 @@ export class ViewHba1cComponent implements OnInit {
   fetchba1c() {
     this.healthService.getHba1c().subscribe((data) => {
       const allHba1c = data;
+      if (data.length == 0) return;
       this.hba1c = data.slice(-1)[0];
-
       // group the hba1c
       const hba1cGroups = {};
       this.formatStatus();

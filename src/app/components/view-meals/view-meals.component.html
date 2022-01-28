@@ -23,16 +23,7 @@
       <div class="mt-1">
         <div *ngIf="segment == 'current'" class="text-center">
           <div
-            class="
-              bg-white
-              shadow-sm
-              px-4
-              py-10
-              rounded-xl
-              text-center
-              flex
-              justify-center
-            "
+            class="bg-white shadow-sm px-4 py-10 rounded-xl text-center flex justify-center"
           >
             <!-- border-gray-300
           border-red-300
@@ -71,14 +62,7 @@
                 <span>Carbohydrate</span> <span>{{ allCab.length }}</span>
               </h3>
               <li
-                class="
-                  bg-white
-                  text-gray-600
-                  p-4
-                  border-t border-gray-200
-                  flex
-                  justify-between
-                "
+                class="bg-white text-gray-600 p-4 border-t border-gray-200 flex justify-between"
                 *ngFor="let item of allCab"
               >
                 <span>{{ item.name }}</span> <span>{{ item.quantity }}</span>
@@ -92,14 +76,7 @@
                 <span>Protein</span> <span>{{ allPro.length }}</span>
               </h3>
               <li
-                class="
-                  bg-white
-                  text-gray-600
-                  p-4
-                  border-t border-gray-200
-                  flex
-                  justify-between
-                "
+                class="bg-white text-gray-600 p-4 border-t border-gray-200 flex justify-between"
                 *ngFor="let item of allFru"
               >
                 <span>{{ item.name }}</span> <span>{{ item.quantity }}</span>
@@ -114,14 +91,7 @@
                 <span>{{ allFru.length }}</span>
               </h3>
               <li
-                class="
-                  bg-white
-                  text-gray-600
-                  p-4
-                  border-t border-gray-200
-                  flex
-                  justify-between
-                "
+                class="bg-white text-gray-600 p-4 border-t border-gray-200 flex justify-between"
                 *ngFor="let item of allPro"
               >
                 <span>{{ item.name }}</span> <span>{{ item.quantity }}</span>
@@ -130,13 +100,7 @@
 
             <div class="bg-gray-200 grid grid-cols-2">
               <div
-                class="
-                  border-r border-gray-700
-                  p-4
-                  flex
-                  justify-between
-                  items-center
-                "
+                class="border-r border-gray-700 p-4 flex justify-between items-center"
               >
                 <p>Total</p>
                 <!-- text-green-900
@@ -156,49 +120,19 @@
             </div>
             <div class="grid grid-cols-2 gap-x-2">
               <span
-                class="
-                  bg-accentBlue
-                  p-4
-                  font-semibold
-                  text-center
-                  block
-                  text-white
-                  uppercase
-                  rounded-xl
-                  m-4
-                "
+                class="bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl m-4"
                 (click)="save()"
                 >Save</span
               >
               <span
-                class="
-                  text-accentBlue
-                  p-4
-                  font-semibold
-                  text-center
-                  block
-                  bg-white
-                  border border-accentBlue
-                  uppercase
-                  rounded-xl
-                  m-4
-                "
+                class="text-accentBlue p-4 font-semibold text-center block bg-white border border-accentBlue uppercase rounded-xl m-4"
                 (click)="change()"
                 >Change</span
               >
             </div>
             <p
               (click)="clear()"
-              class="
-                text-white
-                m-4
-                mt-2
-                bg-red-600
-                rounded-lg
-                p-4
-                uppercase
-                font-bold
-              "
+              class="text-white m-4 mt-2 bg-red-600 rounded-lg p-4 uppercase font-bold"
             >
               Cancel
             </p>
@@ -206,24 +140,16 @@
 
           <div class="mt-8 px-4 py-3 flex justify-center" *ngIf="!food">
             <p
-              class="
-                bg-white
-                py-4
-                px-14
-                flex
-                items-center
-                rounded-3xl
-                font-bold
-                uppercase
-                shadow-sm
-              "
+              class="bg-white py-4 px-14 flex items-center rounded-3xl font-bold uppercase shadow-sm"
               (click)="addMeal()"
             >
               Add meal
             </p>
           </div>
         </div>
-
+        <p *ngIf="allMeals.length == 0" class="p-4 text-gray-500">
+          You have not added any meal plan yet
+        </p>
         <ul *ngIf="segment == 'plan'">
           <li
             *ngFor="let item of filteredMeals"
