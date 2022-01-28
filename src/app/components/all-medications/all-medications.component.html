@@ -18,6 +18,9 @@
         </div>
       </div>
       <div>
+        <p *ngIf="allMedication.length == 0" class="p-4 bg-white text-gray-500">
+          You have not added any medication yet
+        </p>
         <ul class="">
           <li *ngFor="let item of allMedication">
             <div
@@ -46,14 +49,7 @@
                 </div>
 
                 <p
-                  class="
-                    bg-red-600
-                    font-bold
-                    text-white
-                    p-3
-                    text-center
-                    rounded-full
-                  "
+                  class="bg-red-600 font-bold text-white p-3 text-center rounded-full"
                   (click)="remove(item.id)"
                 >
                   Remove
