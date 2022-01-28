@@ -42,6 +42,7 @@ export class SigninPage implements OnInit {
       );
     }
     this.userService.login(this.data).subscribe((user: any) => {
+      console.log(user);
       const { user_details } = user;
       this.userService.setDetails(user);
       this.auth.login(user_details);

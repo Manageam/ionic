@@ -35,8 +35,9 @@ export class AuthenticationService {
   }
 
   login(data) {
+    console.log(data);
     localStorage.user = JSON.stringify(data);
-    localStorage.token = data.api_token;
+    localStorage.token = data.accessToken;
   }
 
   async logout() {

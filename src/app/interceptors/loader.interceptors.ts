@@ -50,15 +50,15 @@ export class LoaderInterceptor implements HttpInterceptor {
       finalize(() => hideLoader && this.global.hideLoader()),
       catchError((error) => {
         if (error.status == 0) return;
-        if (error.status === 401) {
-          return this.auth.logout();
-        }
+        // if (error.status === 401) {
+        //   return this.auth.logout();
+        // }
         const message = error.error;
         if (message)
           return this.global.alert(
             '',
-            typeof message == 'string'
-              ? message
+            typeof message.message == 'string'
+              ? message.message
               : 'Error while trying to send data to server',
             ['Okay']
           );
