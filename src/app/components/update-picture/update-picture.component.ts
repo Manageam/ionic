@@ -36,7 +36,7 @@ export class UpdatePictureComponent implements OnInit {
     // do th api thingy here
     const image = this.DataURIToBlob(this.image);
     const data = new FormData();
-    data.append('file', image);
+    data.append('photo', image);
     this.userService.updatePhoto(data).subscribe((data) => {
       this.userService.getDetails().subscribe((data) => {
         this.userService.setDetails(data);
