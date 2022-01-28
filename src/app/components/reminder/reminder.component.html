@@ -40,7 +40,9 @@
 
       <div>
         <p class="px-4 font-bold text-lg tracking-wide">Reminders</p>
-        <!-- <p class="p-4 text-gray-500">You have not added any reminder</p> -->
+        <p class="p-4 text-gray-500" *ngIf="reminders.length == 0">
+          You have not added any reminder
+        </p>
         <ul>
           <li *ngFor="let item of reminders" class="bg-white p-4 mb-2">
             <div
@@ -66,14 +68,7 @@
                   </p>
                 </div>
                 <p
-                  class="
-                    bg-red-600
-                    font-bold
-                    text-white
-                    p-3
-                    text-center
-                    rounded-full
-                  "
+                  class="bg-red-600 font-bold text-white p-3 text-center rounded-full"
                   (click)="remove(item.id)"
                 >
                   Remove
