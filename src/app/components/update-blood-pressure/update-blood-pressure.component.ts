@@ -45,7 +45,7 @@ export class UpdateBloodPressureComponent implements OnInit {
 
   save() {
     this.bloodPressureService
-      .add({ time: new Date(), ...this.pressure, unit: 'mmhg' })
+      .add({ time: new Date(), ...this.pressure })
       .subscribe((data) => {
         console.log(data);
         this.modalController.dismiss();
