@@ -21,7 +21,8 @@ export class HealthStatusComponent implements OnInit {
   ngOnInit() {
     let sub = this.healthService.getHealth().subscribe((data) => {
       this.healthStatus = data;
-      this.healthStatus.name = checkHealthStatus(data.diabetics);
+      console.log(data);
+      // this.healthStatus.name = checkHealthStatus(data.diabetics);
     });
 
     this.subs.push(sub);

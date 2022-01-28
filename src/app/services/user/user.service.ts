@@ -24,7 +24,6 @@ export class UserService {
   }
 
   setDetails(details) {
-    console.log(details);
     this.details.next(details.user_details);
     localStorage.details = JSON.stringify(details);
   }
@@ -38,7 +37,6 @@ export class UserService {
     const user = this.auth.loggedUser();
     if (!user) return;
     this.getDetails().subscribe((data) => {
-      console.log(data);
       this.setDetails(data);
     });
   }

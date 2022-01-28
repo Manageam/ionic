@@ -64,6 +64,7 @@ export class HealthService {
     this.http
       .get(`${this.url}/all/${id}`)
       .subscribe(({ diabetics }: { diabetics }) => {
+        console.log(diabetics);
         this.userService.setDetails({ ...user, health: diabetics });
         this.health.next(diabetics);
       });

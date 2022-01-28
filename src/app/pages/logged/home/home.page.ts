@@ -21,7 +21,6 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.userService.userDetails().subscribe((data) => {
       this.user = data;
-      console.log(data);
     });
     this.userService.fetchTip().subscribe((data) => {
       this.tip = data;
