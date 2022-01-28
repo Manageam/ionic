@@ -147,7 +147,10 @@
             </p>
           </div>
         </div>
-        <p *ngIf="allMeals.length == 0" class="p-4 text-gray-500">
+        <p
+          *ngIf="allMeals.length == 0 && segment == 'plan'"
+          class="p-4 text-gray-500 text-center"
+        >
           You have not added any meal plan yet
         </p>
         <ul *ngIf="segment == 'plan'">
