@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { HealthService } from 'src/app/services/health/health.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 
 @Component({
   selector: 'app-update-health-status',
@@ -15,7 +17,9 @@ export class UpdateHealthStatusComponent implements OnInit {
     public modalController: ModalController,
     private healthService: HealthService,
     private platform: Platform,
-    private global: GlobalService
+    private global: GlobalService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -27,7 +31,9 @@ export class UpdateHealthStatusComponent implements OnInit {
 
   save() {
     this.healthService.addHealth(this.value).subscribe((data) => {
-      this.healthService.updateHealth();
+      this.webSocket.emit('health-status:update', {
+        user_id: this.auth.loggedUser().id,
+      });
       this.modalController.dismiss();
       this.global.alert(
         'Update health status',

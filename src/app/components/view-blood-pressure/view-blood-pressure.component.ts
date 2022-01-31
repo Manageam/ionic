@@ -7,6 +7,8 @@ import { GlobalService } from 'src/app/services/global/global.service';
 import { CalendarModalComponent } from '../calendar-modal/calendar-modal.component';
 import { ShareEmailComponent } from '../share-email/share-email.component';
 import { HealthService } from 'src/app/services/health/health.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
   selector: 'app-view-blood-pressure',
@@ -22,7 +24,9 @@ export class ViewBloodPressureComponent implements OnInit {
     private bloodPressureService: BloodPressureService,
     private global: GlobalService,
     private platform: Platform,
-    private healthService: HealthService
+    private healthService: HealthService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -95,9 +99,10 @@ export class ViewBloodPressureComponent implements OnInit {
     );
     if (!role) return;
     this.bloodPressureService.remove(id).subscribe((data) => {
-      console.log(data);
       this.allBloodPressure = this.allBloodPressure.filter((b) => b.id != id);
-      this.bloodPressureService.update();
+      this.webSocket.emit('blood-pressure:update', {
+        user_id: this.auth.loggedUser().id,
+      });
     });
   }
 

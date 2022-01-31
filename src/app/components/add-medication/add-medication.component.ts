@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { MedicationsService } from 'src/app/services/medications/medications.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 @Component({
   selector: 'app-add-medication',
   templateUrl: './add-medication.component.html',
@@ -17,7 +19,9 @@ export class AddMedicationComponent implements OnInit {
     public modalController: ModalController,
     private global: GlobalService,
     private medicationService: MedicationsService,
-    private platform: Platform
+    private platform: Platform,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -51,7 +55,9 @@ export class AddMedicationComponent implements OnInit {
     const data: any = { medication_name: this.medication.name, id };
     if (this.med) data.medication_id = this.med.id;
     this.medicationService.add(data).subscribe(() => {
-      this.medicationService.update();
+      this.webSocket.emit('medications:update', {
+        user_id: this.auth.loggedUser().id,
+      });
       this.modalController.dismiss();
     });
   }

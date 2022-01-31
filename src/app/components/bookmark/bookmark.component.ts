@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { EducationService } from 'src/app/services/education/education.service';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 
 @Component({
   selector: 'app-bookmark',
@@ -15,7 +17,9 @@ export class BookmarkComponent implements OnInit {
     public modalController: ModalController,
     private global: GlobalService,
     private educationService: EducationService,
-    private platform: Platform
+    private platform: Platform,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
   ngOnInit() {
     let sub = this.platform.backButton.subscribe(() => {
@@ -37,7 +41,9 @@ export class BookmarkComponent implements OnInit {
 
     this.educationService.deleteBookmark(id).subscribe((data) => {
       this.modalController.dismiss();
-      this.educationService.fetchBookmarks();
+      this.webSocket.emit('bookmark:update', {
+        user_id: this.auth.loggedUser().id,
+      });
     });
   }
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { HealthService } from 'src/app/services/health/health.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { UpdateHba1cComponent } from '../update-hba1c/update-hba1c.component';
 import { ViewHba1cComponent } from '../view-hba1c/view-hba1c.component';
 
@@ -15,13 +17,23 @@ export class Hba1cComponent implements OnInit {
   animation = null;
   status = '';
   allHba1c = [];
+  subs = [];
   constructor(
     private modalController: ModalController,
-    private healthService: HealthService
+    private healthService: HealthService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
     this.fetchba1c();
+    let sub = this.webSocket
+      .listen('hba1c:update')
+      .subscribe(({ user_id }: { user_id }) => {
+        if (user_id != this.auth.loggedUser().id) return;
+        this.healthService.updateHba1c();
+      });
+    this.subs.push(sub);
   }
 
   fetchba1c() {
@@ -71,5 +83,7 @@ export class Hba1cComponent implements OnInit {
     await modal.present();
   }
 
-  ngOnDestroy() {}
+  ngOndestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
+  }
 }

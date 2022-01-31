@@ -6,6 +6,8 @@ import dateFormat from 'dateformat';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { Router } from '@angular/router';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
   selector: 'app-reminder',
@@ -23,7 +25,9 @@ export class ReminderComponent implements OnInit {
     private global: GlobalService,
     private userService: UserService,
     private platform: Platform,
-    public router: Router
+    public router: Router,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -44,6 +48,14 @@ export class ReminderComponent implements OnInit {
     sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
+    this.subs.push(sub);
+
+    sub = this.webSocket
+      .listen('reminder:update')
+      .subscribe(({ user_id }: { user_id }) => {
+        if (user_id != this.auth.loggedUser().id) return;
+        this.reminderService.update();
+      });
     this.subs.push(sub);
   }
 

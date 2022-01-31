@@ -3,7 +3,8 @@ import { ModalController } from '@ionic/angular';
 import { AddMedicationComponent } from 'src/app/components/add-medication/add-medication.component';
 import { AllMedicationsComponent } from 'src/app/components/all-medications/all-medications.component';
 import { MedicationsService } from 'src/app/services/medications/medications.service';
-
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 @Component({
   selector: 'app-health',
   templateUrl: './health.page.html',
@@ -15,7 +16,9 @@ export class HealthPage implements OnInit {
   subs = [];
   constructor(
     private modalController: ModalController,
-    private medicationService: MedicationsService
+    private medicationService: MedicationsService,
+    private webSocketService: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -24,6 +27,14 @@ export class HealthPage implements OnInit {
       this.medication = data.slice(-1)[0];
     });
 
+    this.subs.push(sub);
+
+    sub = this.webSocketService
+      .listen('medications:update')
+      .subscribe(({ user_id }: { user_id }) => {
+        if (this.auth.loggedUser().id != user_id) return;
+        this.medicationService.update();
+      });
     this.subs.push(sub);
   }
   async addMedication() {

@@ -7,6 +7,8 @@ import dateFormat from 'dateformat';
 import { CalendarModalComponent } from '../calendar-modal/calendar-modal.component';
 import { ShareEmailComponent } from '../share-email/share-email.component';
 import { HealthService } from 'src/app/services/health/health.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
   selector: 'app-all-medications',
@@ -20,7 +22,9 @@ export class AllMedicationsComponent implements OnInit {
     public modalController: ModalController,
     private global: GlobalService,
     private medicationService: MedicationsService,
-    private healthService: HealthService
+    private healthService: HealthService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {}
@@ -85,7 +89,9 @@ export class AllMedicationsComponent implements OnInit {
     if (!role) return;
 
     this.medicationService.remove(id).subscribe(() => {
-      this.medicationService.update();
+      this.webSocket.emit('medications:update', {
+        user_id: this.auth.loggedUser().id,
+      });
       this.allMedication = this.allMedication.filter((med) => (med.id! = id));
     });
   }

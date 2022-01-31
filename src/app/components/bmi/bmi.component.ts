@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { BmiService } from 'src/app/services/bmi/bmi.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { UpdateBmiComponent } from '../update-bmi/update-bmi.component';
 import { ViewBmiComponent } from '../view-bmi/view-bmi.component';
 
@@ -16,15 +18,25 @@ export class BmiComponent implements OnInit {
   color = 'gray';
   constructor(
     private modalController: ModalController,
-    private bmiService: BmiService
+    private bmiService: BmiService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
-    const sub = this.bmiService.get().subscribe((data) => {
+    let sub = this.bmiService.get().subscribe((data) => {
       this.allBmi = data;
       this.bmi = data.slice(-1)[0];
       this.color = this.updateColor(this.bmi?.mass);
     });
+    this.subs.push(sub);
+
+    sub = this.webSocket
+      .listen('bmi:update')
+      .subscribe(({ user_id }: { user_id }) => {
+        if (user_id != this.auth.loggedUser().id) return;
+        this.bmiService.update();
+      });
     this.subs.push(sub);
   }
 

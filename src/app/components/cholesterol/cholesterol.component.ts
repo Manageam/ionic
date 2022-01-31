@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { CholesterolService } from 'src/app/services/cholesterol/cholesterol.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { UpdateCholesterolComponent } from '../update-cholesterol/update-cholesterol.component';
 import { ViewCholesterolComponent } from '../view-cholesterol/view-cholesterol.component';
 
@@ -16,7 +18,9 @@ export class CholesterolComponent implements OnInit {
   allCholesterol = [];
   constructor(
     private modalController: ModalController,
-    private cholesterolService: CholesterolService
+    private cholesterolService: CholesterolService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -30,6 +34,14 @@ export class CholesterolComponent implements OnInit {
       );
     });
 
+    this.subs.push(sub);
+
+    sub = this.webSocket
+      .listen('cholesterol:update')
+      .subscribe(({ user_id }: { user_id }) => {
+        if (user_id != this.auth.loggedUser().id) return;
+        this.cholesterolService.update();
+      });
     this.subs.push(sub);
   }
 

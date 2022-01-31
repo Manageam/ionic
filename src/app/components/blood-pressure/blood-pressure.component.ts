@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { BloodPressureService } from 'src/app/services/blood-pressure/blood-pressure.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 
 import { UpdateBloodPressureComponent } from '../update-blood-pressure/update-blood-pressure.component';
 import { ViewBloodPressureComponent } from '../view-blood-pressure/view-blood-pressure.component';
@@ -17,7 +19,9 @@ export class BloodPressureComponent implements OnInit {
   color = '';
   constructor(
     private modalController: ModalController,
-    private bloodPressureService: BloodPressureService
+    private bloodPressureService: BloodPressureService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -32,6 +36,14 @@ export class BloodPressureComponent implements OnInit {
         : 'gray';
     });
 
+    this.subs.push(sub);
+
+    sub = this.webSocket
+      .listen('blood-pressure:update')
+      .subscribe(({ user_id }: { user_id }) => {
+        if (user_id != this.auth.loggedUser().id) return;
+        this.bloodPressureService.update();
+      });
     this.subs.push(sub);
   }
 

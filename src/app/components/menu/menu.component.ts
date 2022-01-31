@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController, ModalController } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { BookmarksComponent } from '../bookmarks/bookmarks.component';
 import { DiabetesWalkComponent } from '../diabetes-walk/diabetes-walk.component';
 import { ExerciseComponent } from '../exercise/exercise.component';
@@ -23,11 +25,12 @@ export class MenuComponent implements OnInit {
   isShowBg = false;
   @Output() onClose = new EventEmitter();
   constructor(
-    private menuController: MenuController,
     private modalController: ModalController,
     private userService: UserService,
     private global: GlobalService,
-    private router: Router
+    private router: Router,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -35,6 +38,13 @@ export class MenuComponent implements OnInit {
       this.user = data;
     });
 
+    this.subs.push(sub);
+    sub = this.webSocket
+      .listen('profile:update')
+      .subscribe(({ user_id }: { user_id }) => {
+        if (user_id != this.auth.loggedUser().id) return;
+        this.userService.refectchDetails();
+      });
     this.subs.push(sub);
   }
 

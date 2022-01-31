@@ -10,6 +10,8 @@ import { MealsListComponent } from '../meals-list/meals-list.component';
 import { ViewMealComponent } from '../view-meal/view-meal.component';
 import dateFormat from 'dateformat';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 @Component({
   selector: 'app-view-meals',
   templateUrl: './view-meals.component.html',
@@ -36,7 +38,9 @@ export class ViewMealsComponent implements OnInit {
     private actionSheetController: ActionSheetController,
     private mealService: MealService,
     private platform: Platform,
-    private global: GlobalService
+    private global: GlobalService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -56,6 +60,22 @@ export class ViewMealsComponent implements OnInit {
     sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
+    this.subs.push(sub);
+
+    sub = this.webSocket
+      .listen('meals:update')
+      .subscribe(({ user_id }: { user_id }) => {
+        if (user_id != this.auth.loggedUser().id) return;
+        this.mealService.update();
+      });
+    this.subs.push(sub);
+
+    sub = this.webSocket
+      .listen('meals:delete')
+      .subscribe(({ user_id }: { user_id }) => {
+        if (user_id != this.auth.loggedUser().id) return;
+        this.mealService.update();
+      });
     this.subs.push(sub);
 
     let today = new Date();

@@ -3,6 +3,8 @@ import { ModalController, Platform } from '@ionic/angular';
 import { BookmarkComponent } from '../bookmark/bookmark.component';
 import { EducationService } from 'src/app/services/education/education.service';
 import dateFormat from 'dateformat';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 @Component({
   selector: 'app-bookmarks',
   templateUrl: './bookmarks.component.html',
@@ -14,7 +16,9 @@ export class BookmarksComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private educationService: EducationService,
-    private platform: Platform
+    private platform: Platform,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -32,6 +36,14 @@ export class BookmarksComponent implements OnInit {
     sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
+    this.subs.push(sub);
+
+    sub = this.webSocket
+      .listen('bookmark:update')
+      .subscribe(({ user_id }: { user_id }) => {
+        if (user_id != this.auth.loggedUser().id) return;
+        this.educationService.fetchBookmarks();
+      });
     this.subs.push(sub);
   }
 

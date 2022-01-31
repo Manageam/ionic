@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { BloodSugarService } from 'src/app/services/blood-sugar/blood-sugar.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { UpdateBloodSugarComponent } from '../update-blood-sugar/update-blood-sugar.component';
 import { ViewBloodSugarComponent } from '../view-blood-sugar/view-blood-sugar.component';
 
@@ -13,13 +15,23 @@ export class BloodSugarComponent implements OnInit {
   bloodSugar: any = null;
   color = 'gray';
   allBloodSugar = [];
+  subs = [];
   constructor(
     private modalController: ModalController,
-    private bloodSugarService: BloodSugarService
+    private bloodSugarService: BloodSugarService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
     this.fetch();
+    let sub = this.webSocket
+      .listen('blood-sugar:update')
+      .subscribe(({ user_id }: { user_id }) => {
+        if (user_id != this.auth.loggedUser().id) return;
+        this.bloodSugarService.update();
+      });
+    this.subs.push(sub);
   }
 
   fetch() {
@@ -108,5 +120,9 @@ export class BloodSugarComponent implements OnInit {
       cssClass: 'modal-80',
     });
     await modal.present();
+  }
+
+  ngOndestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

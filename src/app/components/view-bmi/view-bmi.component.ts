@@ -7,6 +7,8 @@ import { GlobalService } from 'src/app/services/global/global.service';
 import { CalendarModalComponent } from '../calendar-modal/calendar-modal.component';
 import { ShareEmailComponent } from '../share-email/share-email.component';
 import { HealthService } from 'src/app/services/health/health.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
   selector: 'app-view-bmi',
@@ -22,7 +24,9 @@ export class ViewBmiComponent implements OnInit {
     private bmiService: BmiService,
     private global: GlobalService,
     private platform: Platform,
-    private healthService: HealthService
+    private healthService: HealthService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -96,9 +100,10 @@ export class ViewBmiComponent implements OnInit {
     );
     if (!role) return;
     this.bmiService.remove(id).subscribe((data) => {
-      console.log(data);
       this.allBmi = this.allBmi.filter((b) => b.id != id);
-      this.bmiService.update();
+      this.webSocket.emit('bmi:update', {
+        user_id: this.auth.loggedUser().id,
+      });
     });
   }
 

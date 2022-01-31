@@ -7,6 +7,8 @@ import {
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { UserService } from 'src/app/services/user/user.service';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
   selector: 'app-update-picture',
@@ -22,7 +24,9 @@ export class UpdatePictureComponent implements OnInit {
     private actionSheetController: ActionSheetController,
     private userService: UserService,
     private platform: Platform,
-    private global: GlobalService
+    private global: GlobalService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -40,6 +44,9 @@ export class UpdatePictureComponent implements OnInit {
     this.userService.updatePhoto(data).subscribe((data) => {
       this.userService.getDetails().subscribe((data) => {
         this.userService.setDetails(data);
+        this.webSocket.emit('profile:update', {
+          user_id: this.auth.loggedUser().id,
+        });
         this.global.alert(
           'Update profile',
           'Profile picture sucessfully updated!',

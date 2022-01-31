@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { CholesterolService } from 'src/app/services/cholesterol/cholesterol.service';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { fetchCholesterolTips } from 'src/assets/scripts/misc';
 
 @Component({
@@ -20,7 +22,9 @@ export class UpdateCholesterolComponent implements OnInit {
     public modalController: ModalController,
     private cholesterolService: CholesterolService,
     private platform: Platform,
-    private global: GlobalService
+    private global: GlobalService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -43,7 +47,9 @@ export class UpdateCholesterolComponent implements OnInit {
   }
   save() {
     this.cholesterolService.add(this.cholesterol).subscribe(() => {
-      this.cholesterolService.update();
+      this.webSocket.emit('cholesterol:update', {
+        user_id: this.auth.loggedUser().id,
+      });
       this.modalController.dismiss();
       this.global.alert(
         'Update cholesterol',

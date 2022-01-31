@@ -7,6 +7,8 @@ import { GlobalService } from 'src/app/services/global/global.service';
 import { CalendarModalComponent } from '../calendar-modal/calendar-modal.component';
 import { ShareEmailComponent } from '../share-email/share-email.component';
 import { HealthService } from 'src/app/services/health/health.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
   selector: 'app-view-cholesterol',
@@ -22,7 +24,9 @@ export class ViewCholesterolComponent implements OnInit {
     private cholesterolService: CholesterolService,
     private global: GlobalService,
     private platform: Platform,
-    private healthService: HealthService
+    private healthService: HealthService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -96,7 +100,9 @@ export class ViewCholesterolComponent implements OnInit {
 
     this.cholesterolService.remove(id).subscribe((data) => {
       this.allCholesterol = this.allCholesterol.filter((d) => d != id);
-      this.cholesterolService.update();
+      this.webSocket.emit('cholesterol:update', {
+        user_id: this.auth.loggedUser().id,
+      });
     });
   }
 

@@ -6,6 +6,8 @@ import { fetchTip } from 'src/assets/scripts/misc';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { CalendarModalComponent } from '../calendar-modal/calendar-modal.component';
 import { ShareEmailComponent } from '../share-email/share-email.component';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
   selector: 'app-view-hba1c',
@@ -25,7 +27,9 @@ export class ViewHba1cComponent implements OnInit {
     public modalController: ModalController,
     private healthService: HealthService,
     private global: GlobalService,
-    private platform: Platform
+    private platform: Platform,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -128,7 +132,9 @@ export class ViewHba1cComponent implements OnInit {
         this.allHba1c[key] = this.allHba1c[key].filter(
           (hba1c) => hba1c.id != id
         );
-        this.healthService.updateHba1c();
+        this.webSocket.emit('hba1c:update', {
+          user_id: this.auth.loggedUser().id,
+        });
       });
     }
   }

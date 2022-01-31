@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 
 @Component({
   selector: 'app-view-meal',
@@ -16,7 +18,9 @@ export class ViewMealComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private global: GlobalService,
-    private platform: Platform
+    private platform: Platform,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
   @Input()
   set data(val) {
@@ -30,6 +34,14 @@ export class ViewMealComponent implements OnInit {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
+
+    // sub = this.webSocket
+    //   .listen('meals:delete')
+    //   .subscribe(({ user_id }: { user_id }) => {
+    //     if (user_id != this.auth.loggedUser().id) return;
+    //     this..update();
+    //   });
+    // this.subs.push(sub);
   }
 
   async remove() {

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { BloodPressureService } from 'src/app/services/blood-pressure/blood-pressure.service';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { fetchBloodPressureTips } from 'src/assets/scripts/misc';
 
 @Component({
@@ -20,7 +22,9 @@ export class UpdateBloodPressureComponent implements OnInit {
     public modalController: ModalController,
     private bloodPressureService: BloodPressureService,
     private platform: Platform,
-    private global: GlobalService
+    private global: GlobalService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -49,7 +53,9 @@ export class UpdateBloodPressureComponent implements OnInit {
       .subscribe((data) => {
         console.log(data);
         this.modalController.dismiss();
-        this.bloodPressureService.update();
+        this.webSocket.emit('blood-pressure:update', {
+          user_id: this.auth.loggedUser().id,
+        });
         this.global.alert(
           'Update blood pressure',
           'Blood pressure sucessfully updated!',

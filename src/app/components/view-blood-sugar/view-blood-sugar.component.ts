@@ -7,6 +7,8 @@ import { GlobalService } from 'src/app/services/global/global.service';
 import { CalendarModalComponent } from '../calendar-modal/calendar-modal.component';
 import { ShareEmailComponent } from '../share-email/share-email.component';
 import { HealthService } from 'src/app/services/health/health.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 @Component({
   selector: 'app-view-blood-sugar',
   templateUrl: './view-blood-sugar.component.html',
@@ -21,7 +23,9 @@ export class ViewBloodSugarComponent implements OnInit {
     private bloodSugarService: BloodSugarService,
     private global: GlobalService,
     private platform: Platform,
-    private healthService: HealthService
+    private healthService: HealthService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -99,7 +103,9 @@ export class ViewBloodSugarComponent implements OnInit {
     if (role) {
       this.bloodSugarService.remove(id).subscribe(() => {
         this.bloodSugar = this.bloodSugar.filter((s) => s.id != id);
-        this.bloodSugarService.update();
+        this.webSocket.emit('blood-sugar:update', {
+          user_id: this.auth.loggedUser().id,
+        });
       });
     }
   }

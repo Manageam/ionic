@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { ReminderService } from 'src/app/services/reminder/reminder.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 
 @Component({
   selector: 'app-add-reminder',
@@ -19,7 +21,9 @@ export class AddReminderComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private reminderService: ReminderService,
-    private platform: Platform
+    private platform: Platform,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -34,7 +38,9 @@ export class AddReminderComponent implements OnInit {
       id: Math.floor(Math.random() * 1000000 + 1),
     };
     this.reminderService.add(data).subscribe((data) => {
-      this.reminderService.update();
+      this.webSocket.emit('reminder:update', {
+        user_id: this.auth.loggedUser().id,
+      });
       this.modalController.dismiss();
     });
   }

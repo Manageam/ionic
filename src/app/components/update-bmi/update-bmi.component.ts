@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { BmiService } from 'src/app/services/bmi/bmi.service';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { fetchBMI } from 'src/assets/scripts/misc';
 
 @Component({
@@ -22,7 +24,9 @@ export class UpdateBmiComponent implements OnInit {
     public modalController: ModalController,
     private bmiService: BmiService,
     private platform: Platform,
-    private global: GlobalService
+    private global: GlobalService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -57,8 +61,10 @@ export class UpdateBmiComponent implements OnInit {
     delete data.weight;
 
     this.bmiService.add({ ...data, time: new Date() }).subscribe(() => {
-      this.bmiService.update();
       this.modalController.dismiss();
+      this.webSocket.emit('bmi:update', {
+        user_id: this.auth.loggedUser().id,
+      });
       this.global.alert('Update BMI', 'BMI sucessfully updated!', ['OK']);
     });
   }

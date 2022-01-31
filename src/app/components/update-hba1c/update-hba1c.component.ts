@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { HealthService } from 'src/app/services/health/health.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 
 @Component({
   selector: 'app-update-hba1c',
@@ -19,7 +21,9 @@ export class UpdateHba1cComponent implements OnInit {
     public modalController: ModalController,
     private healthService: HealthService,
     private platform: Platform,
-    private global: GlobalService
+    private global: GlobalService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
   updateTip() {
     if (this.hba1c.number == '') {
@@ -76,10 +80,13 @@ export class UpdateHba1cComponent implements OnInit {
     let sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
+    this.subs.push(sub);
   }
   save() {
     this.healthService.addHba1c(this.hba1c).subscribe((data) => {
-      this.healthService.updateHba1c();
+      this.webSocket.emit('hba1c:update', {
+        user_id: this.auth.loggedUser().id,
+      });
       this.modalController.dismiss();
       this.global.alert('Update Hba1c', 'Hba1c sucessfully updated!', ['OK']);
     });
