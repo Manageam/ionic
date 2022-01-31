@@ -1,15 +1,6 @@
 <ion-app class="text-gray-900">
   <ion-header
-    class="
-      bg-blue-100
-      px-4
-      py-6
-      ion-no-border
-      text-xl
-      flex
-      justify-between
-      items-center
-    "
+    class="bg-blue-100 px-4 py-6 ion-no-border text-xl flex justify-between items-center"
   >
     <p class="font-bold">Update Profile</p>
     <ion-icon
@@ -104,7 +95,6 @@
         >
         <ion-input
           placeholder="Enter Phone number"
-          type="number"
           [value]="profile.phone"
           [(ngModel)]="profile.phone"
         ></ion-input>
@@ -112,18 +102,7 @@
 
       <span
         (click)="save()"
-        class="
-          mx-4
-          bg-accentBlue
-          p-4
-          font-semibold
-          text-center
-          block
-          text-white
-          uppercase
-          rounded-xl
-          mt-10
-        "
+        class="mx-4 bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl mt-10"
         >Done</span
       >
     </div>
