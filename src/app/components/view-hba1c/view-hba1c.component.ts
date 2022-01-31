@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { HealthService } from 'src/app/services/health/health.service';
 import dateFormat from 'dateformat';
@@ -29,11 +29,47 @@ export class ViewHba1cComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.fetchba1c();
     let sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
+  }
+
+  @Input() set data(data) {
+    const allHba1c = data;
+    if (data.length == 0) return;
+    this.hba1c = data.slice(-1)[0];
+    // group the hba1c
+    const hba1cGroups = {};
+    this.formatStatus();
+
+    for (let hba1c of allHba1c) {
+      const key = dateFormat(new Date(hba1c.created_at), 'mmm-yyyy');
+      hba1c.time = dateFormat(
+        new Date(hba1c.created_at),
+        'dd mmm, yyyy-hh:MMtt'
+      );
+      hba1c.tip = fetchTip(hba1c);
+      if (hba1cGroups[key]) {
+        hba1cGroups[key].push(hba1c);
+      } else {
+        hba1cGroups[key] = [hba1c];
+      }
+    }
+
+    //sort
+
+    for (const key in hba1cGroups) {
+      hba1cGroups[key] = hba1cGroups[key].sort(
+        (a, z) =>
+          new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
+      );
+    }
+
+    this.allHba1c = hba1cGroups;
+    this.allHba1cKeys = Object.keys(hba1cGroups).sort(
+      (a, z) => new Date(z).getTime() - new Date(a).getTime()
+    );
   }
 
   async share() {
@@ -95,45 +131,6 @@ export class ViewHba1cComponent implements OnInit {
         this.healthService.updateHba1c();
       });
     }
-  }
-
-  fetchba1c() {
-    this.healthService.getHba1c().subscribe((data) => {
-      const allHba1c = data;
-      if (data.length == 0) return;
-      this.hba1c = data.slice(-1)[0];
-      // group the hba1c
-      const hba1cGroups = {};
-      this.formatStatus();
-
-      for (let hba1c of allHba1c) {
-        const key = dateFormat(new Date(hba1c.created_at), 'mmm-yyyy');
-        hba1c.time = dateFormat(
-          new Date(hba1c.created_at),
-          'dd mmm, yyyy-hh:MMtt'
-        );
-        hba1c.tip = fetchTip(hba1c);
-        if (hba1cGroups[key]) {
-          hba1cGroups[key].push(hba1c);
-        } else {
-          hba1cGroups[key] = [hba1c];
-        }
-      }
-
-      //sort
-
-      for (const key in hba1cGroups) {
-        hba1cGroups[key] = hba1cGroups[key].sort(
-          (a, z) =>
-            new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
-        );
-      }
-
-      this.allHba1c = hba1cGroups;
-      this.allHba1cKeys = Object.keys(hba1cGroups).sort(
-        (a, z) => new Date(z).getTime() - new Date(a).getTime()
-      );
-    });
   }
 
   formatStatus() {

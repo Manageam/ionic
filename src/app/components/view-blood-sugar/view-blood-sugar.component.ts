@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { BloodSugarService } from 'src/app/services/blood-sugar/blood-sugar.service';
 import dateFormat from 'dateformat';
@@ -25,31 +25,29 @@ export class ViewBloodSugarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let sub = this.bloodSugarService.get().subscribe((data) => {
-      this.bloodSugar = data
-        .sort(
-          (a, z) =>
-            new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
-        )
-        .map((datum) => {
-          datum.date = dateFormat(
-            new Date(datum.created_at),
-            'dd mmm, yyyy-hh:MMtt'
-          );
-          datum.tip = fetchBloodSugarTips({
-            ...datum,
-            value: datum.reading,
-          });
-          return datum;
-        });
-    });
-
-    this.subs.push(sub);
-
-    sub = this.platform.backButton.subscribe(() => {
+    let sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
+  }
+
+  @Input() set data(data) {
+    this.bloodSugar = data
+      .sort(
+        (a, z) =>
+          new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
+      )
+      .map((datum) => {
+        datum.date = dateFormat(
+          new Date(datum.created_at),
+          'dd mmm, yyyy-hh:MMtt'
+        );
+        datum.tip = fetchBloodSugarTips({
+          ...datum,
+          value: datum.reading,
+        });
+        return datum;
+      });
   }
 
   async share() {

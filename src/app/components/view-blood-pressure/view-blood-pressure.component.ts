@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { BloodPressureService } from 'src/app/services/blood-pressure/blood-pressure.service';
 import dateFormat from 'dateformat';
@@ -26,25 +26,7 @@ export class ViewBloodPressureComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let sub = this.bloodPressureService.get().subscribe((data) => {
-      this.allBloodPressure = data
-        .sort(
-          (a, z) =>
-            new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
-        )
-        .map((datum) => {
-          datum.date = dateFormat(
-            new Date(datum.created_at),
-            'dd mmm, yyyy-hh:MMtt'
-          );
-          datum.tip = fetchBloodPressureTips(datum.upper, datum.lower);
-          return datum;
-        });
-    });
-
-    this.subs.push(sub);
-
-    sub = this.platform.backButton.subscribe(() => {
+    let sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
@@ -77,6 +59,22 @@ export class ViewBloodPressureComponent implements OnInit {
     });
 
     await modal.present();
+  }
+
+  @Input() set data(data) {
+    this.allBloodPressure = data
+      .sort(
+        (a, z) =>
+          new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
+      )
+      .map((datum) => {
+        datum.date = dateFormat(
+          new Date(datum.created_at),
+          'dd mmm, yyyy-hh:MMtt'
+        );
+        datum.tip = fetchBloodPressureTips(datum.upper, datum.lower);
+        return datum;
+      });
   }
 
   toggle(i) {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { MedicationsService } from 'src/app/services/medications/medications.service';
@@ -23,15 +23,15 @@ export class AllMedicationsComponent implements OnInit {
     private healthService: HealthService
   ) {}
 
-  ngOnInit() {
-    this.medicationService.get().subscribe((data) => {
-      this.allMedication = data.map((datum) => {
-        datum.date = dateFormat(
-          new Date(datum.created_at),
-          'dd mmm, yyyy-hh:MMtt'
-        );
-        return datum;
-      });
+  ngOnInit() {}
+
+  @Input() set medications(meds) {
+    this.allMedication = meds.map((datum) => {
+      datum.date = dateFormat(
+        new Date(datum.created_at),
+        'dd mmm, yyyy-hh:MMtt'
+      );
+      return datum;
     });
   }
 

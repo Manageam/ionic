@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { HealthService } from 'src/app/services/health/health.service';
 import { checkHealthStatus } from 'src/assets/scripts/misc';
@@ -21,22 +21,20 @@ export class ViewHealthStatusComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let sub = this.healthService.getHealth().subscribe((data) => {
-      this.healthStatus = data;
-      if (data) {
-        this.healthStatus.name = checkHealthStatus(data.diabetics);
-        this.healthStatus.date = this.healthStatus.name
-          ? dateFormat(new Date(data.created_at), 'dd mmm, yyyy-hh:MMtt')
-          : '';
-      }
-    });
-
-    this.subs.push(sub);
-
-    sub = this.platform.backButton.subscribe(() => {
+    let sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
+  }
+
+  @Input() set status(stat) {
+    this.healthStatus = stat;
+    if (stat) {
+      this.healthStatus.name = checkHealthStatus(stat.diabetics);
+      this.healthStatus.date = this.healthStatus.name
+        ? dateFormat(new Date(stat.created_at), 'dd mmm, yyyy-hh:MMtt')
+        : '';
+    }
   }
   update() {
     this.modalController.dismiss(true);

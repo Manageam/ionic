@@ -12,6 +12,7 @@ import { ViewBmiComponent } from '../view-bmi/view-bmi.component';
 export class BmiComponent implements OnInit {
   subs = [];
   bmi: any = null;
+  allBmi = [];
   color = 'gray';
   constructor(
     private modalController: ModalController,
@@ -20,6 +21,7 @@ export class BmiComponent implements OnInit {
 
   ngOnInit() {
     const sub = this.bmiService.get().subscribe((data) => {
+      this.allBmi = data;
       this.bmi = data.slice(-1)[0];
       this.color = this.updateColor(this.bmi?.mass);
     });
@@ -45,6 +47,9 @@ export class BmiComponent implements OnInit {
   async view() {
     const modal = await this.modalController.create({
       component: ViewBmiComponent,
+      componentProps: {
+        data: this.allBmi,
+      },
     });
     modal.present();
   }

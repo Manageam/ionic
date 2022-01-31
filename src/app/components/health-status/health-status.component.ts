@@ -29,7 +29,11 @@ export class HealthStatusComponent implements OnInit {
   async view() {
     const modal = await this.modalController.create({
       component: ViewHealthStatusComponent,
+      componentProps: {
+        status: this.healthStatus,
+      },
     });
+
     modal.onDidDismiss().then((res) => {
       const { data } = res;
       if (data) this.change(null);

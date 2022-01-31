@@ -12,6 +12,7 @@ import { ViewBloodSugarComponent } from '../view-blood-sugar/view-blood-sugar.co
 export class BloodSugarComponent implements OnInit {
   bloodSugar: any = null;
   color = 'gray';
+  allBloodSugar = [];
   constructor(
     private modalController: ModalController,
     private bloodSugarService: BloodSugarService
@@ -23,6 +24,7 @@ export class BloodSugarComponent implements OnInit {
 
   fetch() {
     this.bloodSugarService.get().subscribe((data) => {
+      this.allBloodSugar = data;
       this.bloodSugar = data.slice(-1)[0];
       this.color = this.bloodSugar
         ? this.updateSugarColor(
@@ -89,6 +91,9 @@ export class BloodSugarComponent implements OnInit {
   async view() {
     const modal = await this.modalController.create({
       component: ViewBloodSugarComponent,
+      componentProps: {
+        data: this.allBloodSugar,
+      },
     });
     modal.present();
   }
@@ -97,6 +102,9 @@ export class BloodSugarComponent implements OnInit {
     e?.stopPropagation();
     const modal = await this.modalController.create({
       component: UpdateBloodSugarComponent,
+      componentProps: {
+        data: this.allBloodSugar,
+      },
       cssClass: 'modal-80',
     });
     await modal.present();

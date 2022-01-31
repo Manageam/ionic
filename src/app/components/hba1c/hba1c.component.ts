@@ -14,6 +14,7 @@ export class Hba1cComponent implements OnInit {
   color = 'green';
   animation = null;
   status = '';
+  allHba1c = [];
   constructor(
     private modalController: ModalController,
     private healthService: HealthService
@@ -25,6 +26,7 @@ export class Hba1cComponent implements OnInit {
 
   fetchba1c() {
     this.healthService.getHba1c().subscribe((data) => {
+      this.allHba1c = data;
       this.hba1c = data.slice(-1)[0];
       if (!this.hba1c) return;
       if (
@@ -53,6 +55,9 @@ export class Hba1cComponent implements OnInit {
   async view() {
     const modal = await this.modalController.create({
       component: ViewHba1cComponent,
+      componentProps: {
+        data: this.allHba1c,
+      },
     });
     modal.present();
   }

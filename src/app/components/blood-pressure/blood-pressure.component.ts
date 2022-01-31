@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { BloodPressureService } from 'src/app/services/blood-pressure/blood-pressure.service';
 
@@ -12,6 +12,7 @@ import { ViewBloodPressureComponent } from '../view-blood-pressure/view-blood-pr
 })
 export class BloodPressureComponent implements OnInit {
   bloodPressure: any = null;
+  allBloodPressure = [];
   subs = [];
   color = '';
   constructor(
@@ -21,6 +22,7 @@ export class BloodPressureComponent implements OnInit {
 
   ngOnInit() {
     let sub = this.bloodPressureService.get().subscribe((data) => {
+      this.allBloodPressure = data;
       this.bloodPressure = data.slice(-1)[0];
       this.color = this.bloodPressure
         ? this.updateSugarColor(
@@ -54,6 +56,9 @@ export class BloodPressureComponent implements OnInit {
   async view() {
     const modal = await this.modalController.create({
       component: ViewBloodPressureComponent,
+      componentProps: {
+        data: this.allBloodPressure,
+      },
     });
     modal.present();
   }

@@ -13,6 +13,7 @@ export class CholesterolComponent implements OnInit {
   color = 'gray';
   cholesterol: any = null;
   subs = [];
+  allCholesterol = [];
   constructor(
     private modalController: ModalController,
     private cholesterolService: CholesterolService
@@ -20,6 +21,7 @@ export class CholesterolComponent implements OnInit {
 
   ngOnInit() {
     let sub = this.cholesterolService.get().subscribe((data) => {
+      this.allCholesterol = data;
       this.cholesterol = data.slice(-1)[0];
       if (!this.cholesterol) return;
       this.color = this.changeColor(
@@ -64,6 +66,9 @@ export class CholesterolComponent implements OnInit {
   async view() {
     const modal = await this.modalController.create({
       component: ViewCholesterolComponent,
+      componentProps: {
+        data: this.allCholesterol,
+      },
     });
     modal.present();
   }

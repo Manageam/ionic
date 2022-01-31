@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { CholesterolService } from 'src/app/services/cholesterol/cholesterol.service';
 import dateFormat from 'dateformat';
@@ -26,25 +26,23 @@ export class ViewCholesterolComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let sub = this.cholesterolService.get().subscribe((data) => {
-      this.allCholesterol = data
-        .sort(
-          (a, z) =>
-            new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
-        )
-        .map((d) => {
-          d.date = dateFormat(new Date(d.created_at), 'dd mmm, yyyy-hh:MMtt');
-          d.tip = fetchBloodPressureTips(d.unit, d.reading);
-          return d;
-        });
-    });
-
-    this.subs.push(sub);
-
-    sub = this.platform.backButton.subscribe(() => {
+    let sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
+  }
+
+  @Input() set data(data) {
+    this.allCholesterol = data
+      .sort(
+        (a, z) =>
+          new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
+      )
+      .map((d) => {
+        d.date = dateFormat(new Date(d.created_at), 'dd mmm, yyyy-hh:MMtt');
+        d.tip = fetchBloodPressureTips(d.unit, d.reading);
+        return d;
+      });
   }
 
   async share() {

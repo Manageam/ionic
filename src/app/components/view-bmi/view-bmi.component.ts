@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { BmiService } from 'src/app/services/bmi/bmi.service';
 import dateFormat from 'dateformat';
@@ -26,28 +26,26 @@ export class ViewBmiComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let sub = this.bmiService.get().subscribe((data) => {
-      this.allBmi = data
-        .sort(
-          (a, z) =>
-            new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
-        )
-        .map((datum) => {
-          datum.date = dateFormat(
-            new Date(datum.created_at),
-            'dd mmm, yyyy-hh:MMtt'
-          );
-          datum.tip = fetchBMI(datum.mass);
-          return datum;
-        });
-    });
-
-    this.subs.push(sub);
-
-    sub = this.platform.backButton.subscribe(() => {
+    let sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
+  }
+
+  @Input() set data(data) {
+    this.allBmi = data
+      .sort(
+        (a, z) =>
+          new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
+      )
+      .map((datum) => {
+        datum.date = dateFormat(
+          new Date(datum.created_at),
+          'dd mmm, yyyy-hh:MMtt'
+        );
+        datum.tip = fetchBMI(datum.mass);
+        return datum;
+      });
   }
 
   async share() {

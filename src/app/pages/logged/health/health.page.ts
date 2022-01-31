@@ -11,6 +11,7 @@ import { MedicationsService } from 'src/app/services/medications/medications.ser
 })
 export class HealthPage implements OnInit {
   medication: any = null;
+  allMedications = [];
   subs = [];
   constructor(
     private modalController: ModalController,
@@ -19,6 +20,7 @@ export class HealthPage implements OnInit {
 
   ngOnInit() {
     let sub = this.medicationService.get().subscribe((data) => {
+      this.allMedications = [];
       this.medication = data.slice(-1)[0];
     });
 
@@ -34,6 +36,9 @@ export class HealthPage implements OnInit {
   async showMedication() {
     const modal = await this.modalController.create({
       component: AllMedicationsComponent,
+      componentProps: {
+        medications: this.allMedications,
+      },
     });
     modal.present();
   }
