@@ -23,6 +23,7 @@ export class UpdateHealthStatusComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.value = String(this.value);
     let sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });

@@ -92,7 +92,7 @@ export class AllMedicationsComponent implements OnInit {
       this.webSocket.emit('medications:update', {
         user_id: this.auth.loggedUser().id,
       });
-      this.allMedication = this.allMedication.filter((med) => (med.id! = id));
+      this.allMedication = this.allMedication.filter((med) => med.id != id);
     });
   }
 }

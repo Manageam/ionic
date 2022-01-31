@@ -52,7 +52,7 @@ export class AddMedicationComponent implements OnInit {
       ]);
 
     let id = Math.floor(Math.random() * 1000000 + 1);
-    const data: any = { medication_name: this.medication.name, id };
+    const data: any = { id };
     if (this.med) data.medication_id = this.med.id;
     this.medicationService.add(data).subscribe(() => {
       this.webSocket.emit('medications:update', {
