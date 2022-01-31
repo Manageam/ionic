@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { UpdatePasswordComponent } from '../update-password/update-password.component';
 import { UpdatePictureComponent } from '../update-picture/update-picture.component';
 import { UpdateProfileComponent } from '../update-profile/update-profile.component';
@@ -18,7 +19,8 @@ export class ProfileComponent implements OnInit {
     public modalController: ModalController,
     private global: GlobalService,
     private userService: UserService,
-    private platform: Platform
+    private platform: Platform,
+    private webSocket: WebsocketService
   ) {}
 
   ngOnInit() {
@@ -63,15 +65,29 @@ export class ProfileComponent implements OnInit {
   }
 
   async updateTipNotification() {
+    const header = 'Daily tip notification';
+    const notification = this.user.notification == 0 ? 1 : 0;
     const { role } = <{ role }>await this.global.alert(
-      'Daily tip notification',
-      'Do you want to recieve daily notification from this app?',
+      header,
+      `Do you want to ${
+        notification ? 'start' : 'stop'
+      } recieving daily notifications from this app?`,
       [
         { role: false, text: 'NO' },
         { role: true, text: 'YES' },
       ]
     );
-    console.log(role);
+    if (role)
+      this.userService.updateDetails({ notification }).subscribe((data) => {
+        console.log(data);
+        this.webSocket.emit('profile:update', {
+          user_id: this.user.id,
+        });
+        const message = `You will ${
+          notification ? 'now' : 'no longer'
+        } recieve daily notifications from this app.`;
+        this.global.alert(header, message, ['Okay']);
+      });
   }
 
   ngOnDestroy() {

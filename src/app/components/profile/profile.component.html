@@ -14,14 +14,7 @@
         <img
           onerror="this.src = '/assets/img/profile.jpeg'"
           src="{{ user.photo }}"
-          class="
-            rounded-full
-            h-40
-            w-40
-            object-cover
-            inline-block
-            border-8 border-white
-          "
+          class="rounded-full h-40 w-40 object-cover inline-block border-8 border-white"
         />
         <p class="text-gray-900 font-bold text-3xl my-4">{{ user.name }}</p>
         <div class="flex p-4 justify-center">
@@ -101,17 +94,9 @@
         <div class="w-full px-4">
           <span class="block text-sm pb-1">Email</span>
           <div
-            class="
-              border-b
-              flex
-              justify-between
-              border-gray-300
-              w-full
-              pb-2
-              text-gray-400
-            "
+            class="border-b flex justify-between border-gray-300 w-full pb-2 text-gray-400"
           >
-            <span>Off</span
+            <span>{{ user.notification == 0 ? "Off" : "On" }}</span
             ><span (click)="updateTipNotification()" class="text-accentBlue"
               >Update</span
             >
