@@ -34,6 +34,12 @@ export class ViewCholesterolComponent implements OnInit {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
+
+    sub = this.cholesterolService.cholesterol.subscribe((data) => {
+      this.data = data;
+    });
+
+    this.subs.push(sub);
   }
 
   @Input() set data(data) {

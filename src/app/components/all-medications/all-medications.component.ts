@@ -27,7 +27,11 @@ export class AllMedicationsComponent implements OnInit {
     private auth: AuthenticationService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.medicationService.myMedications.subscribe((data) => {
+      this.medications = data;
+    });
+  }
 
   @Input() set medications(meds) {
     this.allMedication = meds.map((datum) => {

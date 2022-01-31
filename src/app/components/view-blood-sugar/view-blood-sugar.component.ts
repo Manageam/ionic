@@ -32,6 +32,11 @@ export class ViewBloodSugarComponent implements OnInit {
     let sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
+
+    this.subs.push(sub);
+    this.bloodSugarService.allBloodSugar.subscribe((data) => {
+      this.data = data;
+    });
     this.subs.push(sub);
   }
 

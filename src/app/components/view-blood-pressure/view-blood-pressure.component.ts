@@ -34,6 +34,11 @@ export class ViewBloodPressureComponent implements OnInit {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
+
+    sub = this.bloodPressureService.allBloodPressure.subscribe((data) => {
+      this.data = data;
+    });
+    this.subs.push(sub);
   }
   async share() {
     this.modalController.dismiss();

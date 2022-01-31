@@ -25,6 +25,12 @@ export class ViewHealthStatusComponent implements OnInit {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
+
+    sub = this.healthService.health.subscribe((data) => {
+      this.status = data;
+    });
+
+    this.subs.push(sub);
   }
 
   @Input() set status(stat) {

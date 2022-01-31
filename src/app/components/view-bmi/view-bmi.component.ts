@@ -34,6 +34,11 @@ export class ViewBmiComponent implements OnInit {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
+
+    sub = this.bmiService.bmi.subscribe((data) => {
+      this.data = data;
+    });
+    this.subs.push(sub);
   }
 
   @Input() set data(data) {

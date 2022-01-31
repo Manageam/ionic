@@ -37,6 +37,12 @@ export class ViewHba1cComponent implements OnInit {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
+
+    sub = this.healthService.getHba1c().subscribe((data) => {
+      this.data = data;
+    });
+
+    this.subs.push(sub);
   }
 
   @Input() set data(data) {
