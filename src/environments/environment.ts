@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   hrm: true,
   apiUrl: 'https://api.manageam.com',
+  socketUrl: 'https://socket.mangeam.com',
 };
 
 /*
