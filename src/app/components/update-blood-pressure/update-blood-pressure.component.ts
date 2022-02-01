@@ -48,10 +48,15 @@ export class UpdateBloodPressureComponent implements OnInit {
   }
 
   save() {
+    if (!this.pressure.lower || !this.pressure.upper)
+      return this.global.alert(
+        'Update blood pressure',
+        'All fields are required!',
+        ['OK']
+      );
     this.bloodPressureService
       .add({ time: new Date(), ...this.pressure })
       .subscribe((data) => {
-        console.log(data);
         this.modalController.dismiss();
         this.webSocket.emit('blood-pressure:update', {
           user_id: this.auth.loggedUser().id,

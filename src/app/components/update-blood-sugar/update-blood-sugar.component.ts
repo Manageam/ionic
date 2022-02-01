@@ -50,6 +50,16 @@ export class UpdateBloodSugarComponent implements OnInit {
   }
 
   save() {
+    if (
+      !this.bloodSugar.reading ||
+      !this.bloodSugar.reading_time ||
+      !this.bloodSugar.unit
+    )
+      return this.global.alert(
+        'Update blood sugar',
+        'All fields are required!',
+        ['OK']
+      );
     this.bloodSugarService
       .add({ ...this.bloodSugar, time: new Date() })
       .subscribe((data) => {

@@ -83,6 +83,10 @@ export class UpdateHba1cComponent implements OnInit {
     this.subs.push(sub);
   }
   save() {
+    if (!this.hba1c.number || !this.hba1c.unit)
+      return this.global.alert('Update Hba1c', 'All fields are required!', [
+        'OK',
+      ]);
     this.healthService.addHba1c(this.hba1c).subscribe((data) => {
       this.webSocket.emit('hba1c:update', {
         user_id: this.auth.loggedUser().id,

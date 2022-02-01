@@ -1,15 +1,6 @@
 <ion-app class="text-gray-900">
   <ion-header
-    class="
-      bg-blue-100
-      px-4
-      py-6
-      ion-no-border
-      text-xl
-      flex
-      justify-between
-      items-center
-    "
+    class="bg-blue-100 px-4 py-6 ion-no-border text-xl flex justify-between items-center"
   >
     <p class="font-bold">Record total cholesterol level</p>
     <ion-icon
@@ -25,7 +16,7 @@
           >Unit of measurement</ion-label
         >
         <ion-select
-          [value]="cholesterol.unit"
+          value="mmol/l"
           [(ngModel)]="cholesterol.unit"
           class="w-full"
           placeholder="Choose unit of measurement"
@@ -35,7 +26,7 @@
           <ion-select-option value="mg/dl">mg/dl</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-item *ngIf="cholesterol.unit" onclick="scrollIntoView(this)">
+      <ion-item onclick="scrollIntoView(this)">
         <ion-label class="block font-calibre w-full" position="stacked"
           >Cholesterol level ({{ cholesterol.unit }})</ion-label
         >
@@ -61,19 +52,7 @@
 
       <span
         (click)="save()"
-        *ngIf="cholesterol.reading"
-        class="
-          w-full
-          bg-accentBlue
-          p-4
-          font-semibold
-          text-center
-          block
-          text-white
-          uppercase
-          rounded-xl
-          mt-10
-        "
+        class="w-full bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl mt-10"
         >Done</span
       >
     </div>

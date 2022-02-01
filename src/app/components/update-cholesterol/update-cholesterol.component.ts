@@ -46,6 +46,12 @@ export class UpdateCholesterolComponent implements OnInit {
     );
   }
   save() {
+    if (!this.cholesterol.unit || !this.cholesterol.reading)
+      return this.global.alert(
+        'Update cholesterol',
+        'All fields are required!',
+        ['OK']
+      );
     this.cholesterolService.add(this.cholesterol).subscribe(() => {
       this.webSocket.emit('cholesterol:update', {
         user_id: this.auth.loggedUser().id,

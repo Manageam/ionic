@@ -57,6 +57,10 @@ export class UpdateBmiComponent implements OnInit {
 
   save() {
     const data = Object.assign({}, this.bmi);
+    if (!this.bmi.unit || !this.bmi.height || !this.bmi.weight)
+      return this.global.alert('Update BMI', 'All fields are required!', [
+        'OK',
+      ]);
     delete data.height;
     delete data.weight;
 

@@ -1,15 +1,6 @@
 <ion-app class="text-gray-900">
   <ion-header
-    class="
-      bg-blue-100
-      px-4
-      py-6
-      ion-no-border
-      text-xl
-      flex
-      justify-between
-      items-center
-    "
+    class="bg-blue-100 px-4 py-6 ion-no-border text-xl flex justify-between items-center"
   >
     <p class="font-bold">Record BMI</p>
     <ion-icon
@@ -25,7 +16,7 @@
           >Unit of measurement</ion-label
         >
         <ion-select
-          [value]="bmi.unit"
+          value="kg/m"
           [(ngModel)]="bmi.unit"
           class="w-full"
           placeholder="Choose unit of measurement"
@@ -35,7 +26,7 @@
           <ion-select-option value="kg/m">kg/m</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-item *ngIf="bmi.unit">
+      <ion-item>
         <ion-label class="block font-calibre w-full" position="stacked"
           >Height({{ this.bmi.unit == "kg/m" ? "M" : "Inch" }})</ion-label
         >
@@ -61,7 +52,7 @@
         ></ion-input>
       </ion-item>
 
-      <ion-item *ngIf="bmi.weight">
+      <ion-item>
         <ion-label class="block font-calibre w-full" position="stacked"
           >BMI({{ this.bmi.unit }})</ion-label
         >
@@ -86,19 +77,7 @@
       </div>
       <span
         (click)="save()"
-        *ngIf="bmi.weight"
-        class="
-          w-full
-          bg-accentBlue
-          p-4
-          font-semibold
-          text-center
-          block
-          text-white
-          uppercase
-          rounded-xl
-          mt-10
-        "
+        class="w-full bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl mt-10"
         >Done</span
       >
     </div>
