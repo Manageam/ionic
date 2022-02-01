@@ -24,6 +24,7 @@ export class ViewMealComponent implements OnInit {
   ) {}
   @Input()
   set data(val) {
+    console.log(val);
     this.meal = val;
     this.allCab = val.foods.filter((f) => f.category == 1);
     this.allPro = val.foods.filter((f) => f.category == 2);
@@ -35,13 +36,21 @@ export class ViewMealComponent implements OnInit {
     });
     this.subs.push(sub);
 
-    // sub = this.webSocket
-    //   .listen('meals:delete')
-    //   .subscribe(({ user_id }: { user_id }) => {
-    //     if (user_id != this.auth.loggedUser().id) return;
-    //     this..update();
-    //   });
-    // this.subs.push(sub);
+    sub = this.webSocket
+      .listen('meals:delete')
+      .subscribe(({ user_id, id }: { user_id; id }) => {
+        if (user_id != this.auth.loggedUser().id) return;
+
+        if (this.meal.id == id) {
+          this.modalController.dismiss();
+          this.global.alert(
+            'Remove meal plan',
+            'This meal plan has been removed!',
+            ['Okay']
+          );
+        }
+      });
+    this.subs.push(sub);
   }
 
   async remove() {

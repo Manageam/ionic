@@ -51,6 +51,7 @@ export class ViewMealsComponent implements OnInit {
         meal.info = calorieCounter(meal.calories, meal.type);
         return meal;
       });
+      this.filterMeals(this.filter);
     });
 
     this.filterMeals('');
@@ -72,9 +73,10 @@ export class ViewMealsComponent implements OnInit {
 
     sub = this.webSocket
       .listen('meals:delete')
-      .subscribe(({ user_id }: { user_id }) => {
+      .subscribe(({ user_id, id }: { user_id; id }) => {
         if (user_id != this.auth.loggedUser().id) return;
-        this.mealService.update();
+        this.allMeals = this.allMeals.filter((meal) => meal.id != id);
+        this.filterMeals(this.filter);
       });
     this.subs.push(sub);
 
@@ -122,6 +124,10 @@ export class ViewMealsComponent implements OnInit {
       this.mealService.remove(data.id).subscribe((d) => {
         this.allMeals = this.allMeals.filter((meal) => meal.id != data.id);
         this.filterMeals(this.filter);
+        this.webSocket.emit('meals:delete', {
+          user_id: this.auth.loggedUser().id,
+          id: data.id,
+        });
         this.mealService.update();
       });
     });
@@ -193,7 +199,9 @@ export class ViewMealsComponent implements OnInit {
         type: this.type.toLowerCase(),
       })
       .subscribe((data) => {
-        this.mealService.update();
+        this.webSocket.emit('meals:update', {
+          user_id: this.auth.loggedUser().id,
+        });
         this.global.alert('Meal Plan', 'Meal plan successfully saved', ['OK']);
         this.clear();
       });
