@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { ReminderService } from 'src/app/services/reminder/reminder.service';
-import { AddReminderComponent } from '../add-reminder/add-reminder.component';
+import { AddReminderComponent } from 'src/app/components/add-reminder/add-reminder.component';
 import dateFormat from 'dateformat';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
@@ -11,10 +11,10 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
 
 @Component({
   selector: 'app-reminder',
-  templateUrl: './reminder.component.html',
-  styleUrls: ['./reminder.component.scss'],
+  templateUrl: './reminder.page.html',
+  styleUrls: ['./reminder.page.scss'],
 })
-export class ReminderComponent implements OnInit {
+export class ReminderPage implements OnInit {
   expand = null;
   reminders = [];
   tip: any = {};
@@ -80,6 +80,9 @@ export class ReminderComponent implements OnInit {
     if (!role) return;
     this.reminderService.remove(id).subscribe((d) => {
       this.reminders = this.reminders.filter((r) => r.id != id);
+      this.webSocket.emit('reminder:update', {
+        user_id: this.auth.loggedUser().id,
+      });
       this.reminderService.update();
     });
   }

@@ -29,7 +29,6 @@ import { HomePage } from 'src/app/pages/logged/home/home.page';
 import { HealthPage } from 'src/app/pages/logged/health/health.page';
 import { ExpandableComponent } from 'src/app/components/expandable/expandable.component';
 import { FormsModule } from '@angular/forms';
-import { ReminderComponent } from 'src/app/components/reminder/reminder.component';
 import { AddReminderComponent } from 'src/app/components/add-reminder/add-reminder.component';
 import { BookmarksComponent } from 'src/app/components/bookmarks/bookmarks.component';
 import { BookmarkComponent } from 'src/app/components/bookmark/bookmark.component';
@@ -46,6 +45,7 @@ import { TermsComponent } from 'src/app/components/terms/terms.component';
 import { CalendarModule } from 'ion2-calendar';
 import { CalendarModalComponent } from 'src/app/components/calendar-modal/calendar-modal.component';
 import { ShareEmailComponent } from 'src/app/components/share-email/share-email.component';
+import { ReminderPage } from 'src/app/pages/logged/reminder/reminder.page';
 
 @NgModule({
   declarations: [
@@ -75,8 +75,8 @@ import { ShareEmailComponent } from 'src/app/components/share-email/share-email.
     ViewMealComponent,
     HomePage,
     HealthPage,
+    ReminderPage,
     ExpandableComponent,
-    ReminderComponent,
     AddReminderComponent,
     BookmarksComponent,
     BookmarkComponent,

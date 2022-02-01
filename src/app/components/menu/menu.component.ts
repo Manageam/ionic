@@ -9,7 +9,6 @@ import { BookmarksComponent } from '../bookmarks/bookmarks.component';
 import { DiabetesWalkComponent } from '../diabetes-walk/diabetes-walk.component';
 import { ExerciseComponent } from '../exercise/exercise.component';
 import { ProfileComponent } from '../profile/profile.component';
-import { ReminderComponent } from '../reminder/reminder.component';
 import { SettingsComponent } from '../settings/settings.component';
 import { TermsComponent } from '../terms/terms.component';
 
@@ -103,10 +102,7 @@ export class MenuComponent implements OnInit {
   }
 
   async showReminders() {
-    const modal = await this.modalController.create({
-      component: ReminderComponent,
-    });
-    modal.present();
+    this.router.navigate(['/reminder']);
   }
 
   async showBookmark() {

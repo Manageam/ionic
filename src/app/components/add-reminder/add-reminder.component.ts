@@ -5,7 +5,6 @@ import { GlobalService } from 'src/app/services/global/global.service';
 import { ReminderService } from 'src/app/services/reminder/reminder.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { LocalNotifications } from '@capacitor/local-notifications';
-import { repeat } from 'rxjs/operators';
 
 @Component({
   selector: 'app-add-reminder',
