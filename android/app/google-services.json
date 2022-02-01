@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "754117682243",
+    "firebase_url": "https://manageam.firebaseio.com",
+    "project_id": "manageam",
+    "storage_bucket": "manageam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754117682243:android:c8c12820dbb8ef8f1e60f6",
+        "android_client_info": {
+          "package_name": "com.app.shei.manageam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754117682243-7h4kbrne3n42kf2b1lnll6d6ptri66oc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.shei.manageam",
+            "certificate_hash": "0970b22e2aada5127cd8399e8f429b9a1a6a643d"
+          }
+        },
+        {
+          "client_id": "754117682243-ioonjl62vh0u2nouslaut8e773tcietg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEyZMmNsDuiXqvAYKY6suICOsXxpN0ebc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754117682243-ioonjl62vh0u2nouslaut8e773tcietg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "754117682243-0pvvskh7tv2u0db0063oj7fhacmbqsoa.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.manageamdd"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
