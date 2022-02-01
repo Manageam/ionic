@@ -1,15 +1,6 @@
 <ion-app class="text-gray-900">
   <ion-header
-    class="
-      bg-blue-100
-      px-4
-      py-6
-      ion-no-border
-      text-xl
-      flex
-      justify-between
-      items-center
-    "
+    class="bg-blue-100 px-4 py-6 ion-no-border text-xl flex justify-between items-center"
   >
     <p class="font-bold">New Reminder</p>
     <ion-icon
@@ -42,7 +33,7 @@
           >
         </ion-select>
       </ion-item>
-      <ion-item *ngIf="reminder.category">
+      <ion-item>
         <ion-label class="block font-calibre w-full" position="stacked"
           >Title</ion-label
         >
@@ -54,18 +45,18 @@
         ></ion-input>
       </ion-item>
 
-      <ion-item *ngIf="reminder.title">
+      <ion-item>
         <ion-label class="block font-calibre w-full" position="stacked"
           >Date and time to be reminded</ion-label
         >
         <ion-datetime
+          displayFormat="YYYY-MM-DD HH:mm"
           placeholder="Pick date and time to be reminded"
-          [value]="reminder.time"
           [(ngModel)]="reminder.time"
         ></ion-datetime>
       </ion-item>
 
-      <ion-item *ngIf="reminder.time">
+      <ion-item>
         <ion-label class="block font-calibre w-full" position="stacked"
           >Repeat</ion-label
         >
@@ -77,14 +68,14 @@
         >
           <ion-select-option value="never">Never</ion-select-option>
           <ion-select-option value="hour">Every hour</ion-select-option>
-          <ion-select-option value="day">Every hour</ion-select-option>
+          <ion-select-option value="day">Every day</ion-select-option>
           <ion-select-option value="week">Every week</ion-select-option>
           <ion-select-option value="month">Every month</ion-select-option>
           <ion-select-option value="year">Every year</ion-select-option>
         </ion-select>
       </ion-item>
 
-      <ion-item *ngIf="reminder.repeat">
+      <ion-item>
         <ion-label class="block font-calibre w-full" position="stacked"
           >Note</ion-label
         >
@@ -97,19 +88,7 @@
 
       <span
         (click)="save()"
-        *ngIf="reminder.note"
-        class="
-          w-full
-          bg-accentBlue
-          p-4
-          font-semibold
-          text-center
-          block
-          text-white
-          uppercase
-          rounded-xl
-          mt-10
-        "
+        class="w-full bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl mt-10"
         >Done</span
       >
     </div>
