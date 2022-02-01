@@ -24,7 +24,6 @@ export class ViewMealComponent implements OnInit {
   ) {}
   @Input()
   set data(val) {
-    console.log(val);
     this.meal = val;
     this.allCab = val.foods.filter((f) => f.category == 1);
     this.allPro = val.foods.filter((f) => f.category == 2);
