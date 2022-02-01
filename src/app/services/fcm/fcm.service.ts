@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { PushNotifications } from '@capacitor/push-notifications';
 import { Capacitor } from '@capacitor/core';
+import { Device } from '@capacitor/device';
+import { SettingsService } from '../settings/settings.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FcmService {
-  constructor() {}
+  constructor(private settingService: SettingsService) {}
 
   async init() {
     // dont run this for the web
@@ -31,7 +33,11 @@ export class FcmService {
   }
 
   private async registerListeners() {
+    const device_id = (await Device.getId()).uuid;
     await PushNotifications.addListener('registration', (token) => {
+      this.settingService
+        .pushFCMToken({ token: token.value, device_id })
+        .subscribe();
       console.info('Registration token: ', token.value);
     });
 

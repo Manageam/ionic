@@ -14,9 +14,9 @@ export class SettingsService {
     const {
       user_details: { id },
     } = user;
-    this.http.post(`${environment.apiUrl}/fcm-token`, {
-      fcm_token: token,
-      user_id: id,
-    });
+    const data = new FormData();
+    data.append('fcm_token', token);
+    data.append('user_id', id);
+    return this.http.post(`${environment.apiUrl}/token`, data);
   }
 }
