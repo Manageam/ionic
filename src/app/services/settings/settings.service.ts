@@ -9,7 +9,7 @@ import { UserService } from '../user/user.service';
 export class SettingsService {
   constructor(private http: HttpClient, private userService: UserService) {}
 
-  pushFCMToken(token) {
+  pushFCMToken({ token, device_id }) {
     const user = this.userService.fetchDetails();
     const {
       user_details: { id },
@@ -17,6 +17,7 @@ export class SettingsService {
     const data = new FormData();
     data.append('fcm_token', token);
     data.append('user_id', id);
-    return this.http.post(`${environment.apiUrl}/token`, data);
+    data.append('device_id', device_id);
+    return this.http.post(`${environment.apiUrl}/token?silent=true`, data);
   }
 }
