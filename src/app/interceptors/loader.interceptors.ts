@@ -49,7 +49,7 @@ export class LoaderInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       finalize(() => hideLoader && this.global.hideLoader()),
       catchError((error) => {
-        if (error.status == 0) return;
+        if (error.status == 0 || error.status == 200) return;
         // if (error.status === 401) {
         //   return this.auth.logout();
         // }
