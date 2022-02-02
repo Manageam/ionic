@@ -60,7 +60,7 @@ export class AllMedicationsComponent implements OnInit {
       modal.onDidDismiss().then(({ data }) => {
         if (!data) return;
         this.healthService
-          .share({ email: data, ...date, type: 'medications' })
+          .share({ email: data, ...date, type: 'medication' })
           .subscribe((data: string) => {
             return this.global.alert('Share record', data, [
               { role: true, text: 'OK' },
