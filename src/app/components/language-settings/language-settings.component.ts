@@ -65,6 +65,12 @@ export class LanguageSettingsComponent implements OnInit {
           user_id: this.user.id,
         });
 
+        this.global.alert(
+          'Language Settings',
+          'Your language prefrence has been changed successfully!',
+          ['OK']
+        );
+
         this.modalController.dismiss();
       });
   }

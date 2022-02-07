@@ -15,6 +15,7 @@ export class EducationService {
   bookmarks: Subject<any>;
   allTopics: Subject<any>;
   languages: Subject<any>;
+  categories: Subject<any>;
   constructor(private http: HttpClient, private userService: UserService) {
     this.fetchAllTopics();
     this.getLanguages();
@@ -26,12 +27,17 @@ export class EducationService {
     this.allTopics = new BehaviorSubject(
       JSON.parse(localStorage.categoriesTopics || '[]')
     );
+
+    this.categories = new BehaviorSubject(
+      JSON.parse(localStorage.categories || '[]')
+    );
     this.fetchBookmarks();
   }
 
   fetchCategories() {
     this.http.get(`${this.url}/categories`).subscribe((data) => {
       localStorage.categories = JSON.stringify(data);
+      this.categories.next(data);
     });
     const fcategories = localStorage.categories;
     localStorage.categories = fcategories
@@ -57,8 +63,7 @@ export class EducationService {
   }
 
   getRandomEducational() {
-    let ftopics = localStorage.categoriesfTopics || JSON.stringify(topics);
-    ftopics = JSON.parse(ftopics);
+    let ftopics = JSON.parse(localStorage.categoriesTopics || {});
     const index = Math.floor(Math.random() * ftopics.length - 1);
     return ftopics[index];
   }
