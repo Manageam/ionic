@@ -23,6 +23,7 @@ export class EducationPage implements OnInit {
 
   ngOnInit() {
     this.educationService.fetchAllTopics();
+    this.educationService.fetchCategories();
     this.educationService.categories.subscribe((categories) => {
       const colors = shuffle([
         'bg-red-300',
