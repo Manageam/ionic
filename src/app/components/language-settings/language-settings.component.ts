@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
+import { EducationService } from 'src/app/services/education/education.service';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { UserService } from 'src/app/services/user/user.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 
 @Component({
   selector: 'app-language-settings',
@@ -8,20 +11,17 @@ import { GlobalService } from 'src/app/services/global/global.service';
   styleUrls: ['./language-settings.component.scss'],
 })
 export class LanguageSettingsComponent implements OnInit {
-  languages = [
-    'Hausa',
-    'Igbo',
-    'Yoruba',
-    'Enlish',
-    'Kiswahili',
-    'Shona',
-    'Zulu',
-  ];
+  languages = [];
   subs = [];
+  langId = null;
+  user: any = {};
   constructor(
     public modalController: ModalController,
     private global: GlobalService,
-    private platform: Platform
+    private platform: Platform,
+    private educationService: EducationService,
+    private userService: UserService,
+    private webSocket: WebsocketService
   ) {}
 
   ngOnInit() {
@@ -29,14 +29,44 @@ export class LanguageSettingsComponent implements OnInit {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
+    sub = this.educationService.languages.subscribe((lang) => {
+      this.languages = lang;
+    });
+    this.subs.push(sub);
+
+    this.userService.userDetails().subscribe((user) => {
+      this.langId = user.language_id;
+      this.user = user;
+    });
+
+    this.subs.push(sub);
+  }
+
+  async close() {
+    if (this.langId == this.user.language_id) return;
+
+    const role = <{ role }>await this.global.alert(
+      'Language Settings',
+      'Do you want to save changes before closing?',
+      [
+        { text: 'Yes', role: true },
+        { text: 'Cancel', role: false },
+      ]
+    );
+    if (role) return this.save();
+    this.modalController.dismiss();
   }
 
   async save() {
-    this.global.alert(
-      'Language Settings',
-      'Your language settings has been changed!',
-      ['Okay']
-    );
+    this.userService
+      .updateDetails({ language_id: this.langId })
+      .subscribe((data) => {
+        this.webSocket.emit('profile:update', {
+          user_id: this.user.id,
+        });
+
+        this.modalController.dismiss();
+      });
   }
 
   ngOnDestroy() {

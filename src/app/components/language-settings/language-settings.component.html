@@ -1,15 +1,6 @@
 <ion-app class="text-gray-900">
   <ion-header
-    class="
-      bg-blue-100
-      px-4
-      py-6
-      ion-no-border
-      text-xl
-      flex
-      justify-between
-      items-center
-    "
+    class="bg-blue-100 px-4 py-6 ion-no-border text-xl flex justify-between items-center"
   >
     <p class="font-bold">Update prefered language</p>
     <ion-icon
@@ -20,29 +11,19 @@
   </ion-header>
   <ion-content>
     <div class="p-4 space-y-4">
+      {{ langId }} or fight me
       <ion-list>
-        <ion-radio-group value="biff">
+        <ion-radio-group [value]="langId" [(ngModel)]="langId">
           <ion-item *ngFor="let lang of languages">
-            <ion-label>{{ lang }}</ion-label>
-            <ion-radio slot="start" [value]="lang"></ion-radio>
+            <ion-label>{{ lang.title }}{{ langId }}</ion-label>
+            <ion-radio slot="start" [value]="lang.id"></ion-radio>
           </ion-item>
         </ion-radio-group>
       </ion-list>
 
       <span
         (click)="save()"
-        class="
-          w-full
-          bg-accentBlue
-          p-4
-          font-semibold
-          text-center
-          block
-          text-white
-          uppercase
-          rounded-xl
-          mt-10
-        "
+        class="w-full bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl mt-10"
         >Update</span
       >
     </div>

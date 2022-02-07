@@ -10,9 +10,21 @@
         currentRoute == 'health' ? 'bg-accent white-text' : ''
       }}"
     >
-      <div class="flex items-center" (click)="toggleMenu()">
-        <ion-icon name="menu" class="text-2xl"></ion-icon>
-        <span class="ml-4 capitalize mt-2">{{ currentRoute }}</span>
+      <div class="flex items-center">
+        <ion-icon
+          name="menu"
+          class="text-2xl"
+          (click)="toggleMenu()"
+        ></ion-icon>
+        <span class="ml-4 capitalize mt-2" (click)="toggleMenu()">{{
+          currentRoute
+        }}</span>
+        <span
+          class="inline-block ml-2 mt-2 text-blue-500"
+          (click)="openLanguages()"
+          *ngIf="currentRoute == 'education'"
+          >[{{ lang }}]</span
+        >
       </div>
 
       <div class="space-x-4">

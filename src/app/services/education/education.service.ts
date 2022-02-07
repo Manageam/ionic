@@ -14,10 +14,15 @@ export class EducationService {
   educationBookmark = [];
   bookmarks: Subject<any>;
   allTopics: Subject<any>;
+  languages: Subject<any>;
   constructor(private http: HttpClient, private userService: UserService) {
     this.fetchAllTopics();
+    this.getLanguages();
     const bookmarks = localStorage.bookmarks || '[]';
     this.bookmarks = new BehaviorSubject(JSON.parse(bookmarks));
+    this.languages = new BehaviorSubject(
+      JSON.parse(localStorage.languages || '[]')
+    );
     this.allTopics = new BehaviorSubject(
       JSON.parse(localStorage.categoriesTopics || '[]')
     );
@@ -101,5 +106,16 @@ export class EducationService {
       education_id,
       user_id: id,
     });
+  }
+
+  getLanguages() {
+    this.fetchLanguages().subscribe((data) => {
+      localStorage.languages = JSON.stringify(data);
+      this.languages.next(data);
+    });
+  }
+
+  fetchLanguages() {
+    return this.http.get(`${this.url}/languages`);
   }
 }
