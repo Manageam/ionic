@@ -34,6 +34,7 @@ export class EducationPage implements OnInit {
         'bg-pink-300',
         'bg-gray-300',
       ]);
+      console.log(categories);
       this.categories = categories.map((c, i) => ({
         ...c,
         bg: colors[i],

@@ -51,7 +51,6 @@ export class EducationService {
     this.fetchAllTopics();
     let sTopics = localStorage.categoriesTopics || JSON.stringify(topics);
     localStorage.categoriesTopics = sTopics;
-    this.categories.next(sTopics);
     return JSON.parse(sTopics).filter((data) => data.category == id);
   }
 
