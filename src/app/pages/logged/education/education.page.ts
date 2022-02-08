@@ -34,16 +34,14 @@ export class EducationPage implements OnInit {
         'bg-pink-300',
         'bg-gray-300',
       ]);
-      console.log(categories);
       this.categories = categories.map((c, i) => ({
         ...c,
         bg: colors[i],
       }));
-
-      setTimeout(() => {
-        this.randomEducational = this.educationService.getRandomEducational();
-      }, 100);
     });
+    this.educationService.randomEducational.subscribe(
+      (data) => (this.randomEducational = data)
+    );
     this.webSocketService
       .listen('profile:update')
       .subscribe(({ user_id }: { user_id }) => {
