@@ -43,8 +43,8 @@ export class SignupPage implements OnInit {
 
     await modal.present();
     const { data } = await modal.onDidDismiss();
-    this.UserService.register(this.data).subscribe((user) => {
-      this.authService.login(user);
+    this.UserService.register(this.data).subscribe((user: any) => {
+      this.authService.login(user.user_details);
       this.UserService.getDetails().subscribe((data) => {
         this.UserService.setDetails(data);
       });
