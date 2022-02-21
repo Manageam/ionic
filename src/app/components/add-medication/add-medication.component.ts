@@ -34,7 +34,7 @@ export class AddMedicationComponent implements OnInit {
 
   search() {
     this.med = null;
-    if (this.medication.name.length < 1) {
+    if (this.medication.name.length < 3) {
       this.searched = [];
       return;
     }
