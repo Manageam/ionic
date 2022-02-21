@@ -24,7 +24,7 @@ export class HealthPage implements OnInit {
   ngOnInit() {
     let sub = this.medicationService.get().subscribe((data) => {
       this.allMedications = data;
-      this.medication = data.slice(-1)[0];
+      this.medication = data[0];
     });
 
     this.subs.push(sub);
