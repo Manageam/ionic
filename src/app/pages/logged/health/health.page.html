@@ -1,8 +1,8 @@
 <div class="p-4 relative min-h-full health-page pale-bg-default">
   <div class="text-white">
-    <p class="text-3xl tracking-wide font-bold font-calibre text-white">
+    <!-- <p class="text-3xl tracking-wide font-bold font-calibre text-white">
       Health
-    </p>
+    </p> -->
     <p class="mt-2 text-white">Click cards to see history</p>
   </div>
 
@@ -16,30 +16,14 @@
       <p class="text-gray-500" *ngIf="medication">{{medication.name}}</p>
       <div class="flex space-x-4 mt-4">
         <p
-          class="
-            w-full
-            bg-accentBlue
-            p-2
-            font-semibold
-            text-center text-white
-            rounded-xl
-            items-center
-          "
+          class="w-full bg-accentBlue p-2 font-semibold text-center text-white rounded-xl items-center"
           (click)="addMedication()"
         >
           <span class="text-white">Add new</span>
         </p>
 
         <p
-          class="
-            w-full
-            p-2
-            text-center
-            block
-            text-accentBlue
-            border border-accentBlue
-            rounded-xl
-          "
+          class="w-full p-2 text-center block text-accentBlue border border-accentBlue rounded-xl"
           (click)="showMedication()"
         >
           View all
