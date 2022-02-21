@@ -26,8 +26,8 @@ export class ViewMealComponent implements OnInit {
   set data(val) {
     this.meal = val;
     this.allCab = val.foods.filter((f) => f.category == 1);
-    this.allPro = val.foods.filter((f) => f.category == 2);
-    this.allFru = val.foods.filter((f) => f.category == 3);
+    this.allFru = val.foods.filter((f) => f.category == 2);
+    this.allPro = val.foods.filter((f) => f.category == 3);
   }
   ngOnInit() {
     let sub = this.platform.backButton.subscribe(() => {

@@ -11,7 +11,7 @@
             justify-center
             bg-green-100
             rounded-full
-            text-green-900
+            bg-{{ meal.info.color }}-100 text-{{ meal.info.color }}-900
             mr-1
           "
           >{{ meal.foods.length }}</span
@@ -54,14 +54,7 @@
             <span>Carbohydrate</span> <span>{{ allCab.length }}</span>
           </h3>
           <li
-            class="
-              bg-white
-              text-gray-600
-              p-4
-              border-t border-gray-200
-              flex
-              justify-between
-            "
+            class="bg-white text-gray-600 p-4 border-t border-gray-200 flex justify-between"
             *ngFor="let item of allCab"
           >
             <span>{{ item.name }}</span> <span>{{ item.quantity }}</span>
@@ -73,14 +66,7 @@
             <span>Protein</span> <span>{{ allPro.length }}</span>
           </h3>
           <li
-            class="
-              bg-white
-              text-gray-600
-              p-4
-              border-t border-gray-200
-              flex
-              justify-between
-            "
+            class="bg-white text-gray-600 p-4 border-t border-gray-200 flex justify-between"
             *ngFor="let item of allFru"
           >
             <span>{{ item.name }}</span> <span>{{ item.quantity }}</span>
@@ -93,14 +79,7 @@
             <span>{{ allFru.length }}</span>
           </h3>
           <li
-            class="
-              bg-white
-              text-gray-600
-              p-4
-              border-t border-gray-200
-              flex
-              justify-between
-            "
+            class="bg-white text-gray-600 p-4 border-t border-gray-200 flex justify-between"
             *ngFor="let item of allPro"
           >
             <span>{{ item.name }}</span> <span>{{ item.quantity }}</span>
@@ -111,31 +90,13 @@
       <div class="grid grid-cols-2 gap-10 mt-4">
         <p
           (click)="remove()"
-          class="
-            bg-red-600
-            text-white
-            uppercase
-            rounded-2xl
-            text-center
-            py-4
-            font-semibold
-            px-6
-          "
+          class="bg-red-600 text-white uppercase rounded-2xl text-center py-4 font-semibold px-6"
         >
           Remove
         </p>
         <p
           (click)="modalController.dismiss(false)"
-          class="
-            bg-white
-            text-gray-800
-            uppercase
-            rounded-2xl
-            text-center
-            py-4
-            font-semibold
-            px-6
-          "
+          class="bg-white text-gray-800 uppercase rounded-2xl text-center py-4 font-semibold px-6"
         >
           close
         </p>
