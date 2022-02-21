@@ -1,4 +1,7 @@
-<div class="bg-white rounded-xl p-4 text-center relative" (click)="view()">
+<div
+  class="bg-white rounded-xl p-4 text-center relative h-full"
+  (click)="view()"
+>
   <app-guage value="100" [color]="color"></app-guage>
   <p class="font-bold text-2xl mt-6">{{ bmi?.mass || "0" }}</p>
   <span class="text-sm mb-4 inline-block">{{ bmi?.unit || "nil" }}</span>
