@@ -25,10 +25,10 @@ export class BookmarksComponent implements OnInit {
     let sub = this.educationService.getBookmarks().subscribe((data) => {
       this.bookmarks = data.map((data) => {
         const date = dateFormat(
-          new Date(data.created_at),
+          new Date(data.created_at || null),
           'dd mmm, yyyy-hh:MMtt'
         );
-        return { ...data.education, id: data.id, date };
+        return data;
       });
     });
     this.subs.push(sub);
