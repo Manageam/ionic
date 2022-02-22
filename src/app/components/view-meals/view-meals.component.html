@@ -65,7 +65,8 @@
                 class="bg-white text-gray-600 p-4 border-t border-gray-200 flex justify-between"
                 *ngFor="let item of allCab"
               >
-                <span>{{ item.name }}</span> <span>{{ item.quantity }}</span>
+                <span>{{ item.name }} x({{ item.amount }})</span>
+                <span>{{ item.quantity }}</span>
               </li>
             </ul>
 
@@ -79,7 +80,8 @@
                 class="bg-white text-gray-600 p-4 border-t border-gray-200 flex justify-between"
                 *ngFor="let item of allFru"
               >
-                <span>{{ item.name }}</span> <span>{{ item.quantity }}</span>
+                <span>{{ item.name }} x({{ item.amount }})</span>
+                <span>{{ item.quantity }}</span>
               </li>
             </ul>
 
@@ -94,7 +96,8 @@
                 class="bg-white text-gray-600 p-4 border-t border-gray-200 flex justify-between"
                 *ngFor="let item of allPro"
               >
-                <span>{{ item.name }}</span> <span>{{ item.quantity }}</span>
+                <span>{{ item.name }} x({{ item.amount }})</span>
+                <span>{{ item.quantity }}</span>
               </li>
             </ul>
 
