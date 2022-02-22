@@ -27,7 +27,7 @@
               class="bg-white flex mt-1 p-4 justify-between items-center"
               (click)="toggle(item)"
             >
-              <p class="text-lg">{{ item.name }}</p>
+              <p class="text-lg">{{ item.name || item.medication_name }}</p>
               <ion-icon
                 name="chevron-forward"
                 class="text-xl {{ item == expand ? 'rotate-90' : '' }}"
