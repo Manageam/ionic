@@ -41,6 +41,7 @@ export class Hba1cComponent implements OnInit {
       this.allHba1c = data;
       this.hba1c = data.slice(-1)[0];
       if (!this.hba1c) return;
+      this.hba1c.number = Number(this.hba1c.number).toFixed(2);
       if (
         (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) < 42) ||
         (this.hba1c.unit == 'percentage' && Number(this.hba1c.number) < 6)

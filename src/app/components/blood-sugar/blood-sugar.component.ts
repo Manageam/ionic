@@ -38,6 +38,8 @@ export class BloodSugarComponent implements OnInit {
     this.bloodSugarService.get().subscribe((data) => {
       this.allBloodSugar = data;
       this.bloodSugar = data.slice(-1)[0];
+      if (this.bloodSugar)
+        this.bloodSugar.reading = Number(this.bloodSugar.reading).toFixed(2);
       this.color = this.bloodSugar
         ? this.updateSugarColor(
             this.bloodSugar.unit,
