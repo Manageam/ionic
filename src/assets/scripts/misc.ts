@@ -54,7 +54,7 @@ export function fetchTip(hba1c) {
 
 export function fetchBloodSugarTips(bloodSugar) {
   let tip = [];
-  if (bloodSugar.unit === 'mmol/L') {
+  if (bloodSugar.unit.toLowerCase() === 'mmol/l') {
     switch (true) {
       case bloodSugar.value < 4.4:
         tip = [

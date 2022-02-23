@@ -54,7 +54,7 @@ export function fetchTip(hba1c) {
 
 export function fetchBloodSugarTips(bloodSugar) {
   let tip = [];
-  if (bloodSugar.unit === 'mmol/L') {
+  if (bloodSugar.unit.toLowerCase() === 'mmol/l') {
     switch (true) {
       case bloodSugar.value < 4.4:
         tip = [
@@ -212,6 +212,7 @@ export function fetchBloodPressureTips(upper, lower) {
 }
 
 export function fetchCholesterolTips(unit, value) {
+  console.log(unit);
   let tips = [];
   if (String(unit).toLowerCase() === 'mmol/l') {
     switch (true) {
@@ -233,27 +234,26 @@ export function fetchCholesterolTips(unit, value) {
         ];
         break;
     }
-    return false;
-  }
-
-  switch (true) {
-    case value < 200:
-      tips = ['Good work.'];
-      break;
-    case value >= 200 && value < 240:
-      tips = [
-        'Total cholesterol in your blood is Borderline High.',
-        'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
-        'Educate yourself on how to manage cholesterol.',
-      ];
-      break;
-    case value >= 240:
-      tips = [
-        'Total cholesterol in your blood is High.',
-        'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
-        'Educate yourself on how to manage cholesterol.',
-      ];
-      break;
+  } else {
+    switch (true) {
+      case value < 200:
+        tips = ['Good work.'];
+        break;
+      case value >= 200 && value < 240:
+        tips = [
+          'Total cholesterol in your blood is Borderline High.',
+          'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
+          'Educate yourself on how to manage cholesterol.',
+        ];
+        break;
+      case value >= 240:
+        tips = [
+          'Total cholesterol in your blood is High.',
+          'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
+          'Educate yourself on how to manage cholesterol.',
+        ];
+        break;
+    }
   }
 
   if (tips.length == 1) return tips[0];
