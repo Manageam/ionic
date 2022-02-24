@@ -35,15 +35,17 @@
             </div>
             <app-expandable [expanded]="item == expand" expandHeight="500px">
               <div class="bg-white p-4 text-gray-600 space-y-4">
-                <p>
-                  <span class="font-bold">Used for</span>:
-                  <span [innerHTML]="item.used_for"></span>
-                </p>
-                <p class="text-green-600">
-                  Contact your doctor if you have any of these symptoms
-                </p>
+                <ng-container *ngIf="item.used_for">
+                  <p>
+                    <span class="font-bold">Used for</span>:
+                    <span [innerHTML]="item.used_for"></span>
+                  </p>
+                  <p class="text-green-600">
+                    Contact your doctor if you have any of these symptoms
+                  </p>
+                </ng-container>
 
-                <div class="text-gray-600">
+                <div class="text-gray-600" *ngIf="item.effect">
                   <p class="font-bold mb-2">Possible Side Effect:</p>
                   <p [innerHTML]="item.effect"></p>
                 </div>
