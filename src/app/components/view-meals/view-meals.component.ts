@@ -164,7 +164,6 @@ export class ViewMealsComponent implements OnInit {
       if (role == 'backdrop') return;
       this.type = role;
     }
-    this.type = 'Breakfast';
     const modal = await this.modalController.create({
       component: MealsListComponent,
       componentProps: {
