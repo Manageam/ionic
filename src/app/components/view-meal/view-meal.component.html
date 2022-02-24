@@ -58,7 +58,7 @@
             *ngFor="let item of allCab"
           >
             <span>{{ item.name }} x({{ item.amount }})</span>
-            <span>{{ item.quantity }}</span>
+            <span>{{ item.calories * item.amount }}</span>
           </li>
         </ul>
 
@@ -71,7 +71,7 @@
             *ngFor="let item of allFru"
           >
             <span>{{ item.name }} x({{ item.amount }})</span>
-            <span>{{ item.quantity }}</span>
+            <span>{{ item.calories * item.amount }}</span>
           </li>
         </ul>
 
@@ -85,7 +85,7 @@
             *ngFor="let item of allPro"
           >
             <span>{{ item.name }} x({{ item.amount }})</span>
-            <span>{{ item.quantity }}</span>
+            <span>{{ item.calories * item.amount }}</span>
           </li>
         </ul>
       </div>
