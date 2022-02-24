@@ -32,8 +32,9 @@ export class ReminderPage implements OnInit {
 
   ngOnInit() {
     let sub = this.reminderService.get().subscribe((data) => {
+      console.log(data);
       this.reminders = data.map((d) => {
-        d.date = dateFormat(new Date(d.created_at), 'dd mmm, yyyy-hh:MMtt');
+        d.date = dateFormat(new Date(d.time), 'dd mmm, yyyy-hh:MMtt');
         return d;
       });
     });
