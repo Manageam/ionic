@@ -42,23 +42,36 @@ export class Hba1cComponent implements OnInit {
       this.hba1c = data.slice(-1)[0];
       if (!this.hba1c) return;
       this.hba1c.number = Number(this.hba1c.number).toFixed(2);
+      this.hba1c.unit =
+        this.hba1c.unit in ['percentage', 'percent']
+          ? 'percentage'
+          : this.hba1c.unit;
       if (
-        (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) < 42) ||
-        (this.hba1c.unit == 'percentage' && Number(this.hba1c.number) < 6)
+        (this.hba1c.unit == 'mmol/mol' && this.hba1c.number < 20) ||
+        (this.hba1c.unit == 'percentage' && this.hba1c.number < 4)
+      ) {
+        this.color = 'gray';
+      } else if (
+        (this.hba1c.unit == 'mmol/mol' &&
+          this.hba1c.number >= 20 &&
+          this.hba1c.number <= 38) ||
+        (this.hba1c.unit == 'percentage' &&
+          this.hba1c.number >= 4 &&
+          this.hba1c.number <= 5.6)
       ) {
         this.color = 'green';
       } else if (
         (this.hba1c.unit == 'mmol/mol' &&
-          Number(this.hba1c.number) >= 42 &&
-          Number(this.hba1c.number) <= 47) ||
+          this.hba1c.number >= 39 &&
+          this.hba1c.number <= 46) ||
         (this.hba1c.unit == 'percentage' &&
-          Number(this.hba1c.number) >= 6 &&
-          Number(this.hba1c.number) <= 6.4)
+          this.hba1c.number >= 5.7 &&
+          this.hba1c.number <= 6.4)
       ) {
         this.color = 'orange';
       } else if (
-        (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) >= 48) ||
-        (this.hba1c.unit == 'percentage' && Number(this.hba1c.number) >= 6.5)
+        (this.hba1c.unit == 'mmol/mol' && this.hba1c.number >= 48) ||
+        (this.hba1c.unit == 'percentage' && this.hba1c.number >= 6.5)
       ) {
         this.color = 'red';
       }

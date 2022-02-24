@@ -4,6 +4,7 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
 import { GlobalService } from 'src/app/services/global/global.service';
 import { HealthService } from 'src/app/services/health/health.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { fetchTip } from 'src/assets/scripts/misc';
 
 @Component({
   selector: 'app-update-hba1c',
@@ -26,55 +27,7 @@ export class UpdateHba1cComponent implements OnInit {
     private auth: AuthenticationService
   ) {}
   updateTip() {
-    if (this.hba1c.number == '') {
-      this.tip = '';
-    } else if (
-      (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) < 42) ||
-      (this.hba1c.unit == 'percentage' && Number(this.hba1c.number) < 6)
-    ) {
-      this.tip = `Good work`;
-    } else if (
-      (this.hba1c.unit == 'mmol/mol' &&
-        Number(this.hba1c.number) >= 42 &&
-        Number(this.hba1c.number) <= 47) ||
-      (this.hba1c.unit == 'percentage' &&
-        Number(this.hba1c.number) >= 6 &&
-        Number(this.hba1c.number) <= 6.4)
-    ) {
-      this.tip = `<ul class="space-y-5 list-disc pl-4">
-      <li>
-      You blood test shows that you are at risk or developing Diabetes. But you have not developed diabetes yet.
-      </li>
-      <li>
-      You must make changes in your eating habits and increase your physical activity to ensure that you don't develop diabetes in the future.
-      </li>
-      <li>
-      Yearly checkup with you doctor is recommended.
-      </li>
-      </ul>`;
-    } else if (
-      (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) >= 48) ||
-      (this.hba1c.unit == 'percentage' && Number(this.hba1c.number) >= 6.5)
-    ) {
-      this.tip = `
-      <ul class="space-y-5 list-disc pl-4">
-      <li>
-      Your blood test shows that your A1C level is of a Diabetic person.
-      </li>
-      <li>
-      Eating habits and lifestyle changes are recommended.
-      </li>
-      <li>
-      See a doctor to see if you need a medication and please make sure you follow up.
-      </li>
-      <li>
-      YOu must aim to bring down your A1C to less than 6.5%[48mmol/mol].
-      </li>
-      </ul>
-      `;
-    } else {
-      this.tip = '';
-    }
+    this.tip = fetchTip(this.hba1c);
   }
   ngOnInit() {
     let sub = this.platform.backButton.subscribe(() => {
