@@ -1,30 +1,43 @@
-export function fetchTip(hba1c) {
-  if (!hba1c.number) return '';
+export function fetchTip(hba1c): {
+  tip: string;
+  color: string;
+  status: string;
+} {
+  if (!hba1c.number) return { tip: '', color: 'gray', status: '' };
 
   hba1c.number = Number(hba1c.number);
   hba1c.unit =
     hba1c.unit in ['percentage', 'percent'] ? 'percentage' : hba1c.unit;
 
-  console.log(hba1c.unit, hba1c.number);
-
   if (
     (hba1c.unit == 'mmol/mol' && hba1c.number < 20) ||
     (hba1c.unit == 'percentage' && hba1c.number < 4)
   ) {
-    return `<ul class="space-y-5 list-disc pl-4">
+    return {
+      tip: `<ul class="space-y-5 list-disc pl-4">
     <li>A1c is Below <strong>Desired Range</strong></li>
     <li>Please see your doctor to discuss you A1c test</li>
-    </ul>`;
+    </ul>`,
+      color: 'gray',
+      status:
+        'Your blood test shows that your A1C level is low. Please see your doctor.',
+    };
   } else if (
     (hba1c.unit == 'mmol/mol' && hba1c.number >= 20 && hba1c.number <= 38) ||
     (hba1c.unit == 'percentage' && hba1c.number >= 4 && hba1c.number <= 5.6)
   ) {
-    return `Good work`;
+    return {
+      tip: `Good work`,
+      color: 'green',
+      status:
+        'Your blood test shows that your A1C level is good. keep eating healthy.',
+    };
   } else if (
     (hba1c.unit == 'mmol/mol' && hba1c.number >= 39 && hba1c.number <= 46) ||
     (hba1c.unit == 'percentage' && hba1c.number >= 5.7 && hba1c.number <= 6.4)
   ) {
-    return `<ul class="space-y-5 list-disc pl-4">
+    return {
+      tip: `<ul class="space-y-5 list-disc pl-4">
       <li>
       You blood test shows that you are at risk or developing Diabetes. But you have not developed diabetes yet.
       </li>
@@ -34,12 +47,17 @@ export function fetchTip(hba1c) {
       <li>
       Yearly checkup with you doctor is recommended.
       </li>
-      </ul>`;
+      </ul>`,
+      color: 'orange',
+      status:
+        'Your blood test shows that you are at risk of developing Diabetes but not developed diabetes yet.',
+    };
   } else if (
     (hba1c.unit == 'mmol/mol' && hba1c.number >= 48) ||
     (hba1c.unit == 'percentage' && hba1c.number >= 6.5)
   ) {
-    return `
+    return {
+      tip: `
       <ul class="space-y-5 list-disc pl-4">
       <li>
       Your blood test shows that your A1C level is of a Diabetic person.
@@ -54,9 +72,18 @@ export function fetchTip(hba1c) {
       YOu must aim to bring down your A1C to less than 6.5%[48mmol/mol].
       </li>
       </ul>
-      `;
+      `,
+      color: 'red',
+      status:
+        'Your blood test shows that your A1C level is of a Diabetic person. Eating habits and lifestyle changes are recommended.',
+    };
   } else {
-    return '';
+    return {
+      tip: '',
+      color: 'gray',
+      status:
+        'Your blood test shows that your A1C level is low. Please see your doctor.',
+    };
   }
 }
 

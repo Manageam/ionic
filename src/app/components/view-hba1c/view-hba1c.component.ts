@@ -51,7 +51,9 @@ export class ViewHba1cComponent implements OnInit {
     this.hba1c = data.slice(-1)[0];
     // group the hba1c
     const hba1cGroups = {};
-    this.formatStatus();
+    const d = fetchTip(this.hba1c);
+    this.status = d.status;
+    this.color = d.color;
 
     for (let hba1c of allHba1c) {
       const key = dateFormat(new Date(hba1c.created_at), 'mmm-yyyy');
@@ -59,7 +61,7 @@ export class ViewHba1cComponent implements OnInit {
         new Date(hba1c.created_at),
         'dd mmm, yyyy-hh:MMtt'
       );
-      hba1c.tip = fetchTip(hba1c);
+      hba1c.tip = fetchTip(hba1c).tip;
       if (hba1cGroups[key]) {
         hba1cGroups[key].push(hba1c);
       } else {
@@ -142,35 +144,6 @@ export class ViewHba1cComponent implements OnInit {
           user_id: this.auth.loggedUser().id,
         });
       });
-    }
-  }
-
-  formatStatus() {
-    if (
-      (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) < 42) ||
-      (this.hba1c.unit == 'percentage' && Number(this.hba1c.number) < 6)
-    ) {
-      this.color = 'green';
-      this.status =
-        'Your blood test shows that your A1C level is good. keep eating healthy. ';
-    } else if (
-      (this.hba1c.unit == 'mmol/mol' &&
-        Number(this.hba1c.number) >= 42 &&
-        Number(this.hba1c.number) <= 47) ||
-      (this.hba1c.unit == 'percentage' &&
-        Number(this.hba1c.number) >= 6 &&
-        Number(this.hba1c.number) <= 6.4)
-    ) {
-      this.color = 'yellow';
-      this.status =
-        'Your blood test shows that you are at risk of developing Diabetes but not developed diabetes yet.';
-    } else if (
-      (this.hba1c.unit == 'mmol/mol' && Number(this.hba1c.number) >= 48) ||
-      (this.hba1c.unit == 'percentage' && Number(this.hba1c.number) >= 6.5)
-    ) {
-      this.color = 'red';
-      this.status =
-        'Your blood test shows that your A1C level is of a Diabetic person. Eating habits and lifestyle changes are recommended.';
     }
   }
 

@@ -27,7 +27,7 @@ export class UpdateHba1cComponent implements OnInit {
     private auth: AuthenticationService
   ) {}
   updateTip() {
-    this.tip = fetchTip(this.hba1c);
+    this.tip = fetchTip(this.hba1c).tip;
   }
   ngOnInit() {
     let sub = this.platform.backButton.subscribe(() => {
