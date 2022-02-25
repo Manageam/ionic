@@ -9,32 +9,13 @@
     >
       <img
         src="{{ user?.photo }}"
-        class="
-          w-20
-          h-20
-          rounded-full
-          object-cover
-          border-4 border-white
-          overflow-hidden
-          inline-block
-          mb-4
-        "
+        class="w-20 h-20 rounded-full object-cover border-4 border-white overflow-hidden inline-block mb-4"
         (click)="showProfile()"
         onerror="this.src='/assets/img/profile.jpeg'"
       />
       <p class="font-bold text-lg text-gray-900">{{ user?.name }}</p>
       <p
-        class="
-          border border-accentBlue
-          text-accentBlue
-          py-2
-          text-lg
-          px-12
-          mt-4
-          rounded-xl
-          inline-block
-          uppercase
-        "
+        class="border border-accentBlue text-accentBlue py-2 text-lg px-12 mt-4 rounded-xl inline-block uppercase"
         (click)="logout()"
       >
         Logout
@@ -53,7 +34,7 @@
           <ion-icon name="chevron-forward"></ion-icon>
         </li>
         <li class="flex justify-between" (click)="showBookmark()">
-          <span>Bookmark</span> <ion-icon name="chevron-forward"></ion-icon>
+          <span>Bookmarks</span> <ion-icon name="chevron-forward"></ion-icon>
         </li>
         <li class="flex justify-between" (click)="showDiabetesWalk()">
           <span>Diabetes Walk</span>
