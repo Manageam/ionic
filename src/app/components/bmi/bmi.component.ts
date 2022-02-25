@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { BmiService } from 'src/app/services/bmi/bmi.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { fetchBMI } from 'src/assets/scripts/misc';
 import { UpdateBmiComponent } from '../update-bmi/update-bmi.component';
 import { ViewBmiComponent } from '../view-bmi/view-bmi.component';
 
@@ -27,8 +28,9 @@ export class BmiComponent implements OnInit {
     let sub = this.bmiService.get().subscribe((data) => {
       this.allBmi = data;
       this.bmi = data.slice(-1)[0];
-      this.color = this.updateColor(this.bmi?.mass);
-      if (this.bmi) this.bmi.mass = Number(this.bmi.mass).toFixed(2);
+      if (!this.bmi) return;
+      this.color = fetchBMI(this.bmi.mass).color;
+      this.bmi.mass = Number(this.bmi.mass).toFixed(2);
     });
     this.subs.push(sub);
 

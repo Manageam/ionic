@@ -298,21 +298,24 @@ export function fetchCholesterolTips(unit, value) {
     .join('')}</ul>`;
 }
 
-export function fetchBMI(value) {
-  let tips = [];
+export function fetchBMI(value): { tips: string; color: string } {
+  const data = { tips: [], color: '' };
   switch (true) {
     case value < 18.5:
-      tips = [
+      data.color = 'grey';
+      data.tips = [
         'Your BMI is Below Normal.',
         'This may suggest lack of sufficient nutrients in your diet.',
         'Change your food habits to make sure you are consuming enough calories and keep a healthy diet plan.',
       ];
       break;
     case value >= 18.5 && value <= 24.9:
-      tips = ['Good work.'];
+      data.color = 'green';
+      data.tips = ['Good work.'];
       break;
-    case value >= 25 && value < 30:
-      tips = [
+    case value > 24.9 && value < 30:
+      data.color = 'orange';
+      data.tips = [
         'Your BMI is of an Overweight Person.',
         'This is a risk factor for developing diabetes and other medical conditions.',
         'Change your eating habits and increase physical activity.',
@@ -320,7 +323,8 @@ export function fetchBMI(value) {
       ];
       break;
     case value >= 30:
-      tips = [
+      data.color = 'red';
+      data.tips = [
         'Your BMI is of an Obese Person.',
         'This is a risk factor for developing diabetes and other medical conditions.',
         'Change your eating habits and increase physical activity.',
@@ -329,11 +333,13 @@ export function fetchBMI(value) {
       break;
   }
 
-  if (tips.length == 1) return tips[0];
+  if (data.tips.length == 1) return { color: data.color, tips: data.tips[0] };
 
-  return `<ul class="space-y-5 list-disc pl-4">${tips
+  const tips = `<ul class="space-y-5 list-disc pl-4">${data.tips
     .map((t) => '<li>' + t + '</li>')
     .join('')}</ul>`;
+
+  return { tips, color: data.color };
 }
 
 export function checkHealthStatus(status) {

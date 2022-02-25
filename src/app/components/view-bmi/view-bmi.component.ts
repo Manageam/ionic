@@ -52,7 +52,7 @@ export class ViewBmiComponent implements OnInit {
           new Date(datum.created_at),
           'dd mmm, yyyy-hh:MMtt'
         );
-        datum.tip = fetchBMI(datum.mass);
+        datum.tip = fetchBMI(datum.mass).tips;
         return datum;
       });
   }
