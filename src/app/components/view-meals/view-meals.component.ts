@@ -214,6 +214,7 @@ export class ViewMealsComponent implements OnInit {
     this.food = null;
     this.type = '';
     this.calInfo = null;
+    this.totalCals = 0;
   }
 
   filterMeals(meal) {
