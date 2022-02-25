@@ -178,8 +178,8 @@ export class ViewMealsComponent implements OnInit {
       }
       this.food = data;
       this.allCab = this.food.filter((f) => f.category == 1);
-      this.allPro = this.food.filter((f) => f.category == 2);
-      this.allFru = this.food.filter((f) => f.category == 3);
+      this.allFru = this.food.filter((f) => f.category == 2);
+      this.allPro = this.food.filter((f) => f.category == 3);
 
       this.totalCals = this.food
         .reduce((a, b: any) => a + Number(b.amount || 0) * b.calories, 0)
