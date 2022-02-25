@@ -1,21 +1,43 @@
-export function fetchTip(hba1c) {
-  if (hba1c.number == '') {
-    return '';
-  } else if (
-    (hba1c.unit == 'mmol/mol' && Number(hba1c.number) < 42) ||
-    ((hba1c.unit == 'percentage' || hba1c.unit == 'percent') &&
-      Number(hba1c.number) < 6)
+export function fetchTip(hba1c): {
+  tip: string;
+  color: string;
+  status: string;
+} {
+  if (!hba1c.number) return { tip: '', color: 'gray', status: '' };
+
+  hba1c.number = Number(hba1c.number);
+  hba1c.unit =
+    hba1c.unit in ['percentage', 'percent'] ? 'percentage' : hba1c.unit;
+
+  if (
+    (hba1c.unit == 'mmol/mol' && hba1c.number < 20) ||
+    (hba1c.unit == 'percentage' && hba1c.number < 4)
   ) {
-    return `Good work`;
+    return {
+      tip: `<ul class="space-y-5 list-disc pl-4">
+    <li>A1c is Below <strong>Desired Range</strong></li>
+    <li>Please see your doctor to discuss you A1c test</li>
+    </ul>`,
+      color: 'gray',
+      status:
+        'Your blood test shows that your A1C level is low. Please see your doctor.',
+    };
   } else if (
-    (hba1c.unit == 'mmol/mol' &&
-      Number(hba1c.number) >= 42 &&
-      Number(hba1c.number) <= 47) ||
-    ((hba1c.unit == 'percentage' || hba1c.unit == 'percent') &&
-      Number(hba1c.number) >= 6 &&
-      Number(hba1c.number) <= 6.4)
+    (hba1c.unit == 'mmol/mol' && hba1c.number >= 20 && hba1c.number <= 38) ||
+    (hba1c.unit == 'percentage' && hba1c.number >= 4 && hba1c.number <= 5.6)
   ) {
-    return `<ul class="space-y-5 list-disc pl-4">
+    return {
+      tip: `Good work`,
+      color: 'green',
+      status:
+        'Your blood test shows that your A1C level is good. keep eating healthy.',
+    };
+  } else if (
+    (hba1c.unit == 'mmol/mol' && hba1c.number >= 39 && hba1c.number <= 46) ||
+    (hba1c.unit == 'percentage' && hba1c.number >= 5.7 && hba1c.number <= 6.4)
+  ) {
+    return {
+      tip: `<ul class="space-y-5 list-disc pl-4">
       <li>
       You blood test shows that you are at risk or developing Diabetes. But you have not developed diabetes yet.
       </li>
@@ -25,13 +47,17 @@ export function fetchTip(hba1c) {
       <li>
       Yearly checkup with you doctor is recommended.
       </li>
-      </ul>`;
+      </ul>`,
+      color: 'orange',
+      status:
+        'Your blood test shows that you are at risk of developing Diabetes but not developed diabetes yet.',
+    };
   } else if (
-    (hba1c.unit == 'mmol/mol' && Number(hba1c.number) >= 48) ||
-    ((hba1c.unit == 'percentage' || hba1c.unit == 'percent') &&
-      Number(hba1c.number) >= 6.5)
+    (hba1c.unit == 'mmol/mol' && hba1c.number >= 48) ||
+    (hba1c.unit == 'percentage' && hba1c.number >= 6.5)
   ) {
-    return `
+    return {
+      tip: `
       <ul class="space-y-5 list-disc pl-4">
       <li>
       Your blood test shows that your A1C level is of a Diabetic person.
@@ -46,9 +72,18 @@ export function fetchTip(hba1c) {
       YOu must aim to bring down your A1C to less than 6.5%[48mmol/mol].
       </li>
       </ul>
-      `;
+      `,
+      color: 'red',
+      status:
+        'Your blood test shows that your A1C level is of a Diabetic person. Eating habits and lifestyle changes are recommended.',
+    };
   } else {
-    return '';
+    return {
+      tip: '',
+      color: 'gray',
+      status:
+        'Your blood test shows that your A1C level is low. Please see your doctor.',
+    };
   }
 }
 
@@ -103,181 +138,173 @@ export function fetchBloodSugarTips(bloodSugar) {
     .join('')}</ul>`;
 }
 
-export function fetchBloodPressureTips(upper, lower) {
-  let tip;
-  switch (true) {
-    case upper >= 90 && upper <= 120 && lower >= 60 && lower <= 80:
-      tip = ['Good work.'];
-      break;
-    case upper < 90:
-      tip = [
-        'Your blood pressure measurement is Lower than Desired Range.',
-        'You can also talk to your doctor if you are required to monitor your blood pressure daily from home. ',
-        'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see if you need medication. ',
-        'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
-        'Food habits for Low BP:',
+export function fetchBloodPressureTips(
+  upper,
+  lower
+): { tips: string; color: string } {
+  const data = {
+    tips: [],
+    color: '',
+  };
+
+  console.log(upper, lower);
+
+  if (upper < 90) {
+    data.tips = [
+      'Your blood pressure measurement is Lower than Desired Range.',
+      'You can also talk to your doctor if you are required to monitor your blood pressure daily from home. ',
+      'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see if you need medication. ',
+      'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
+      `Food habits for Low BP: <ul class="space-y-2 list-disc pl-2"> ${[
         'Increase consumption of fruits and vegetable (banana, apples',
         'Increase consumption of foods rich Omega 3 (Salmon, Mackerel, etc.)',
         'Increase consumption of Fiber foods (Oats, Beans, etc.)',
         'Increase water consumption and a cup of caffeinated beverage.',
         'Reduction in alcohol intake',
-      ];
-      break;
-    case upper > 120 && upper <= 129:
-      tip = [
-        'Your blood pressure measurement is Elevated.',
-        'If your measurements continue to rise, you will need to talk to your doctor about your rising blood pressure and how to monitor it.',
-
-        'Food habits  to reduce risk of High BP:',
+      ]
+        .map((l) => '<li>' + l + '</li>')
+        .join('')}</ul>`,
+    ];
+    data.color = 'grey';
+  } else if (upper >= 90 && lower >= 60 && upper < 120 && lower <= 80) {
+    data.tips = ['Good work, stay healthy.'];
+    data.color = 'green';
+  } else if (upper >= 120 && upper <= 129) {
+    data.tips = [
+      'Your blood pressure measurement is Elevated.',
+      'If your measurements continue to rise, you will need to talk to your doctor about your rising blood pressure and how to monitor it.',
+      `Food habits  to reduce risk of High BP: <ul class="space-y-2 list-disc pl-2">${[
         'Reducing salt intake from food and snacks.',
         'Increasing consumption of fruits and vegetables.',
         'Reduction in  alcohol intake.',
-      ];
-      break;
-    case upper >= 130 && upper <= 139:
-      tip = [
-        'Your blood pressure measurement is Above the Desired Range. ',
-        'If your measurements continue to rise you may be at risk of developing hypertension.',
-        'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see if you need medication. ',
-        'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
-        'You can also talk to your doctor if you are required to monitor your blood pressure daily from home.  (*Link to BP page in education)',
-        'Food habits  to reduce risk of High BP:',
+      ]
+        .map((l) => '<li>' + l + '</li>')
+        .join('')}</ul>`,
+    ];
+    data.color = 'orange';
+  } else if (upper >= 130 && lower >= 80 && upper <= 139 && lower <= 89) {
+    data.tips = [
+      'Your blood pressure measurement is Above the Desired Range. ',
+      'If your measurements continue to rise you may be at risk of developing hypertension.',
+      'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see if you need medication. ',
+      'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
+      'You can also talk to your doctor if you are required to monitor your blood pressure daily from home.  (*Link to BP page in education)',
+      `Food habits  to reduce risk of High BP: <ul class="space-y-2 list-disc pl-2">${[
         'Reducing salt intake from food and snacks.',
         'Increasing consumption of fruits and vegetables.',
         'Reduction in  alcohol intake.',
-      ];
-      break;
-    case upper >= 140 && upper <= 159:
-      tip = [
-        'Your blood pressure measurement is High.',
-        'If your measurements continue to rise you may be at risk of developing hypertension.',
-        'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see which medication is best for you.',
-        'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
-        'You can also talk to your doctor if you are required to monitor your blood pressure daily from home.',
-        'Food habits  to reduce risk of High BP:',
+      ]
+        .map((l) => '<li>' + l + '</li>')
+        .join('')}</ul>`,
+    ];
+    data.color = 'red';
+  } else if (upper >= 140 && lower >= 90 && upper <= 159 && lower <= 119) {
+    data.tips = [
+      'Your blood pressure measurement is High.',
+      'If your measurements continue to rise you may be at risk of developing hypertension.',
+      'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see which medication is best for you.',
+      'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
+      'You can also talk to your doctor if you are required to monitor your blood pressure daily from home.',
+      `Food habits  to reduce risk of High BP: <ul class="space-y-2 list-disc pl-2">${[
         'Reducing salt intake from food and snacks.',
         'Increasing consumption of fruits and vegetables.',
         'Reduction in  alcohol intake.',
-      ];
-      break;
-    case upper >= 90 && upper <= 120 && lower > 80:
-      tip = [
-        'Your blood pressure measurement is High.',
-        'If your measurements continue to rise you may be at risk of developing hypertension.',
-        'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see which medication is best for you.',
-        'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
-        'You can also talk to your doctor if you are required to monitor your blood pressure daily from home.',
-        'Food habits  to reduce risk of High BP:',
+      ]
+        .map((l) => '<li>' + l + '</li>')
+        .join('')}</ul>`,
+    ];
+    data.color = 'red';
+  } else if (upper >= 160 && lower >= 120) {
+    data.tips = [
+      'Your blood pressure measurement is High.',
+      'If your measurements continue to rise you may be at risk of developing hypertension.',
+      'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see which medication is best for you.',
+      'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
+      'You can also talk to your doctor if you are required to monitor your blood pressure daily from home.',
+      `Food habits  to reduce risk of High BP: <ul class="space-y-2 list-disc pl-2">${[
         'Reducing salt intake from food and snacks.',
         'Increasing consumption of fruits and vegetables.',
-        'Reduction in  alcohol intake.',
-      ];
-      break;
-    case upper >= 90 && upper <= 120 && lower < 60:
-      tip = [
-        'Your blood pressure measurement is Lower than Desired Range.',
-        'You can also talk to your doctor if you are required to monitor your blood pressure daily from home. ',
-        'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see if you need medication. ',
-        'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
-        'Food habits for Low BP:',
-        'Increase consumption of fruits and vegetable (banana, apples',
-        'Increase consumption of foods rich Omega 3 (Salmon, Mackerel, etc.)',
-        'Increase consumption of Fiber foods (Oats, Beans, etc.)',
-        'Increase water consumption and a cup of caffeinated beverage.',
-        'Reduction in alcohol intake',
-      ];
-      break;
-    case upper >= 160:
-      tip = [
-        'Your blood pressure measurement is severely High.',
-        'If your measurements continue to rise you may be at risk of developing hypertension.',
-        'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see which medication is best for you.',
-        'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
-        'You can also talk to your doctor if you are required to monitor your blood pressure daily from home.',
-        'Food habits  to reduce risk of High BP:',
-        'Reducing salt intake from food and snacks.',
-        'Increasing consumption of fruits and vegetables.',
-        'Reduction in  alcohol intake.',
-      ];
-      break;
-    default:
-      tip = ['Invalid blood pressure range'];
-  }
-
-  if (tip.length == 1) return tip[0];
-
-  return `<ul class="space-y-5 list-disc pl-4">${tip
-    .map((t) => '<li>' + t + '</li>')
-    .join('')}</ul>`;
-}
-
-export function fetchCholesterolTips(unit, value) {
-  console.log(unit);
-  let tips = [];
-  if (String(unit).toLowerCase() === 'mmol/l') {
-    switch (true) {
-      case value < 5.2:
-        tips = ['Good work.'];
-        break;
-      case value >= 5.2 && value < 6.3:
-        tips = [
-          'Total cholesterol in your blood is Borderline High.',
-          'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
-          'Educate yourself on how to manage cholesterol.',
-        ];
-        break;
-      case value >= 6.3:
-        tips = [
-          'Total cholesterol in your blood is High.',
-          'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
-          'Educate yourself on how to manage cholesterol.',
-        ];
-        break;
-    }
+        'Reduction in alcohol intake.',
+      ]
+        .map((l) => '<li>' + l + '</li>')
+        .join('')}</ul>`,
+    ];
   } else {
-    switch (true) {
-      case value < 200:
-        tips = ['Good work.'];
-        break;
-      case value >= 200 && value < 240:
-        tips = [
-          'Total cholesterol in your blood is Borderline High.',
-          'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
-          'Educate yourself on how to manage cholesterol.',
-        ];
-        break;
-      case value >= 240:
-        tips = [
-          'Total cholesterol in your blood is High.',
-          'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
-          'Educate yourself on how to manage cholesterol.',
-        ];
-        break;
-    }
+    data.tips = [''];
+    data.color = 'grey';
   }
 
-  if (tips.length == 1) return tips[0];
+  if (data.tips.length == 1) return { tips: data.tips[0], color: data.color };
 
-  return `<ul class="space-y-5 list-disc pl-4">${tips
+  const tips = `<ul class="space-y-5 list-disc pl-4">${data.tips
     .map((t) => '<li>' + t + '</li>')
     .join('')}</ul>`;
+  return { color: data.color, tips };
 }
 
-export function fetchBMI(value) {
-  let tips = [];
+export function fetchCholesterolTips(
+  unit,
+  value
+): { color: string; tips: string } {
+  unit = String(unit).toLowerCase();
+  value = Number(value);
+  const data = { tips: [], color: '' };
+
+  if ((unit == 'mmol/l' && value < 5.2) || (unit == 'mg/dl' && value < 200)) {
+    data.tips = ['Good work.'];
+    data.color = 'green';
+  } else if (
+    (unit == 'mmol/l' && value >= 5.2 && value < 6.3) ||
+    (unit == 'mg/dl' && value >= 200 && value < 240)
+  ) {
+    data.tips = [
+      'Total cholesterol in your blood is above average.',
+      'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
+      'Educate yourself on how to manage cholesterol.',
+    ];
+    data.color = 'orange';
+  } else if (
+    (unit == 'mmol/l' && value >= 6.3) ||
+    (unit == 'mg/dl' && value >= 240)
+  ) {
+    data.tips = [
+      'Total cholesterol in your blood is High.',
+      'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
+      'Educate yourself on how to manage cholesterol.',
+    ];
+    data.color = 'red';
+  } else {
+    data.tips = [''];
+    data.color = '#fff';
+  }
+
+  if (data.tips.length == 1) return { tips: data.tips[0], color: data.color };
+
+  const tips = `<ul class="space-y-5 list-disc pl-4">${data.tips
+    .map((t) => '<li>' + t + '</li>')
+    .join('')}</ul>`;
+
+  return { tips, color: data.color };
+}
+
+export function fetchBMI(value): { tips: string; color: string } {
+  const data = { tips: [], color: '' };
   switch (true) {
     case value < 18.5:
-      tips = [
+      data.color = 'grey';
+      data.tips = [
         'Your BMI is Below Normal.',
         'This may suggest lack of sufficient nutrients in your diet.',
         'Change your food habits to make sure you are consuming enough calories and keep a healthy diet plan.',
       ];
       break;
     case value >= 18.5 && value <= 24.9:
-      tips = ['Good work.'];
+      data.color = 'green';
+      data.tips = ['Good work.'];
       break;
-    case value >= 25 && value < 30:
-      tips = [
+    case value > 24.9 && value < 30:
+      data.color = 'orange';
+      data.tips = [
         'Your BMI is of an Overweight Person.',
         'This is a risk factor for developing diabetes and other medical conditions.',
         'Change your eating habits and increase physical activity.',
@@ -285,7 +312,8 @@ export function fetchBMI(value) {
       ];
       break;
     case value >= 30:
-      tips = [
+      data.color = 'red';
+      data.tips = [
         'Your BMI is of an Obese Person.',
         'This is a risk factor for developing diabetes and other medical conditions.',
         'Change your eating habits and increase physical activity.',
@@ -294,11 +322,13 @@ export function fetchBMI(value) {
       break;
   }
 
-  if (tips.length == 1) return tips[0];
+  if (data.tips.length == 1) return { color: data.color, tips: data.tips[0] };
 
-  return `<ul class="space-y-5 list-disc pl-4">${tips
+  const tips = `<ul class="space-y-5 list-disc pl-4">${data.tips
     .map((t) => '<li>' + t + '</li>')
     .join('')}</ul>`;
+
+  return { tips, color: data.color };
 }
 
 export function checkHealthStatus(status) {
