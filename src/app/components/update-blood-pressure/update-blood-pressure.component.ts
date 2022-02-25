@@ -40,7 +40,10 @@ export class UpdateBloodPressureComponent implements OnInit {
       return;
     }
 
-    this.tip = fetchBloodPressureTips(this.pressure.upper, this.pressure.lower);
+    this.tip = fetchBloodPressureTips(
+      this.pressure.upper,
+      this.pressure.lower
+    ).tips;
   }
 
   scrollIntoView(el: Element) {

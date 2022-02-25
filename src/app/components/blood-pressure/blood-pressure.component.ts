@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { BloodPressureService } from 'src/app/services/blood-pressure/blood-pressure.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { fetchBloodPressureTips } from 'src/assets/scripts/misc';
 
 import { UpdateBloodPressureComponent } from '../update-blood-pressure/update-blood-pressure.component';
 import { ViewBloodPressureComponent } from '../view-blood-pressure/view-blood-pressure.component';
@@ -28,11 +29,14 @@ export class BloodPressureComponent implements OnInit {
     let sub = this.bloodPressureService.get().subscribe((data) => {
       this.allBloodPressure = data;
       this.bloodPressure = data.slice(-1)[0];
+
+      console.log(this.bloodPressure);
+
       this.color = this.bloodPressure
-        ? this.updateSugarColor(
+        ? fetchBloodPressureTips(
             this.bloodPressure.upper,
             this.bloodPressure.lower
-          )
+          ).color
         : 'gray';
     });
 

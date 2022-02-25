@@ -81,7 +81,7 @@ export class ViewBloodPressureComponent implements OnInit {
           new Date(datum.created_at),
           'dd mmm, yyyy-hh:MMtt'
         );
-        datum.tip = fetchBloodPressureTips(datum.upper, datum.lower);
+        datum.tip = fetchBloodPressureTips(datum.upper, datum.lower).tips;
         return datum;
       });
   }
