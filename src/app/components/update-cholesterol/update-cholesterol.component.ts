@@ -43,7 +43,7 @@ export class UpdateCholesterolComponent implements OnInit {
     this.tip = fetchCholesterolTips(
       this.cholesterol.unit,
       this.cholesterol.reading
-    );
+    ).tips;
   }
   save() {
     if (!this.cholesterol.unit || !this.cholesterol.reading)

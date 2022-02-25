@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { CholesterolService } from 'src/app/services/cholesterol/cholesterol.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { fetchCholesterolTips } from 'src/assets/scripts/misc';
 import { UpdateCholesterolComponent } from '../update-cholesterol/update-cholesterol.component';
 import { ViewCholesterolComponent } from '../view-cholesterol/view-cholesterol.component';
 
@@ -29,10 +30,11 @@ export class CholesterolComponent implements OnInit {
       this.cholesterol = data.slice(-1)[0];
       if (!this.cholesterol) return;
       this.cholesterol.reading = Number(this.cholesterol.reading).toFixed(2);
-      this.color = this.changeColor(
+
+      this.color = fetchCholesterolTips(
         this.cholesterol.unit,
         this.cholesterol.reading
-      );
+      ).color;
     });
 
     this.subs.push(sub);
@@ -44,36 +46,6 @@ export class CholesterolComponent implements OnInit {
         this.cholesterolService.update();
       });
     this.subs.push(sub);
-  }
-
-  changeColor(unit, value) {
-    if (String(unit).toLowerCase() === 'mmol/l') {
-      switch (true) {
-        case value === 0:
-          return '#fff';
-        case value < 5.2:
-          return 'green';
-        case value >= 5.2 && value < 6.3:
-          return 'orange';
-        case value >= 6.3:
-          return 'red';
-        default:
-          return '#fff';
-      }
-    }
-
-    switch (true) {
-      case value === '0':
-        return '#fff';
-      case value < 200:
-        return 'green';
-      case value >= 200 && value < 240:
-        return 'orange';
-      case value >= 240:
-        return 'red';
-      default:
-        return '#fff';
-    }
   }
 
   async view() {

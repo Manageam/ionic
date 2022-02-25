@@ -2,7 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { CholesterolService } from 'src/app/services/cholesterol/cholesterol.service';
 import dateFormat from 'dateformat';
-import { fetchBloodPressureTips } from 'src/assets/scripts/misc';
+import {
+  fetchBloodPressureTips,
+  fetchCholesterolTips,
+} from 'src/assets/scripts/misc';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { CalendarModalComponent } from '../calendar-modal/calendar-modal.component';
 import { ShareEmailComponent } from '../share-email/share-email.component';
@@ -50,7 +53,7 @@ export class ViewCholesterolComponent implements OnInit {
       )
       .map((d) => {
         d.date = dateFormat(new Date(d.created_at), 'dd mmm, yyyy-hh:MMtt');
-        d.tip = fetchBloodPressureTips(d.unit, d.reading);
+        d.tip = fetchCholesterolTips(d.unit, d.reading).tips;
         return d;
       });
   }

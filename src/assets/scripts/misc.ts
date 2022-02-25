@@ -246,56 +246,49 @@ export function fetchBloodPressureTips(upper, lower) {
     .join('')}</ul>`;
 }
 
-export function fetchCholesterolTips(unit, value) {
-  console.log(unit);
-  let tips = [];
-  if (String(unit).toLowerCase() === 'mmol/l') {
-    switch (true) {
-      case value < 5.2:
-        tips = ['Good work.'];
-        break;
-      case value >= 5.2 && value < 6.3:
-        tips = [
-          'Total cholesterol in your blood is Borderline High.',
-          'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
-          'Educate yourself on how to manage cholesterol.',
-        ];
-        break;
-      case value >= 6.3:
-        tips = [
-          'Total cholesterol in your blood is High.',
-          'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
-          'Educate yourself on how to manage cholesterol.',
-        ];
-        break;
-    }
+export function fetchCholesterolTips(
+  unit,
+  value
+): { color: string; tips: string } {
+  unit = String(unit).toLowerCase();
+  value = Number(value);
+  const data = { tips: [], color: '' };
+
+  if ((unit == 'mmol/l' && value < 5.2) || (unit == 'mg/dl' && value < 200)) {
+    data.tips = ['Good work.'];
+    data.color = 'green';
+  } else if (
+    (unit == 'mmol/l' && value >= 5.2 && value < 6.3) ||
+    (unit == 'mg/dl' && value >= 200 && value < 240)
+  ) {
+    data.tips = [
+      'Total cholesterol in your blood is above average.',
+      'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
+      'Educate yourself on how to manage cholesterol.',
+    ];
+    data.color = 'orange';
+  } else if (
+    (unit == 'mmol/l' && value >= 6.3) ||
+    (unit == 'mg/dl' && value >= 240)
+  ) {
+    data.tips = [
+      'Total cholesterol in your blood is High.',
+      'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
+      'Educate yourself on how to manage cholesterol.',
+    ];
+    data.color = 'red';
   } else {
-    switch (true) {
-      case value < 200:
-        tips = ['Good work.'];
-        break;
-      case value >= 200 && value < 240:
-        tips = [
-          'Total cholesterol in your blood is Borderline High.',
-          'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
-          'Educate yourself on how to manage cholesterol.',
-        ];
-        break;
-      case value >= 240:
-        tips = [
-          'Total cholesterol in your blood is High.',
-          'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
-          'Educate yourself on how to manage cholesterol.',
-        ];
-        break;
-    }
+    data.tips = [''];
+    data.color = '#fff';
   }
 
-  if (tips.length == 1) return tips[0];
+  if (data.tips.length == 1) return { tips: data.tips[0], color: data.color };
 
-  return `<ul class="space-y-5 list-disc pl-4">${tips
+  const tips = `<ul class="space-y-5 list-disc pl-4">${data.tips
     .map((t) => '<li>' + t + '</li>')
     .join('')}</ul>`;
+
+  return { tips, color: data.color };
 }
 
 export function fetchBMI(value): { tips: string; color: string } {
