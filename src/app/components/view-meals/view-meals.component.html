@@ -35,7 +35,9 @@
                 w-52
                 border-8
                 {{
-                calInfo ? 'border-' + calInfo.color + '-300' : 'border-gray-200'
+                calInfo
+                  ? 'border-' + calInfo?.color + '-300'
+                  : 'border-gray-200'
               }}
                 flex
                 items-center
@@ -172,7 +174,9 @@
                     items-center
                     justify-center
                     rounded-full
-                    bg-{{ item.info.color }}-100 text-{{ item.info.color }}-900
+                    bg-{{ item.info?.color }}-100 text-{{
+                    item.info?.color
+                  }}-900
                     mr-1
                   "
                   >{{ item.foods.length }}</span
@@ -197,10 +201,10 @@
                 </p>
                 <p
                   class="py-1 text-sm rounded-full px-4 bg-{{
-                    item.info.color
-                  }}-100 text-{{ item.info.color }}-900"
+                    item.info?.color
+                  }}-100 text-{{ item.info?.color }}-900"
                 >
-                  {{ item.info.state }}
+                  {{ item.info?.state }}
                 </p>
               </div>
             </div>
