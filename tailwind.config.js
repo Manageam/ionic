@@ -19,6 +19,10 @@ module.exports = {
         accent: "#012547",
         accentBlue: "#058ED3",
         paleBg: "#EEF3FC",
+        orange: {
+          100: "hsl(39deg 100% 80%)",
+          900: "hsl(39deg 100% 50%)",
+        },
       },
     },
   },

@@ -380,7 +380,7 @@ export function calorieCounter(value, type) {
       case value >= 500 && value < 600:
         return {
           state: 'Fair',
-          color: 'orange',
+          color: 'yellow',
           percentage: calculateDiabeticPercentage(value),
         };
       case value > 600:
@@ -403,7 +403,7 @@ export function calorieCounter(value, type) {
       case value >= 500 && value < 550:
         return {
           state: 'Fair',
-          color: 'orange',
+          color: 'yellow',
           percentage: calculateDiabeticPercentage(value),
         };
       case value > 550:
@@ -415,7 +415,7 @@ export function calorieCounter(value, type) {
     }
   }
 
-  if (type == 'snack') {
+  if (type == 'snack' || type == 'snacks') {
     switch (true) {
       case value < 150:
         return {
@@ -426,7 +426,7 @@ export function calorieCounter(value, type) {
       case value >= 150 && value < 200:
         return {
           state: 'Fair',
-          color: 'orange',
+          color: 'yellow',
           percentage: calculateDiabeticPercentage(value),
         };
       case value > 200:
