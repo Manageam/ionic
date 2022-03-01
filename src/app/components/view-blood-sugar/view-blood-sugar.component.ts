@@ -54,7 +54,7 @@ export class ViewBloodSugarComponent implements OnInit {
         datum.tip = fetchBloodSugarTips({
           ...datum,
           value: datum.reading,
-        });
+        }).tips;
         return datum;
       });
   }

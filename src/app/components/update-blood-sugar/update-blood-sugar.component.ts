@@ -46,7 +46,7 @@ export class UpdateBloodSugarComponent implements OnInit {
     this.tip = fetchBloodSugarTips({
       ...this.bloodSugar,
       value: this.bloodSugar.reading,
-    });
+    }).tips;
   }
 
   save() {

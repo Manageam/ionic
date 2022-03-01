@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { BloodSugarService } from 'src/app/services/blood-sugar/blood-sugar.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { fetchBloodSugarTips } from 'src/assets/scripts/misc';
 import { UpdateBloodSugarComponent } from '../update-blood-sugar/update-blood-sugar.component';
 import { ViewBloodSugarComponent } from '../view-blood-sugar/view-blood-sugar.component';
 
@@ -41,65 +42,9 @@ export class BloodSugarComponent implements OnInit {
       if (this.bloodSugar)
         this.bloodSugar.reading = Number(this.bloodSugar.reading).toFixed(2);
       this.color = this.bloodSugar
-        ? this.updateSugarColor(
-            this.bloodSugar.unit,
-            this.bloodSugar.reading,
-            this.bloodSugar.time
-          )
+        ? fetchBloodSugarTips(this.bloodSugar).color
         : 'gray';
     });
-  }
-
-  updateSugarColor(unit, value, time) {
-    if (unit === 'mmol/L') {
-      if (time === 'after') {
-        switch (true) {
-          case value != 0:
-            return 'white';
-          case value < 4.4:
-            return 'orange';
-          case value >= 4.4 && value < 10:
-            return 'green';
-          default:
-            return 'red';
-        }
-      }
-
-      switch (true) {
-        case value != 0:
-          return 'white';
-        case value < 4.4:
-          return 'orange';
-        case value >= 4.4 && value <= 7.2:
-          return 'green';
-        default:
-          return 'red';
-      }
-    } else {
-      if (time === 'after') {
-        switch (true) {
-          case value != 0:
-            return 'white';
-          case value < 80:
-            return 'orange';
-          case value >= 80 && value < 180:
-            return 'green';
-          default:
-            return 'red';
-        }
-      }
-
-      switch (true) {
-        case !value:
-          return 'white';
-        case value < 80:
-          return 'orange';
-        case value >= 80 && value <= 130:
-          return 'green';
-        default:
-          return 'red';
-      }
-    }
   }
 
   async view() {
