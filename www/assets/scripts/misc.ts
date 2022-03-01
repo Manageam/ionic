@@ -260,7 +260,7 @@ export function fetchCholesterolTips(
     data.tips = [
       'Total cholesterol in your blood is above average.',
       'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
-      'Educate yourself on how to manage cholesterol.',
+      'Educate yourself on how to manage cholesterol <a href="/education" class="text-blue-500">here.</a>',
     ];
     data.color = 'orange';
   } else if (
@@ -270,7 +270,7 @@ export function fetchCholesterolTips(
     data.tips = [
       'Total cholesterol in your blood is High.',
       'Talk to your doctor on how to reduce it. Start by making lifestyle changes and maintain a healthy diet.',
-      'Educate yourself on how to manage cholesterol.',
+      'Educate yourself on how to manage cholesterol  <a href="/education" class="text-blue-500">here.</a>',
     ];
     data.color = 'red';
   } else {
