@@ -46,7 +46,10 @@
 
       <ion-item onclick="scrollIntoView(this)">
         <ion-label class="block font-calibre w-full" position="stacked"
-          >Blood glucose ({{ bloodSugar.unit }})</ion-label
+          >Blood glucose
+          <span *ngIf="bloodSugar.unit"
+            >({{ bloodSugar.unit }})</span
+          ></ion-label
         >
         <ion-input
           placeholder="Enter blood sugar level"

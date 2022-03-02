@@ -28,7 +28,10 @@
       </ion-item>
       <ion-item>
         <ion-label class="block font-calibre w-full" position="stacked"
-          >Height({{ this.bmi.unit == "kg/m" ? "M" : "Inch" }})</ion-label
+          >Height
+          <span *ngIf="this.bmi.unit"
+            >({{ this.bmi.unit == "kg/m" ? "M" : "Inch" }})</span
+          ></ion-label
         >
         <ion-input
           placeholder="Enter height"
@@ -39,9 +42,12 @@
         ></ion-input>
       </ion-item>
 
-      <ion-item *ngIf="bmi.height" onclick="scrollIntoView(this)">
+      <ion-item onclick="scrollIntoView(this)">
         <ion-label class="block font-calibre w-full" position="stacked"
-          >Weight({{ this.bmi.unit == "kg/m" ? "Kg" : "Pounds" }})</ion-label
+          >Weight
+          <span *ngIf="this.bmi.unit"
+            >({{ this.bmi.unit == "kg/m" ? "Kg" : "Pounds" }})</span
+          ></ion-label
         >
         <ion-input
           type="number"
@@ -54,7 +60,8 @@
 
       <ion-item>
         <ion-label class="block font-calibre w-full" position="stacked"
-          >BMI({{ this.bmi.unit }})</ion-label
+          >BMI
+          <span *ngIf="this.bmi.unit">({{ this.bmi.unit }})</span></ion-label
         >
         <ion-input
           type="number"

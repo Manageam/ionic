@@ -28,7 +28,10 @@
       </ion-item>
       <ion-item onclick="scrollIntoView(this)">
         <ion-label class="block font-calibre w-full" position="stacked"
-          >Cholesterol level ({{ cholesterol.unit }})</ion-label
+          >Cholesterol level
+          <span *ngIf="cholesterol.unit"
+            >({{ cholesterol.unit }})</span
+          ></ion-label
         >
         <ion-input
           placeholder="Enter total cholesterol reading"
