@@ -171,8 +171,6 @@ export function fetchBloodPressureTips(
     color: '',
   };
 
-  console.log(upper, lower);
-
   if (upper < 90) {
     data.tips = [
       'Your blood pressure measurement is Lower than Desired Range.',

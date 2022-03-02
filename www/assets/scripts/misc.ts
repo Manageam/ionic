@@ -87,55 +87,79 @@ export function fetchTip(hba1c): {
   }
 }
 
-export function fetchBloodSugarTips(bloodSugar) {
-  let tip = [];
-  if (bloodSugar.unit.toLowerCase() === 'mmol/l') {
+export function fetchBloodSugarTips(bloodSugar): {
+  tips: string;
+  color: string;
+} {
+  const unit = bloodSugar.unit.toLowerCase();
+  const reading = bloodSugar.reading_time;
+  const value = Number(bloodSugar.reading);
+  let data = { tips: [], color: '' };
+
+  if (reading == 'after') {
     switch (true) {
-      case bloodSugar.value < 4.4:
-        tip = [
-          'Your blood sugar is Lower than Desired Level.',
-          'Please eat or drink a moderate quantity of fast acting carbohydrate such as glucose tablets, sweets, sugary fizzy drinks or fruit juice to bring your sugar level to desired level.',
-          'A blood test should be taken after 15-20 minutes to check whether blood sugar is now within desired level.',
-          'If your reading is always LOW, talk to your doctor about your medication(s).',
-        ];
+      case (unit == 'mmol/l' && value < 4.4) || (unit == 'mg/dl' && value < 80):
+        data = generateLevels(1);
         break;
-      case bloodSugar.value >= 4.4 && bloodSugar.value <= 7.2:
-        tip = ['Good Work'];
+      case (unit == 'mmol/l' && value >= 4.4 && value <= 7.2) ||
+        (unit == 'mg/dl' && value >= 80 && value <= 130):
+        data = generateLevels(2);
         break;
-      case bloodSugar.value > 7.2:
-        tip = [
-          'Your blood sugar is Higher than Desired Level.',
-          'You should aim to bring your blood sugar down to less than 130mg/dl.',
-          'If your number remains high, talk to your doctor about your medications and make sure you are following recommended lifestyle changes.',
-        ];
+      case (unit == 'mmol/l' && value > 7.2) ||
+        (unit == 'mg/dl' && value > 130):
+        data = generateLevels(3);
     }
   } else {
     switch (true) {
-      case bloodSugar.value < 80:
-        tip = [
-          'Your blood sugar is Lower than Desired Level.',
-          'Please eat or drink a moderate quantity of fast acting carbohydrate such as glucose tablets, sweets, sugary fizzy drinks or fruit juice to bring your sugar level to desired level.',
-          'A blood test should be taken after 15-20 minutes to check whether blood sugar is now within desired level.',
-          'If your reading is always LOW, talk to your doctor about your medication(s).',
-        ];
+      case (unit == 'mmol/l' && value < 4.4) || (unit == 'mg/dl' && value < 80):
+        data = generateLevels(1);
         break;
-      case bloodSugar.value >= 80 && bloodSugar.value <= 130:
-        tip = ['Good Work'];
+      case (unit == 'mmol/l' && value >= 4.4 && value <= 10.0) ||
+        (unit == 'mg/dl' && value >= 80 && value <= 180):
+        data = generateLevels(2);
         break;
-      case bloodSugar.value > 130:
-        tip = [
-          'Your blood sugar is Higher than Desired Level.',
-          'You should aim to bring your blood sugar down to less than 130mg/dl.',
-          'If your number remains high, talk to your doctor about your medications and make sure you are following recommended lifestyle changes.',
-        ];
+      case (unit == 'mmol/l' && value > 10) || (unit == 'mg/dl' && value > 180):
+        data = generateLevels(3);
     }
   }
 
-  if (tip.length == 1) return tip[0];
+  if (data.tips.length == 1) return { tips: data.tips[0], color: data.color };
 
-  return `<ul class="space-y-5 list-disc pl-4">${tip
+  const tips = `<ul class="space-y-5 list-disc pl-4">${data.tips
     .map((t) => '<li>' + t + '</li>')
     .join('')}</ul>`;
+  return { tips, color: data.color };
+
+  function generateLevels(level) {
+    switch (level) {
+      case 1:
+        return {
+          tips: [
+            'Your blood sugar is Lower than Desired Level.',
+            'Please eat or drink a moderate quantity of fast acting carbohydrate such as glucose tablets, sweets, sugary fizzy drinks or fruit juice to bring your sugar level to desired level.',
+            'A blood test should be taken after 15-20 minutes to check whether blood sugar is now within desired level.',
+            'If your reading is always LOW, talk to your doctor about your medication(s).',
+          ],
+          color: 'orange',
+        };
+
+      case 2:
+        return {
+          tips: ['Good Work'],
+          color: 'green',
+        };
+
+      case 3:
+        return {
+          tips: [
+            `You should aim to bring your blood sugar down to less than 130mg/dl or than 7.2 mmol/L`,
+            'You should aim to bring your blood sugar down to less than 130mg/dl.',
+            'If your number remains high, talk to your doctor about your medications and make sure you are following recommended lifestyle changes.',
+          ],
+          color: 'red',
+        };
+    }
+  }
 }
 
 export function fetchBloodPressureTips(
@@ -380,7 +404,7 @@ export function calorieCounter(value, type) {
       case value >= 500 && value < 600:
         return {
           state: 'Fair',
-          color: 'orange',
+          color: 'yellow',
           percentage: calculateDiabeticPercentage(value),
         };
       case value > 600:
@@ -403,7 +427,7 @@ export function calorieCounter(value, type) {
       case value >= 500 && value < 550:
         return {
           state: 'Fair',
-          color: 'orange',
+          color: 'yellow',
           percentage: calculateDiabeticPercentage(value),
         };
       case value > 550:
@@ -415,7 +439,7 @@ export function calorieCounter(value, type) {
     }
   }
 
-  if (type == 'snack') {
+  if (type == 'snack' || type == 'snacks') {
     switch (true) {
       case value < 150:
         return {
@@ -426,7 +450,7 @@ export function calorieCounter(value, type) {
       case value >= 150 && value < 200:
         return {
           state: 'Fair',
-          color: 'orange',
+          color: 'yellow',
           percentage: calculateDiabeticPercentage(value),
         };
       case value > 200:

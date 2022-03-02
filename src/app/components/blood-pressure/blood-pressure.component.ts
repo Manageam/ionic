@@ -30,8 +30,6 @@ export class BloodPressureComponent implements OnInit {
       this.allBloodPressure = data;
       this.bloodPressure = data.slice(-1)[0];
 
-      console.log(this.bloodPressure);
-
       this.color = this.bloodPressure
         ? fetchBloodPressureTips(
             this.bloodPressure.upper,
