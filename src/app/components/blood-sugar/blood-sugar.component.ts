@@ -40,7 +40,7 @@ export class BloodSugarComponent implements OnInit {
       this.allBloodSugar = data;
       this.bloodSugar = data.slice(-1)[0];
       if (this.bloodSugar)
-        this.bloodSugar.reading = Number(this.bloodSugar.reading).toFixed(2);
+        this.bloodSugar.reading = Number(this.bloodSugar.reading);
       this.color = this.bloodSugar
         ? fetchBloodSugarTips(this.bloodSugar).color
         : 'gray';
