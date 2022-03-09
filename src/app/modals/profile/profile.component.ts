@@ -79,7 +79,6 @@ export class ProfileComponent implements OnInit {
     );
     if (role)
       this.userService.updateDetails({ notification }).subscribe((data) => {
-        console.log(data);
         this.webSocket.emit('profile:update', {
           user_id: this.user.id,
         });
