@@ -76,7 +76,7 @@ export class ViewBmiComponent implements OnInit {
         this.healthService
           .share({ email: data, ...date, type: 'body_mass' })
           .subscribe((data: string) => {
-            return this.global.alert('Share record', data, [
+            return this.global.alert('Shared record', data, [
               { role: true, text: 'OK' },
             ]);
           });

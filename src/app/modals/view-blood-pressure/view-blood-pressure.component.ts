@@ -59,7 +59,7 @@ export class ViewBloodPressureComponent implements OnInit {
         this.healthService
           .share({ email: data, ...date, type: 'blood_pressure' })
           .subscribe((data: string) => {
-            return this.global.alert('Share record', data, [
+            return this.global.alert('Shared record', data, [
               { role: true, text: 'OK' },
             ]);
           });

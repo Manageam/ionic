@@ -4,8 +4,8 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
 import { CholesterolService } from 'src/app/services/cholesterol/cholesterol.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { fetchCholesterolTips } from 'src/assets/scripts/misc';
-import { UpdateCholesterolComponent } from '../update-cholesterol/update-cholesterol.component';
-import { ViewCholesterolComponent } from '../view-cholesterol/view-cholesterol.component';
+import { UpdateCholesterolComponent } from '../../modals/update-cholesterol/update-cholesterol.component';
+import { ViewCholesterolComponent } from '../../modals/view-cholesterol/view-cholesterol.component';
 
 @Component({
   selector: 'app-cholesterol',

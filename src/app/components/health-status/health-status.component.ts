@@ -4,8 +4,8 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
 import { HealthService } from 'src/app/services/health/health.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { checkHealthStatus } from 'src/assets/scripts/misc';
-import { UpdateHealthStatusComponent } from '../update-health-status/update-health-status.component';
-import { ViewHealthStatusComponent } from '../view-health-status/view-health-status.component';
+import { UpdateHealthStatusComponent } from 'src/app/modals/update-health-status/update-health-status.component';
+import { ViewHealthStatusComponent } from '../../modals/view-health-status/view-health-status.component';
 
 @Component({
   selector: 'app-health-status',

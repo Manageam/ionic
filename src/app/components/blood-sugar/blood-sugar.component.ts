@@ -4,8 +4,8 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
 import { BloodSugarService } from 'src/app/services/blood-sugar/blood-sugar.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { fetchBloodSugarTips } from 'src/assets/scripts/misc';
-import { UpdateBloodSugarComponent } from '../update-blood-sugar/update-blood-sugar.component';
-import { ViewBloodSugarComponent } from '../view-blood-sugar/view-blood-sugar.component';
+import { UpdateBloodSugarComponent } from '../../modals/update-blood-sugar/update-blood-sugar.component';
+import { ViewBloodSugarComponent } from '../../modals/view-blood-sugar/view-blood-sugar.component';
 
 @Component({
   selector: 'app-blood-sugar',

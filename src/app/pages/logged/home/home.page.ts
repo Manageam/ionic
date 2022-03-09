@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { SearchComponent } from 'src/app/components/search/search.component';
+import { SearchComponent } from 'src/app/modals/search/search.component';
 import { FcmService } from 'src/app/services/fcm/fcm.service';
 import { UserService } from 'src/app/services/user/user.service';
 

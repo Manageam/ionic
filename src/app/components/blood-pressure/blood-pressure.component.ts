@@ -5,8 +5,8 @@ import { BloodPressureService } from 'src/app/services/blood-pressure/blood-pres
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { fetchBloodPressureTips } from 'src/assets/scripts/misc';
 
-import { UpdateBloodPressureComponent } from '../update-blood-pressure/update-blood-pressure.component';
-import { ViewBloodPressureComponent } from '../view-blood-pressure/view-blood-pressure.component';
+import { UpdateBloodPressureComponent } from '../../modals/update-blood-pressure/update-blood-pressure.component';
+import { ViewBloodPressureComponent } from '../../modals/view-blood-pressure/view-blood-pressure.component';
 
 @Component({
   selector: 'app-blood-pressure',

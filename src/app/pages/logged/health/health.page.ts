@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { AddMedicationComponent } from 'src/app/components/add-medication/add-medication.component';
-import { AllMedicationsComponent } from 'src/app/components/all-medications/all-medications.component';
+import { AddMedicationComponent } from 'src/app/modals/add-medication/add-medication.component';
+import { AllMedicationsComponent } from 'src/app/modals/all-medications/all-medications.component';
 import { MedicationsService } from 'src/app/services/medications/medications.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';

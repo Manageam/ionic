@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { MenuController, ModalController } from '@ionic/angular';
-import { LocationsComponent } from 'src/app/components/locations/locations.component';
-import { ViewMealsComponent } from 'src/app/components/view-meals/view-meals.component';
+import { LocationsComponent } from 'src/app/modals/locations/locations.component';
+import { ViewMealsComponent } from 'src/app/modals/view-meals/view-meals.component';
 
-import { LanguageSettingsComponent } from 'src/app/components/language-settings/language-settings.component';
+import { LanguageSettingsComponent } from 'src/app/modals/language-settings/language-settings.component';
 import { EducationService } from 'src/app/services/education/education.service';
 import { UserService } from 'src/app/services/user/user.service';
 

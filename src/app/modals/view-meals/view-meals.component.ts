@@ -6,7 +6,7 @@ import {
 } from '@ionic/angular';
 import { MealService } from 'src/app/services/meal/meal.service';
 import { calorieCounter } from 'src/assets/scripts/misc';
-import { MealsListComponent } from '../meals-list/meals-list.component';
+import { MealsListComponent } from 'src/app/modals/meals-list/meals-list.component';
 import { ViewMealComponent } from '../view-meal/view-meal.component';
 import dateFormat from 'dateformat';
 import { GlobalService } from 'src/app/services/global/global.service';

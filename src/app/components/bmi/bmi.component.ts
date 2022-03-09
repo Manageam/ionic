@@ -4,8 +4,8 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
 import { BmiService } from 'src/app/services/bmi/bmi.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { fetchBMI } from 'src/assets/scripts/misc';
-import { UpdateBmiComponent } from '../update-bmi/update-bmi.component';
-import { ViewBmiComponent } from '../view-bmi/view-bmi.component';
+import { UpdateBmiComponent } from '../../modals/update-bmi/update-bmi.component';
+import { ViewBmiComponent } from '../../modals/view-bmi/view-bmi.component';
 
 @Component({
   selector: 'app-bmi',

@@ -4,8 +4,8 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
 import { HealthService } from 'src/app/services/health/health.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { fetchTip } from 'src/assets/scripts/misc';
-import { UpdateHba1cComponent } from '../update-hba1c/update-hba1c.component';
-import { ViewHba1cComponent } from '../view-hba1c/view-hba1c.component';
+import { UpdateHba1cComponent } from 'src/app/modals/update-hba1c/update-hba1c.component';
+import { ViewHba1cComponent } from 'src/app/modals/view-hba1c/view-hba1c.component';
 
 @Component({
   selector: 'app-hba1c',

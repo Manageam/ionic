@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { ReminderService } from 'src/app/services/reminder/reminder.service';
-import { AddReminderComponent } from 'src/app/components/add-reminder/add-reminder.component';
+import { AddReminderComponent } from 'src/app/modals/add-reminder/add-reminder.component';
 import dateFormat from 'dateformat';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { ForgotPasswordComponent } from 'src/app/components/forgot-password/forgot-password.component';
+import { ForgotPasswordComponent } from 'src/app/modals/forgot-password/forgot-password.component';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
