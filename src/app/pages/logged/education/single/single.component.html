@@ -1,14 +1,6 @@
 <ion-app>
   <ion-header
-    class="
-      p-4
-      flex
-      items-center
-      justify-end justify-items-end
-      ion-no-border
-      font-geomanist font-bold
-      text-xl
-    "
+    class="p-4 flex items-center justify-end justify-items-end ion-no-border font-geomanist font-bold text-xl"
   >
     <span class="text-accentBlue font-bold" (click)="modalController.dismiss()"
       >Close</span
@@ -19,7 +11,10 @@
       <span>Topic</span>
       <h2 class="text-2xl font-bold">{{ data.topic }}</h2>
     </div>
-    <div class="p-4 content content" [innerHtml]="data.description"></div>
+    <div
+      class="p-4 content content text-xl"
+      [innerHtml]="data.description"
+    ></div>
     <div class="flex justify-between p-4">
       <p
         class="py-2 px-6 text-accentBlue rounded-xl flex items-center"
@@ -29,15 +24,7 @@
         <span class="text-xl">Bookmark</span>
       </p>
       <p
-        class="
-          py-2
-          px-14
-          text-accentBlue
-          rounded-xl
-          flex
-          items-center
-          border border-accentBlue
-        "
+        class="py-2 px-14 text-accentBlue rounded-xl flex items-center border border-accentBlue"
         (click)="share()"
       >
         <span class="text-xl">Share</span>
