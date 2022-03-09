@@ -18,7 +18,7 @@ export class ShareEmailComponent implements OnInit {
 
   save() {
     if (!this.email)
-      return this.global.alert('Share Medication', 'Email is required!', [
+      return this.global.alert('Share Record', 'Email is required!', [
         { role: true, text: 'OK' },
       ]);
 

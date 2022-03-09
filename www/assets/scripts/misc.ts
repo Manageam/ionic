@@ -101,12 +101,12 @@ export function fetchBloodSugarTips(bloodSugar): {
       case (unit == 'mmol/l' && value < 4.4) || (unit == 'mg/dl' && value < 80):
         data = generateLevels(1);
         break;
-      case (unit == 'mmol/l' && value >= 4.4 && value <= 7.2) ||
-        (unit == 'mg/dl' && value >= 80 && value <= 130):
+      case (unit == 'mmol/l' && value >= 4.4 && value < 10.0) ||
+        (unit == 'mg/dl' && value >= 80 && value <= 180):
         data = generateLevels(2);
         break;
-      case (unit == 'mmol/l' && value > 7.2) ||
-        (unit == 'mg/dl' && value > 130):
+      case (unit == 'mmol/l' && value >= 10) ||
+        (unit == 'mg/dl' && value > 180):
         data = generateLevels(3);
     }
   } else {
@@ -114,11 +114,12 @@ export function fetchBloodSugarTips(bloodSugar): {
       case (unit == 'mmol/l' && value < 4.4) || (unit == 'mg/dl' && value < 80):
         data = generateLevels(1);
         break;
-      case (unit == 'mmol/l' && value >= 4.4 && value <= 10.0) ||
-        (unit == 'mg/dl' && value >= 80 && value <= 180):
+      case (unit == 'mmol/l' && value >= 4.4 && value <= 7.2) ||
+        (unit == 'mg/dl' && value >= 80 && value <= 130):
         data = generateLevels(2);
         break;
-      case (unit == 'mmol/l' && value > 10) || (unit == 'mg/dl' && value > 180):
+      case (unit == 'mmol/l' && value > 7.2) ||
+        (unit == 'mg/dl' && value > 130):
         data = generateLevels(3);
     }
   }
@@ -152,6 +153,7 @@ export function fetchBloodSugarTips(bloodSugar): {
       case 3:
         return {
           tips: [
+            'Your blood sugar is Higher than Desired Level.',
             `You should aim to bring your blood sugar down to less than 130mg/dl or than 7.2 mmol/L`,
             'You should aim to bring your blood sugar down to less than 130mg/dl.',
             'If your number remains high, talk to your doctor about your medications and make sure you are following recommended lifestyle changes.',
