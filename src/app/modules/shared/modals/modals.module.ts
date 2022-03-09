@@ -34,6 +34,8 @@ import { BookmarkComponent } from 'src/app/modals/bookmark/bookmark.component';
 import { ComponentsModule } from '../components/components.module';
 import { ExerciseComponent } from 'src/app/modals/exercise/exercise.component';
 import { ViewMealsComponent } from 'src/app/modals/view-meals/view-meals.component';
+import { DiabetesWalkComponent } from 'src/app/modals/diabetes-walk/diabetes-walk.component';
+import { HealthProfileComponent } from 'src/app/pages/auth/signup/health-profile/health-profile.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { ViewMealsComponent } from 'src/app/modals/view-meals/view-meals.compone
     BookmarksComponent,
     BookmarkComponent,
     ExerciseComponent,
+    DiabetesWalkComponent,
+    HealthProfileComponent,
   ],
   imports: [
     CommonModule,
