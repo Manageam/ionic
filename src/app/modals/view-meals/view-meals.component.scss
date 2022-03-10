@@ -5,6 +5,8 @@
   background-size: cover;
   background-color: hsl(0deg, 0%, 90%);
   background-attachment: fixed;
+  max-height: 100%;
+  overflow-y: scroll;
 }
 
 .footer-bg {
