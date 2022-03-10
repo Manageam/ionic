@@ -45,7 +45,7 @@ export class EducationService {
     localStorage.categories = fcategories
       ? fcategories
       : JSON.stringify(categories);
-
+    this.categories.next(JSON.parse(localStorage.categories));
     return JSON.parse(localStorage.categories);
   }
 

@@ -78,7 +78,7 @@ export class ViewBloodSugarComponent implements OnInit {
         this.healthService
           .share({ email: data, ...date, type: 'blood_sugar' })
           .subscribe((data: string) => {
-            return this.global.alert('Shared record', data, [
+            return this.global.alert('Shared Record', data, [
               { role: true, text: 'OK' },
             ]);
           });

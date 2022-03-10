@@ -103,7 +103,7 @@ export class ViewHba1cComponent implements OnInit {
         this.healthService
           .share({ email: data, ...date, type: 'hba1c' })
           .subscribe((data: string) => {
-            return this.global.alert('Shared record', data, [
+            return this.global.alert('Shared Record', data, [
               { role: true, text: 'OK' },
             ]);
           });

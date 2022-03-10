@@ -77,7 +77,7 @@ export class ViewCholesterolComponent implements OnInit {
         this.healthService
           .share({ email: data, ...date, type: 'body_mass' })
           .subscribe((data: string) => {
-            return this.global.alert('Shared record', data, [
+            return this.global.alert('Shared Record', data, [
               { role: true, text: 'OK' },
             ]);
           });
