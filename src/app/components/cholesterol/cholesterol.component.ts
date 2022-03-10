@@ -29,7 +29,7 @@ export class CholesterolComponent implements OnInit {
       this.allCholesterol = data;
       this.cholesterol = data.slice(-1)[0];
       if (!this.cholesterol) return;
-      this.cholesterol.reading = Number(this.cholesterol.reading).toFixed(2);
+      this.cholesterol.reading = Number(this.cholesterol.reading);
 
       this.color = fetchCholesterolTips(
         this.cholesterol.unit,

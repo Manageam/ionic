@@ -102,11 +102,11 @@ export function fetchBloodSugarTips(bloodSugar): {
         data = generateLevels(1);
         break;
       case (unit == 'mmol/l' && value >= 4.4 && value < 10.0) ||
-        (unit == 'mg/dl' && value >= 80 && value <= 180):
+        (unit == 'mg/dl' && value >= 80 && value < 180):
         data = generateLevels(2);
         break;
       case (unit == 'mmol/l' && value >= 10) ||
-        (unit == 'mg/dl' && value > 180):
+        (unit == 'mg/dl' && value >= 180):
         data = generateLevels(3);
     }
   } else {

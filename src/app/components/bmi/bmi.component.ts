@@ -30,7 +30,7 @@ export class BmiComponent implements OnInit {
       this.bmi = data.slice(-1)[0];
       if (!this.bmi) return;
       this.color = fetchBMI(this.bmi.mass).color;
-      this.bmi.mass = Number(this.bmi.mass).toFixed(2);
+      this.bmi.mass = Number(this.bmi.mass).toFixed(1);
     });
     this.subs.push(sub);
 

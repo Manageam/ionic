@@ -51,7 +51,7 @@ export class UpdateBmiComponent implements OnInit {
       return;
     }
 
-    this.bmi.mass = this.bmi.mass.toFixed(2);
+    this.bmi.mass = this.bmi.mass.toFixed(1);
     this.tip = fetchBMI(this.bmi.mass).tips;
   }
 
