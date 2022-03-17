@@ -7,10 +7,10 @@
     <p class="font-bold text-2xl mt-6">
       {{ bloodPressure?.upper || 0 }}/{{ bloodPressure?.lower || 0 }}
     </p>
-    <span class="text-sm mb-4 inline-block">mmhg</span>
+    <span class="text-sm mb-1 inline-block">mmhg</span>
     <p class="font-bold">Blood Pressure</p>
   </div>
-  <p class="border border-accent py-2 mt-4 rounded-xl" (click)="record($event)">
+  <p class="border border-accent py-2 mt-1 rounded-xl" (click)="record($event)">
     Record
   </p>
 </div>

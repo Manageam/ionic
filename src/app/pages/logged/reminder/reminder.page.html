@@ -39,7 +39,7 @@
       <ul>
         <li *ngFor="let item of reminders" class="bg-white p-4 mb-2">
           <div class="flex justify-between items-center" (click)="toggle(item)">
-            <div class="text-lg">
+            <div>
               <p>{{ item.title }}</p>
               <p class="text-gray-500 text-sm">{{ item.date }}</p>
             </div>

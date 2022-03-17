@@ -9,7 +9,7 @@
       }}{{ hba1c?.unit == "percentage" || hba1c?.unit == "percent" ? "%" : "" }}
     </p>
     <span
-      class="text-sm mb-4 inline-block {{
+      class="text-sm mb-1 inline-block {{
         hba1c?.unit == 'percentage' || hba1c?.unit == 'percent'
           ? 'text-white'
           : ''
@@ -19,7 +19,7 @@
     <p class="font-bold">HbA1C</p>
   </div>
   <p
-    class="border border-accentBlue py-2 mt-4 text-accentBlue rounded-xl"
+    class="border border-accentBlue py-2 mt-1 text-accentBlue rounded-xl"
     (click)="record($event)"
   >
     Record

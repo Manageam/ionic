@@ -1,5 +1,5 @@
 <div class="text-gray-900 pale-bg-default min-h-full">
-  <p class="p-4 text-lg">Suggested for you</p>
+  <p class="p-4 text-lg pb-2 text-accent font-bold">Suggested for you</p>
   <div
     class="flex justify-between bg-white px-4 py-6 items-center"
     (click)="viewEducation()"
@@ -8,7 +8,7 @@
     <ion-icon name="chevron-forward" class="text-2xl"></ion-icon>
   </div>
 
-  <p class="mt-4 p-4 text-xl font-semibold">Categories</p>
+  <p class="mt-4 p-4 pb-2 text-xl font-semibold">Categories</p>
   <ul class="px-4 text-gray-900 pb-4">
     <li
       class="p-4 flex {{category.bg}} justify-between"
@@ -17,7 +17,7 @@
     >
       <div class="">
         <h3 class="text-xl font-bold mb-2">{{category.category}}</h3>
-        <p class="text-lg">{{category.subtitle}}</p>
+        <p>{{category.subtitle}}</p>
       </div>
       <div class="flex items-center">
         <span class="text-lg inline-block mr-1">{{category.count}}</span>

@@ -2,7 +2,7 @@
   <ion-header class="ion-no-border p-4 font-geomanist">
     <div class="flex" (click)="modalController.dismiss()">
       <ion-icon name="arrow-back" class="text-2xl"></ion-icon>
-      <p class="ml-4 block text-xl">Meal guide</p>
+      <p class="ml-4 block">Meal guide</p>
     </div>
     <ion-segment
       (ionChange)="segmentChanged($event)"
@@ -214,7 +214,7 @@
     </div>
   </ion-content>
   <ion-footer class="ion-no-border footer-bg" *ngIf="segment == 'plan'">
-    <div class="grid grid-cols-4 p-4 uppercase">
+    <div class="grid grid-cols-4 p-4 {{ filter ? 'pb-2' : '' }} uppercase">
       <div
         class="grid text-center justify-items-center"
         (click)="filterMeals('breakfast')"
@@ -248,11 +248,7 @@
             />
           </g>
         </svg>
-        <p
-          class="mt-1 {{
-            filter == 'breakfast' ? 'text-teal' : 'text-transparent'
-          }}"
-        >
+        <p class="mt-1 text-teal text-sm" *ngIf="filter == 'breakfast'">
           breakfast
         </p>
       </div>
@@ -292,13 +288,7 @@
             />
           </g>
         </svg>
-        <p
-          class="mt-1 {{
-            filter == 'lunch' ? 'text-teal' : 'text-transparent'
-          }}"
-        >
-          Lunch
-        </p>
+        <p class="mt-1 text-teal text-sm" *ngIf="filter == 'lunch'">Lunch</p>
       </div>
       <div
         class="grid text-center justify-items-center"
@@ -317,9 +307,7 @@
             class="dinner meal_icon"
           />
         </svg>
-        <p class="mt-1 {{ filter == 'dinner' ? 'text-teal' : 'hidden' }}">
-          dinner
-        </p>
+        <p class="mt-1 text-teal text-sm" *ngIf="filter == 'dinner'">dinner</p>
       </div>
       <div
         class="grid text-center justify-items-center"
@@ -366,13 +354,7 @@
             />
           </g>
         </svg>
-        <p
-          class="mt-1  {{
-            filter == 'snack' ? 'text-teal' : 'text-transparent'
-          }}"
-        >
-          snack
-        </p>
+        <p class="mt-1 text-teal text-sm" *ngIf="filter == 'snack'">snack</p>
       </div>
     </div>
   </ion-footer>
