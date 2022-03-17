@@ -168,17 +168,12 @@ export function fetchBloodPressureTips(
   upper,
   lower
 ): { tips: string; color: string } {
-  const data = {
-    tips: [],
-    color: '',
-  };
-
-  if (upper < 90) {
-    data.tips = [
+  const advice = {
+    grey: [
       'Your blood pressure measurement is Lower than Desired Range.',
       'You can also talk to your doctor if you are required to monitor your blood pressure daily from home. ',
-      'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see if you need medication. ',
-      'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
+      'If you are not on any medication to increase your blood pressure, talk to your doctor soonest to see if you need medication. ',
+      'If you are already on treatment to increase your blood pressure, continue the medication given to you by your doctor for better results.',
       `Food habits for Low BP: <ul class="space-y-2 list-disc pl-2"> ${[
         'Increase consumption of fruits and vegetable (banana, apples',
         'Increase consumption of foods rich Omega 3 (Salmon, Mackerel, etc.)',
@@ -188,14 +183,10 @@ export function fetchBloodPressureTips(
       ]
         .map((l) => '<li>' + l + '</li>')
         .join('')}</ul>`,
-    ];
-    data.color = 'grey';
-  } else if (upper >= 90 && lower >= 60 && upper < 120 && lower <= 80) {
-    data.tips = ['Good work, stay healthy.'];
-    data.color = 'green';
-  } else if (upper >= 120 && upper <= 129) {
-    data.tips = [
-      'Your blood pressure measurement is Elevated.',
+    ],
+    green: ['Good work, stay healthy.'],
+    yellow: [
+      'Your blood pressure level is Elevated.',
       'If your measurements continue to rise, you will need to talk to your doctor about your rising blood pressure and how to monitor it.',
       `Food habits  to reduce risk of High BP: <ul class="space-y-2 list-disc pl-2">${[
         'Reducing salt intake from food and snacks.',
@@ -204,11 +195,9 @@ export function fetchBloodPressureTips(
       ]
         .map((l) => '<li>' + l + '</li>')
         .join('')}</ul>`,
-    ];
-    data.color = 'orange';
-  } else if (upper >= 130 && lower >= 80 && upper <= 139 && lower <= 89) {
-    data.tips = [
-      'Your blood pressure measurement is Above the Desired Range. ',
+    ],
+    orange: [
+      'Your blood pressure level is Above the Desired Range. ',
       'If your measurements continue to rise you may be at risk of developing hypertension.',
       'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see if you need medication. ',
       'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
@@ -220,11 +209,9 @@ export function fetchBloodPressureTips(
       ]
         .map((l) => '<li>' + l + '</li>')
         .join('')}</ul>`,
-    ];
-    data.color = 'red';
-  } else if (upper >= 140 && lower >= 90 && upper <= 159 && lower <= 119) {
-    data.tips = [
-      'Your blood pressure measurement is High.',
+    ],
+    red: [
+      'Your blood pressure level is High.',
       'If your measurements continue to rise you may be at risk of developing hypertension.',
       'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see which medication is best for you.',
       'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
@@ -236,11 +223,9 @@ export function fetchBloodPressureTips(
       ]
         .map((l) => '<li>' + l + '</li>')
         .join('')}</ul>`,
-    ];
-    data.color = 'red';
-  } else if (upper >= 160 && lower >= 120) {
-    data.tips = [
-      'Your blood pressure measurement is High.',
+    ],
+    high_red: [
+      'Your blood pressure is Severely High.',
       'If your measurements continue to rise you may be at risk of developing hypertension.',
       'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see which medication is best for you.',
       'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
@@ -252,10 +237,66 @@ export function fetchBloodPressureTips(
       ]
         .map((l) => '<li>' + l + '</li>')
         .join('')}</ul>`,
-    ];
+    ],
+  };
+  const data = {
+    tips: [],
+    color: '',
+  };
+
+  if (upper < 90 || lower < 60) {
+    data.tips = advice.grey;
+    data.color = 'gray';
+  } else if (upper >= 80 && upper < 121) {
+    if (lower >= 81 && lower < 90) {
+      data.tips = advice.orange;
+      data.color = 'orange';
+    } else if (lower >= 90 && lower < 120) {
+      data.tips = advice.red;
+      data.color = 'red';
+    } else if (lower >= 120) {
+      data.tips = advice.high_red;
+      data.color = 'red';
+    } else {
+      data.tips = advice.green;
+      data.color = 'green';
+    }
+  } else if (upper >= 121 && upper < 130) {
+    if (lower >= 81 && lower < 90) {
+      data.tips = advice.orange;
+      data.color = 'orange';
+    } else if (lower >= 90 && lower < 120) {
+      data.tips = advice.red;
+      data.color = 'red';
+    } else if (lower >= 120) {
+      data.tips = advice.high_red;
+      data.color = 'red';
+    } else {
+      data.tips = advice.yellow;
+      data.color = 'yellow';
+    }
+  } else if (upper >= 130 && upper < 140) {
+    if (lower >= 90 && lower < 120) {
+      data.tips = advice.red;
+      data.color = 'red';
+    } else if (lower >= 120) {
+      data.tips = advice.high_red;
+      data.color = 'red';
+    } else {
+      data.tips = advice.orange;
+      data.color = 'orange';
+    }
+  } else if (upper >= 140 && upper < 160) {
+    if (lower >= 120) {
+      data.tips = advice.high_red;
+      data.color = 'red';
+    } else {
+      data.tips = advice.red;
+      data.color = 'red';
+    }
   } else {
-    data.tips = [''];
-    data.color = 'grey';
+    data.color = 'red';
+    data.tips = advice.high_red;
   }
 
   if (data.tips.length == 1) return { tips: data.tips[0], color: data.color };

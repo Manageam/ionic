@@ -20,7 +20,7 @@ export class ExpandableComponent implements AfterViewInit {
     this.renderer.setStyle(
       this.expandWrapper.nativeElement,
       'max-height',
-      this.expandHeight
+      '1000px'
     );
   }
 }

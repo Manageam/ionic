@@ -33,7 +33,7 @@
                 class="text-xl {{ item == expand ? 'rotate-90' : '' }}"
               ></ion-icon>
             </div>
-            <app-expandable [expanded]="item == expand" expandHeight="500px">
+            <app-expandable [expanded]="item == expand" expandHeight="1000px">
               <div class="bg-white p-4 text-gray-600 space-y-4">
                 <ng-container *ngIf="item.used_for">
                   <p>

@@ -35,7 +35,7 @@ export class UpdateBloodPressureComponent implements OnInit {
   }
 
   updateTip() {
-    if (this.pressure.upper == '' || this.pressure.lower == '') {
+    if (!this.pressure.upper || !this.pressure.lower) {
       this.tip = '';
       return;
     }

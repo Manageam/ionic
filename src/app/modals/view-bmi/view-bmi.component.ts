@@ -53,6 +53,7 @@ export class ViewBmiComponent implements OnInit {
           'dd mmm, yyyy-hh:MMtt'
         );
         datum.tip = fetchBMI(datum.mass).tips;
+        datum.mass = Number(datum.mass).toFixed(1);
         return datum;
       });
   }
