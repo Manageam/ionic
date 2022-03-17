@@ -64,7 +64,7 @@ export class BloodSugarComponent implements OnInit {
       componentProps: {
         data: this.allBloodSugar,
       },
-      cssClass: 'modal-80',
+      // cssClass: 'modal-80',
     });
     await modal.present();
   }

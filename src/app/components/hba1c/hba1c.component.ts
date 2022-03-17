@@ -60,7 +60,7 @@ export class Hba1cComponent implements OnInit {
     e?.stopPropagation();
     const modal = await this.modalController.create({
       component: UpdateHba1cComponent,
-      cssClass: 'modal-80',
+      // cssClass: 'modal-80',
     });
     await modal.present();
   }

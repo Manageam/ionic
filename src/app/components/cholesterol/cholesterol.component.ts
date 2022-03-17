@@ -62,7 +62,7 @@ export class CholesterolComponent implements OnInit {
     e?.stopPropagation();
     const modal = await this.modalController.create({
       component: UpdateCholesterolComponent,
-      cssClass: 'modal-80',
+      // cssClass: 'modal-80',
     });
     await modal.present();
   }
