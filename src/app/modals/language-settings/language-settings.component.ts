@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, Platform } from '@ionic/angular';
+import { AlertController, ModalController, Platform } from '@ionic/angular';
 import { EducationService } from 'src/app/services/education/education.service';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { UserService } from 'src/app/services/user/user.service';
@@ -21,7 +21,8 @@ export class LanguageSettingsComponent implements OnInit {
     private platform: Platform,
     private educationService: EducationService,
     private userService: UserService,
-    private webSocket: WebsocketService
+    private webSocket: WebsocketService,
+    private alertCtr: AlertController
   ) {}
 
   ngOnInit() {
@@ -70,6 +71,9 @@ export class LanguageSettingsComponent implements OnInit {
           'Your language prefrence has been changed successfully!',
           ['OK']
         );
+        setTimeout(() => {
+          this.alertCtr.dismiss();
+        }, 1000);
 
         this.modalController.dismiss();
       });

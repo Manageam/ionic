@@ -1,15 +1,6 @@
 <ion-app class="text-gray-900">
   <ion-header
-    class="
-      bg-blue-100
-      px-4
-      py-6
-      ion-no-border
-      text-xl
-      flex
-      justify-between
-      items-center
-    "
+    class="bg-blue-100 px-4 py-6 ion-no-border text-xl flex justify-between items-center"
   >
     <p class="font-bold">New Medication</p>
     <ion-icon
@@ -28,6 +19,7 @@
           value="prescribed"
           class="w-full"
           [(ngModel)]="medication.type"
+          interface="popover"
         >
           <ion-select-option value="prescribed">Prescribed</ion-select-option>
           <ion-select-option value="self">Self</ion-select-option>
@@ -79,18 +71,7 @@
 
       <span
         (click)="save()"
-        class="
-          w-full
-          bg-accentBlue
-          p-4
-          font-semibold
-          text-center
-          block
-          text-white
-          uppercase
-          rounded-xl
-          mt-10
-        "
+        class="w-full bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl mt-10 bottom-4 sticky"
         >Done</span
       >
     </div>
