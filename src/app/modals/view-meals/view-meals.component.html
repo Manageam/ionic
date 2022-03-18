@@ -1,5 +1,5 @@
 <ion-app class="meal">
-  <ion-header class="ion-no-border p-4 font-geomanist">
+  <ion-header class="ion-no-border p-4 font-geomanist text-accent">
     <div class="flex" (click)="modalController.dismiss()">
       <ion-icon name="arrow-back" class="text-2xl"></ion-icon>
       <p class="ml-4 block">Meal guide</p>
@@ -19,7 +19,7 @@
     </ion-segment>
   </ion-header>
   <ion-content>
-    <div class="min-h-full p-4 meal pb-10">
+    <div class="min-h-full p-4 pt-0 meal pb-10">
       <div class="mt-1">
         <div *ngIf="segment == 'current'" class="text-center">
           <div
@@ -145,7 +145,7 @@
 
           <div class="mt-8 px-4 py-3 flex justify-center" *ngIf="!food">
             <p
-              class="bg-white py-4 px-14 flex items-center rounded-3xl font-bold uppercase shadow-sm"
+              class="py-3 px-10 flex items-center rounded-3xl font-bold uppercase shadow-sm bg-accentBlue text-white"
               (click)="addMeal()"
             >
               Add meal

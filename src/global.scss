@@ -243,3 +243,20 @@ ion-app {
 html {
   font-size: 18px;
 }
+
+.android-scroll-bar ::-webkit-scrollbar {
+  width: 5px;
+}
+
+.android-scroll-bar ::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.android-scroll-bar ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(169, 169, 169);
+}
+
+.android-scroll-bar ::-webkit-scrollbar-thumb:window-inactive {
+  background: rgb(128, 128, 128);
+}
