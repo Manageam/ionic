@@ -247,7 +247,7 @@ export function fetchBloodPressureTips(
     color: '',
   };
 
-  if (upper < 80 || lower < 60) {
+  if (upper < 90 || lower < 60) {
     data.tips = advice.grey;
     data.color = 'gray';
   } else if (upper >= 80 && upper < 121) {

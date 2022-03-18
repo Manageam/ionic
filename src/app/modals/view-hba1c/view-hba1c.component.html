@@ -76,7 +76,7 @@
               <img src="/assets/img/status.svg" class="inline-block h-16" />
               <div class="ml-4">
                 <h3 class="font-bold text-2xl mb-1">
-                  Your levels are
+                  Your levels is
                   {{
                     color == "green"
                       ? "Very Good"
@@ -84,6 +84,8 @@
                       ? "at Risk"
                       : color == "red"
                       ? "Critical"
+                      : color == "gray"
+                      ? "Low"
                       : "Not recorded"
                   }}
                 </h3>

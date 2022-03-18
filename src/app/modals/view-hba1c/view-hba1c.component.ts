@@ -18,7 +18,8 @@ export class ViewHba1cComponent implements OnInit {
   segment = 'current';
   expand = null;
   color = 'gray';
-  hba1c: { unit; number; date } = null;
+  hba1c: any = null;
+  // hba1c: { unit; number; date } = null;
   allHba1c = {};
   allHba1cKeys = [];
   status = '';
@@ -77,6 +78,14 @@ export class ViewHba1cComponent implements OnInit {
           new Date(z.created_at).getTime() - new Date(a.created_at).getTime()
       );
     }
+
+    this.hba1c.date = dateFormat(
+      new Date(this.hba1c.created_at),
+      'dd mmm, yyyy-hh:MMtt'
+    );
+    this.hba1c.color = fetchTip(this.hba1c).color;
+
+    console.log(this.hba1c);
 
     this.allHba1c = hba1cGroups;
     this.allHba1cKeys = Object.keys(hba1cGroups).sort(

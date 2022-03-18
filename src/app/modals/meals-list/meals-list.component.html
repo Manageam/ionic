@@ -144,26 +144,30 @@
             >Last</span
           >
         </li>
-        <li class="bg-gray-200 grid grid-cols-2">
-          <p class="border-r border-gray-700 px-4 py-3 flex justify-between">
-            Total
-            <span
-              *ngIf="totalCals > 0"
-              class="text-{{ calInfo?.color }}-900 bg-{{
-                calInfo?.color
-              }}-100 inline-block px-3 pt-1 rounded-full"
-              >{{ calInfo?.state }}</span
-            >
-          </p>
-          <p class="self-end px-4 py-3 text-right">{{ totalCals }}kcal</p>
-        </li>
+        <div class="bottom-0 sticky">
+          <li class="bg-gray-200 grid grid-cols-2">
+            <p class="border-r border-gray-700 px-4 py-3 flex justify-between">
+              Total
+              <span
+                *ngIf="totalCals > 0"
+                class="text-{{ calInfo?.color }}-900 bg-{{
+                  calInfo?.color
+                }}-100 inline-block px-3 pt-1 rounded-full"
+                >{{ calInfo?.state }}</span
+              >
+            </p>
+            <p class="self-end px-4 py-3 text-right">{{ totalCals }}kcal</p>
+          </li>
 
-        <p
-          (click)="save()"
-          class="bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl m-4"
-        >
-          Done
-        </p>
+          <div class="p-4 bottom-0 bg-white sticky rounded-b-lg">
+            <p
+              (click)="save()"
+              class="bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl"
+            >
+              Done
+            </p>
+          </div>
+        </div>
       </ul>
     </div>
   </ion-content>

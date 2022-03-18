@@ -54,29 +54,27 @@ export class LanguageSettingsComponent implements OnInit {
         { text: 'Cancel', role: false },
       ]
     );
-    if (role) return this.save();
+    if (role) return this.save(this.langId);
     this.modalController.dismiss();
   }
 
-  async save() {
-    this.userService
-      .updateDetails({ language_id: this.langId })
-      .subscribe((data) => {
-        this.webSocket.emit('profile:update', {
-          user_id: this.user.id,
-        });
-
-        this.global.alert(
-          'Language Settings',
-          'Your language prefrence has been changed successfully!',
-          ['OK']
-        );
-        setTimeout(() => {
-          this.alertCtr.dismiss();
-        }, 1000);
-
-        this.modalController.dismiss();
+  async save(language_id) {
+    this.userService.updateDetails({ language_id }).subscribe((data) => {
+      this.webSocket.emit('profile:update', {
+        user_id: this.user.id,
       });
+
+      this.global.alert(
+        'Language Settings',
+        'Your language prefrence has been changed successfully!',
+        ['OK']
+      );
+      setTimeout(() => {
+        this.alertCtr.dismiss();
+      }, 1000);
+
+      this.modalController.dismiss();
+    });
   }
 
   ngOnDestroy() {

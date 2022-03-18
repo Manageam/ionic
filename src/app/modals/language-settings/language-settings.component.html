@@ -13,7 +13,7 @@
     <div class="p-4 space-y-4">
       <ion-list>
         <ion-radio-group [value]="langId" [(ngModel)]="langId">
-          <ion-item *ngFor="let lang of languages" (click)="save()">
+          <ion-item *ngFor="let lang of languages" (click)="save(lang.id)">
             <ion-label>{{ lang.title }}</ion-label>
             <ion-radio slot="start" [value]="lang.id"></ion-radio>
           </ion-item>
