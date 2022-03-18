@@ -48,9 +48,10 @@ export class SignupPage implements OnInit {
       this.UserService.getDetails().subscribe((data) => {
         this.UserService.setDetails(data);
       });
-      this.UserService.updateDetails(data).subscribe(async () => {
-        await this.router.navigate(['/']);
-      });
+      if (data)
+        this.UserService.updateDetails(data).subscribe(async () => {
+          await this.router.navigate(['/']);
+        });
     });
   }
 }
