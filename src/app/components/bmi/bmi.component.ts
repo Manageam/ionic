@@ -43,6 +43,21 @@ export class BmiComponent implements OnInit {
     this.subs.push(sub);
   }
 
+  calculateBMI(bmi) {
+    const unit = bmi.unit;
+    const weight = Number(bmi.weight);
+    const height = Number(bmi.height);
+
+    if (unit === 'pounds/inch') {
+      let calc = weight / Math.pow(height, 2);
+      bmi.mass = calc * 703;
+    } else bmi.mass = weight / Math.pow(height, 2);
+
+    bmi.mass = bmi.mass.toFixed(1);
+
+    return bmi;
+  }
+
   updateColor(value) {
     switch (true) {
       case value === 0 || value === '0':
