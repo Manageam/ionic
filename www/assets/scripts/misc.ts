@@ -33,7 +33,7 @@ export function fetchTip(hba1c): {
         'Your blood test shows that your A1C level is good. keep eating healthy.',
     };
   } else if (
-    (hba1c.unit == 'mmol/mol' && hba1c.number >= 39 && hba1c.number <= 46) ||
+    (hba1c.unit == 'mmol/mol' && hba1c.number >= 39 && hba1c.number <= 47) ||
     (hba1c.unit == 'percentage' && hba1c.number >= 5.7 && hba1c.number <= 6.4)
   ) {
     return {
@@ -204,7 +204,7 @@ export function fetchBloodPressureTips(
       'If your measurements continue to rise you may be at risk of developing hypertension.',
       'If you are not on any medication to reduce your blood pressure, talk to your doctor soonest to see if you need medication. ',
       'If you are already on treatment to reduce your blood pressure, continue the medication given to you by your doctor for better results.',
-      'You can also talk to your doctor if you are required to monitor your blood pressure daily from home.  (*Link to BP page in education)',
+      'You can also talk to your doctor if you are required to monitor your blood pressure daily from home.',
       `Food habits  to reduce risk of High BP: <ul class="space-y-2 list-disc pl-2">${[
         'Reducing salt intake from food and snacks.',
         'Increasing consumption of fruits and vegetables.',
