@@ -99,28 +99,28 @@ export function fetchBloodSugarTips(bloodSugar): {
   if (reading == 'after') {
     switch (true) {
       case (unit == 'mmol/l' && value < 4.4) || (unit == 'mg/dl' && value < 80):
-        data = generateLevels(1);
+        data = generateLevels(1, reading);
         break;
       case (unit == 'mmol/l' && value >= 4.4 && value < 10.0) ||
         (unit == 'mg/dl' && value >= 80 && value < 180):
-        data = generateLevels(2);
+        data = generateLevels(2, reading);
         break;
       case (unit == 'mmol/l' && value >= 10) ||
         (unit == 'mg/dl' && value >= 180):
-        data = generateLevels(3);
+        data = generateLevels(3, reading);
     }
   } else {
     switch (true) {
       case (unit == 'mmol/l' && value < 4.4) || (unit == 'mg/dl' && value < 80):
-        data = generateLevels(1);
+        data = generateLevels(1, reading);
         break;
       case (unit == 'mmol/l' && value >= 4.4 && value <= 7.2) ||
         (unit == 'mg/dl' && value >= 80 && value <= 130):
-        data = generateLevels(2);
+        data = generateLevels(2, reading);
         break;
       case (unit == 'mmol/l' && value > 7.2) ||
         (unit == 'mg/dl' && value > 130):
-        data = generateLevels(3);
+        data = generateLevels(3, reading);
     }
   }
 
@@ -131,7 +131,7 @@ export function fetchBloodSugarTips(bloodSugar): {
     .join('')}</ul>`;
   return { tips, color: data.color };
 
-  function generateLevels(level) {
+  function generateLevels(level, time = 'before') {
     switch (level) {
       case 1:
         return {
@@ -154,8 +154,11 @@ export function fetchBloodSugarTips(bloodSugar): {
         return {
           tips: [
             'Your blood sugar is Higher than Desired Level.',
-            `You should aim to bring your blood sugar down to less than 130mg/dl or than 7.2 mmol/L`,
-            'You should aim to bring your blood sugar down to less than 130mg/dl.',
+            `You should aim to bring your blood sugar down to less than ${
+              time == 'before'
+                ? '130mg/dl or than 7.2 mmol/L'
+                : '180mg/dl or than 10.0 mmol/L'
+            }`,
             'If your number remains high, talk to your doctor about your medications and make sure you are following recommended lifestyle changes.',
           ],
           color: 'red',

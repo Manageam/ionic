@@ -260,3 +260,20 @@ html {
 .android-scroll-bar ::-webkit-scrollbar-thumb:window-inactive {
   background: rgb(128, 128, 128);
 }
+
+.popover-content.sc-ion-popover-md {
+  width: 90%;
+  padding: 15px;
+  padding-right: 0px;
+}
+
+.sc-ion-select-popover-h ion-list.sc-ion-select-popover {
+  width: 90%;
+  padding: 15px;
+  padding-right: 0px;
+}
+
+.popover-content.sc-ion-popover-ios {
+  width: 90%;
+  left: 20px !important;
+}

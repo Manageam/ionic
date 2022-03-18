@@ -21,6 +21,7 @@
           (ngModelChange)="updateTip()"
           class="w-full"
           placeholder="Choose unit of measurement"
+          interface="popover"
         >
           <ion-select-option value="mmol/l">mmol/L</ion-select-option>
           <ion-select-option value="mg/dl">mg/dl</ion-select-option>
@@ -36,6 +37,7 @@
           class="w-full"
           placeholder="Choose reading time"
           (ngModelChange)="updateTip()"
+          interface="popover"
         >
           <ion-select-option value="before">Before meal</ion-select-option>
           <ion-select-option value="after">
