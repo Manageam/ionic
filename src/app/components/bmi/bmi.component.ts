@@ -26,9 +26,16 @@ export class BmiComponent implements OnInit {
 
   ngOnInit() {
     let sub = this.bmiService.get().subscribe((data) => {
+      const user = this.auth.userDetails();
+      // calculate bmi from the current user information
+      const bmi = this.calculateBMI({
+        unit: user.unit || 'kg/m',
+        weight: user.body_weight,
+        height: user.height,
+      });
       this.allBmi = data;
       this.bmi = data.slice(-1)[0];
-      if (!this.bmi) return;
+      if (!this.bmi) this.bmi = bmi;
       this.color = fetchBMI(this.bmi.mass).color;
       this.bmi.mass = Number(this.bmi.mass).toFixed(1);
     });

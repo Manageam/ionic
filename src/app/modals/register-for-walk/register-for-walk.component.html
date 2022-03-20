@@ -1,15 +1,6 @@
 <ion-app class="text-gray-900">
   <ion-header
-    class="
-      bg-blue-100
-      px-4
-      py-6
-      ion-no-border
-      text-xl
-      flex
-      justify-between
-      items-center
-    "
+    class="bg-blue-100 px-4 py-6 ion-no-border text-xl flex justify-between items-center"
   >
     <p class="font-bold">Register to attend this event</p>
     <ion-icon
@@ -41,6 +32,7 @@
           [(ngModel)]="walk.location"
           class="w-full"
           placeholder="Choose a location for the walk"
+          interface="popover"
         >
           <ion-select-option value="lagos">Lagos</ion-select-option>
           <ion-select-option value="akwa-ibom">Akwa Ibom</ion-select-option>
@@ -54,18 +46,7 @@
 
       <span
         (click)="save()"
-        class="
-          w-full
-          bg-accentBlue
-          p-4
-          font-semibold
-          text-center
-          block
-          text-white
-          uppercase
-          rounded-xl
-          mt-10
-        "
+        class="w-full bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl mt-10"
         >Done</span
       >
     </div>

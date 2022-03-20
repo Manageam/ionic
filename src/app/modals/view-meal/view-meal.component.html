@@ -14,6 +14,7 @@
             bg-{{ meal.info.color }}-100 text-{{ meal.info.color }}-900
             mr-1
           "
+          style="font-family: serif"
           >{{ meal.foods.length }}</span
         >
         <span class="text-blue-400">Total foods</span>
@@ -39,6 +40,7 @@
           class="py-1 text-sm rounded-full px-4 bg-{{
             meal.info.color
           }}-100 text-{{ meal.info.color }}-900"
+          style="font-family: serif"
         >
           {{ meal.info.state }}
         </p>
@@ -93,13 +95,13 @@
       <div class="grid grid-cols-2 gap-10 mt-4">
         <p
           (click)="remove()"
-          class="bg-red-600 text-white uppercase rounded-2xl text-center py-4 font-semibold px-6"
+          class="bg-red-600 text-white uppercase rounded-2xl text-center py-3 font-semibold px-6"
         >
           Remove
         </p>
         <p
           (click)="modalController.dismiss(false)"
-          class="bg-white text-gray-800 uppercase rounded-2xl text-center py-4 font-semibold px-6"
+          class="bg-white text-gray-800 uppercase rounded-2xl text-center py-3 font-semibold px-6"
         >
           close
         </p>

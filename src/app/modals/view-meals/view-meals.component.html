@@ -125,19 +125,19 @@
             </div>
             <div class="grid grid-cols-2 gap-x-2">
               <span
-                class="bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl m-4"
+                class="bg-accentBlue p-4 py-3 font-semibold text-center block text-white uppercase rounded-xl m-4"
                 (click)="save()"
                 >Save</span
               >
               <span
-                class="text-accentBlue p-4 font-semibold text-center block bg-white border border-accentBlue uppercase rounded-xl m-4"
+                class="text-accentBlue p-4 py-3 font-semibold text-center block bg-white border border-accentBlue uppercase rounded-xl m-4"
                 (click)="change()"
                 >Change</span
               >
             </div>
             <p
               (click)="clear()"
-              class="text-white m-4 mt-2 bg-red-600 rounded-lg p-4 uppercase font-bold"
+              class="text-white m-4 mt-2 bg-red-600 rounded-lg p-3 uppercase font-bold"
             >
               Cancel
             </p>
@@ -148,16 +148,34 @@
               class="py-3 px-10 flex items-center rounded-3xl font-bold uppercase shadow-sm bg-accentBlue text-white"
               (click)="addMeal()"
             >
-              Add meal
+              <ion-icon
+                name="add"
+                class="text-white text-2xl mr-2 relative"
+                style="top: -3px"
+              ></ion-icon>
+              <span class="text-white">Add meal</span>
             </p>
           </div>
         </div>
-        <p
-          *ngIf="allMeals.length == 0 && segment == 'plan'"
-          class="p-4 text-gray-500 text-center"
+        <div
+          *ngIf="
+            (allMeals.length == 0 || filteredMeals.length == 0) &&
+            segment == 'plan'
+          "
+          class="p-4"
+          style="
+            background-color: #fffaf0;
+            border-left: 4px solid #0d78c7 !important;
+          "
         >
-          You have not added any meal plan yet
-        </p>
+          <p class="font-geomanist font-semibold" style="color: #012448">
+            No {{ type }} meal plan
+          </p>
+          <p class="font-geomanist" style="color: #7d8ca6">
+            You have not added any plan {{ allMeals.length }}
+            {{ allMeals.length !== 0 ? "for this meal type" : "" }} yet
+          </p>
+        </div>
         <ul *ngIf="segment == 'plan'">
           <li
             *ngFor="let item of filteredMeals"
@@ -179,15 +197,19 @@
                   }}-900
                     mr-1
                   "
+                  style="font-family: serif"
                   >{{ item.foods.length }}</span
                 >
-                <span class="text-blue-400">Total foods</span>
+                <span class="text-blue-400 font-geomanist">Total foods</span>
               </p>
               <p class="flex items-center">
                 <span class="uppercase block mr-3 text-gray-500">{{
                   item.date
                 }}</span>
-                <ion-icon name="chevron-forward" class="text-xl"></ion-icon>
+                <ion-icon
+                  name="chevron-forward"
+                  style="position: relative; top: -4px"
+                ></ion-icon>
               </p>
             </div>
             <div class="mt-10 text-gray-900">
@@ -203,6 +225,7 @@
                   class="py-1 text-sm rounded-full px-4 bg-{{
                     item.info?.color
                   }}-100 text-{{ item.info?.color }}-900"
+                  style="font-family: serif"
                 >
                   {{ item.info?.state }}
                 </p>
@@ -213,10 +236,13 @@
       </div>
     </div>
   </ion-content>
-  <ion-footer class="ion-no-border footer-bg" *ngIf="segment == 'plan'">
-    <div class="grid grid-cols-4 p-4 {{ filter ? 'pb-2' : '' }} uppercase">
+  <ion-footer
+    class="ion-no-border footer-bg rounded-t-xl"
+    *ngIf="segment == 'plan'"
+  >
+    <div class="grid grid-cols-4 px-4 {{ filter ? 'pb-2' : '' }} uppercase">
       <div
-        class="grid text-center justify-items-center"
+        class="grid text-center justify-items-center py-4 relative"
         (click)="filterMeals('breakfast')"
       >
         <svg
@@ -248,12 +274,16 @@
             />
           </g>
         </svg>
-        <p class="mt-1 text-teal text-sm" *ngIf="filter == 'breakfast'">
+        <p
+          class="mt-1 text-teal text-sm absolute"
+          style="bottom: -7px"
+          *ngIf="filter == 'breakfast'"
+        >
           breakfast
         </p>
       </div>
       <div
-        class="grid text-center justify-items-center"
+        class="grid text-center justify-items-center py-4 relative"
         (click)="filterMeals('lunch')"
       >
         <svg
@@ -288,10 +318,16 @@
             />
           </g>
         </svg>
-        <p class="mt-1 text-teal text-sm" *ngIf="filter == 'lunch'">Lunch</p>
+        <p
+          class="mt-1 text-teal text-sm absolute"
+          style="bottom: -7px"
+          *ngIf="filter == 'lunch'"
+        >
+          Lunch
+        </p>
       </div>
       <div
-        class="grid text-center justify-items-center"
+        class="grid text-center justify-items-center py-4 relative"
         (click)="filterMeals('dinner')"
       >
         <svg
@@ -307,10 +343,16 @@
             class="dinner meal_icon"
           />
         </svg>
-        <p class="mt-1 text-teal text-sm" *ngIf="filter == 'dinner'">dinner</p>
+        <p
+          class="mt-1 text-teal text-sm absolute"
+          style="bottom: -7px"
+          *ngIf="filter == 'dinner'"
+        >
+          dinner
+        </p>
       </div>
       <div
-        class="grid text-center justify-items-center"
+        class="grid text-center justify-items-center py-4 relative"
         (click)="filterMeals('snack')"
       >
         <svg
@@ -354,7 +396,13 @@
             />
           </g>
         </svg>
-        <p class="mt-1 text-teal text-sm" *ngIf="filter == 'snack'">snack</p>
+        <p
+          class="mt-1 text-teal text-sm absolute"
+          style="bottom: -7px"
+          *ngIf="filter == 'snack'"
+        >
+          snack
+        </p>
       </div>
     </div>
   </ion-footer>

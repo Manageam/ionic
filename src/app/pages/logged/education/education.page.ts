@@ -23,7 +23,7 @@ export class EducationPage implements OnInit {
 
   ngOnInit() {
     this.educationService.fetchAllTopics();
-    this.educationService.fetchCategories();
+    this.educationService.fetchCategories(true);
     this.educationService.categories.subscribe((categories) => {
       const colors = shuffle([
         'bg-red-300',
@@ -38,15 +38,15 @@ export class EducationPage implements OnInit {
         ...c,
         bg: colors[i],
       }));
+      this.randomEducational = this.educationService.getRandomEducational();
     });
-    this.educationService.randomEducational.subscribe(
-      (data) => (this.randomEducational = data)
-    );
     this.webSocketService
       .listen('profile:update')
       .subscribe(({ user_id }: { user_id }) => {
-        this.educationService.fetchAllTopics();
-        this.educationService.fetchCategories();
+        if (user_id == this.auth.loggedUser().id) {
+          this.educationService.fetchAllTopics();
+          this.educationService.fetchCategories();
+        }
       });
   }
 

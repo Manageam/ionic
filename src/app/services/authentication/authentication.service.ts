@@ -48,4 +48,8 @@ export class AuthenticationService {
   loggedUser() {
     return JSON.parse(localStorage.user || 'null');
   }
+
+  userDetails() {
+    return JSON.parse(localStorage.details || '{}').user_details;
+  }
 }

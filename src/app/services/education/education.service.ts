@@ -18,7 +18,7 @@ export class EducationService {
   categories: Subject<any>;
   randomEducational: Subject<any>;
   constructor(private http: HttpClient, private userService: UserService) {
-    this.fetchAllTopics();
+    // this.fetchAllTopics();
     this.getLanguages();
     const bookmarks = localStorage.bookmarks || '[]';
     this.bookmarks = new BehaviorSubject(JSON.parse(bookmarks));
@@ -36,21 +36,37 @@ export class EducationService {
     this.fetchBookmarks();
   }
 
-  fetchCategories() {
+  fetchCategories(init = false) {
     this.http.get(`${this.url}/categories`).subscribe((data) => {
       localStorage.categories = JSON.stringify(data);
-      this.categories.next(data);
+      this.countTopics();
+      this.categories.next(JSON.parse(localStorage.categories));
     });
-    const fcategories = localStorage.categories;
-    localStorage.categories = fcategories
-      ? fcategories
-      : JSON.stringify(categories);
-    this.categories.next(JSON.parse(localStorage.categories));
-    return JSON.parse(localStorage.categories);
+    if (!init) {
+      const fcategories = localStorage.categories;
+      localStorage.categories = fcategories
+        ? fcategories
+        : JSON.stringify(categories);
+      this.countTopics();
+
+      this.categories.next(JSON.parse(localStorage.categories));
+    }
+    return JSON.parse(localStorage.categories || '[]');
+  }
+
+  countTopics() {
+    let categories = JSON.parse(localStorage.categories);
+    const stopics = JSON.parse(localStorage.categoriesTopics || null) || topics;
+
+    categories = categories.map((c) => {
+      const count = stopics.filter((t) => t.category == c.id).length;
+      return { count, ...c };
+    });
+
+    localStorage.categories = JSON.stringify(categories);
   }
 
   fetchCategoryTopics(id) {
-    this.fetchAllTopics();
     let sTopics = localStorage.categoriesTopics || JSON.stringify(topics);
     localStorage.categoriesTopics = sTopics;
     return JSON.parse(sTopics).filter((data) => data.category == id);
@@ -60,14 +76,13 @@ export class EducationService {
     this.http.get(`${this.url}/all`).subscribe((data) => {
       localStorage.categoriesTopics = JSON.stringify(data);
       this.allTopics.next(data);
-      this.getRandomEducational();
     });
   }
 
   getRandomEducational() {
-    let ftopics = JSON.parse(localStorage.categoriesTopics || {});
+    let ftopics = JSON.parse(localStorage.categoriesTopics || 'null') || topics;
     const index = Math.floor(Math.random() * ftopics.length - 1);
-    this.randomEducational.next(ftopics[index]);
+    return ftopics[index];
   }
 
   fetchBookmarks() {

@@ -11,6 +11,7 @@ import { ExerciseComponent } from 'src/app/modals/exercise/exercise.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { SettingsComponent } from '../settings/settings.component';
 import { TermsComponent } from '../terms/terms.component';
+import { ReminderService } from 'src/app/services/reminder/reminder.service';
 
 @Component({
   selector: 'app-menu',
@@ -22,6 +23,7 @@ export class MenuComponent implements OnInit {
   subs = [];
   isShow = false;
   isShowBg = false;
+  reminder = [];
   @Output() onClose = new EventEmitter();
   constructor(
     private modalController: ModalController,
@@ -29,7 +31,8 @@ export class MenuComponent implements OnInit {
     private global: GlobalService,
     private router: Router,
     private webSocket: WebsocketService,
-    private auth: AuthenticationService
+    private auth: AuthenticationService,
+    private reminderService: ReminderService
   ) {}
 
   ngOnInit() {
@@ -44,6 +47,12 @@ export class MenuComponent implements OnInit {
         if (user_id != this.auth.loggedUser().id) return;
         this.userService.refectchDetails();
       });
+    this.subs.push(sub);
+
+    sub = this.reminderService.get().subscribe((data) => {
+      this.reminder = data;
+    });
+
     this.subs.push(sub);
   }
 
