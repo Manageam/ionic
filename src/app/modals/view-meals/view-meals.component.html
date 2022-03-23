@@ -1,8 +1,11 @@
 <ion-app class="meal">
   <ion-header class="ion-no-border p-4 font-geomanist text-accent">
-    <div class="flex" (click)="modalController.dismiss()">
-      <ion-icon name="arrow-back" class="text-2xl"></ion-icon>
-      <p class="ml-4 block">Meal guide</p>
+    <div class="flex justify-between">
+      <div class="flex" (click)="modalController.dismiss()">
+        <ion-icon name="arrow-back" class="text-2xl"></ion-icon>
+        <p class="ml-4 block">Meal guide</p>
+      </div>
+      <span class="text-accentBlue text-xl" (click)="share()">Share</span>
     </div>
     <ion-segment
       (ionChange)="segmentChanged($event)"

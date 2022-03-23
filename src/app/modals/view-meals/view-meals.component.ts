@@ -12,6 +12,9 @@ import dateFormat from 'dateformat';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { CalendarModalComponent } from '../calendar-modal/calendar-modal.component';
+import { ShareEmailComponent } from '../share-email/share-email.component';
+import { HealthService } from 'src/app/services/health/health.service';
 @Component({
   selector: 'app-view-meals',
   templateUrl: './view-meals.component.html',
@@ -40,7 +43,8 @@ export class ViewMealsComponent implements OnInit {
     private platform: Platform,
     private global: GlobalService,
     private webSocket: WebsocketService,
-    private auth: AuthenticationService
+    private auth: AuthenticationService,
+    private healthService: HealthService
   ) {}
 
   ngOnInit() {
@@ -111,6 +115,36 @@ export class ViewMealsComponent implements OnInit {
   segmentChanged(e) {
     this.segment = e.detail.value;
     this.filterMeals('');
+  }
+
+  async share() {
+    this.modalController.dismiss();
+    const modal = await this.modalController.create({
+      component: CalendarModalComponent,
+      cssClass: 'modal-80',
+    });
+
+    modal.onDidDismiss().then(async ({ data }) => {
+      if (!data) return;
+      const modal = await this.modalController.create({
+        component: ShareEmailComponent,
+        cssClass: 'modal-50',
+      });
+      const date = data;
+      modal.onDidDismiss().then(({ data }) => {
+        if (!data) return;
+        this.healthService
+          .share({ email: data, ...date, type: 'meal_plan' })
+          .subscribe((data: string) => {
+            return this.global.alert('Shared Record', data, [
+              { role: true, text: 'OK' },
+            ]);
+          });
+      });
+      await modal.present();
+    });
+
+    await modal.present();
   }
 
   async showMeal(meal) {
