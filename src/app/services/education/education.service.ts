@@ -80,7 +80,7 @@ export class EducationService {
   }
 
   getRandomEducational() {
-    let ftopics = JSON.parse(localStorage.categoriesTopics || 'null') || topics;
+    let ftopics = JSON.parse(localStorage.categoriesTopics || null) || topics;
     const index = Math.floor(Math.random() * ftopics.length - 1);
     return ftopics[index];
   }

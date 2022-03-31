@@ -42,7 +42,7 @@ export class HealthPage implements OnInit {
     e?.stopPropagation();
     const modal = await this.modalController.create({
       component: AddMedicationComponent,
-      cssClass: 'modal-80',
+      // cssClass: 'modal-80',
     });
     modal.present();
   }

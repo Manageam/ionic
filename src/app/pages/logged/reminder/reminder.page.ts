@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, Platform } from '@ionic/angular';
+import { ModalController, NavController, Platform } from '@ionic/angular';
 import { ReminderService } from 'src/app/services/reminder/reminder.service';
 import { AddReminderComponent } from 'src/app/modals/add-reminder/add-reminder.component';
 import dateFormat from 'dateformat';
@@ -8,6 +8,7 @@ import { UserService } from 'src/app/services/user/user.service';
 import { Router } from '@angular/router';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-reminder',
@@ -19,6 +20,7 @@ export class ReminderPage implements OnInit {
   reminders = [];
   tip: any = {};
   subs = [];
+  opener = null;
   constructor(
     public modalController: ModalController,
     private reminderService: ReminderService,
@@ -27,7 +29,8 @@ export class ReminderPage implements OnInit {
     private platform: Platform,
     public router: Router,
     private webSocket: WebsocketService,
-    private auth: AuthenticationService
+    private auth: AuthenticationService,
+    public location: NavController
   ) {}
 
   ngOnInit() {
@@ -89,11 +92,16 @@ export class ReminderPage implements OnInit {
   }
 
   async showAdd() {
-    const modal = await this.modalController.create({
-      component: AddReminderComponent,
-      cssClass: 'modal-80',
-    });
-    modal.present();
+    this.modalController
+      .create({
+        component: AddReminderComponent,
+        cssClass: 'modal-80',
+        componentProps: { modal: opener },
+      })
+      .then((modal) => {
+        this.opener = modal;
+        modal.present();
+      });
   }
 
   ngOnDestroy() {

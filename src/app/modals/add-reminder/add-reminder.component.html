@@ -4,7 +4,7 @@
   >
     <p class="font-bold">New Reminder</p>
     <ion-icon
-      (click)="modalController.dismiss()"
+      (click)="close()"
       name="close"
       class="bg-gray-500 text-2xl text-white rounded-full"
     ></ion-icon>
@@ -46,16 +46,37 @@
         ></ion-input>
       </ion-item>
 
-      <ion-item>
+      <ion-item id="open-modal">
         <ion-label class="block font-calibre w-full" position="stacked"
           >Date and time to be reminded</ion-label
         >
-        <ion-datetime
-          displayFormat="YYYY-MM-DD HH:mm"
-          placeholder="Pick date and time to be reminded"
-          [(ngModel)]="reminder.time"
-        ></ion-datetime>
+        <ion-text>{{ dateString }}</ion-text>
       </ion-item>
+
+      <!-- <ion-item>
+        <ion-datetime
+          #dateTime
+          (ionChange)="change(dateTime.value)"
+        ></ion-datetime>
+      </ion-item> -->
+
+      <ion-modal trigger="open-modal">
+        <ng-template>
+          <ion-content>
+            <ion-datetime
+              #dateTime
+              (ionChange)="change(dateTime.value)"
+              [value]="reminder.time"
+              size="cover"
+            ></ion-datetime>
+            <span
+              (click)="dateTime.confirm(true)"
+              class="w-full bg-white p-4 font-semibold text-center block text-accentBlue uppercase rounded-xl mt-10"
+              >Done</span
+            >
+          </ion-content>
+        </ng-template>
+      </ion-modal>
 
       <ion-item>
         <ion-label class="block font-calibre w-full" position="stacked"

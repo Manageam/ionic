@@ -6,6 +6,8 @@ import { SingleComponent } from './single/single.component';
 import { shuffle } from 'lodash';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { debounce, scan, throttle } from 'rxjs/operators';
+import { interval } from 'rxjs';
 @Component({
   selector: 'app-education',
   templateUrl: './education.page.html',
@@ -13,6 +15,7 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
 })
 export class EducationPage implements OnInit {
   categories = [];
+  subs = [];
   randomEducational: any = {};
   constructor(
     private modalController: ModalController,
@@ -24,23 +27,35 @@ export class EducationPage implements OnInit {
   ngOnInit() {
     this.educationService.fetchAllTopics();
     this.educationService.fetchCategories(true);
-    this.educationService.categories.subscribe((categories) => {
-      const colors = shuffle([
-        'bg-red-300',
-        'bg-green-300',
-        'bg-indigo-300',
-        'bg-purple-300',
-        'bg-yellow-300',
-        'bg-pink-300',
-        'bg-gray-300',
-      ]);
-      this.categories = categories.map((c, i) => ({
-        ...c,
-        bg: colors[i],
-      }));
-      this.randomEducational = this.educationService.getRandomEducational();
-    });
-    this.webSocketService
+    let sub = this.educationService.allTopics
+      .pipe(debounce((ev) => interval(ev)))
+      .subscribe(() => {
+        this.randomEducational = this.educationService.getRandomEducational();
+      });
+
+    this.subs.push(sub);
+
+    sub = this.educationService.categories
+      .pipe(debounce((ev) => interval(ev)))
+      .subscribe((categories) => {
+        const colors = shuffle([
+          'bg-red-300',
+          'bg-green-300',
+          'bg-indigo-300',
+          'bg-purple-300',
+          'bg-yellow-300',
+          'bg-pink-300',
+          'bg-gray-300',
+        ]);
+        this.categories = categories.map((c, i) => ({
+          ...c,
+          bg: colors[i],
+        }));
+      });
+
+    this.subs.push(sub);
+
+    sub = this.webSocketService
       .listen('profile:update')
       .subscribe(({ user_id }: { user_id }) => {
         if (user_id == this.auth.loggedUser().id) {
@@ -48,6 +63,8 @@ export class EducationPage implements OnInit {
           this.educationService.fetchCategories();
         }
       });
+
+    this.subs.push(sub);
   }
 
   async viewCategory(category) {
@@ -68,5 +85,9 @@ export class EducationPage implements OnInit {
       },
     });
     await modal.present();
+  }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
   }
 }

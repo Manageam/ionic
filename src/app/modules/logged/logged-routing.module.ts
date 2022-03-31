@@ -29,18 +29,18 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'reminder',
-        loadChildren: () =>
-          import('../../pages/logged/reminder/reminder.module').then(
-            (m) => m.ReminderPageModule
-          ),
-      },
-      {
         path: '',
         pathMatch: 'full',
         redirectTo: 'home',
       },
     ],
+  },
+  {
+    path: 'reminder',
+    loadChildren: () =>
+      import('../../pages/logged/reminder/reminder.module').then(
+        (m) => m.ReminderPageModule
+      ),
   },
 ];
 

@@ -1,0 +1,18 @@
+ion-modal {
+  --background: hsl(0 0% 0%/0.2);
+  &::part(content) {
+    backdrop-filter: blur(30px);
+  }
+
+  ion-content {
+    --background: transparent;
+    --padding-start: 20px;
+    --padding-top: 20vh;
+    --padding-end: 20px;
+  }
+}
+
+ion-datetime {
+  background-color: white;
+  border-radius: 10px;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { GlobalService } from 'src/app/services/global/global.service';
@@ -6,21 +6,27 @@ import { ReminderService } from 'src/app/services/reminder/reminder.service';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { LocalNotifications } from '@capacitor/local-notifications';
 
+import { format, parseISO } from 'date-fns';
+
 @Component({
   selector: 'app-add-reminder',
   templateUrl: './add-reminder.component.html',
   styleUrls: ['./add-reminder.component.scss'],
 })
 export class AddReminderComponent implements OnInit {
+  @Input() modal = null;
   reminder = {
     category: '',
     title: '',
-    time: '',
+    time: new Date().toISOString(),
     repeat: '',
     note: '',
   };
+
+  dateString = this.formatDate(this.reminder.time);
   subs = [];
   minDate = new Date();
+
   constructor(
     public modalController: ModalController,
     private reminderService: ReminderService,
@@ -32,10 +38,27 @@ export class AddReminderComponent implements OnInit {
 
   ngOnInit() {
     const sub = this.platform.backButton.subscribe(() => {
-      this.modalController.dismiss();
+      this.close();
     });
     this.subs.push(sub);
+
+    console.log(this.reminder.time);
   }
+
+  close() {
+    this.modal.dismiss();
+  }
+
+  change(value) {
+    console.log(value);
+    this.reminder.time = value;
+    this.dateString = this.formatDate(value);
+  }
+
+  formatDate(iso) {
+    return format(new Date(iso), 'HH:mm, MMMM d, yyyy');
+  }
+
   save() {
     if (
       !this.reminder.category ||
@@ -56,7 +79,10 @@ export class AddReminderComponent implements OnInit {
       this.webSocket.emit('reminder:update', {
         user_id: this.auth.loggedUser().id,
       });
-      this.modalController.dismiss();
+      this.global.alert('Add reminder', 'Reminder sucessfully added!', [
+        'Okay',
+      ]);
+      this.close();
     });
   }
 

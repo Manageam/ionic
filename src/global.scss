@@ -266,6 +266,10 @@ html {
   padding: 15px;
   padding-right: 0px;
 }
+ion-label.sc-ion-select-popover-md,
+ion-label.sc-ion-select-popover-ios {
+  padding: 10px;
+}
 
 .sc-ion-select-popover-h ion-list.sc-ion-select-popover {
   width: 90%;
@@ -276,4 +280,8 @@ html {
 .popover-content.sc-ion-popover-ios {
   width: 90%;
   left: 20px !important;
+
+  ion-label {
+    padding: 10px;
+  }
 }
