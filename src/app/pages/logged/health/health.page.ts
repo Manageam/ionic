@@ -37,13 +37,16 @@ export class HealthPage implements OnInit {
       });
     this.subs.push(sub);
   }
-  async addMedication() {
+
+  async addMedication(e = null) {
+    e?.stopPropagation();
     const modal = await this.modalController.create({
       component: AddMedicationComponent,
       cssClass: 'modal-80',
     });
     modal.present();
   }
+
   async showMedication() {
     const modal = await this.modalController.create({
       component: AllMedicationsComponent,
