@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user/user.service';
 import { Router } from '@angular/router';
 import { WebsocketService } from 'src/app/services/websocket/websocket.service';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
-import { Location } from '@angular/common';
+import { LocalNotifications } from '@capacitor/local-notifications';
 
 @Component({
   selector: 'app-reminder',
@@ -18,6 +18,7 @@ import { Location } from '@angular/common';
 export class ReminderPage implements OnInit {
   expand = null;
   reminders = [];
+  activeReminders = [];
   tip: any = {};
   subs = [];
   opener = null;
@@ -34,11 +35,23 @@ export class ReminderPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    let sub = this.reminderService.get().subscribe((data) => {
-      console.log(data);
+    let sub = this.reminderService.get().subscribe(async (data) => {
+      const activeNotifications = await LocalNotifications.getPending();
+
+      console.log(
+        activeNotifications.notifications.length,
+        activeNotifications.notifications,
+        'active nofications'
+      );
       this.reminders = data.map((d) => {
         d.date = dateFormat(new Date(d.time), 'dd mmm, yyyy-hh:MMtt');
-        return d;
+
+        // check if reminder is active
+        const isActive = !!activeNotifications.notifications.find(
+          (notif) => notif.id == d.id
+        );
+
+        return { ...d, isActive };
       });
     });
     this.subs.push(sub);
@@ -71,6 +84,39 @@ export class ReminderPage implements OnInit {
     }
   }
 
+  async cancel(id) {
+    await LocalNotifications.cancel({ notifications: [{ id }] });
+    this.reminders = this.reminders.map((reminder) =>
+      reminder.id == id ? { ...reminder, isActive: false } : reminder
+    );
+  }
+
+  async schedule(notification) {
+    const date = new Date(notification.time);
+    let schedule: { every?; repeats?; at } = { at: date };
+    if (notification.repeat != 'never') {
+      schedule.every = notification.repeat;
+      schedule.repeats = true;
+    }
+
+    await LocalNotifications.schedule({
+      notifications: [
+        {
+          title: notification.title,
+          body: notification.note,
+          id: notification.id,
+          schedule,
+        },
+      ],
+    });
+
+    // this.reminders = this.reminders.map((reminder) =>
+    //   reminder.id == notification.id
+    //     ? { ...reminder, isActive: true }
+    //     : reminder
+    // );
+  }
+
   async remove(id) {
     const { role } = <{ role }>await this.global.alert(
       'Remove alert/reminder',
@@ -84,6 +130,7 @@ export class ReminderPage implements OnInit {
     if (!role) return;
     this.reminderService.remove(id).subscribe((d) => {
       this.reminders = this.reminders.filter((r) => r.id != id);
+      this.cancel(id);
       this.webSocket.emit('reminder:update', {
         user_id: this.auth.loggedUser().id,
       });

@@ -55,12 +55,21 @@
                   <p class="text-accentBlue">Note:</p>
                   <p>{{ item.note }}</p>
                 </div>
-                <p
-                  class="bg-red-600 font-bold text-white p-3 text-center rounded-full"
-                  (click)="remove(item.id)"
-                >
-                  Remove
-                </p>
+                <div class="flex justify-between">
+                  <!-- <p
+                    class="bg-accentBlue font-bold w-full mr-4 text-white p-3 text-center rounded-full"
+                    (click)="cancel(item.id)"
+                  >
+                    Cancel
+                  </p> -->
+
+                  <p
+                    class="bg-red-600 font-bold w-full text-white p-3 text-center rounded-full"
+                    (click)="remove(item.id)"
+                  >
+                    Remove
+                  </p>
+                </div>
               </div>
             </app-expandable>
           </li>

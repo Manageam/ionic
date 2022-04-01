@@ -88,10 +88,10 @@ export class AddReminderComponent implements OnInit {
 
   schedule(notification) {
     const date = new Date(notification.time);
-    let schedule: { every?; repeat?; at } = { at: date };
+    let schedule: { every?; repeats?; at } = { at: date };
     if (notification.repeat != 'never') {
       schedule.every = notification.repeat;
-      schedule.repeat = true;
+      schedule.repeats = true;
     }
 
     LocalNotifications.schedule({
