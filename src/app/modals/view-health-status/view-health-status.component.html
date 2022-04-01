@@ -28,8 +28,9 @@
             {{ healthStatus.name || "Not record yet" }}
           </h3>
           <span class="text-accentBlue" *ngIf="healthStatus.date"
-            >Last updated {{ healthStatus.date }}</span
-          >
+            >Last updated
+          </span>
+          <p class="text-accentBlue">{{ healthStatus.date }}</p>
         </div>
         <div class="flex justify-between mt-8">
           <span

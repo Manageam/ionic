@@ -409,6 +409,10 @@ export function checkHealthStatus(status) {
       return 'Pre-diabetic';
     case 4:
       return 'Diabetes and HBP';
+    case 5:
+      return 'Non-diabetic, Non-hypertensive';
+    default:
+      return "I don't know";
   }
 }
 
