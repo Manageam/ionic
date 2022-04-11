@@ -24,6 +24,7 @@
             >
             <span
               class="absolute right-0 top-10"
+              style="top: 30px"
               (click)="showPassword = !showPassword"
             >
               <ion-icon name="eye-outline" *ngIf="showPassword"></ion-icon>
@@ -40,31 +41,12 @@
           </p>
           <span
             (click)="login()"
-            class="
-              w-full
-              bg-accentBlue
-              p-4
-              font-semibold
-              text-center
-              block
-              text-white
-              uppercase
-              rounded-xl
-            "
+            class="w-full bg-accentBlue p-3 font-semibold text-center block text-white uppercase rounded-xl"
             >Login</span
           >
 
           <span
-            class="
-              w-full
-              p-4
-              text-center
-              block
-              text-accentBlue
-              border border-accentBlue
-              uppercase
-              rounded-xl
-            "
+            class="w-full p-3 text-center block text-accentBlue border border-accentBlue uppercase rounded-xl"
             routerLink="/auth/signup"
             >create account</span
           >
