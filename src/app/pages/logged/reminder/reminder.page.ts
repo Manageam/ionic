@@ -138,12 +138,12 @@ export class ReminderPage implements OnInit {
     });
   }
 
-  async showAdd() {
+  async showAdd(reminder = null) {
     this.modalController
       .create({
         component: AddReminderComponent,
         cssClass: 'modal-80',
-        componentProps: { modal: opener },
+        componentProps: { modal: opener, data: reminder },
       })
       .then((modal) => {
         this.opener = modal;

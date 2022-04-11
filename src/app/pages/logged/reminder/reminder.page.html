@@ -9,11 +9,16 @@
     <div class="min-h-full pale-bg-default font-calibre text-gray-900">
       <div class="flex justify-center py-4 items-center">
         <p
-          class="inline-block font-bold py-2 px-8 bg-white rounded-xl"
+          class="inline-block font-bold py-2 px-8 rounded-xl bg-accentBlue p-3 text-center"
           (click)="showAdd()"
         >
-          <ion-icon name="add" class="text-xl relative top-1"></ion-icon>
-          <span class="uppercase inline-block ml-2">New reminder</span>
+          <ion-icon
+            name="add"
+            class="text-xl relative top-1 text-white"
+          ></ion-icon>
+          <span class="uppercase inline-block ml-2 text-white"
+            >New reminder</span
+          >
         </p>
       </div>
 
@@ -56,12 +61,12 @@
                   <p>{{ item.note }}</p>
                 </div>
                 <div class="flex justify-between">
-                  <!-- <p
+                  <p
                     class="bg-accentBlue font-bold w-full mr-4 text-white p-3 text-center rounded-full"
-                    (click)="cancel(item.id)"
+                    (click)="showAdd(item)"
                   >
-                    Cancel
-                  </p> -->
+                    Update
+                  </p>
 
                   <p
                     class="bg-red-600 font-bold w-full text-white p-3 text-center rounded-full"

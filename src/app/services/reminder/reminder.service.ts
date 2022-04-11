@@ -51,4 +51,15 @@ export class ReminderService {
     };
     return this.http.post(`${this.url}/create`, data);
   }
+
+  updateOne(id, data) {
+    const {
+      user_details: { id: userId },
+    } = this.userService.fetchDetails();
+    data = {
+      ...data,
+      user_id: userId,
+    };
+    return this.http.put(`${this.url}/update/${id}`, data);
+  }
 }

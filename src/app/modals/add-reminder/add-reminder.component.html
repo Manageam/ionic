@@ -2,7 +2,7 @@
   <ion-header
     class="bg-blue-100 px-4 py-6 ion-no-border text-xl flex justify-between items-center"
   >
-    <p class="font-bold">New Reminder</p>
+    <p class="font-bold">{{ reminderId ? "Update" : "New" }} Reminder</p>
     <ion-icon
       (click)="close()"
       name="close"
@@ -46,19 +46,12 @@
         ></ion-input>
       </ion-item>
 
-      <ion-item id="open-modal">
+      <ion-item id="open-modal" (click)="openDateTime()">
         <ion-label class="block font-calibre w-full" position="stacked"
           >Date and time to be reminded</ion-label
         >
         <ion-text>{{ dateString }}</ion-text>
       </ion-item>
-
-      <!-- <ion-item>
-        <ion-datetime
-          #dateTime
-          (ionChange)="change(dateTime.value)"
-        ></ion-datetime>
-      </ion-item> -->
 
       <ion-modal trigger="open-modal">
         <ng-template>
@@ -68,6 +61,8 @@
               (ionChange)="change(dateTime.value)"
               [value]="reminder.time"
               size="cover"
+              [min]="minDate"
+              [max]="minDate + 10"
             ></ion-datetime>
             <span
               (click)="dateTime.confirm(true)"

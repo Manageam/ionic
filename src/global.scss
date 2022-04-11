@@ -285,3 +285,13 @@ ion-label.sc-ion-select-popover-ios {
     padding: 10px;
   }
 }
+
+
+ion-datetime {
+  .time-body {
+    font-size: 28px;
+  }
+  .datetime-calendar {
+    background-color: red !important;
+  }
+}
