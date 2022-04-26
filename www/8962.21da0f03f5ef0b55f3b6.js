@@ -1,1 +1,0 @@
-(self.webpackChunkcom_app_shei_manageam=self.webpackChunkcom_app_shei_manageam||[]).push([[8962],{8962:(a,e,s)=>{"use strict";s.r(e),s.d(e,{SplashScreenWeb:()=>h});var c=s(8384);class h extends c.Uw{async show(a){}async hide(a){}}}}]);

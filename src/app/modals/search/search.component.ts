@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
   subs = [];
   constructor(
     private educationService: EducationService,
-    private modalController: ModalController,
+    public modalController: ModalController,
     private platform: Platform
   ) {}
 

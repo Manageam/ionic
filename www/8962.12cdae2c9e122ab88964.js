@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcom_app_shei_manageam=self.webpackChunkcom_app_shei_manageam||[]).push([[8962],{8962:(u,n,e)=>{e.r(n),e.d(n,{SplashScreenWeb:()=>_});var s=e(8239),a=e(8384);class _ extends a.Uw{show(o){return(0,s.Z)(function*(){})()}hide(o){return(0,s.Z)(function*(){})()}}}}]);

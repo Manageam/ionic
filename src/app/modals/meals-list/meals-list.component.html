@@ -39,8 +39,8 @@
     <div class="min-h-full p-4 meal pale-bg-default">
       <ul class="bg-white rounded-lg pb-1">
         <li class="px-4 py-2 pt-3 grid grid-cols-3">
-          <span class="font-bold col-start-2 text-center">Food</span>
-          <span class="font-bold col-start-3 text-right">Calories</span>
+          <span class="font-bold">Food</span>
+          <span class="font-bold col-start-2 text-right">Calories</span>
         </li>
         <li
           class="px-4 py-3 grid grid-cols-12 border-t border-gray-200 items-center"
@@ -51,12 +51,23 @@
             )
           "
         >
-          <div class="flex space-x-1 items-center text-left col-span-4">
+          <p class="text-left col-span-6">
+            {{ food.name }} - {{ food.quantity }}g
+            {{ food.amount ? " x " + food.amount : "" }}
+          </p>
+          <p class="text-right col-span-2">
+            {{ food.calories }}<br />
+            kcal
+          </p>
+
+          <span></span>
+
+          <div class="flex space-x-1 items-center text-left col-span-3">
             <ion-icon
               (click)="inc(food)"
               name="add"
               class="text-white bg-gray-500 p-1 rounded-full"
-              style="padding: 2px"
+              style="padding: 2px; max-height: 18px; max-width: 18px"
             ></ion-icon>
             <ion-icon
               name="ellipse-outline"
@@ -74,17 +85,9 @@
               (click)="dec(food)"
               name="remove"
               class="text-white bg-gray-500 p-1 rounded-full"
-              style="padding: 2px"
+              style="padding: 2px; max-height: 18px; max-width: 18px"
             ></ion-icon>
           </div>
-          <p class="text-left col-span-6">
-            {{ food.name }} - {{ food.quantity }}g
-            {{ food.amount ? " x " + food.amount : "" }}
-          </p>
-          <p class="text-right col-span-2">
-            {{ food.calories }}<br />
-            kcal
-          </p>
         </li>
         <li class="flex justify-center border-t border-gray-200 px-4 py-3">
           <span

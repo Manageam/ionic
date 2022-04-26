@@ -15,6 +15,7 @@ import { GlobalService } from 'src/app/services/global/global.service';
 })
 export class LocationsComponent implements OnInit {
   locations = [];
+  currentLocation: any = {};
   @ViewChild('map') mapElement: any;
   map: google.maps.Map;
   location = '';
@@ -33,6 +34,25 @@ export class LocationsComponent implements OnInit {
       this.modalController.dismiss();
     });
     this.subs.push(sub);
+    navigator.geolocation.getCurrentPosition((d) => {
+      this.currentLocation = d.coords;
+    });
+  }
+
+  distance(lat1, lon1, lat2, lon2) {
+    const R = 6371e3; // metres
+    const l1 = (lat1 * Math.PI) / 180; // l, t in radians
+    const l2 = (lat2 * Math.PI) / 180;
+    const dl = ((lat2 - lat1) * Math.PI) / 180;
+    const dt = ((lon2 - lon1) * Math.PI) / 180;
+
+    const a =
+      Math.sin(dl / 2) * Math.sin(dl / 2) +
+      Math.cos(l1) * Math.cos(l2) * Math.sin(dt / 2) * Math.sin(dt / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    const d = R * c;
+    return d;
   }
 
   async requestLocation() {
@@ -105,7 +125,7 @@ export class LocationsComponent implements OnInit {
         map.set('styles', customStyled);
         let request = {
           location: pos,
-          radius: 5000,
+          rankBy: google.maps.places.RankBy.DISTANCE,
           fields: ['name', 'geometry', 'formatted_address'],
           types: [this.location],
         };
@@ -114,6 +134,28 @@ export class LocationsComponent implements OnInit {
 
         service.nearbySearch(request, function (results, status) {
           viz.locations = results;
+          viz.locations = viz.locations.sort((a, b) => {
+            const da = viz.distance(
+              a.geometry.location.lat(),
+              a.geometry.location.lng(),
+              viz.currentLocation.latitude,
+              viz.currentLocation.longitude
+            );
+
+            const db = viz.distance(
+              b.geometry.location.lat(),
+              b.geometry.location.lng(),
+              viz.currentLocation.latitude,
+              viz.currentLocation.longitude
+            );
+
+            if (da > db) {
+              return 1;
+            } else {
+              return -1;
+            }
+          });
+
           loading.dismiss();
         });
       },

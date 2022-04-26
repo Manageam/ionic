@@ -1,15 +1,20 @@
 <ion-app class="bg-white text-gray-900">
-  <ion-header class="ion-no-border flex justify-between font-geomanist">
+  <ion-header class="ion-no-border font-geomanist">
     <div class="bg-white flex w-full p-4 items-center border-b border-gray-200">
       <ion-icon name="search" class="text-2xl p-2"></ion-icon>
       <input
         type="text"
         class=""
         placeholder="Search on diabetes..."
-        class="py-4 w-full outline-none search bg-white"
+        class="py-2 w-full outline-none search bg-white"
         [(ngModel)]="searchText"
         (ngModelChange)="search()"
       />
+      <ion-icon
+        name="close"
+        class="text-2xl text-accent p-2"
+        (click)="modalController.dismiss()"
+      ></ion-icon>
     </div>
   </ion-header>
   <ion-content>
