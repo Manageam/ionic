@@ -55,7 +55,7 @@
   color: white !important;
 }
 
-.modal-60 .modal-wrapper,
+ion-modal.modal-60::part(content),
 .modal-60 .modal-shadow {
   height: 60%;
   bottom: 0;
@@ -77,7 +77,7 @@
   background-color: hsl(0deg 0% 0% /0.1);
 }
 
-.modal-30 .modal-wrapper,
+ion-modal.modal-30::part(content),
 .modal-30 .modal-shadow {
   height: 30%;
   bottom: 0;
@@ -99,7 +99,7 @@
   background-color: hsl(0deg 0% 0% /0.1);
 }
 
-.modal-40 .modal-wrapper,
+ion-modal.modal-40::part(content),
 .modal-40 .modal-shadow {
   height: 40%;
   bottom: 0;
@@ -121,7 +121,7 @@
   background-color: hsl(0deg 0% 0% /0.1);
 }
 
-.modal-50 .modal-wrapper,
+ion-modal.modal-50::part(content),
 .modal-50 .modal-shadow {
   height: 50%;
   bottom: 0;
@@ -143,7 +143,7 @@
   background-color: hsl(0deg 0% 0% /0.1);
 }
 
-.modal-70 .modal-wrapper,
+ion-modal.modal-70::part(content),
 .modal-70 .modal-shadow {
   height: 70%;
   bottom: 0;
@@ -165,7 +165,7 @@
   background-color: hsl(0deg 0% 0% /0.1);
 }
 
-.modal-80 .modal-wrapper,
+ion-modal.modal-80::part(content),
 .modal-80 .modal-shadow {
   height: 80%;
   bottom: 0;
@@ -187,7 +187,7 @@
   background-color: hsl(0deg 0% 0% /0.1);
 }
 
-.modal-90 .modal-wrapper,
+ion-modal.modal-90::part(content),
 .modal-90 .modal-shadow {
   height: 90%;
   bottom: 0;

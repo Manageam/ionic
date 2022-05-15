@@ -75,12 +75,15 @@ export class LocationsComponent implements OnInit {
     await actionSheet.present();
 
     const { role } = await actionSheet.onDidDismiss();
-    return role == 'backdrop' ? 'hospital' : role;
+    return role;
   }
 
   async fetchLocations() {
     this.location = '';
     this.location = await this.requestLocation();
+
+    if (this.location == 'backdrop') return this.modalController.dismiss();
+
     if (!navigator.geolocation) {
       this.global.alert(
         'Location finder',
