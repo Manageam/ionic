@@ -17,7 +17,7 @@ export class HealthService {
       user_details: { id },
     } = user;
     const { hba1c, health } = user;
-    this.allhbac1 = new BehaviorSubject(hba1c);
+    this.allhbac1 = new BehaviorSubject(hba1c || []);
     this.health = new BehaviorSubject(health);
   }
 

@@ -84,8 +84,8 @@ export class UserService {
 
   fetchTip() {
     this.http.get(`${environment.apiUrl}/dailytips/all`).subscribe((data) => {
-      localStorage.tip = JSON.stringify(data[0]);
-      if (!this.tip) this.tips.next(data[0]);
+      localStorage.tip = JSON.stringify(data);
+      if (!this.tip) this.tips.next(data);
     });
 
     return this.tips;

@@ -1,0 +1,85 @@
+<ion-app class="pale-bg-default">
+  <ion-header class="ion-no-border p-4 flex justify-between font-geomanist">
+    <div class="flex" (click)="location.back()">
+      <ion-icon name="arrow-back" class="text-2xl text-accent"></ion-icon>
+      <p class="ml-4 block text-xl text-accent">Alerts/reminders</p>
+    </div>
+  </ion-header>
+  <ion-content>
+    <div class="min-h-full pale-bg-default font-calibre text-gray-900">
+      <div class="flex justify-center py-4 items-center">
+        <p
+          class="inline-block font-bold py-2 px-8 rounded-xl bg-accentBlue p-3 text-center"
+          (click)="showAdd()"
+        >
+          <ion-icon
+            name="add"
+            class="text-xl relative top-1 text-white"
+          ></ion-icon>
+          <span class="uppercase inline-block ml-2 text-white"
+            >New reminder</span
+          >
+        </p>
+      </div>
+
+      <div class="pb-4">
+        <p class="px-4 font-bold text-lg tracking-wide">Reminders</p>
+        <p class="p-4 text-gray-500" *ngIf="reminders.length == 0">
+          You have not added any reminder
+        </p>
+        <ul>
+          <li *ngFor="let item of reminders" class="bg-white p-4 mb-2">
+            <div
+              class="flex justify-between items-center"
+              (click)="toggle(item)"
+            >
+              <div>
+                <p>{{ item.title }}</p>
+                <p class="text-gray-500 text-sm">{{ item.date }}</p>
+              </div>
+              <ion-icon
+                name="chevron-forward"
+                class="text-xl {{ item == expand ? 'rotate-90' : '' }}"
+              ></ion-icon>
+            </div>
+            <app-expandable [expanded]="item == expand" expandHeight="500px">
+              <div class="bg-white mt-6 text-gray-600 space-y-4">
+                <div *ngIf="item.repeat_on != 'never'">
+                  <span class="">Repeat:</span>
+                  <span class="font-bold ml-2 inline-block"
+                    >Every {{ item.repeat_on }}</span
+                  >
+                </div>
+                <div>
+                  <span class="">Type:</span>
+                  <span class="font-bold ml-2 inline-block"
+                    >{{ item.category }}</span
+                  >
+                </div>
+                <div>
+                  <p class="text-accentBlue">Note:</p>
+                  <p>{{ item.note }}</p>
+                </div>
+                <div class="flex justify-between">
+                  <p
+                    class="bg-accentBlue font-bold w-full mr-4 text-white p-3 text-center rounded-full"
+                    (click)="showAdd(item)"
+                  >
+                    Update
+                  </p>
+
+                  <p
+                    class="bg-red-600 font-bold w-full text-white p-3 text-center rounded-full"
+                    (click)="remove(item.id)"
+                  >
+                    Remove
+                  </p>
+                </div>
+              </div>
+            </app-expandable>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>

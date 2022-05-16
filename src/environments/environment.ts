@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   hrm: true,
-  apiUrl: 'https://sh-ei.org/admin/api/public/api',
+  apiUrl: 'https://api.manageam.com',
+  socketUrl: 'https://socket.manageam.com',
 };
 
 /*

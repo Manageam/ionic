@@ -50,7 +50,6 @@ export class BmiService {
       ...data,
       user_id: id,
     };
-    console.log(data);
     return this.http.post(`${this.url}/addBodyMass`, data);
   }
 }

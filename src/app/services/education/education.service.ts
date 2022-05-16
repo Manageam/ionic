@@ -14,33 +14,61 @@ export class EducationService {
   educationBookmark = [];
   bookmarks: Subject<any>;
   allTopics: Subject<any>;
+  languages: Subject<any>;
+  categories: Subject<any>;
+  randomEducational: Subject<any>;
   constructor(private http: HttpClient, private userService: UserService) {
-    this.fetchAllTopics();
+    // this.fetchAllTopics();
+    this.getLanguages();
     const bookmarks = localStorage.bookmarks || '[]';
     this.bookmarks = new BehaviorSubject(JSON.parse(bookmarks));
+    this.languages = new BehaviorSubject(
+      JSON.parse(localStorage.languages || '[]')
+    );
     this.allTopics = new BehaviorSubject(
       JSON.parse(localStorage.categoriesTopics || '[]')
     );
+
+    this.categories = new BehaviorSubject(
+      JSON.parse(localStorage.categories || '[]')
+    );
+    this.randomEducational = new BehaviorSubject({});
     this.fetchBookmarks();
   }
 
-  fetchCategories() {
+  fetchCategories(init = false) {
     this.http.get(`${this.url}/categories`).subscribe((data) => {
       localStorage.categories = JSON.stringify(data);
+      this.countTopics();
+      this.categories.next(JSON.parse(localStorage.categories));
     });
-    const fcategories = localStorage.categories;
-    localStorage.categories = fcategories
-      ? fcategories
-      : JSON.stringify(categories);
+    if (!init) {
+      const fcategories = localStorage.categories;
+      localStorage.categories = fcategories
+        ? fcategories
+        : JSON.stringify(categories);
+      this.countTopics();
 
-    return JSON.parse(localStorage.categories);
+      this.categories.next(JSON.parse(localStorage.categories));
+    }
+    return JSON.parse(localStorage.categories || '[]');
+  }
+
+  countTopics() {
+    let categories = JSON.parse(localStorage.categories);
+    const stopics = JSON.parse(localStorage.categoriesTopics || null) || topics;
+
+    categories = categories.map((c) => {
+      const count = stopics.filter((t) => t.category == c.id).length;
+      return { count, ...c };
+    });
+
+    localStorage.categories = JSON.stringify(categories);
   }
 
   fetchCategoryTopics(id) {
-    this.fetchAllTopics();
     let sTopics = localStorage.categoriesTopics || JSON.stringify(topics);
     localStorage.categoriesTopics = sTopics;
-
     return JSON.parse(sTopics).filter((data) => data.category == id);
   }
 
@@ -52,8 +80,7 @@ export class EducationService {
   }
 
   getRandomEducational() {
-    let ftopics = localStorage.categoriesfTopics || JSON.stringify(topics);
-    ftopics = JSON.parse(ftopics);
+    let ftopics = JSON.parse(localStorage.categoriesTopics || null) || topics;
     const index = Math.floor(Math.random() * ftopics.length - 1);
     return ftopics[index];
   }
@@ -101,5 +128,16 @@ export class EducationService {
       education_id,
       user_id: id,
     });
+  }
+
+  getLanguages() {
+    this.fetchLanguages().subscribe((data) => {
+      localStorage.languages = JSON.stringify(data);
+      this.languages.next(data);
+    });
+  }
+
+  fetchLanguages() {
+    return this.http.get(`${this.url}/languages`);
   }
 }

@@ -10,9 +10,21 @@
         currentRoute == 'health' ? 'bg-accent white-text' : ''
       }}"
     >
-      <div class="flex items-center" (click)="toggleMenu()">
-        <ion-icon name="menu" class="text-2xl"></ion-icon>
-        <span class="ml-4 capitalize mt-2">{{ currentRoute }}</span>
+      <div class="flex items-center">
+        <ion-icon
+          name="menu"
+          class="text-2xl"
+          (click)="toggleMenu()"
+        ></ion-icon>
+        <span class="ml-4 capitalize mt-2" (click)="toggleMenu()">{{
+          currentRoute
+        }}</span>
+        <span
+          class="inline-block ml-2 mt-2 text-blue-500"
+          (click)="openLanguages()"
+          *ngIf="currentRoute == 'education'"
+          >[{{ lang }}]</span
+        >
       </div>
 
       <div class="space-x-4">
@@ -64,33 +76,41 @@
     <router-outlet></router-outlet>
   </ion-content>
   <ion-footer class="ion-no-border">
-    <div class="flex justify-between p-4 uppercase bg-white rounded-t-3xl">
+    <div
+      class="flex justify-between py-3 px-4 capitalize bg-white rounded-t-3xl"
+    >
       <div
-        class="text-center {{
+        class="text-center grid justify-items-center {{
           currentRoute == 'home' ? 'text-accentBlue' : ' text-gray-900'
         }}"
         routerLink="/home"
       >
-        <ion-icon name="home" class="text-2xl"></ion-icon>
-        <span class="block text-sm">HOME</span>
+        <ion-icon name="home" class="text-2xl inline-block mb-1"></ion-icon>
+        <span class="block text-sm font-bold" style="font-size: 15px"
+          >Home</span
+        >
       </div>
       <div
-        class="text-center {{
+        class="text-center  grid justify-items-center {{
           currentRoute == 'education' ? 'text-accentBlue' : 'text-gray-900'
         }}"
         routerLink="/education"
       >
-        <ion-icon name="person" class="text-2xl"></ion-icon>
-        <span class="block text-sm">Education</span>
+        <ion-icon name="person" class="text-2xl inline-block mb-1"></ion-icon>
+        <span class="block text-sm font-bold" style="font-size: 15px"
+          >Education</span
+        >
       </div>
       <div
-        class="text-center {{
+        class="text-center  grid justify-items-center {{
           currentRoute == 'health' ? 'text-accentBlue' : 'text-gray-900'
         }}"
         routerLink="/health"
       >
-        <ion-icon name="heart" class="text-2xl"></ion-icon>
-        <span class="block text-sm">Health</span>
+        <ion-icon name="heart" class="text-2xl inline-block mb-1"></ion-icon>
+        <span class="block text-sm font-bold" style="font-size: 15px"
+          >Health</span
+        >
       </div>
     </div>
   </ion-footer>

@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { BloodPressureService } from 'src/app/services/blood-pressure/blood-pressure.service';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { fetchBloodPressureTips } from 'src/assets/scripts/misc';
 
-import { UpdateBloodPressureComponent } from '../update-blood-pressure/update-blood-pressure.component';
-import { ViewBloodPressureComponent } from '../view-blood-pressure/view-blood-pressure.component';
+import { UpdateBloodPressureComponent } from '../../modals/update-blood-pressure/update-blood-pressure.component';
+import { ViewBloodPressureComponent } from '../../modals/view-blood-pressure/view-blood-pressure.component';
 
 @Component({
   selector: 'app-blood-pressure',
@@ -12,24 +15,37 @@ import { ViewBloodPressureComponent } from '../view-blood-pressure/view-blood-pr
 })
 export class BloodPressureComponent implements OnInit {
   bloodPressure: any = null;
+  allBloodPressure = [];
   subs = [];
   color = '';
   constructor(
     private modalController: ModalController,
-    private bloodPressureService: BloodPressureService
+    private bloodPressureService: BloodPressureService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
     let sub = this.bloodPressureService.get().subscribe((data) => {
+      this.allBloodPressure = data;
       this.bloodPressure = data.slice(-1)[0];
+
       this.color = this.bloodPressure
-        ? this.updateSugarColor(
+        ? fetchBloodPressureTips(
             this.bloodPressure.upper,
             this.bloodPressure.lower
-          )
+          ).color
         : 'gray';
     });
 
+    this.subs.push(sub);
+
+    sub = this.webSocket
+      .listen('blood-pressure:update')
+      .subscribe(({ user_id }: { user_id }) => {
+        if (user_id != this.auth.loggedUser().id) return;
+        this.bloodPressureService.update();
+      });
     this.subs.push(sub);
   }
 
@@ -54,6 +70,9 @@ export class BloodPressureComponent implements OnInit {
   async view() {
     const modal = await this.modalController.create({
       component: ViewBloodPressureComponent,
+      componentProps: {
+        data: this.allBloodPressure,
+      },
     });
     modal.present();
   }
@@ -62,7 +81,7 @@ export class BloodPressureComponent implements OnInit {
     e?.stopPropagation();
     const modal = await this.modalController.create({
       component: UpdateBloodPressureComponent,
-      cssClass: 'modal-80',
+      // cssClass: 'modal-80',
     });
     await modal.present();
   }

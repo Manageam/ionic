@@ -1,54 +1,36 @@
 <div class="p-4 relative min-h-full health-page pale-bg-default">
   <div class="text-white">
-    <p class="text-3xl tracking-wide font-bold font-calibre text-white">
+    <!-- <p class="text-3xl tracking-wide font-bold font-calibre text-white">
       Health
-    </p>
-    <p class="mt-2 text-white">Click cards to see history</p>
+    </p> -->
+    <p class="mt-2 text-white font-geomanist">Click cards to see history</p>
   </div>
 
-  <div class="bg-white p-4 mt-4 rounded-lg flex">
+  <div class="bg-white p-4 mt-4 rounded-lg flex" (click)="showMedication()">
     <img src="/assets/img/drug.svg" />
     <div class="ml-4 font-geomanist w-full">
       <p class="text-lg font-bold">Medication</p>
       <p class="text-gray-500" *ngIf="!medication">
         What medication are you on?
       </p>
-      <p class="text-gray-500" *ngIf="medication">{{medication.name}}</p>
-      <div class="flex space-x-4 mt-4">
-        <p
-          class="
-            w-full
-            bg-accentBlue
-            p-2
-            font-semibold
-            text-center text-white
-            rounded-xl
-            items-center
-          "
-          (click)="addMedication()"
+      <p class="text-gray-500" *ngIf="medication">
+        {{medication.name || medication.medication_name}}
+      </p>
+      <div class="flex space-x-4 mt-4 items-end">
+        <div
+          class="bg-accentBlue p-2 px-6 font-semibold text-center text-white rounded-xl items-center flex justify-center"
+          (click)="addMedication($event)"
         >
-          <span class="text-white">Add new</span>
-        </p>
-
-        <p
-          class="
-            w-full
-            p-2
-            text-center
-            block
-            text-accentBlue
-            border border-accentBlue
-            rounded-xl
-          "
-          (click)="showMedication()"
-        >
-          View all
-        </p>
+          <div class="inline-flex">
+            <ion-icon name="add" class="text-lg mr-2 text-white"></ion-icon>
+            <span class="text-white">Add new</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="py-8 grid grid-cols-2 gap-5 text-gray-900">
+  <div class="py-8 grid grid-cols-2 gap-5 text-gray-900 pb-4">
     <app-health-status></app-health-status>
     <app-hba1c></app-hba1c>
 

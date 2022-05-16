@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { BmiService } from 'src/app/services/bmi/bmi.service';
-import { UpdateBmiComponent } from '../update-bmi/update-bmi.component';
-import { ViewBmiComponent } from '../view-bmi/view-bmi.component';
+import { WebsocketService } from 'src/app/services/websocket/websocket.service';
+import { fetchBMI } from 'src/assets/scripts/misc';
+import { UpdateBmiComponent } from '../../modals/update-bmi/update-bmi.component';
+import { ViewBmiComponent } from '../../modals/view-bmi/view-bmi.component';
 
 @Component({
   selector: 'app-bmi',
@@ -12,18 +15,54 @@ import { ViewBmiComponent } from '../view-bmi/view-bmi.component';
 export class BmiComponent implements OnInit {
   subs = [];
   bmi: any = null;
+  allBmi = [];
   color = 'gray';
   constructor(
     private modalController: ModalController,
-    private bmiService: BmiService
+    private bmiService: BmiService,
+    private webSocket: WebsocketService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
-    const sub = this.bmiService.get().subscribe((data) => {
+    let sub = this.bmiService.get().subscribe((data) => {
+      const user = this.auth.userDetails();
+      // calculate bmi from the current user information
+      const bmi = this.calculateBMI({
+        unit: user.unit || 'kg/m',
+        weight: user.body_weight,
+        height: user.height,
+      });
+      this.allBmi = data;
       this.bmi = data.slice(-1)[0];
-      this.color = this.updateColor(this.bmi?.mass);
+      if (!this.bmi) this.bmi = bmi;
+      this.color = fetchBMI(this.bmi.mass).color;
+      this.bmi.mass = Number(this.bmi.mass).toFixed(1);
     });
     this.subs.push(sub);
+
+    sub = this.webSocket
+      .listen('bmi:update')
+      .subscribe(({ user_id }: { user_id }) => {
+        if (user_id != this.auth.loggedUser().id) return;
+        this.bmiService.update();
+      });
+    this.subs.push(sub);
+  }
+
+  calculateBMI(bmi) {
+    const unit = bmi.unit;
+    const weight = Number(bmi.weight);
+    const height = Number(bmi.height);
+
+    if (unit === 'pounds/inch') {
+      let calc = weight / Math.pow(height, 2);
+      bmi.mass = calc * 703;
+    } else bmi.mass = weight / Math.pow(height, 2);
+
+    bmi.mass = bmi.mass.toFixed(1);
+
+    return bmi;
   }
 
   updateColor(value) {
@@ -45,6 +84,9 @@ export class BmiComponent implements OnInit {
   async view() {
     const modal = await this.modalController.create({
       component: ViewBmiComponent,
+      componentProps: {
+        data: this.allBmi,
+      },
     });
     modal.present();
   }
@@ -53,7 +95,7 @@ export class BmiComponent implements OnInit {
     e?.stopPropagation();
     const modal = await this.modalController.create({
       component: UpdateBmiComponent,
-      cssClass: 'modal-80',
+      // cssClass: 'modal-80',
     });
     await modal.present();
   }

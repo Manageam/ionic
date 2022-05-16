@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { EducationService } from 'src/app/services/education/education.service';
 import { Share } from '@capacitor/share';
+import { GlobalService } from 'src/app/services/global/global.service';
 @Component({
   selector: 'app-single',
   templateUrl: './single.component.html',
@@ -13,7 +14,8 @@ export class SingleComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private educationService: EducationService,
-    private platform: Platform
+    private platform: Platform,
+    private global: GlobalService
   ) {}
 
   ngOnInit() {
@@ -39,6 +41,11 @@ export class SingleComponent implements OnInit {
   bookmark(id) {
     this.educationService.addBookmark(id).subscribe((data) => {
       this.educationService.fetchBookmarks();
+      this.global.alert(
+        'Add bookmark',
+        'Education has been bookmarked successfully!',
+        ['Okay']
+      );
     });
   }
 

@@ -5,7 +5,7 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, finalize } from 'rxjs/operators';
 import { AuthenticationService } from '../services/authentication/authentication.service';
 import { GlobalService } from '../services/global/global.service';
@@ -48,14 +48,21 @@ export class LoaderInterceptor implements HttpInterceptor {
     // @ts-ignore
     return next.handle(req).pipe(
       finalize(() => hideLoader && this.global.hideLoader()),
-      catchError(async (error) => {
-        if (error.status == 0) return;
-        if (error.status === 401) {
-          await this.auth.logout();
-        }
+      catchError((error) => {
+        if (error.status == 0 || error.status == 200) return;
+        // if (error.status === 401) {
+        //   return this.auth.logout();
+        // }
         const message = error.error;
-        if (message) await this.global.alert('', message, ['Okay']);
-        return error;
+        if (message)
+          return this.global.alert(
+            '',
+            typeof message.message == 'string'
+              ? message.message
+              : 'Error while trying to send data to server',
+            ['Okay']
+          );
+        return throwError(error);
       })
     );
   }

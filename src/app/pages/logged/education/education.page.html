@@ -1,5 +1,5 @@
-<div class="text-gray-900 pale-bg-default min-h-full">
-  <p class="p-4 text-lg">Suggested for you</p>
+<div class="text-gray-900 pale-bg-default min-h-full pb-6">
+  <p class="p-4 text-lg pb-2 text-accent font-bold">Suggested for you</p>
   <div
     class="flex justify-between bg-white px-4 py-6 items-center"
     (click)="viewEducation()"
@@ -8,20 +8,25 @@
     <ion-icon name="chevron-forward" class="text-2xl"></ion-icon>
   </div>
 
-  <p class="mt-4 p-4 text-lg font-semibold">Categories</p>
+  <p class="mt-4 p-4 pb-2 text-xl font-semibold">Categories</p>
   <ul class="px-4 text-gray-900 pb-4">
     <li
-      class="p-4 flex {{category.bg}} justify-between"
+      class="p-4 {{category.bg}}"
       *ngFor="let category of categories"
       (click)="viewCategory(category)"
     >
-      <div class="">
-        <h3 class="text-xl font-bold mb-2">{{category.category}}</h3>
+      <div class="w-full">
+        <div class="text-xl font-bold mb-2 flex justify-between w-full">
+          <span>{{category.category}} </span>
+          <div class="flex items-center">
+            <span class="inline-block mr-1 text-sm">{{category.count}}</span>
+            <ion-icon
+              name="chevron-forward"
+              style="top: -3px; position: relative"
+            ></ion-icon>
+          </div>
+        </div>
         <p>{{category.subtitle}}</p>
-      </div>
-      <div class="flex items-center">
-        <span class="text-lg inline-block mr-1">{{category.count}}</span>
-        <ion-icon name="chevron-forward" class="text-xl"></ion-icon>
       </div>
     </li>
   </ul>

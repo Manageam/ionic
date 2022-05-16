@@ -36,7 +36,7 @@ export class AuthenticationService {
 
   login(data) {
     localStorage.user = JSON.stringify(data);
-    localStorage.token = data.api_token;
+    localStorage.token = data.accessToken;
   }
 
   async logout() {
@@ -47,5 +47,9 @@ export class AuthenticationService {
 
   loggedUser() {
     return JSON.parse(localStorage.user || 'null');
+  }
+
+  userDetails() {
+    return JSON.parse(localStorage.details || '{}').user_details;
   }
 }

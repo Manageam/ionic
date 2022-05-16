@@ -1,7 +1,7 @@
-<div class="pale-bg-default">
+<div class="pale-bg-default min-h-full">
   <div class="p-4">
     <p class="text-3xl font-bold font-calibre">Hello, {{ user.name }}</p>
-    <p class="mt-2 font-geomanist">
+    <p class="font-geomanist">
       Let's keep you up to date on your health, learn something new today.
     </p>
     <div
@@ -22,7 +22,10 @@
         <img src="/assets/img/tip.svg" />
       </div>
       <div class="col-span-9">
-        <p class="font-bold mb-1 text-xl">{{tip.title}}</p>
+        <p class="font-bold mb-1 text-xl flex justify-between">
+          <span>{{tip.title}} </span
+          ><ion-icon name="chevron-forward" class="text-xl"></ion-icon>
+        </p>
         <p class="text-accentBlue font-geomanist">Learn more About diabetes</p>
         <p class="text-gray-500 font-geomanist">{{tip.note}}</p>
       </div>

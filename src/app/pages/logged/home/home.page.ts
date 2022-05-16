@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { SearchComponent } from 'src/app/components/search/search.component';
+import { SearchComponent } from 'src/app/modals/search/search.component';
+import { FcmService } from 'src/app/services/fcm/fcm.service';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class HomePage implements OnInit {
   constructor(
     private userService: UserService,
     private modalController: ModalController,
-    public router: Router
+    public router: Router,
+    private fcmService: FcmService
   ) {}
 
   ngOnInit() {
@@ -25,6 +27,7 @@ export class HomePage implements OnInit {
     this.userService.fetchTip().subscribe((data) => {
       this.tip = data;
     });
+    this.fcmService.init();
   }
 
   async showSearch() {

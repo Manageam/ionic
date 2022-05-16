@@ -36,6 +36,7 @@
             >
             <span
               class="absolute right-0 top-10"
+              style="top: 30px"
               (click)="showPassword = !showPassword"
             >
               <ion-icon name="eye-outline" *ngIf="showPassword"></ion-icon>
@@ -49,33 +50,13 @@
           </ion-item>
 
           <span
-            class="
-              mt-6
-              w-full
-              bg-accentBlue
-              p-4
-              font-semibold
-              text-center
-              block
-              text-white
-              uppercase
-              rounded-xl
-            "
+            class="mt-6 w-full bg-accentBlue p-3 font-semibold text-center block text-white uppercase rounded-xl"
             (click)="register()"
             >Continue</span
           >
 
           <span
-            class="
-              w-full
-              p-4
-              text-center
-              block
-              text-accentBlue
-              border border-accentBlue
-              uppercase
-              rounded-xl
-            "
+            class="w-full p-3 text-center block text-accentBlue border border-accentBlue uppercase rounded-xl"
             routerLink="/auth/signin"
             >Login</span
           >

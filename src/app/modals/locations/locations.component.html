@@ -1,0 +1,46 @@
+<ion-app class="pale-bg-default">
+  <ion-header class="ion-no-border p-4 flex justify-between font-geomanist">
+    <div class="flex">
+      <ion-icon
+        name="arrow-back"
+        class="text-2xl"
+        (click)="modalController.dismiss()"
+      ></ion-icon>
+      <p class="ml-4 block text-gray-900">Location</p>
+    </div>
+    <span class="text-accentBlue" (click)="fetchLocations()">Change</span>
+  </ion-header>
+  <ion-content>
+    <div class="pt-6 py-4 px-4 font-geomanist pale-bg-default min-h-full">
+      <h3 class="text-xl text-gray-900 mb-4 uppercase font-semibold">
+        {{ location }}
+      </h3>
+      <ul>
+        <li class="" *ngFor="let item of locations">
+          <a
+            href="https://www.google.com/maps/search/{{ item.name }}/@{{
+              item.geometry.location.toUrlValue()
+            }},17z/"
+            target="_blank"
+            class="flex items-center bg-white border-b border-gray-100 p-4 justify-between"
+          >
+            <div class="grid">
+              <p class="">
+                {{ item.name }}
+              </p>
+              <p class="text-accentBlue">
+                {{ item.vicinity }}
+              </p>
+            </div>
+            <ion-icon
+              name="chevron-forward"
+              class="inline-block ml-2 text-xl"
+              style="min-width: 21px"
+            ></ion-icon>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div #map style="width: 0%; height: 0px"></div>
+  </ion-content>
+</ion-app>
