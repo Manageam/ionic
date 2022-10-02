@@ -1,18 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-  ActionSheetController,
-  LoadingController,
-  ModalController,
-  Platform,
-} from '@ionic/angular';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {ActionSheetController, LoadingController, ModalController, Platform} from '@ionic/angular';
 import {} from 'googlemaps';
-import { GlobalService } from 'src/app/services/global/global.service';
+import {GlobalService} from 'src/app/services/global/global.service';
+
 
 @Component({
   selector: 'app-locations',
   templateUrl: './locations.component.html',
   styleUrls: ['./locations.component.scss'],
 })
+
 export class LocationsComponent implements OnInit {
   locations = [];
   currentLocation: any = {};
@@ -20,16 +17,18 @@ export class LocationsComponent implements OnInit {
   map: google.maps.Map;
   location = '';
   subs = [];
+
   constructor(
     private actionSheetController: ActionSheetController,
     public modalController: ModalController,
     private global: GlobalService,
     private loadingController: LoadingController,
     private platform: Platform
-  ) {}
+  ) {
+  }
 
-  ngOnInit() {
-    this.fetchLocations();
+  async ngOnInit() {
+    await this.fetchLocations();
     let sub = this.platform.backButton.subscribe(() => {
       this.modalController.dismiss();
     });
@@ -38,6 +37,7 @@ export class LocationsComponent implements OnInit {
       this.currentLocation = d.coords;
     });
   }
+
 
   distance(lat1, lon1, lat2, lon2) {
     const R = 6371e3; // metres
@@ -74,18 +74,17 @@ export class LocationsComponent implements OnInit {
     });
     await actionSheet.present();
 
-    const { role } = await actionSheet.onDidDismiss();
+    const {role} = await actionSheet.onDidDismiss();
     return role;
   }
 
   async fetchLocations() {
     this.location = '';
     this.location = await this.requestLocation();
-
-    if (this.location == 'backdrop') return this.modalController.dismiss();
+    if (this.location === 'backdrop') return this.modalController.dismiss();
 
     if (!navigator.geolocation) {
-      this.global.alert(
+      await this.global.alert(
         'Location finder',
         'Unable to get health locations at the moment. Make sure you enable location services for manageAm app',
         ['Okay']
@@ -93,7 +92,7 @@ export class LocationsComponent implements OnInit {
       return;
     }
 
-    this.loadLocation();
+    await this.loadLocation();
   }
 
   async loadLocation() {
@@ -116,7 +115,7 @@ export class LocationsComponent implements OnInit {
           {
             featureType: 'poi',
             elementType: 'labels',
-            stylers: [{ visibility: 'off' }],
+            stylers: [{visibility: 'off'}],
           },
         ];
 
@@ -124,6 +123,7 @@ export class LocationsComponent implements OnInit {
           center: pos,
           zoom: 15,
         });
+
 
         map.set('styles', customStyled);
         let request = {
@@ -170,7 +170,7 @@ export class LocationsComponent implements OnInit {
           ['Okay']
         );
       },
-      { timeout: 20000, enableHighAccuracy: true, maximumAge: 75000 }
+      {timeout: 20000, enableHighAccuracy: true, maximumAge: 75000}
     );
   }
 
