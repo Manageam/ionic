@@ -60,13 +60,10 @@ export class UpdateBloodSugarComponent implements OnInit {
         'All fields are required!',
         ['OK']
       );
-      // console.log("bloodzzz>>", {...this.bloodSugar});
     this.bloodSugarService
       .add({ ...this.bloodSugar, time: new Date() })
       .subscribe((data) => {
-        console.log("bloodzzz>>", {...this.bloodSugar});
         console.log("data>>", data);
-        console.log("original value set>>", this.bloodSugar.reading.valueOf());
         this.modalController.dismiss();
         this.webSocket.emit('blood-sugar:update', {
           user_id: this.auth.loggedUser().id,

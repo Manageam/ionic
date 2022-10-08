@@ -49,7 +49,6 @@ export class BloodSugarService {
     const {
       user_details: { id },
     } = this.userService.fetchDetails();
-    console.log("dattaParsed>>>", {...data});
     return this.http.post(`${this.url}/addBloodSugar`, {
       ...data,
       user_id: id,

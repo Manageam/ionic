@@ -39,11 +39,8 @@ export class BloodSugarComponent implements OnInit {
     this.bloodSugarService.get().subscribe((data) => {
       this.allBloodSugar = data;
       this.bloodSugar = data.slice(-1)[0];
-      console.log("data slice>>", this.bloodSugar);
       if (this.bloodSugar)
-      console.log("reading set from form>>", this.bloodSugar.reading);
         this.bloodSugar.reading = this.bloodSugar.reading.valueOf();
-        console.log("actual blood sugar reading>>", this.bloodSugar.reading);
       this.color = this.bloodSugar
         ? fetchBloodSugarTips(this.bloodSugar).color
         : 'gray';
