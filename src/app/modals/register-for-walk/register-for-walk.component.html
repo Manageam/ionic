@@ -1,0 +1,54 @@
+<ion-app class="text-gray-900">
+  <ion-header
+    class="bg-blue-100 px-4 py-6 ion-no-border text-xl flex justify-between items-center"
+  >
+    <p class="font-bold">Register to attend this event</p>
+    <ion-icon
+      (click)="modalController.dismiss()"
+      name="close"
+      class="bg-gray-500 text-2xl text-white rounded-full"
+    ></ion-icon>
+  </ion-header>
+  <ion-content>
+    <div class="p-4 space-y-4">
+      <ion-item>
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Email address</ion-label
+        >
+        <ion-input
+          placeholder="Enter your email address"
+          type="text"
+          [value]="walk.email"
+          [(ngModel)]="walk.email"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Location</ion-label
+        >
+        <ion-select
+          [value]="walk.location"
+          [(ngModel)]="walk.location"
+          class="w-full"
+          placeholder="Choose a location for the walk"
+          interface="popover"
+        >
+          <ion-select-option value="lagos">Lagos</ion-select-option>
+          <ion-select-option value="akwa-ibom">Akwa Ibom</ion-select-option>
+          <ion-select-option value="abuja">Abuja</ion-select-option>
+          <ion-select-option value="enugu">Enugu</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <p class="text text-gray-500 text-center">
+        We will promptly send you a message when the event timeline is ready
+      </p>
+
+      <span
+        (click)="save()"
+        class="w-full bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl mt-10"
+        >Done</span
+      >
+    </div>
+  </ion-content>
+</ion-app>

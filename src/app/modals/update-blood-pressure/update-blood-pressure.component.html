@@ -1,0 +1,58 @@
+<ion-app class="text-gray-900">
+  <ion-header
+    class="bg-blue-100 px-4 py-6 ion-no-border text-xl flex justify-between items-center"
+  >
+    <p class="font-bold">Record Blood pressure</p>
+    <ion-icon
+      (click)="modalController.dismiss()"
+      name="close"
+      class="bg-gray-500 text-2xl text-white rounded-full"
+    ></ion-icon>
+  </ion-header>
+  <ion-content>
+    <div class="p-4 space-y-4">
+      <ion-item>
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Systolic - upper number(mmHg)</ion-label
+        >
+        <ion-input
+          placeholder="Enter systolic reading"
+          type="number"
+          [value]="pressure.upper"
+          [(ngModel)]="pressure.upper"
+          (ngModelChange)="updateTip()"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item onclick="scrollIntoView(this)">
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Diastolic - lower number (mmHg)</ion-label
+        >
+        <ion-input
+          type="number"
+          placeholder="Enter diastolic reading"
+          [value]="pressure.lower"
+          [(ngModel)]="pressure.lower"
+          (ngModelChange)="updateTip()"
+        ></ion-input>
+      </ion-item>
+
+      <div *ngIf="tip">
+        <div class="flex items-center">
+          <ion-icon
+            name="information-circle-outline"
+            class="text-blue-600 text-xl inline-block mr-2 relative -top-1"
+          ></ion-icon>
+          <span>Health Tip</span>
+        </div>
+        <p class="text-gray-400 mt-3 font-geomanist" [innerHTML]="tip"></p>
+      </div>
+
+      <span
+        (click)="save()"
+        class="w-full bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl mt-10 bottom-4 sticky"
+        >Done</span
+      >
+    </div>
+  </ion-content>
+</ion-app>

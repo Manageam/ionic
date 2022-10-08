@@ -1,0 +1,51 @@
+<ion-app class="text-gray-900">
+  <ion-header
+    class="
+      bg-blue-100
+      px-4
+      py-6
+      ion-no-border
+      text-xl
+      flex
+      justify-between
+      items-center
+    "
+  >
+    <p class="font-bold">Choose date range</p>
+    <ion-icon
+      (click)="modalController.dismiss()"
+      name="close"
+      class="bg-gray-500 text-2xl text-white rounded-full"
+    ></ion-icon>
+  </ion-header>
+  <ion-content class="p-4 space-y-4">
+    <div class="mt-4">
+      <ion-calendar
+        [(ngModel)]="dateRange"
+        [options]="optionsRange"
+        [type]="type"
+        [format]="'YYYY-MM-DD'"
+      >
+      </ion-calendar>
+
+      <div
+        (click)="save()"
+        *ngIf="dateRange && dateRange.from && dateRange.to"
+        class="
+          bg-accentBlue
+          p-4
+          mx-4
+          font-semibold
+          text-center
+          block
+          text-white
+          uppercase
+          rounded-xl
+          mt-10
+        "
+      >
+        Continue
+      </div>
+    </div>
+  </ion-content>
+</ion-app>

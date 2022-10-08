@@ -1,0 +1,297 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@font-face {
+  font-family: "Calibre Regular";
+  src: url("./assets/fonts/calibre/CalibreRegular.woff");
+}
+@font-face {
+  font-family: "Geomanist Regular";
+  src: url("./assets/fonts/geomanist-regular-webfont.woff");
+}
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+* {
+  font-family: "Calibre Regular";
+  color: #012547;
+}
+
+.pale-bg-default {
+  background: linear-gradient(to bottom, #f0f4fc, #ddedfe);
+  min-height: 100%;
+}
+.modal-60 {
+  bottom: 0;
+  min-height: initial;
+  top: initial;
+  height: 100%;
+  border-width: 0;
+  border-style: solid;
+  color: white !important;
+}
+
+ion-modal.modal-60::part(content),
+.modal-60 .modal-shadow {
+  height: 60%;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.modal-30 {
+  bottom: 0;
+  min-height: initial;
+  top: initial;
+  height: 100%;
+  border-width: 0;
+  border-style: solid;
+  color: white !important;
+  z-index: 20000;
+  background-color: hsl(0deg 0% 0% /0.1);
+}
+
+ion-modal.modal-30::part(content),
+.modal-30 .modal-shadow {
+  height: 30%;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.modal-40 {
+  bottom: 0;
+  min-height: initial;
+  top: initial;
+  height: 100%;
+  border-width: 0;
+  border-style: solid;
+  color: white !important;
+  z-index: 20000;
+  background-color: hsl(0deg 0% 0% /0.1);
+}
+
+ion-modal.modal-40::part(content),
+.modal-40 .modal-shadow {
+  height: 40%;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.modal-50 {
+  bottom: 0;
+  min-height: initial;
+  top: initial;
+  height: 100%;
+  border-width: 0;
+  border-style: solid;
+  color: white !important;
+  z-index: 20000;
+  background-color: hsl(0deg 0% 0% /0.1);
+}
+
+ion-modal.modal-50::part(content),
+.modal-50 .modal-shadow {
+  height: 50%;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.modal-70 {
+  bottom: 0;
+  min-height: initial;
+  top: initial;
+  height: 100%;
+  border-width: 0;
+  border-style: solid;
+  color: white !important;
+  z-index: 20000;
+  background-color: hsl(0deg 0% 0% /0.1);
+}
+
+ion-modal.modal-70::part(content),
+.modal-70 .modal-shadow {
+  height: 70%;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.modal-80 {
+  bottom: 0;
+  min-height: initial;
+  top: initial;
+  height: 100%;
+  border-width: 0;
+  border-style: solid;
+  color: white !important;
+  z-index: 20000;
+  background-color: hsl(0deg 0% 0% /0.1);
+}
+
+ion-modal.modal-80::part(content),
+.modal-80 .modal-shadow {
+  height: 80%;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.modal-90 {
+  bottom: 0;
+  min-height: initial;
+  top: initial;
+  height: 100%;
+  border-width: 0;
+  border-style: solid;
+  color: white !important;
+  z-index: 20000;
+  background-color: hsl(0deg 0% 0% /0.1);
+}
+
+ion-modal.modal-90::part(content),
+.modal-90 .modal-shadow {
+  height: 90%;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.item-native {
+  --padding-start: 0px !important;
+}
+
+ion-item {
+  --padding-start: 0px !important;
+}
+
+.bg-pink-200 {
+  background-color: #d6c2ed !important;
+}
+
+.bg-blue-200 {
+  background-color: #8ecff0 !important;
+}
+
+.content ul {
+  list-style: disc !important;
+  margin-left: 10px;
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+.text-gray-400.mt-3.font-geomanist * {
+  color: #7d8ca6 !important;
+  font-family: "Geomanist Regular";
+  font-weight: lighter;
+}
+
+ion-app {
+  padding-top: calc(var(--ion-safe-area-top));
+  padding-bottom: calc(var(--ion-safe-area-bottom));
+}
+
+.action-sheet-title {
+  font-size: 18px;
+}
+
+.action-sheet-button {
+  font-size: 20px !important;
+}
+
+html {
+  font-size: 18px;
+}
+
+.android-scroll-bar ::-webkit-scrollbar {
+  width: 5px;
+}
+
+.android-scroll-bar ::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.android-scroll-bar ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(169, 169, 169);
+}
+
+.android-scroll-bar ::-webkit-scrollbar-thumb:window-inactive {
+  background: rgb(128, 128, 128);
+}
+
+.popover-content.sc-ion-popover-md {
+  width: 90%;
+  padding: 15px;
+  padding-right: 0px;
+}
+ion-label.sc-ion-select-popover-md,
+ion-label.sc-ion-select-popover-ios {
+  padding: 10px;
+}
+
+.sc-ion-select-popover-h ion-list.sc-ion-select-popover {
+  width: 90%;
+  padding: 15px;
+  padding-right: 0px;
+}
+
+.popover-content.sc-ion-popover-ios {
+  width: 90%;
+  left: 20px !important;
+
+  ion-label {
+    padding: 10px;
+  }
+}
+
+
+ion-datetime {
+  .time-body {
+    font-size: 28px;
+  }
+  .datetime-calendar {
+    background-color: red !important;
+  }
+}

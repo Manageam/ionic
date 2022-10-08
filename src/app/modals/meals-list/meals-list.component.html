@@ -1,0 +1,177 @@
+<ion-app>
+  <ion-header class="ion-no-border p-4 font-geomanist">
+    <div class="flex" (click)="modalController.dismiss()">
+      <ion-icon name="arrow-back" class="text-2xl text-accent"></ion-icon>
+      <p class="ml-4 block text-accent text-xl">Add food ({{ type }})</p>
+    </div>
+    <ion-segment
+      scrollable
+      (ionChange)="segmentChanged($event)"
+      [value]="segment"
+      mode="md"
+      class="bg-white mt-2 remove-scroll"
+    >
+      <ion-segment-button
+        [value]="category.id"
+        *ngFor="let category of categories"
+        class="text-gray-100"
+      >
+        <ion-label class="active:text-white hover:text-white">{{
+          category.category
+        }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <div
+      class="bg-white mt-2 flex px-2 items-center rounded border border-gray-200"
+    >
+      <ion-icon name="search" class="text-2xl p-2"></ion-icon>
+      <input
+        [(ngModel)]="search"
+        (ngModelChange)="filterFoods(segment)"
+        type="text"
+        class=""
+        [placeholder]="'Search ' + searchCat"
+        class="py-2 w-full outline-none"
+      />
+    </div>
+  </ion-header>
+  <ion-content>
+    <div class="min-h-full p-4 meal pale-bg-default">
+      <ul class="bg-white rounded-lg pb-1">
+        <li class="px-4 py-2 pt-3 grid grid-cols-3">
+          <span class="font-bold">Food</span>
+          <span class="font-bold col-start-2 text-right">Calories</span>
+        </li>
+        <li
+          class="px-4 py-3 grid grid-cols-12 border-t border-gray-200 items-center"
+          *ngFor="
+            let food of filteredFood.slice(
+              currentPage * pagination,
+              currentPage * pagination + pagination
+            )
+          "
+        >
+          <p class="text-left col-span-6">
+            {{ food.name }} - {{ food.quantity }}g
+            {{ food.amount ? " x " + food.amount : "" }}
+          </p>
+          <p class="text-right col-span-2">
+            {{ food.calories }}<br />
+            kcal
+          </p>
+
+          <span></span>
+
+          <div class="flex space-x-1 items-center text-left col-span-3">
+            <ion-icon
+              (click)="inc(food)"
+              name="add"
+              class="text-white bg-gray-500 p-1 rounded-full"
+              style="padding: 2px; max-height: 18px; max-width: 18px"
+            ></ion-icon>
+            <ion-icon
+              name="ellipse-outline"
+              class="text-2xl text-gray-500"
+              *ngIf="food.amount == 0"
+              (click)="toggle(food)"
+            ></ion-icon>
+            <ion-icon
+              name="checkmark-circle"
+              class="text-2xl text-accentBlue"
+              *ngIf="food.amount > 0"
+              (click)="toggle(food)"
+            ></ion-icon>
+            <ion-icon
+              (click)="dec(food)"
+              name="remove"
+              class="text-white bg-gray-500 p-1 rounded-full"
+              style="padding: 2px; max-height: 18px; max-width: 18px"
+            ></ion-icon>
+          </div>
+        </li>
+        <li class="flex justify-center border-t border-gray-200 px-4 py-3">
+          <span
+            (click)="currentPage = 0"
+            class="text-gray-900 px-2 py-1 {{
+              currentPage == 0 ? 'text-gray-500' : 'text-gray-900'
+            }}"
+            >First</span
+          >
+          <span
+            (click)="currentPage = currentPage == 0 ? 0 : currentPage - 1"
+            class="text-blue-600 px-2 py-1 {{
+              currentPage == 0 ? 'text-blue-300' : 'text-blue-600'
+            }}"
+            >Previous</span
+          >
+          <span
+            class=" inline-block px-3 py-1 {{
+              i == currentPage ? 'text-white bg-blue-600' : 'text-blue-600'
+            }}"
+            *ngFor="
+              let i of generatePagination(filteredFood.length / pagination)
+            "
+            (click)="currentPage = i"
+            >{{ i + 1 }}</span
+          >
+          <span
+            (click)="
+              currentPage =
+                currentPage ==
+                generatePagination(filteredFood.length / pagination).slice(
+                  -1
+                )[0]
+                  ? currentPage
+                  : currentPage + 1
+            "
+            class="text-blue-600 px-2 py-1 {{
+              currentPage ==
+              generatePagination(filteredFood.length / pagination).slice(-1)[0]
+                ? 'text-blue-300'
+                : 'text-blue-600'
+            }}"
+            >Next</span
+          >
+          <span
+            (click)="
+              currentPage = generatePagination(
+                filteredFood.length / pagination
+              ).slice(-1)[0]
+            "
+            class="text-gray-900 px-2 py-1 {{
+              currentPage ==
+              generatePagination(filteredFood.length / pagination).slice(-1)[0]
+                ? 'text-gray-500'
+                : 'text-gray-900'
+            }}"
+            >Last</span
+          >
+        </li>
+        <div class="bottom-0 sticky">
+          <li class="bg-gray-200 grid grid-cols-2">
+            <p class="border-r border-gray-700 px-4 py-3 flex justify-between">
+              Total
+              <span
+                *ngIf="totalCals > 0"
+                class="text-{{ calInfo?.color }}-900 bg-{{
+                  calInfo?.color
+                }}-100 inline-block px-3 pt-1 rounded-full"
+                >{{ calInfo?.state }}</span
+              >
+            </p>
+            <p class="self-end px-4 py-3 text-right">{{ totalCals }}kcal</p>
+          </li>
+
+          <div class="p-4 bottom-0 bg-white sticky rounded-b-lg">
+            <p
+              (click)="save()"
+              class="bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl"
+            >
+              Done
+            </p>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </ion-content>
+</ion-app>

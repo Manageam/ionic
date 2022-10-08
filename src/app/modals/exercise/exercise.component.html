@@ -1,0 +1,50 @@
+<ion-app class="">
+  <ion-header
+    class="ion-no-border p-4 flex justify-between font-geomanist bg-white"
+  >
+    <div class="flex" (click)="modalController.dismiss()">
+      <ion-icon name="arrow-back" class="text-2xl"></ion-icon>
+      <p class="ml-4 block text-xl">Exercise</p>
+    </div>
+  </ion-header>
+  <ion-content>
+    <div class="pale-bg-default">
+      <div class="bg-white py-4 text-center">
+        <img src="/assets/img/meditation.svg" class="h-40 inline-block" />
+      </div>
+
+      <div class="p-4">
+        <h3 class="font-bold text-lg font-geomanist">List of exercises</h3>
+        <p class="pt-2 font-geomanist">
+          Other recommended exercises that could be adopted are cycling,
+          running, swimming, trendmilling, skating, e.t.c
+        </p>
+      </div>
+
+      <ul class="bg-white p-4 pt-8 space-y-8">
+        <li *ngFor="let exercise of exercises">
+          <h3 class="font-bold text-lg">
+            {{ exercise.name[0] + exercise.name.slice(1).toLowerCase() }}
+          </h3>
+          <p class="font-geomanist">
+            Duration:
+            <span class="text-accentBlue font-geomanist">{{
+              exercise.duration.toLowerCase()
+            }}</span>
+          </p>
+          <p class="text-accentBlue font-geomanist">
+            {{ exercise.part[0] + exercise.part.slice(1).toLowerCase() }}
+          </p>
+          <ul class="text-gray-600 font-geomanist">
+            <li
+              *ngFor="let form of exercise.form"
+              class="font-geomanist text-gray-400 lowercase"
+            >
+              {{ form }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-app>

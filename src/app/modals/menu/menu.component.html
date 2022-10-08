@@ -1,0 +1,87 @@
+<div
+  class="menu-container {{ isShow ? 'menu-container--active' : '' }}"
+  (click)="close($event)"
+  *ngIf="isShowBg"
+>
+  <div class="menu">
+    <div class="ion-no-border px-4 pt-10 bg-paleBg font-calibre">
+      <img
+        src="{{ user?.photo }}"
+        class="w-20 h-20 rounded-full object-cover border-4 border-white overflow-hidden inline-block mb-4"
+        (click)="showProfile()"
+        onerror="this.src='/assets/img/profile.jpeg'"
+      />
+      <p class="font-bold text-xl text-gray-900">{{ user?.name }}</p>
+      <p
+        class="border border-accentBlue text-accentBlue py-2 text-sm px-6 mt-2 rounded-lg inline-block uppercase"
+        (click)="logout()"
+      >
+        Logout
+      </p>
+      <p class="text-left pt-8 pb-2 text-lg font-bold">Menu</p>
+    </div>
+    <div class="flex flex-col justify-between text-gray-900">
+      <ul class="px-4 text-lg py-6 space-y-6 bg-white overflow-y-scroll">
+        <li class="flex justify-between" (click)="showProfile()">
+          <span>Profile</span> <ion-icon name="chevron-forward"></ion-icon>
+        </li>
+        <li class="flex justify-between" (click)="showExercise()">
+          <span>Exercise</span> <ion-icon name="chevron-forward"></ion-icon>
+        </li>
+        <li class="flex justify-between" (click)="showReminders()">
+          <div class="flex justify-between mr-2 w-full">
+            <span>Alerts/Reminders</span>
+            <span
+              class="text-white bg-accentBlue text-sm grid place-items-center"
+              style="
+                width: 25px;
+                height: 25px;
+                border-radius: 20px;
+                font-family: serif;
+              "
+              >{{ reminder.length }}</span
+            >
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </li>
+        <li class="flex justify-between" (click)="showBookmark()">
+          <span>Bookmarks</span> <ion-icon name="chevron-forward"></ion-icon>
+        </li>
+        <li class="flex justify-between" (click)="showDiabetesWalk()">
+          <span>Diabetes Walk</span>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </li>
+        <li class="flex justify-between" (click)="showSettings()">
+          <span>Settings</span> <ion-icon name="chevron-forward"></ion-icon>
+        </li>
+      </ul>
+      <div class="p-4 pt-6 bg-paleBg row-span-2 grid">
+        <div>
+          <p>ManageAm</p>
+          <div class="flex text-accentBlue space-x-4 mt-3">
+            <a class="text-sm" target="_blank" href="https://sh-ei.org/"
+              >Website</a
+            >
+            <span class="text-accentBlue">·</span>
+            <a class="text-sm" (click)="showTerms()">Terms and conditions</a>
+          </div>
+
+          <div class="flex justify-between mt-3 pb-3">
+            <a
+              target="_blank"
+              href="https://facebook.com/ManageAm-Shei-370175390415149/"
+            >
+              <img src="/assets/img/facebook.svg" />
+            </a>
+            <a target="_blank" href="https://twitter.com/manageam">
+              <img src="/assets/img/twitter.svg" />
+            </a>
+            <a target="_blank" href="https://instagram.com/manageamapp/">
+              <img src="/assets/img/instagram.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

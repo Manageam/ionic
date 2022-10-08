@@ -1,0 +1,70 @@
+<ion-app class="text-gray-900">
+  <ion-header
+    class="
+      bg-blue-100
+      px-4
+      py-6
+      ion-no-border
+      text-xl
+      flex
+      justify-between
+      items-center
+    "
+  >
+    <p class="font-bold">Update Profile Image</p>
+    <ion-icon
+      (click)="modalController.dismiss()"
+      name="close"
+      class="bg-gray-500 text-2xl text-white rounded-full"
+    ></ion-icon>
+  </ion-header>
+  <ion-content>
+    <div class="p-4 space-y-4 text-center">
+      <img
+        [src]="image || photo"
+        onerror="this.src = '/assets/img/profile.jpeg'"
+        class="
+          rounded-full
+          h-40
+          w-40
+          object-cover
+          inline-block
+          border-8 border-gray-100
+        "
+      />
+      <span
+        (click)="update()"
+        class="
+          mx-4
+          bg-accentBlue
+          p-4
+          font-semibold
+          text-center
+          block
+          text-white
+          uppercase
+          rounded-xl
+          mt-10
+        "
+        >Update picture</span
+      >
+      <span
+        *ngIf="image"
+        (click)="save()"
+        class="
+          mx-4
+          bg-accentBlue
+          p-4
+          font-semibold
+          text-center
+          block
+          text-white
+          uppercase
+          rounded-xl
+          mt-10
+        "
+        >Save changes</span
+      >
+    </div>
+  </ion-content>
+</ion-app>

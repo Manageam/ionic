@@ -1,0 +1,19 @@
+.meal {
+  background-image: url("/assets/img/meal.jpg");
+  background: linear-gradient(to bottom, #f0f4fca6, #ddedfe),
+    url("/assets/img/meal.jpg");
+  background-size: cover;
+  background-color: hsl(0deg, 0%, 90%);
+  background-attachment: fixed;
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+.footer-bg {
+  background-color: #c4e274;
+  color: #89a53a;
+}
+
+.text-teal {
+  color: #89a53a;
+}

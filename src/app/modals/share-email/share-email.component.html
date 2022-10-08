@@ -1,0 +1,53 @@
+<ion-app>
+  <ion-header
+    class="
+      bg-blue-100
+      px-4
+      py-6
+      ion-no-border
+      text-xl
+      flex
+      justify-between
+      items-center
+    "
+  >
+    <p class="font-bold">Choose email</p>
+    <ion-icon
+      (click)="modalController.dismiss()"
+      name="close"
+      class="bg-gray-500 text-2xl text-white rounded-full"
+    ></ion-icon>
+  </ion-header>
+  <ion-content>
+    <div class="p-4">
+      <p class="mb-4">What email address would you like to share record with</p>
+      <ion-item>
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Email</ion-label
+        >
+        <ion-input
+          type="text"
+          placeholder="Enter email"
+          [(ngModel)]="email"
+        ></ion-input>
+      </ion-item>
+
+      <div
+        (click)="save()"
+        class="
+          bg-accentBlue
+          p-4
+          font-semibold
+          text-center
+          block
+          text-white
+          uppercase
+          rounded-xl
+          mt-10
+        "
+      >
+        Continue
+      </div>
+    </div>
+  </ion-content>
+</ion-app>
