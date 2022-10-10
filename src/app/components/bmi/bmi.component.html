@@ -1,0 +1,15 @@
+<div
+  class="bg-white rounded-xl p-4 text-center relative h-full"
+  (click)="view()"
+>
+  <app-guage value="100" [color]="color"></app-guage>
+  <p class="font-bold text-2xl mt-6">{{ bmi?.mass || "0" }}</p>
+  <span class="text-sm mb-1 inline-block">{{ bmi?.unit || "nil" }}</span>
+  <p class="font-bold">Body Mass Index</p>
+  <p
+    class="border border-accentBlue py-2 mt-1 text-accentBlue rounded-xl"
+    (click)="record($event)"
+  >
+    Record
+  </p>
+</div>

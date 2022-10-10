@@ -1,0 +1,16 @@
+.health-page {
+  z-index: 3;
+  &::after {
+    content: "";
+    display: block;
+    height: 55vh;
+    position: fixed;
+    z-index: -1;
+    background-color: #012547;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}

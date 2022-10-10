@@ -1,0 +1,125 @@
+<ion-app>
+  <ion-content class="h-full bg-gray-200 font-geomanist">
+    <ion-slides pager="true" class="h-screen" #mySlider>
+      <ion-slide class="h-full slide-1 relative">
+        <span
+          class="
+            absolute
+            top-10
+            right-6
+            font-semibold
+            tracking-wider
+            text-white
+          "
+          routerLink="/auth/signup"
+          >Skip</span
+        >
+        <div
+          class="
+            grid
+            h-full
+            w-full
+            items-end
+            p-2
+            pb-16
+            bg-gradient-to-t
+            from-gray-900
+          "
+        >
+          <div class="w-full p-3">
+            <h3 class="text-white font-bold text-2xl mb-4">
+              Track your well being
+            </h3>
+            <div class="grid">
+              <span
+                class="inline-block uppercase bg-white py-3 px-3 rounded-lg"
+                (click)="next($event)"
+              >
+                Next
+              </span>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide class="h-full slide-2 relative">
+        <span
+          class="
+            absolute
+            top-10
+            right-6
+            font-semibold
+            tracking-wider
+            text-white
+          "
+          routerLink="/auth/signup"
+          >Skip</span
+        >
+        <div
+          class="
+            grid
+            h-full
+            w-full
+            items-end
+            p-2
+            pb-16
+            bg-gradient-to-t
+            from-gray-900
+          "
+        >
+          <div class="w-full p-3">
+            <h3 class="text-white font-bold text-2xl mb-4">Your meal guide</h3>
+            <div class="grid">
+              <span
+                (click)="next($event)"
+                class="inline-block uppercase bg-white py-3 px-3 rounded-lg"
+              >
+                Next
+              </span>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide class="h-full slide-3 relative">
+        <div
+          class="
+            grid
+            h-full
+            w-full
+            items-end
+            p-2
+            pb-16
+            bg-gradient-to-t
+            from-gray-900
+          "
+        >
+          <div class="w-full p-3">
+            <h3 class="text-white font-bold text-2xl mb-4">
+              Diabetes education
+            </h3>
+            <div class="grid grid-cols-2 gap-3">
+              <span
+                routerLink="/auth/signin"
+                class="inline-block uppercase bg-white py-3 px-3 rounded-lg"
+              >
+                Login
+              </span>
+              <span
+                routerLink="/auth/signup"
+                class="
+                  inline-block
+                  uppercase
+                  px-3
+                  border border-white
+                  text-white
+                  rounded-lg
+                  py-3
+                "
+                >Get Started</span
+              >
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </ion-content>
+</ion-app>

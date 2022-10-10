@@ -1,0 +1,79 @@
+<ion-app class="text-gray-900">
+  <ion-header
+    class="bg-blue-100 px-4 py-6 ion-no-border text-xl flex justify-between items-center"
+  >
+    <p class="font-bold">New Medication</p>
+    <ion-icon
+      (click)="modalController.dismiss()"
+      name="close"
+      class="bg-gray-500 text-2xl text-white rounded-full"
+    ></ion-icon>
+  </ion-header>
+  <ion-content>
+    <div class="p-4 space-y-4">
+      <ion-item>
+        <ion-label class="block font-calibre w-full" position="stacked"
+          >Medication type</ion-label
+        >
+        <ion-select
+          value="prescribed"
+          class="w-full"
+          [(ngModel)]="medication.type"
+          interface="popover"
+        >
+          <ion-select-option value="prescribed">Prescribed</ion-select-option>
+          <ion-select-option value="self">Self</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div>
+        <ion-item onclick="scrollIntoView(this)">
+          <ion-label class="block font-calibre w-full" position="stacked"
+            >Name of medication</ion-label
+          >
+          <ion-input
+            placeholder="Enter name of medication"
+            [(ngModel)]="medication.name"
+            (ngModelChange)="search()"
+          ></ion-input>
+        </ion-item>
+        <div class="-top-2 relative shadow-xl rounded-xl">
+          <ion-list *ngIf="searched.length > 0">
+            <ion-item
+              *ngFor="let item of searched"
+              (click)="med = item; medication.name = item.name; searched = []"
+            >
+              <p class="px-4 py-2">{{ item.name }}</p>
+            </ion-item>
+          </ion-list>
+        </div>
+
+        <div *ngIf="med" class="mt-4">
+          <div class="flex items-center">
+            <ion-icon
+              name="information-circle-outline"
+              class="text-blue-600 text-xl inline-block mr-2 relative -top-1"
+            ></ion-icon>
+            <span>Health Tip</span>
+          </div>
+          <span class="text-gray-400 mt-3 font-bold inline-block"
+            >Used For:</span
+          >
+          <p class="text-gray-400 mt-1" [innerHTML]="med.used_for"></p>
+
+          <p class="text-green-900 my-3">
+            Contact your doctor if you have any of these syptoms
+          </p>
+          <p class="my-4 text-gray-500 font-bold">Possible side effects:</p>
+          <p class="text-gray-400 mt-3" [innerHTML]="med.effect"></p>
+        </div>
+      </div>
+
+      <span
+        (click)="save()"
+        class="w-full bg-accentBlue p-4 font-semibold text-center block text-white uppercase rounded-xl mt-10 bottom-4 sticky"
+        >Done</span
+      >
+    </div>
+  </ion-content>
+</ion-app>

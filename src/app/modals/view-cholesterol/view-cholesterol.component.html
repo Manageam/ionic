@@ -1,0 +1,55 @@
+<ion-app class="pale-bg-default text-gray-900">
+  <ion-header class="ion-no-border p-4 flex justify-between font-geomanist">
+    <div class="flex">
+      <ion-icon
+        name="arrow-back"
+        class="text-2xl"
+        (click)="modalController.dismiss()"
+      ></ion-icon>
+      <p class="ml-4 block text-gray-900 text-xl">Total cholesterol level</p>
+    </div>
+    <span class="text-accentBlue text-xl" (click)="share()">Share</span>
+  </ion-header>
+  <ion-content>
+    <div class="pale-bg-default p-4 font-bold min-h-full">
+      <p class="mb-4">Cholesterol history</p>
+      <p *ngIf="allCholesterol.length == 0" class="text-gray-500">
+        You have not added any cholesterol reading yet
+      </p>
+      <ul>
+        <li *ngFor="let item of allCholesterol" class="bg-white p-4 mb-2">
+          <p class="text-accentBlue">{{ item.date }}</p>
+          <div class="flex justify-between items-center" (click)="toggle(item)">
+            <p class="text-lg">{{ item.reading }} {{ item.unit }}</p>
+            <ion-icon
+              name="chevron-forward"
+              class="text-xl {{ item == expand ? 'rotate-90' : '' }}"
+            ></ion-icon>
+          </div>
+          <app-expandable [expanded]="item == expand" expandHeight="5000px">
+            <div class="bg-white mt-6 text-gray-600 space-y-4">
+              <div class="flex items-center">
+                <ion-icon
+                  name="information-circle-outline"
+                  class="text-blue-600 text-xl inline-block mr-2 relative"
+                ></ion-icon>
+                <span>Health Tip</span>
+              </div>
+              <p
+                class="text-gray-400 mt-3 font-geomanist"
+                [innerHTML]="item.tip"
+              ></p>
+
+              <p
+                class="bg-red-600 font-bold text-white p-3 text-center rounded-full"
+                (click)="remove(item.id)"
+              >
+                Remove
+              </p>
+            </div>
+          </app-expandable>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-app>

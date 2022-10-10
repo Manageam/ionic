@@ -1,0 +1,7 @@
+{
+  "name": "manageam-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

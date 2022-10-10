@@ -1,0 +1,111 @@
+<ion-app>
+  <ion-header class="py-6 px-4 ion-no-border">
+    <div class="flex justify-between items-center">
+      <p class="flex">
+        <span
+          class="
+            w-6
+            h-6
+            flex
+            items-center
+            justify-center
+            bg-green-100
+            rounded-full
+            bg-{{ meal.info.color }}-100 text-{{ meal.info.color }}-900
+            mr-1
+          "
+          style="font-family: serif"
+          >{{ meal.foods.length }}</span
+        >
+        <span class="text-blue-400">Total foods</span>
+      </p>
+
+      <ion-icon
+        (click)="modalController.dismiss(false)"
+        name="close"
+        class="text-white bg-gray-400 p-1 rounded-full"
+      ></ion-icon>
+    </div>
+
+    <div class="mt-16 text-gray-900">
+      <div class="flex justify-between">
+        <p class="text-xl">{{ meal.type }}</p>
+        <span class="uppercase block mr-3 text-gray-500">{{ meal.date }}</span>
+      </div>
+      <div class="flex justify-between items-end">
+        <p>
+          <span class="text-3xl font-semibold">{{ meal.calories }}</span> kcal
+        </p>
+        <p
+          class="py-1 text-sm rounded-full px-4 bg-{{
+            meal.info.color
+          }}-100 text-{{ meal.info.color }}-900"
+          style="font-family: serif"
+        >
+          {{ meal.info.state }}
+        </p>
+      </div>
+    </div>
+  </ion-header>
+  <ion-content>
+    <div class="pale-bg-default p-4">
+      <div class="bg-white rounded-lg">
+        <h2 class="text-xl p-4">Nutrition Information</h2>
+        <ul *ngIf="allCab.length > 0">
+          <h3 class="pale-bg-default text-accentBlue p-4 flex justify-between">
+            <span>Carbohydrate</span> <span>{{ allCab.length }}</span>
+          </h3>
+          <li
+            class="bg-white text-gray-600 p-4 border-t border-gray-200 flex justify-between"
+            *ngFor="let item of allCab"
+          >
+            <span>{{ item.name }} x({{ item.amount }})</span>
+            <span>{{ item.calories * item.amount }}</span>
+          </li>
+        </ul>
+
+        <ul *ngIf="allPro.length > 0">
+          <h3 class="pale-bg-default text-accentBlue p-4 flex justify-between">
+            <span>Protein</span> <span>{{ allPro.length }}</span>
+          </h3>
+          <li
+            class="bg-white text-gray-600 p-4 border-t border-gray-200 flex justify-between"
+            *ngFor="let item of allFru"
+          >
+            <span>{{ item.name }} x({{ item.amount }})</span>
+            <span>{{ item.calories * item.amount }}</span>
+          </li>
+        </ul>
+
+        <ul *ngIf="allFru.length > 0">
+          <h3 class="pale-bg-default text-accentBlue p-4 flex justify-between">
+            <span>Fruit & Vegetables</span>
+            <span>{{ allFru.length }}</span>
+          </h3>
+          <li
+            class="bg-white text-gray-600 p-4 border-t border-gray-200 flex justify-between"
+            *ngFor="let item of allPro"
+          >
+            <span>{{ item.name }} x({{ item.amount }})</span>
+            <span>{{ item.calories * item.amount }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-2 gap-10 mt-4">
+        <p
+          (click)="remove()"
+          class="bg-red-600 text-white uppercase rounded-2xl text-center py-3 font-semibold px-6"
+        >
+          Remove
+        </p>
+        <p
+          (click)="modalController.dismiss(false)"
+          class="bg-white text-gray-800 uppercase rounded-2xl text-center py-3 font-semibold px-6"
+        >
+          close
+        </p>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>
