@@ -24,8 +24,7 @@ export class LocationsComponent implements OnInit {
     private global: GlobalService,
     private loadingController: LoadingController,
     private platform: Platform
-  ) {
-  }
+  ) {}
 
   async ngOnInit() {
     await this.fetchLocations();
